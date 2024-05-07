@@ -6,6 +6,6 @@ export (PackedScene) var projectile_scene:PackedScene
 
 var projectile_container
 
-func fire():
+func fire(dmg_mul):
 	var proj_instance = projectile_scene.instance()
 	proj_instance.initialize(projectile_container, cannon_tip.global_position, global_position.direction_to(cannon_tip.global_position))

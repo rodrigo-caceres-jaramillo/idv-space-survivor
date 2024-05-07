@@ -9,6 +9,16 @@ export (float) var FRICTION_WEIGHT:float = 0.1
 var velocity:Vector2 = Vector2.ZERO
 var projectile_container
 
+### PLAYER STATS
+var HP = 10
+var HP_MAX = 10
+
+var DAMAGE_MUL = 1  
+var RATE_OF_FIRE_MUL = 1
+var RANGE_MUL = 1
+###
+
+
 func initialize(projectile_container):
 	self.projectile_container = projectile_container
 	cannon.projectile_container = projectile_container
@@ -20,11 +30,11 @@ func _physics_process(delta):
 	cannon.look_at(mouse_position)
 	
 	# Cannon fire
-	if Input.is_action_just_pressed("fire_cannon"):
+	if Input.is_action_pressed("fire_cannon"):
 		if projectile_container == null:
 			projectile_container = get_parent()
 			cannon.projectile_container = projectile_container
-		cannon.fire()
+		cannon.fire(DAMAGE_MUL)
 	
 	# Player movement
 	var h_movement_direction:int = int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left"))
