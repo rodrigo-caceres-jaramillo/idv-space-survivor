@@ -18,6 +18,10 @@ config/name="Space-survivor"
 run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://src/game/singletons/Global.gd"
+
 [display]
 
 window/size/width=800
