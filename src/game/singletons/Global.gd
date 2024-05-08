@@ -1,6 +1,7 @@
 extends Node
 
 var player = null
+var money = 100
 
 func instance_node(node, location, parent):
 	var node_instance = node.instance()

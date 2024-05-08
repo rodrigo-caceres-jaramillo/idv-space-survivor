@@ -3,10 +3,11 @@ extends Sprite
 onready var life_time = $LifeTime
 
 export (float) var VELOCITY:float = 500.0
-
+var DAMAGE=0
 var direction:Vector2
 
-func initialize(container, spawn_position:Vector2, direction:Vector2):
+func initialize(damage, container, spawn_position:Vector2, direction:Vector2):
+	DAMAGE=damage
 	container.add_child(self)
 	self.direction = direction
 	global_position = spawn_position

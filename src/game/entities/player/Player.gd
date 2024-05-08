@@ -1,11 +1,14 @@
 extends KinematicBody2D
 
 onready var weapon = $Weapon
+onready var invulnerability_timer = $InvulnerabilityTimer
 
 export (int) var SPEED = 200
 export (float) var DAMAGE_MUL:float = 1
+export (float) var HP = 10
 
 var VELOCITY= Vector2()
+var INVUNERABLE = false
 var projectile_container
 
 func _ready():
@@ -37,3 +40,18 @@ func _movement(delta):
 	
 	VELOCITY = VELOCITY.normalized()
 	global_position += SPEED * VELOCITY * delta
+	
+	if HP <= 0:
+		queue_free()
+
+func _on_Hitbox_area_entered(area):
+	if area.is_in_group("Enemy") and INVUNERABLE == false:
+		INVUNERABLE = true
+		invulnerability_timer.start()
+		modulate= Color.red
+		var enemy = area.get_parent()
+		HP -= enemy.DAMAGE
+
+func _on_InvulnerabilityTimer_timeout():
+	modulate = Color.white
+	INVUNERABLE = false

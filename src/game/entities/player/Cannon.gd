@@ -6,11 +6,12 @@ onready var rate_of_fire = $RateOfFire
 export (PackedScene) var projectile_scene:PackedScene
 var can_shoot = true
 var projectile_container
+var DAMAGE = 2
 
 func fire(dmg_mul):
 	if(can_shoot):
 		var proj_instance = projectile_scene.instance()
-		proj_instance.initialize(projectile_container, cannon_tip.global_position, global_position.direction_to(cannon_tip.global_position))
+		proj_instance.initialize(DAMAGE, projectile_container, cannon_tip.global_position, global_position.direction_to(cannon_tip.global_position))
 		rate_of_fire.start()
 		can_shoot = false
 
