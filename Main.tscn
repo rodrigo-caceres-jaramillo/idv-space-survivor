@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/game/entities/player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/textures/background.png" type="Texture" id=2]
 [ext_resource path="res://Main.gd" type="Script" id=3]
-[ext_resource path="res://src/game/entities/enemies/Minion.tscn" type="PackedScene" id=4]
 [ext_resource path="res://EnemySpawner.gd" type="Script" id=5]
 [ext_resource path="res://src/game/ui/HUD.tscn" type="PackedScene" id=6]
 
@@ -24,22 +23,21 @@ position = Vector2( 413.003, 395.272 )
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
 
-[node name="Minion" parent="." instance=ExtResource( 4 )]
-position = Vector2( 742, 96 )
-
 [node name="EnemySpawner" type="Node" parent="."]
 script = ExtResource( 5 )
 
 [node name="SpawnTimer" type="Timer" parent="EnemySpawner"]
 
 [node name="RoundTimer" type="Timer" parent="EnemySpawner"]
-wait_time = 30.0
+wait_time = 20.0
 one_shot = true
 autostart = true
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="UILayer" instance=ExtResource( 6 )]
+
+[node name="EnemyContainer" type="Node" parent="."]
 
 [connection signal="timeout" from="EnemySpawner/SpawnTimer" to="EnemySpawner" method="_on_SpawnTimer_timeout"]
 [connection signal="ready" from="EnemySpawner/RoundTimer" to="EnemySpawner" method="_on_RoundTimer_ready"]

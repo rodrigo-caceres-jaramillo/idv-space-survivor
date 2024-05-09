@@ -5,8 +5,8 @@ onready var rate_of_fire = $RateOfFire
 
 export (PackedScene) var projectile_scene:PackedScene
 var can_shoot = true
-var projectile_container
 var DAMAGE = 2
+var projectile_container = null
 
 func fire(dmg_mul):
 	if(can_shoot):

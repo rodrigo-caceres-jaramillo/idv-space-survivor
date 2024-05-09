@@ -9,17 +9,16 @@ func _ready():
 
 func _on_SpawnTimer_timeout():
 	var enemy_position = Vector2(rand_range(0, 1500), rand_range(0, 1500))
-	var enemy = enemy_scene.instance()
-	add_child(enemy)
-	enemy.position = enemy_position
+	Global.instance_wave_node(enemy_scene, enemy_position)
 
 func _on_RoundTimer_ready():
 	print("Comienza la ronda")
 	_ready()
 
 func _on_RoundTimer_timeout():
-	print("Termina la ronda")
 	spawn_timer.stop()
-	for enemy in get_children():
-		enemy.queue_free() 
+	for enemy in Global.wave_container.get_children():
+		enemy.queue_free()
+	print("Termina la ronda")
+
 	

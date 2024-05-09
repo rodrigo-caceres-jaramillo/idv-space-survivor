@@ -7,14 +7,12 @@ var VELOCITY = Vector2()
 var STUN = false
 var HP = 4
 var DAMAGE = 2
+var SPWANING = true
 
-var money_scene = preload("res://src/game/entities/money/Money.tscn")
-var money_container: Node
+var money = preload("res://src/game/entities/money/Money.tscn")
 
-func initialize(container,money_container, spawn_position:Vector2):
-	container.add_child(self)
-	self.money_container = money_container
-	global_position = spawn_position
+func _ready():
+	modulate= Color.black
 
 func _process(delta):
 	if Global.player != null and STUN == false:
@@ -29,17 +27,17 @@ func _process(delta):
 	
 func _hp_process():
 	if HP <= 0:
-		var money_position = self.global_position
-		var money = money_scene.instance()
-		Global.main.add_child(money) # cambiar a contenedor
-		money.position = money_position
-		if money != null:
-			print(money)
+		Global.instance_wave_node(money, self.global_position)
 		queue_free()
-		
+
+func attackPlayer():
+	if (SPWANING):
+		return 0
+	else:
+		return self.DAMAGE
 
 func _on_Hitbox_area_entered(area):
-	if area.is_in_group("Enemy_damager") and STUN == false:
+	if area.is_in_group("Enemy_damager") and !STUN and !SPWANING:
 		modulate = Color.black
 		VELOCITY = -VELOCITY * 3
 		STUN = true
@@ -51,3 +49,7 @@ func _on_Hitbox_area_entered(area):
 func _on_StunTimer_timeout():
 	modulate = Color.white
 	STUN = false
+
+func _on_SpawningTimer_timeout():
+	SPWANING = false
+	modulate= Color.white
