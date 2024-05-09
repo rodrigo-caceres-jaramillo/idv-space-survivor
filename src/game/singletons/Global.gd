@@ -2,7 +2,7 @@ extends Node
 
 var main = null
 var player = null
-var money = 100
+var money = 0
 var timer = null
 
 func instance_node(node, location, parent):

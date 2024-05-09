@@ -33,8 +33,6 @@ func _hp_process():
 		var money = money_scene.instance()
 		Global.main.add_child(money) # cambiar a contenedor
 		money.position = money_position
-		if money != null:
-			print(money)
 		queue_free()
 		
 
