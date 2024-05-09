@@ -25,11 +25,13 @@ func _process(delta):
 	
 	VELOCITY = VELOCITY.normalized()
 	global_position += VELOCITY * SPEED * delta
+	self._hp_process()
 	
+func _hp_process():
 	if HP <= 0:
 		var money_position = self.global_position
 		var money = money_scene.instance()
-		add_child(money) # cambiar a contenedor
+		Global.main.add_child(money) # cambiar a contenedor
 		money.position = money_position
 		if money != null:
 			print(money)

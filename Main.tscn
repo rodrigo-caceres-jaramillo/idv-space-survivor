@@ -32,15 +32,15 @@ script = ExtResource( 5 )
 
 [node name="SpawnTimer" type="Timer" parent="EnemySpawner"]
 
+[node name="RoundTimer" type="Timer" parent="EnemySpawner"]
+wait_time = 30.0
+one_shot = true
+autostart = true
+
 [node name="UILayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="UILayer" instance=ExtResource( 6 )]
 
-[node name="RoundTimer" type="Timer" parent="."]
-wait_time = 15.0
-one_shot = true
-autostart = true
-
 [connection signal="timeout" from="EnemySpawner/SpawnTimer" to="EnemySpawner" method="_on_SpawnTimer_timeout"]
-[connection signal="ready" from="RoundTimer" to="EnemySpawner" method="_on_RoundTimer_ready"]
-[connection signal="timeout" from="RoundTimer" to="EnemySpawner" method="_on_RoundTimer_timeout"]
+[connection signal="ready" from="EnemySpawner/RoundTimer" to="EnemySpawner" method="_on_RoundTimer_ready"]
+[connection signal="timeout" from="EnemySpawner/RoundTimer" to="EnemySpawner" method="_on_RoundTimer_timeout"]
