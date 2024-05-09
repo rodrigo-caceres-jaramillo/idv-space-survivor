@@ -39,15 +39,18 @@ func aim_and_shoot():
 			weapon.projectile_container = projectile_container
 		weapon.fire(DAMAGE_MUL)
 		
+func takeDamage(damager):
+	var damage = damager.attack()
+	if (damage):
+		INVUNERABLE = true
+		modulate = Color.red
+		invulnerability_timer.start()
+		HP -= damage
+		
 func _on_Hitbox_area_entered(area):
 	if area.is_in_group("Enemy") and INVUNERABLE == false:
 		var enemy = area.get_parent()
-		var damge = enemy.attackPlayer()
-		if (damge):
-			INVUNERABLE = true
-			invulnerability_timer.start()
-			modulate= Color.red
-			HP -= damge
+		self.takeDamage(enemy)
 		
 func _on_InvulnerabilityTimer_timeout():
 	modulate = Color.white

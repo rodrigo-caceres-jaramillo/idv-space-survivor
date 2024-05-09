@@ -17,10 +17,14 @@ func initialize(damage, container, spawn_position:Vector2, direction:Vector2):
 
 func _physics_process(delta):
 	position += direction * VELOCITY * delta
-
-func _remove():
+	
+func attack():
+	self.remove()
+	return self.DAMAGE
+	
+func remove():
 	get_parent().remove_child(self)
 	queue_free()
 
 func _on_LifeTime_timeout():
-	_remove()
+	remove()
