@@ -12,8 +12,8 @@ script = ExtResource( 3 )
 [node name="Background" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 700.0
-margin_bottom = 900.0
+margin_right = 400.0
+margin_bottom = 300.0
 texture = ExtResource( 2 )
 expand = true
 
@@ -36,6 +36,8 @@ autostart = true
 [node name="UILayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="UILayer" instance=ExtResource( 6 )]
+margin_right = 800.0
+margin_bottom = 600.0
 
 [node name="EnemyContainer" type="Node" parent="."]
 

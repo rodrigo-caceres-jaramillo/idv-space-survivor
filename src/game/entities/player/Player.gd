@@ -5,7 +5,8 @@ onready var invulnerability_timer = $InvulnerabilityTimer
 
 export (int) var SPEED = 200
 export (float) var DAMAGE_MUL:float = 1
-export (float) var HP = 10
+export (float) var MAX_HP = 10
+var HP = 10
 
 var VELOCITY= Vector2()
 var INVUNERABLE = false
@@ -13,6 +14,10 @@ var projectile_container
 
 func _ready():
 	Global.player = self
+	self.HP = self.MAX_HP
+	
+func heal_to_max():
+	self.HP = self.MAX_HP
 	
 func _exit_tree():
 	Global.player = null
