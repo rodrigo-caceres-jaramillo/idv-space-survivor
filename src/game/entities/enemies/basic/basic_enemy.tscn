@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://bg51w5vbn6vps"]
+
+[ext_resource type="PackedScene" uid="uid://butts5geqiee5" path="res://src/game/entities/enemies/enemy.tscn" id="1_4itsn"]
+[ext_resource type="Texture2D" uid="uid://bb3rar8v85vnf" path="res://assets/textures/enemies/basic.png" id="2_dxhs3"]
+[ext_resource type="Script" path="res://src/game/entities/enemies/basic/basic_enemy.gd" id="2_ibr85"]
+[ext_resource type="Script" path="res://src/game/components/move_to_target.gd" id="3_4fse3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mab0w"]
+radius = 9.0
+height = 34.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jrprr"]
+radius = 6.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4abfs"]
+radius = 8.0
+height = 32.0
+
+[node name="BasicEnemy" instance=ExtResource("1_4itsn")]
+script = ExtResource("2_ibr85")
+
+[node name="StatsComponent" parent="." index="0"]
+speed = 150.0
+health = 5
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource("2_dxhs3")
+
+[node name="CollisionShape" parent="." index="2"]
+shape = SubResource("CapsuleShape2D_mab0w")
+
+[node name="HitboxComponent" parent="." index="3"]
+visible = false
+
+[node name="HitboxShape" type="CollisionShape2D" parent="HitboxComponent" index="0"]
+shape = SubResource("CapsuleShape2D_jrprr")
+
+[node name="HurtboxComponent" parent="." index="4"]
+visible = false
+
+[node name="HurtboxShape" type="CollisionShape2D" parent="HurtboxComponent" index="0"]
+shape = SubResource("CapsuleShape2D_4abfs")
+
+[node name="MoveToTargetComponent" type="Node" parent="." index="6" node_paths=PackedStringArray("actor", "stats")]
+script = ExtResource("3_4fse3")
+actor = NodePath("..")
+stats = NodePath("../StatsComponent")

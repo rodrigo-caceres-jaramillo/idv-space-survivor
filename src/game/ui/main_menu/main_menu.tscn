@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://bngqp1vja7siw"]
+
+[ext_resource type="Script" path="res://src/game/ui/main_menu/Buttons.gd" id="1_3sbce"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_3sbce")
+
+[node name="StartButton" type="Button" parent="Buttons"]
+layout_mode = 2
+
+[node name="QuitButton" type="Button" parent="Buttons"]
+layout_mode = 2
+
+[connection signal="pressed" from="Buttons/StartButton" to="Buttons" method="_on_start_button_pressed"]
+[connection signal="pressed" from="Buttons/QuitButton" to="Buttons" method="_on_quit_button_pressed"]
