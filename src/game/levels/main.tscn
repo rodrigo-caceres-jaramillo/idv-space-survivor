@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://btjax2v4qeeu3"]
+[gd_scene load_steps=10 format=3 uid="uid://btjax2v4qeeu3"]
 
 [ext_resource type="Script" path="res://src/game/levels/main.gd" id="1_mb85g"]
 [ext_resource type="PackedScene" uid="uid://ds70pbbdbtgkc" path="res://src/game/entities/player/player.tscn" id="2_8y62r"]
 [ext_resource type="PackedScene" uid="uid://bg51w5vbn6vps" path="res://src/game/entities/enemies/basic/basic_enemy.tscn" id="3_1wnej"]
+[ext_resource type="Texture2D" uid="uid://c45p5tvcf6p2d" path="res://assets/textures/money/Money.png" id="3_33pak"]
 [ext_resource type="Texture2D" uid="uid://c4fcy8vnn5k02" path="res://assets/textures/tiles/floor.png" id="4_1yrui"]
+[ext_resource type="Script" path="res://src/game/levels/HealthBar.gd" id="4_aegg0"]
+[ext_resource type="FontFile" uid="uid://jd478um6wqpv" path="res://assets/fonts/Gameplay.ttf" id="4_fow5n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gjf3c"]
 texture = ExtResource("4_1yrui")
@@ -85,7 +88,7 @@ terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_gjf3c")
 
-[node name="World" type="Node2D"]
+[node name="Main" type="Node2D"]
 position = Vector2(-308, -197)
 script = ExtResource("1_mb85g")
 
@@ -97,15 +100,77 @@ layer_0/tile_data = PackedInt32Array(983057, 131072, 1, 983058, 0, 1, 983059, 0,
 layer_1/name = "wall"
 layer_1/tile_data = PackedInt32Array(0, 393216, 0, 65536, 393216, 0, 131072, 393216, 0, 196608, 393216, 0, 262144, 393216, 0, 327680, 393216, 0, 393216, 393216, 0, 458752, 393216, 0, 524288, 393216, 0, 589824, 393216, 0, 655360, 393216, 0, 720896, 393216, 0, 786432, 393216, 0, 851968, 393216, 0, 917504, 393216, 0, 983040, 393216, 0, 1048576, 393216, 0, 1114112, 393216, 0, 1179648, 393216, 0, 1245184, 393216, 0, 1310720, 393216, 0, 1376256, 393216, 0, 1441792, 393216, 0, 1507328, 393216, 0, 1572864, 393216, 0, 1638400, 393216, 0, 1703936, 393216, 0, 1769472, 393216, 0, 1835008, 393216, 0, 1900544, 393216, 0, 1966080, 393216, 0, 2031616, 393216, 0, 2097152, 393216, 0, 2162688, 393216, 0, 2228224, 393216, 0, 2293760, 393216, 0, 2359296, 393216, 0, 2424832, 393216, 0, 2490368, 393216, 0, 2555904, 393216, 0, 2621440, 393216, 0, 2686976, 393216, 0, 2752512, 393216, 0, 2818048, 393216, 0, 2883584, 393216, 0, 2949120, 393216, 0, 3014656, 393216, 0, 3080192, 393216, 0, 3145728, 393216, 0, 3211264, 393216, 0, 3276800, 393216, 0, 3342336, 393216, 0, 3407872, 393216, 0, 3473408, 393216, 0, 3538944, 393216, 0, 3538945, 393216, 0, 3538946, 393216, 0, 3538947, 393216, 0, 3538948, 393216, 0, 3538949, 393216, 0, 3538950, 393216, 0, 3538951, 393216, 0, 3538952, 393216, 0, 3538953, 393216, 0, 3538954, 393216, 0, 3538955, 393216, 0, 3538956, 393216, 0, 3538957, 393216, 0, 3538958, 393216, 0, 3538959, 393216, 0, 3538960, 393216, 0, 3538961, 393216, 0, 3538962, 393216, 0, 3538963, 393216, 0, 3538964, 393216, 0, 3538965, 393216, 0, 3538966, 393216, 0, 3538967, 393216, 0, 3538968, 393216, 0, 3538969, 393216, 0, 3538970, 393216, 0, 3538971, 393216, 0, 3538972, 393216, 0, 3538973, 393216, 0, 3538974, 393216, 0, 3538975, 393216, 0, 3538976, 393216, 0, 3538977, 393216, 0, 3538978, 393216, 0, 3538979, 393216, 0, 3538980, 393216, 0, 3538981, 393216, 0, 3538982, 393216, 0, 3538983, 393216, 0, 3538984, 393216, 0, 3538985, 393216, 0, 3538986, 393216, 0, 3538987, 393216, 0, 3538988, 393216, 0, 3538989, 393216, 0, 3538990, 393216, 0, 3538991, 393216, 0, 3538992, 393216, 0, 3538993, 393216, 0, 3538994, 393216, 0, 3538995, 393216, 0, 3538996, 393216, 0, 3538997, 393216, 0, 3538998, 393216, 0, 3538999, 393216, 0, 3539000, 393216, 0, 3539001, 393216, 0, 3539002, 393216, 0, 3539003, 393216, 0, 3539004, 393216, 0, 3539005, 393216, 0, 3539006, 393216, 0, 3539007, 393216, 0, 3539008, 393216, 0, 3539009, 393216, 0, 3539010, 393216, 0, 3539011, 393216, 0, 3539012, 393216, 0, 3539013, 393216, 0, 3539014, 393216, 0, 3539015, 393216, 0, 3539016, 393216, 0, 3539017, 393216, 0, 3539018, 393216, 0, 3539019, 393216, 0, 3539020, 393216, 0, 3539021, 393216, 0, 3539022, 393216, 0, 3539023, 393216, 0, 3539024, 393216, 0, 3539025, 393216, 0, 3539026, 393216, 0, 3539027, 393216, 0, 3539028, 393216, 0, 3539029, 393216, 0, 3539030, 393216, 0, 3539031, 393216, 0, 3539032, 393216, 0, 3539033, 393216, 0, 89, 393216, 0, 65625, 393216, 0, 131161, 393216, 0, 196697, 393216, 0, 262233, 393216, 0, 327769, 393216, 0, 393305, 393216, 0, 458841, 393216, 0, 524377, 393216, 0, 589913, 393216, 0, 655449, 393216, 0, 720985, 393216, 0, 786521, 393216, 0, 852057, 393216, 0, 917593, 393216, 0, 983129, 393216, 0, 1048665, 393216, 0, 1114201, 393216, 0, 1179737, 393216, 0, 1245273, 393216, 0, 1310809, 393216, 0, 1376345, 393216, 0, 1441881, 393216, 0, 1507417, 393216, 0, 1572953, 393216, 0, 1638489, 393216, 0, 1704025, 393216, 0, 1769561, 393216, 0, 1835097, 393216, 0, 1900633, 393216, 0, 1966169, 393216, 0, 2031705, 393216, 0, 2097241, 393216, 0, 2162777, 393216, 0, 2228313, 393216, 0, 2293849, 393216, 0, 2359385, 393216, 0, 2424921, 393216, 0, 2490457, 393216, 0, 2555993, 393216, 0, 2621529, 393216, 0, 2687065, 393216, 0, 2752601, 393216, 0, 2818137, 393216, 0, 2883673, 393216, 0, 2949209, 393216, 0, 3014745, 393216, 0, 3080281, 393216, 0, 3145817, 393216, 0, 3211353, 393216, 0, 3276889, 393216, 0, 3342425, 393216, 0, 3407961, 393216, 0, 3473497, 393216, 0, 1, 393216, 0, 2, 393216, 0, 3, 393216, 0, 4, 393216, 0, 5, 393216, 0, 6, 393216, 0, 7, 393216, 0, 8, 393216, 0, 9, 393216, 0, 10, 393216, 0, 11, 393216, 0, 12, 393216, 0, 13, 393216, 0, 14, 393216, 0, 15, 393216, 0, 16, 393216, 0, 17, 393216, 0, 18, 393216, 0, 19, 393216, 0, 20, 393216, 0, 21, 393216, 0, 22, 393216, 0, 23, 393216, 0, 24, 393216, 0, 25, 393216, 0, 26, 393216, 0, 27, 393216, 0, 28, 393216, 0, 29, 393216, 0, 30, 393216, 0, 31, 393216, 0, 32, 393216, 0, 33, 393216, 0, 34, 393216, 0, 35, 393216, 0, 36, 393216, 0, 37, 393216, 0, 38, 393216, 0, 39, 393216, 0, 40, 393216, 0, 41, 393216, 0, 42, 393216, 0, 43, 393216, 0, 44, 393216, 0, 45, 393216, 0, 46, 393216, 0, 47, 393216, 0, 48, 393216, 0, 49, 393216, 0, 50, 393216, 0, 51, 393216, 0, 52, 393216, 0, 53, 393216, 0, 54, 393216, 0, 55, 393216, 0, 56, 393216, 0, 57, 393216, 0, 58, 393216, 0, 59, 393216, 0, 60, 393216, 0, 61, 393216, 0, 62, 393216, 0, 63, 393216, 0, 64, 393216, 0, 65, 393216, 0, 66, 393216, 0, 67, 393216, 0, 68, 393216, 0, 69, 393216, 0, 70, 393216, 0, 71, 393216, 0, 72, 393216, 0, 73, 393216, 0, 74, 393216, 0, 75, 393216, 0, 76, 393216, 0, 77, 393216, 0, 78, 393216, 0, 79, 393216, 0, 80, 393216, 0, 81, 393216, 0, 82, 393216, 0, 83, 393216, 0, 84, 393216, 0, 85, 393216, 0, 86, 393216, 0, 87, 393216, 0, 88, 393216, 0)
 
-[node name="UiLayer" type="CanvasLayer" parent="."]
-
 [node name="Player" parent="." instance=ExtResource("2_8y62r")]
 position = Vector2(706, 423)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
-[node name="WaveContainer" type="Node2D" parent="."]
-position = Vector2(776, 13)
+[node name="UiLayer" type="CanvasLayer" parent="."]
+offset = Vector2(10, 10)
+transform = Transform2D(1, 0, 0, 1, 10, 10)
+
+[node name="HealthAndMoney" type="VBoxContainer" parent="UiLayer"]
+offset_right = 160.0
+offset_bottom = 60.0
+
+[node name="HealthBar" type="ProgressBar" parent="UiLayer/HealthAndMoney"]
+self_modulate = Color(0.298039, 0.854902, 0.25098, 1)
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+value = 100.0
+show_percentage = false
+script = ExtResource("4_aegg0")
+
+[node name="HealthLabel" type="Label" parent="UiLayer/HealthAndMoney/HealthBar"]
+layout_mode = 2
+offset_left = -1.0
+offset_top = 2.0
+offset_right = 156.0
+offset_bottom = 25.0
+text = "10/10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UiLayer/HealthAndMoney"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="UiLayer/HealthAndMoney/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_33pak")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="UiLayer/HealthAndMoney/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_fow5n")
+text = "MONEY"
+
+[node name="WaveProgress" type="VBoxContainer" parent="UiLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+
+[node name="Wave" type="Label" parent="UiLayer/WaveProgress"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_fow5n")
+text = "WAVE 1"
+horizontal_alignment = 1
+
+[node name="TimeLeft" type="Label" parent="UiLayer/WaveProgress"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_fow5n")
+text = "20"
+horizontal_alignment = 1
 
 [node name="BasicEnemy" parent="." instance=ExtResource("3_1wnej")]
 position = Vector2(916, 286)

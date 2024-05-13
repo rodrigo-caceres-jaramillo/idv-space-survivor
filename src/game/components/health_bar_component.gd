@@ -2,7 +2,6 @@ class_name HealthBarComponent
 extends ProgressBar
 
 @export var stats_component: StatsComponent
-var show
 
 func _ready():
 	self.max_value = stats_component.health
