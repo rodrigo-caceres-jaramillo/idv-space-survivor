@@ -9,10 +9,11 @@ var range
 func _ready():
 	hitbox_component.hit_hurtbox.connect(queue_free.unbind(1))
 
-func initialize(damage, range, direction:Vector2):
+func initialize(damage, range, speed, direction:Vector2):
 	self.damage = damage
 	self.range = damage
 	hitbox_component.damage = damage
+	move_to_direction_component.speed = speed
 	move_to_direction_component.direction = direction
 	life_time.start(range)
 

@@ -55,6 +55,7 @@ scene = ExtResource("5_vd2y6")
 
 [node name="HurtboxComponent" type="Area2D" parent="."]
 visible = false
+collision_layer = 2
 collision_mask = 0
 script = ExtResource("9_kk872")
 
@@ -62,10 +63,11 @@ script = ExtResource("9_kk872")
 shape = SubResource("CapsuleShape2D_erdwi")
 debug_color = Color(0.848908, 0.340529, 0.415049, 0.42)
 
-[node name="HurtComponent" type="Node" parent="." node_paths=PackedStringArray("stats_component", "hurtbox_component")]
+[node name="HurtComponent" type="Node" parent="." node_paths=PackedStringArray("stats_component", "hurtbox_component", "sprite")]
 script = ExtResource("10_xcugp")
 stats_component = NodePath("../StatsComponent")
 hurtbox_component = NodePath("../HurtboxComponent")
+sprite = NodePath("../Sprite")
 
 [node name="MoveInputComponent" type="Node" parent="." node_paths=PackedStringArray("actor", "stats")]
 script = ExtResource("6_d4ko6")
