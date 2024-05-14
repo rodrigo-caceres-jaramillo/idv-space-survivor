@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://butts5geqiee5"]
+[gd_scene load_steps=8 format=3 uid="uid://butts5geqiee5"]
 
 [ext_resource type="Script" path="res://src/game/entities/enemies/enemy.gd" id="1_1hpwl"]
 [ext_resource type="Script" path="res://src/game/components/hurt_box_component.gd" id="3_54b25"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://src/game/components/hitbox_component.gd" id="4_hqphb"]
 [ext_resource type="Script" path="res://src/game/components/health_bar_component.gd" id="5_cqd0b"]
 [ext_resource type="Script" path="res://src/game/components/hurt_component.gd" id="5_f0sbc"]
+[ext_resource type="Script" path="res://src/game/components/spawn_invincibilitiy_component.gd" id="7_x1hsm"]
 
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_1hpwl")
@@ -43,3 +44,9 @@ script = ExtResource("5_f0sbc")
 stats_component = NodePath("../StatsComponent")
 hurtbox_component = NodePath("../HurtboxComponent")
 sprite = NodePath("../Sprite")
+
+[node name="SpawnInvicibilityComponent" type="Node" parent="." node_paths=PackedStringArray("hurtbox_component", "hitbox_component")]
+script = ExtResource("7_x1hsm")
+hurtbox_component = NodePath("../HurtboxComponent")
+hitbox_component = NodePath("../HitboxComponent")
+spawn_duration = 3.0

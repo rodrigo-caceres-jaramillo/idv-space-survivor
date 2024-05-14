@@ -42,3 +42,4 @@ shape = SubResource("CapsuleShape2D_4abfs")
 script = ExtResource("3_4fse3")
 actor = NodePath("..")
 stats = NodePath("../StatsComponent")
+active = false
