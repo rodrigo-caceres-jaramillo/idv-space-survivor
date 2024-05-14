@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://bg51w5vbn6vps" path="res://src/game/entities/enemies/basic/basic_enemy.tscn" id="3_1wnej"]
 [ext_resource type="Texture2D" uid="uid://c45p5tvcf6p2d" path="res://assets/textures/money/Money.png" id="3_33pak"]
 [ext_resource type="Texture2D" uid="uid://c4fcy8vnn5k02" path="res://assets/textures/tiles/floor.png" id="4_1yrui"]
-[ext_resource type="Script" path="res://src/game/levels/HealthBar.gd" id="4_aegg0"]
 [ext_resource type="FontFile" uid="uid://jd478um6wqpv" path="res://assets/fonts/Gameplay.ttf" id="4_fow5n"]
+[ext_resource type="Script" path="res://src/game/levels/HealthAndMoney.gd" id="4_pat6d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gjf3c"]
 texture = ExtResource("4_1yrui")
@@ -104,6 +104,7 @@ layer_1/tile_data = PackedInt32Array(0, 393216, 0, 65536, 393216, 0, 131072, 393
 position = Vector2(706, 423)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(1.33333, 0)
 
 [node name="UiLayer" type="CanvasLayer" parent="."]
 offset = Vector2(10, 10)
@@ -112,6 +113,7 @@ transform = Transform2D(1, 0, 0, 1, 10, 10)
 [node name="HealthAndMoney" type="VBoxContainer" parent="UiLayer"]
 offset_right = 160.0
 offset_bottom = 60.0
+script = ExtResource("4_pat6d")
 
 [node name="HealthBar" type="ProgressBar" parent="UiLayer/HealthAndMoney"]
 self_modulate = Color(0.298039, 0.854902, 0.25098, 1)
@@ -119,7 +121,6 @@ custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 value = 100.0
 show_percentage = false
-script = ExtResource("4_aegg0")
 
 [node name="HealthLabel" type="Label" parent="UiLayer/HealthAndMoney/HealthBar"]
 layout_mode = 2
@@ -131,15 +132,15 @@ text = "10/10"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UiLayer/HealthAndMoney"]
+[node name="MoneyContainer" type="HBoxContainer" parent="UiLayer/HealthAndMoney"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="UiLayer/HealthAndMoney/HBoxContainer"]
+[node name="Icon" type="TextureRect" parent="UiLayer/HealthAndMoney/MoneyContainer"]
 layout_mode = 2
 texture = ExtResource("3_33pak")
 expand_mode = 2
 
-[node name="Label" type="Label" parent="UiLayer/HealthAndMoney/HBoxContainer"]
+[node name="MoneyLabel" type="Label" parent="UiLayer/HealthAndMoney/MoneyContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
@@ -172,5 +173,14 @@ theme_override_fonts/font = ExtResource("4_fow5n")
 text = "20"
 horizontal_alignment = 1
 
+[node name="BasicEnemy4" parent="." instance=ExtResource("3_1wnej")]
+position = Vector2(466, 447)
+
 [node name="BasicEnemy" parent="." instance=ExtResource("3_1wnej")]
-position = Vector2(916, 286)
+position = Vector2(909, 392)
+
+[node name="BasicEnemy2" parent="." instance=ExtResource("3_1wnej")]
+position = Vector2(831, 478)
+
+[node name="BasicEnemy3" parent="." instance=ExtResource("3_1wnej")]
+position = Vector2(682, 333)

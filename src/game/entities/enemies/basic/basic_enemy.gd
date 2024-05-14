@@ -9,3 +9,7 @@ func _ready():
 		func():
 			move_to_target_component.active = true
 	)
+	stats_component.no_health.connect(in_death)
+
+func in_death():
+	spawn_money(10)
