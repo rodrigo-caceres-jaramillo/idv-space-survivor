@@ -4,7 +4,7 @@ extends VBoxContainer
 @onready var health_label = $HealthBar/HealthLabel
 @onready var money_label = $MoneyContainer/MoneyLabel
 @onready var stats_component = Global.player.stats_component
-var max_health
+var max_health = 1
 
 func _ready():
 	max_health = stats_component.health

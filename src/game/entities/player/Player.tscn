@@ -28,7 +28,7 @@ script = ExtResource("1_t5npn")
 [node name="StatsComponent" type="Node" parent="."]
 script = ExtResource("8_6fxie")
 speed = 200.0
-health = 10
+health = 100
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_oblfc")
@@ -58,6 +58,7 @@ visible = false
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("9_kk872")
+invincibility_duration = 0.5
 
 [node name="HurtboxShape" type="CollisionShape2D" parent="HurtboxComponent"]
 shape = SubResource("CapsuleShape2D_erdwi")

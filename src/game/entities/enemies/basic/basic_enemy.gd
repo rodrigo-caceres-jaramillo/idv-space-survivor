@@ -13,3 +13,5 @@ func _ready():
 
 func in_death():
 	spawn_money(10)
+	queue_free()
+	

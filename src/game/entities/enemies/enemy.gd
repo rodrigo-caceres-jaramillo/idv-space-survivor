@@ -10,12 +10,10 @@ const money = preload("res://src/game/entities/money/money.tscn")
 
 func _ready():
 	hurtbox_component.hurt.connect(
-		func(hitbox: HitboxComponent):
+		func(_hitbox: HitboxComponent):
 			print("enemigo golpeado")
-			print(stats_component.health)
 	)
-	stats_component.no_health.connect(queue_free)
-
+	
 func spawn_money(value):
 	var spawn_position = self.global_position
 	var parent = get_tree().current_scene
