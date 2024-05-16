@@ -17,8 +17,6 @@ func _ready():
 		invincibility_timer.timeout.connect(_on_invincibility_timeout)
 
 func receive_hit(damage, critical):
-	print(damage)
-	#critical = true
 	if is_invincible: return
 	if(invincibility_duration > 0):
 		is_invincible = true

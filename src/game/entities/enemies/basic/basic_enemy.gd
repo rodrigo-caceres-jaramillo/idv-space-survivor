@@ -3,7 +3,7 @@ extends Enemy
 @onready var move_to_target_component = $MoveToTargetComponent
 
 func _ready():
-	super()
+	#super()
 	move_to_target_component.target = Global.player
 	spawn_invicibility_component.spawned.connect(
 		func():

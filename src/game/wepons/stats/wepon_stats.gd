@@ -3,7 +3,7 @@ extends Resource
 
 @export var damage: int = 1
 @export var rate: int = 6
-@export var crit_change: float = 0.5
+@export var crit_chance: int = 5
 @export var crit_damage: float = 1.5
 @export var range: int = 10
 @export var knockback: int = 1

@@ -5,12 +5,12 @@
 [resource]
 script = ExtResource("1_mcnpq")
 projectiles = 1
-spread = 1
+spread = 15.517
 penetration = 1
 projectile_speed = 200
-damage = 2
+damage = 1
 rate = 0
-crit_change = 0.5
+crit_chance = 50
 crit_damage = 2.0
 range = 1
 knockback = 1

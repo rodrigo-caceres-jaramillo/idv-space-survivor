@@ -38,18 +38,5 @@ func show_damage_numbers(value, critical):
 	else:
 		label.label_settings.font_color = damage_color
 	add_child(label)
-	
-	var twenn = get_tree().create_tween()
-	twenn.set_parallel(true)
-	twenn.tween_property(
-		label, "position:y", label.position.y - 10, 0.2
-	).set_ease(Tween.EASE_OUT)
-	twenn.tween_property(
-		label, "position:y", label.position.y, 0.5
-	).set_ease(Tween.EASE_IN).set_delay(0.2)
-	twenn.tween_property(
-		label, "scale", Vector2.ZERO, 0.2
-	).set_ease(Tween.EASE_IN).set_delay(0.5)
-	
-	await twenn.finished
+	await get_tree().create_timer(0.5).timeout
 	label.queue_free()

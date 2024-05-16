@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://d00a51jft8ga2"]
+[gd_scene load_steps=5 format=3 uid="uid://d00a51jft8ga2"]
 
 [ext_resource type="Texture2D" uid="uid://c45rw8lxcr7xy" path="res://assets/textures/proyectile/proyectile.png" id="1_rghjg"]
 [ext_resource type="Script" path="res://src/game/proyectile/Proyectile.gd" id="2_fljcr"]
 [ext_resource type="Script" path="res://src/game/components/hitbox_component.gd" id="3_ftewo"]
-[ext_resource type="Script" path="res://src/game/components/move_to_direction_component.gd" id="4_bm2vo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rm1o8"]
 radius = 8.0
@@ -11,9 +10,6 @@ radius = 8.0
 [node name="Proyectile" type="Sprite2D"]
 texture = ExtResource("1_rghjg")
 script = ExtResource("2_fljcr")
-
-[node name="LifeTime" type="Timer" parent="."]
-wait_time = 10.0
 
 [node name="HitboxComponent" type="Area2D" parent="."]
 collision_layer = 0
@@ -23,8 +19,7 @@ script = ExtResource("3_ftewo")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
 shape = SubResource("CircleShape2D_rm1o8")
 
-[node name="MoveToDirectionComponent" type="Node" parent="." node_paths=PackedStringArray("actor")]
-script = ExtResource("4_bm2vo")
-actor = NodePath("..")
+[node name="LifeTime" type="Timer" parent="."]
+wait_time = 10.0
 
 [connection signal="timeout" from="LifeTime" to="." method="_on_life_time_timeout"]
