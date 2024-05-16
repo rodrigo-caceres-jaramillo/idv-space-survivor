@@ -14,16 +14,16 @@ var critical_color = Color.YELLOW
 
 func _ready() -> void:
 	add_child(timer)
-	hurtbox_component.hurt.connect(func(hitbox_component: HitboxComponent):
-		var damage = hitbox_component.damage
-		stats_component.health -= damage
-		if(show_number):
-			show_damage_numbers(damage, true)
-		sprite.material = FLASH_MATERIAL
-		timer.start(flash_duration)
-		await timer.timeout
-		sprite.material = null
-	)
+	hurtbox_component.hurt.connect(apply_damage	)
+	
+func apply_damage(damage, critical):
+	stats_component.health -= damage
+	if(show_number):
+		show_damage_numbers(damage, critical)
+	sprite.material = FLASH_MATERIAL
+	timer.start(flash_duration)
+	await timer.timeout
+	sprite.material = null
 	
 func show_damage_numbers(value, critical):
 	var label = Label.new()

@@ -2,6 +2,7 @@ class_name HitboxComponent
 extends Area2D
 
 @export var damage: int = 1
+@export var critical = false
 @export var check_interval: float = 0.1
 @export var is_active = true :
 	set(value):
@@ -26,7 +27,6 @@ func on_check_timer_timeout():
 func on_hurtbox_entered(hurtbox: HurtboxComponent):
 	if not hurtbox is HurtboxComponent: return
 	if hurtbox.is_invincible: return
-	hurtbox.receive_hit(self)
-	print("check")
+	hurtbox.receive_hit(damage, critical)
 
 signal hit_hurtbox(hurtbox)

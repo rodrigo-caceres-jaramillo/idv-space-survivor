@@ -10,7 +10,7 @@ const money = preload("res://src/game/entities/money/money.tscn")
 
 func _ready():
 	hurtbox_component.hurt.connect(
-		func(_hitbox: HitboxComponent):
+		func(damage, critical):
 			print("enemigo golpeado")
 	)
 	

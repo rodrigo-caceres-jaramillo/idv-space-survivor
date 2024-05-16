@@ -1,3 +1,4 @@
+class_name Projectile
 extends Sprite2D
 
 @onready var move_to_direction_component = $MoveToDirectionComponent as MoveToDirectionComponent
@@ -7,11 +8,12 @@ extends Sprite2D
 func _ready():
 	hitbox_component.hit_hurtbox.connect(queue_free.unbind(1))
 
-func initialize(damage, lifetime, speed, direction:Vector2):
+func initialize(damage, range, speed, critical, direction:Vector2):
 	hitbox_component.damage = damage
+	hitbox_component.critical = critical
 	move_to_direction_component.speed = speed
 	move_to_direction_component.direction = direction
-	life_time.start(lifetime)
+	life_time.start(range)
 
 func _on_life_time_timeout():
 	get_parent().remove_child(self)

@@ -1,11 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://ds70pbbdbtgkc"]
+[gd_scene load_steps=11 format=3 uid="uid://ds70pbbdbtgkc"]
 
 [ext_resource type="Script" path="res://src/game/entities/player/player.gd" id="1_t5npn"]
 [ext_resource type="Texture2D" uid="uid://bxvf481uc5x5j" path="res://assets/textures/player/player.png" id="2_oblfc"]
-[ext_resource type="Texture2D" uid="uid://lsinxl4gsrnk" path="res://assets/textures/weapons/Gun.png" id="3_4ioo5"]
-[ext_resource type="Script" path="res://src/game/entities/player/Weapon.gd" id="3_shbgt"]
-[ext_resource type="Script" path="res://src/game/components/spawner_component.gd" id="5_jvrom"]
-[ext_resource type="PackedScene" uid="uid://d00a51jft8ga2" path="res://src/game/entities/proyectile/Proyectile.tscn" id="5_vd2y6"]
+[ext_resource type="Script" path="res://src/game/entities/player/WeaponContainer.gd" id="3_54588"]
+[ext_resource type="PackedScene" uid="uid://dn5r6qogjyaco" path="res://src/game/wepons/weapon.tscn" id="4_rjtny"]
 [ext_resource type="Script" path="res://src/game/components/move_input_component.gd" id="6_d4ko6"]
 [ext_resource type="Script" path="res://src/game/components/stats_component.gd" id="8_6fxie"]
 [ext_resource type="Script" path="res://src/game/components/hurt_box_component.gd" id="9_kk872"]
@@ -30,28 +28,17 @@ script = ExtResource("8_6fxie")
 speed = 200.0
 health = 100
 
+[node name="WeaponContainer" type="Node2D" parent="."]
+script = ExtResource("3_54588")
+
+[node name="Weapon" parent="WeaponContainer" instance=ExtResource("4_rjtny")]
+
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_oblfc")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 visible = false
 shape = SubResource("CapsuleShape2D_0mxik")
-
-[node name="Weapon" type="Sprite2D" parent="."]
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("3_4ioo5")
-script = ExtResource("3_shbgt")
-
-[node name="WeaponTip" type="Marker2D" parent="Weapon"]
-position = Vector2(6.22222, 0)
-
-[node name="FireDelayTimer" type="Timer" parent="Weapon"]
-wait_time = 0.3
-
-[node name="SpawnerComponent" type="Node2D" parent="Weapon"]
-position = Vector2(2.66667, 0)
-script = ExtResource("5_jvrom")
-scene = ExtResource("5_vd2y6")
 
 [node name="HurtboxComponent" type="Area2D" parent="."]
 visible = false
@@ -74,5 +61,3 @@ sprite = NodePath("../Sprite")
 script = ExtResource("6_d4ko6")
 actor = NodePath("..")
 stats = NodePath("../StatsComponent")
-
-[connection signal="timeout" from="Weapon/FireDelayTimer" to="Weapon" method="_on_fire_delay_timer_timeout"]

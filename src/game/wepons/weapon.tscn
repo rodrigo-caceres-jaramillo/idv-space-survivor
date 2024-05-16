@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://dn5r6qogjyaco"]
+
+[ext_resource type="Script" path="res://src/game/wepons/weapon.gd" id="1_ylij1"]
+[ext_resource type="Resource" uid="uid://dad7vyfoekxj5" path="res://src/game/wepons/ranged/pistol_stats.tres" id="2_g8u5y"]
+[ext_resource type="Script" path="res://src/game/components/spawn_projectile_component.gd" id="2_pvbja"]
+[ext_resource type="Texture2D" uid="uid://lsinxl4gsrnk" path="res://src/game/wepons/ranged/pistol.png" id="3_qbxre"]
+[ext_resource type="PackedScene" uid="uid://d00a51jft8ga2" path="res://src/game/proyectile/Proyectile.tscn" id="5_vpjxq"]
+
+[node name="Weapon" type="Node2D"]
+z_index = 50
+script = ExtResource("1_ylij1")
+stats = ExtResource("2_g8u5y")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("3_qbxre")
+
+[node name="Tip" type="Marker2D" parent="."]
+position = Vector2(7, 0)
+
+[node name="FireRateTimer" type="Timer" parent="."]
+
+[node name="SpawnProjectileComponent" type="Node" parent="."]
+script = ExtResource("2_pvbja")
+projectile_scene = ExtResource("5_vpjxq")
+
+[connection signal="timeout" from="FireRateTimer" to="." method="_on_fire_rate_timer_timeout"]
