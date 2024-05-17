@@ -1,21 +1,21 @@
 class_name Player
 extends CharacterBody2D
 
+@onready var hurt_component = $HurtComponent
+@export var stats: PlayerStats
 @onready var hurtbox_component = $HurtboxComponent as HurtboxComponent
-@onready var stats_component = $StatsComponent as StatsComponent
 @onready var weapon_container = $WeaponContainer
-@export var rate_mul = 1
-@export var damage_mul = 1
-@export var range_mul = 1
-@export var max_health = 1000
+@onready var move_input_component = $MoveInputComponent
 
 func _ready():
-	Global.player = self
-	stats_component.no_health.connect(
+	hurt_component.stats = stats
+	print(stats.speed)
+	move_input_component.speed = stats.speed
+	stats.no_health.connect(
 		func():
 		queue_free()
 	)
-	stats_component.health = max_health
+	Global.player = self
 	
 func _process(_delta):
 	self.aim_and_shoot()

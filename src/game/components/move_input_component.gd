@@ -2,8 +2,7 @@ class_name MoveInputComponent
 extends Node
 
 @export var actor: Node2D
-@export var stats: StatsComponent
-@onready var speed = stats.speed
+@export var speed = 10
 var velocity: Vector2
 
 func _process(delta):

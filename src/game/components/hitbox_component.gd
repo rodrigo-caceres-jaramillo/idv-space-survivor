@@ -30,7 +30,7 @@ func on_hurtbox_entered(hurtbox: HurtboxComponent):
 	if hurtbox.is_invincible: return
 	var final_damage = self.damage
 	var critical = false
-	if randi_range ( 0, 100) <= self.crit_chance:
+	if randi_range (1, 100) <= self.crit_chance:
 		critical = true
 		final_damage *= self.crit_damage
 	hurtbox.receive_hit(final_damage, critical)

@@ -8,10 +8,10 @@ extends Node2D
 var can_shoot = true
 
 func fire():
-	if(can_shoot):
+	if can_shoot:
 		var direction = global_position.direction_to(tip.global_position)
 		var rotation = global_rotation
-		spawn_projectile_component.spawn_projectile(stats, direction, tip.global_position)
+		spawn_projectile_component.spawn_projectile(stats, direction, rotation, tip.global_position)
 		fire_rate_timer.start(stats.rate)
 		self.can_shoot = false
 		

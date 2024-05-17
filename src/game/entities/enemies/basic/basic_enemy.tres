@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=2 format=3 uid="uid://bsjthkpn0ub0g"]
+
+[ext_resource type="Script" path="res://src/game/entities/enemies/stats/enemy_stats.gd" id="1_ds2mq"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_ds2mq")
+damage = 1
+health = 100
+speed = 300

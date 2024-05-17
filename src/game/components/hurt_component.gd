@@ -1,7 +1,7 @@
 class_name HurtComponent
 extends Node
 
-@export var stats_component: StatsComponent
+@export var stats: CharacterStats = CharacterStats.new()
 @export var hurtbox_component: HurtboxComponent
 @export var sprite: Sprite2D
 @export var flash_duration: = 0.1
@@ -17,7 +17,7 @@ func _ready() -> void:
 	hurtbox_component.hurt.connect(apply_damage	)
 	
 func apply_damage(damage, critical):
-	stats_component.health -= damage
+	stats.health -= damage
 	if(show_number):
 		show_damage_numbers(damage, critical)
 	sprite.material = FLASH_MATERIAL

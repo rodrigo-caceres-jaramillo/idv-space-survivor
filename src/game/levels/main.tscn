@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://btjax2v4qeeu3"]
+[gd_scene load_steps=13 format=3 uid="uid://btjax2v4qeeu3"]
 
 [ext_resource type="Script" path="res://src/game/levels/main.gd" id="1_mb85g"]
 [ext_resource type="PackedScene" uid="uid://ds70pbbdbtgkc" path="res://src/game/entities/player/player.tscn" id="2_8y62r"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c4fcy8vnn5k02" path="res://assets/textures/tiles/floor.png" id="4_1yrui"]
 [ext_resource type="FontFile" uid="uid://jd478um6wqpv" path="res://assets/fonts/Gameplay.ttf" id="4_fow5n"]
 [ext_resource type="Script" path="res://src/game/levels/HealthAndMoney.gd" id="4_pat6d"]
+[ext_resource type="Script" path="res://src/game/entities/enemies/stats/enemy_stats.gd" id="8_k3rl8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gjf3c"]
 texture = ExtResource("4_1yrui")
@@ -87,6 +88,20 @@ terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_gjf3c")
+
+[sub_resource type="Resource" id="Resource_ccmru"]
+resource_local_to_scene = true
+script = ExtResource("8_k3rl8")
+damage = 1
+health = 100
+speed = 1
+
+[sub_resource type="Resource" id="Resource_piw64"]
+resource_local_to_scene = true
+script = ExtResource("8_k3rl8")
+damage = 1
+health = 100
+speed = 300
 
 [node name="Main" type="Node2D"]
 position = Vector2(-308, -197)
@@ -173,14 +188,10 @@ theme_override_fonts/font = ExtResource("4_fow5n")
 text = "20"
 horizontal_alignment = 1
 
-[node name="BasicEnemy4" parent="." instance=ExtResource("3_1wnej")]
-position = Vector2(466, 447)
-
 [node name="BasicEnemy" parent="." instance=ExtResource("3_1wnej")]
-position = Vector2(909, 392)
+position = Vector2(339, 225)
+stats = SubResource("Resource_ccmru")
 
 [node name="BasicEnemy2" parent="." instance=ExtResource("3_1wnej")]
-position = Vector2(831, 478)
-
-[node name="BasicEnemy3" parent="." instance=ExtResource("3_1wnej")]
-position = Vector2(682, 333)
+position = Vector2(444, 197)
+stats = SubResource("Resource_piw64")
