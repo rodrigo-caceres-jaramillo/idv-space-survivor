@@ -16,14 +16,16 @@ func _ready():
 		add_child(invincibility_timer)
 		invincibility_timer.timeout.connect(_on_invincibility_timeout)
 
-func receive_hit(damage, critical):
+func receive_hit(hitbox):
 	if is_invincible: return
 	if(invincibility_duration > 0):
 		is_invincible = true
 		invincibility_timer.start(invincibility_duration)
-	self.hurt.emit(damage, critical)
+	self.hurt.emit(hitbox)
 
 func _on_invincibility_timeout():
 	is_invincible = false
 	
-signal hurt(damage: int, critical:bool)
+signal hurt(hitbox: HitboxComponent)
+
+

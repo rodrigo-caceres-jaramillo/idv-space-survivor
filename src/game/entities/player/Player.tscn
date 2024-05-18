@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://c0cbpcna58yav" path="res://src/game/entities/player/stats.tres" id="2_lfeoh"]
 [ext_resource type="Texture2D" uid="uid://bxvf481uc5x5j" path="res://assets/textures/player/player.png" id="2_oblfc"]
 [ext_resource type="Script" path="res://src/game/entities/player/WeaponContainer.gd" id="3_54588"]
-[ext_resource type="PackedScene" uid="uid://dn5r6qogjyaco" path="res://src/game/wepons/weapon.tscn" id="4_rjtny"]
+[ext_resource type="Resource" uid="uid://c5ptco8aob6l8" path="res://src/game/wepons/ranged/basic/pistol/pistol.tres" id="4_f6ay3"]
 [ext_resource type="Script" path="res://src/game/components/move_input_component.gd" id="6_d4ko6"]
 [ext_resource type="Script" path="res://src/game/components/hurt_box_component.gd" id="9_kk872"]
 [ext_resource type="Script" path="res://src/game/components/hurt_component.gd" id="10_xcugp"]
@@ -26,8 +26,7 @@ stats = ExtResource("2_lfeoh")
 
 [node name="WeaponContainer" type="Node2D" parent="."]
 script = ExtResource("3_54588")
-
-[node name="Weapon" parent="WeaponContainer" instance=ExtResource("4_rjtny")]
+weapon_resource = ExtResource("4_f6ay3")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_oblfc")
@@ -47,10 +46,11 @@ invincibility_duration = 0.5
 shape = SubResource("CapsuleShape2D_erdwi")
 debug_color = Color(0.848908, 0.340529, 0.415049, 0.42)
 
-[node name="HurtComponent" type="Node" parent="." node_paths=PackedStringArray("hurtbox_component", "sprite")]
+[node name="HurtComponent" type="Node" parent="." node_paths=PackedStringArray("hurtbox_component", "sprite", "actor")]
 script = ExtResource("10_xcugp")
 hurtbox_component = NodePath("../HurtboxComponent")
 sprite = NodePath("../Sprite")
+actor = NodePath("..")
 
 [node name="MoveInputComponent" type="Node" parent="." node_paths=PackedStringArray("actor")]
 script = ExtResource("6_d4ko6")

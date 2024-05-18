@@ -7,5 +7,6 @@ script = ExtResource("1_booc1")
 rate_mul = 1
 damage_mul = 1
 range_mul = 1
-health = 100
+health = 1000
 speed = 200
+knockback_resistance = 1e+06

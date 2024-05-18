@@ -5,6 +5,8 @@
 [resource]
 resource_local_to_scene = true
 script = ExtResource("1_ds2mq")
-damage = 1
+damage = 20
+min_value = 2
+max_value = 5
 health = 100
 speed = 300

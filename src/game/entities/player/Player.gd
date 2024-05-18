@@ -6,10 +6,10 @@ extends CharacterBody2D
 @onready var hurtbox_component = $HurtboxComponent as HurtboxComponent
 @onready var weapon_container = $WeaponContainer
 @onready var move_input_component = $MoveInputComponent
+var stun = false
 
 func _ready():
 	hurt_component.stats = stats
-	print(stats.speed)
 	move_input_component.speed = stats.speed
 	stats.no_health.connect(
 		func():

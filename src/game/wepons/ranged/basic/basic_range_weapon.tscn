@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dn5r6qogjyaco"]
+
+[ext_resource type="Script" path="res://src/game/wepons/ranged/basic/basic_range_weapon.gd" id="1_f08ps"]
+[ext_resource type="Script" path="res://src/game/components/spawn_projectile_component.gd" id="3_n3l1h"]
+
+[node name="BasicRangeWeapon" type="Node2D"]
+z_index = 50
+script = ExtResource("1_f08ps")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+
+[node name="Tip" type="Marker2D" parent="."]
+position = Vector2(7, 0)
+
+[node name="FireRateTimer" type="Timer" parent="."]
+
+[node name="SpawnProjectileComponent" type="Node" parent="."]
+script = ExtResource("3_n3l1h")
+
+[connection signal="timeout" from="FireRateTimer" to="." method="_on_fire_rate_timer_timeout"]

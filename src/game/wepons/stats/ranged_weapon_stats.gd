@@ -1,6 +1,7 @@
 class_name RangedWeaponsStats
 extends WeaponStats
 
+@export var projectile_scene: PackedScene
 @export var projectiles: int = 1
 @export var spread: float = 0.0
 @export var precision: float = 1.0

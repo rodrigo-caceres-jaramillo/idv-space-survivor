@@ -7,13 +7,15 @@ extends CharacterBody2D
 @onready var hurtbox_component:HurtboxComponent = $HurtboxComponent as HurtboxComponent
 @onready var hurt_component = $HurtComponent
 @onready var spawn_invicibility_component = $SpawnInvicibilityComponent as SpawnInvicibilityComponent
-const money = preload("res://src/game/entities/money/money.tscn")
-	
+@export var money = preload("res://src/game/entities/money/money.tscn")
+var stun = false
+
 func _ready():
 		hurt_component.stats = stats
 		health_bar_component.initial_value = stats.health
 		health_bar_component.stats = stats
 		health_bar_component.start()
+		hitbox_component.damage = stats.damage
 		
 func spawn_money(value):
 	var spawn_position = self.global_position
