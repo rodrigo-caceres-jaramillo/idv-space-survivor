@@ -38,7 +38,6 @@ func apply_damage(hitbox: HitboxComponent):
 	
 func apply_knockback(hitbox):
 	var knockback = hitbox.knockback - stats.knockback_resistance
-	print(knockback)
 	if (knockback > 0): 
 		actor.stun = true
 		stun_timer.start(0.03)

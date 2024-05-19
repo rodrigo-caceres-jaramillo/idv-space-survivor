@@ -47,7 +47,7 @@ actor = NodePath("..")
 script = ExtResource("7_x1hsm")
 hurtbox_component = NodePath("../HurtboxComponent")
 hitbox_component = NodePath("../HitboxComponent")
-spawn_duration = 1.0
+spawn_duration = 2.0
 
 [node name="SpawnerComponent" type="Node2D" parent="."]
 script = ExtResource("8_q5w0d")

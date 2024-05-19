@@ -10,3 +10,4 @@ min_value = 2
 max_value = 5
 health = 100
 speed = 300
+knockback_resistance = 1.0

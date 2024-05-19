@@ -9,9 +9,8 @@ extends Area2D
 @export var is_active = true :
 	set(value):
 		is_active = value
-		for child in get_children():
-			if not child is CollisionShape2D and not child is CollisionPolygon2D: continue
-			child.set_deferred("disabled", !is_active)
+		self.monitorable = value
+		self.monitoring = value
 var check_timer: Timer = Timer.new()
 
 func _ready():
