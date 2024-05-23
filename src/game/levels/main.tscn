@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://btjax2v4qeeu3"]
 
 [ext_resource type="Script" path="res://src/game/levels/main.gd" id="1_mb85g"]
-[ext_resource type="PackedScene" uid="uid://ds70pbbdbtgkc" path="res://src/game/entities/player/player.tscn" id="2_8y62r"]
+[ext_resource type="PackedScene" uid="uid://ds70pbbdbtgkc" path="res://src/game/entities/player/Player.tscn" id="2_8y62r"]
 [ext_resource type="PackedScene" uid="uid://bg51w5vbn6vps" path="res://src/game/entities/enemies/basic/basic_enemy.tscn" id="3_1wnej"]
 [ext_resource type="Texture2D" uid="uid://c45p5tvcf6p2d" path="res://assets/textures/money/Money.png" id="3_33pak"]
 [ext_resource type="Texture2D" uid="uid://c4fcy8vnn5k02" path="res://assets/textures/tiles/floor.png" id="4_1yrui"]

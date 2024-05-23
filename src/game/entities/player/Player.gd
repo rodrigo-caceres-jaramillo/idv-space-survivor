@@ -1,4 +1,3 @@
-class_name Player
 extends CharacterBody2D
 
 @onready var hurt_component = $HurtComponent
