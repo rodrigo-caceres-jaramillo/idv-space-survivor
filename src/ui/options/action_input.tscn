@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://ba5yv066x2v50"]
+
+[ext_resource type="Script" path="res://src/ui/options/action_input.gd" id="1_15x7n"]
+[ext_resource type="FontFile" uid="uid://jd478um6wqpv" path="res://assets/fonts/Gameplay.ttf" id="1_snssj"]
+
+[node name="ActionInput" type="PanelContainer"]
+script = ExtResource("1_15x7n")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Input" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_snssj")
+theme_override_font_sizes/font_size = 30
+text = "D"
+
+[node name="Action" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_snssj")
+theme_override_font_sizes/font_size = 30
+text = "Move right"
