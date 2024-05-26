@@ -19,11 +19,11 @@ func _ready():
 		
 func spawn_money(value):
 	var spawn_position = self.global_position
-	var parent = get_tree().current_scene
+	var parent = Global.wave_container
 	var instance = money.instantiate()
-	parent.add_child(instance)
 	instance.global_position = spawn_position
 	instance.value = value
+	parent.call_deferred("add_child", instance)
 
 func _on_spawn_timer_timeout():
 	hurtbox_component.is_invincible = false

@@ -17,7 +17,7 @@ func in_death():
 	spawn_money(randi_range(stats.min_value, stats.max_value))
 	queue_free()
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	if not active:
 		return
 	if !stun:	

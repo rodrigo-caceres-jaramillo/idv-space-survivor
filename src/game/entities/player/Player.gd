@@ -16,9 +16,13 @@ func _ready():
 	)
 	Global.player = self
 	
-func _process(delta):
+func _process(_delta):
 	var mouse_position:Vector2 = get_global_mouse_position()
 	weapon_container.look_at(mouse_position)
 	if Input.is_action_pressed("fire_weapon"):
 		weapon_container.shoot_weapon()
+	if Input.is_action_just_pressed("reload"):
+		weapon_container.reload_weapon()
+	if Input.is_action_just_pressed("change_weapon"):
+		weapon_container.switch_weapon()
 	

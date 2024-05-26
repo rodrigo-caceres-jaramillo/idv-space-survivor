@@ -18,6 +18,3 @@ position = Vector2(7, 0)
 
 [node name="SpawnProjectileComponent" type="Node" parent="."]
 script = ExtResource("2_p77t0")
-
-[connection signal="timeout" from="FireRateTimer" to="." method="_on_fire_rate_timer_timeout"]
-[connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]

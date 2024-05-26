@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://daba4863wb8fu"]
+[gd_scene load_steps=7 format=3 uid="uid://daba4863wb8fu"]
 
 [ext_resource type="Script" path="res://src/game/levels/HealthAndMoney.gd" id="1_kgeun"]
 [ext_resource type="Texture2D" uid="uid://c45p5tvcf6p2d" path="res://assets/textures/money/Money.png" id="2_flb3g"]
 [ext_resource type="FontFile" uid="uid://jd478um6wqpv" path="res://assets/fonts/Gameplay.ttf" id="3_7epsx"]
 [ext_resource type="Script" path="res://src/ui/hud/wave_progress.gd" id="4_p26kv"]
+[ext_resource type="Script" path="res://src/ui/hud/gun_and_ammo.gd" id="5_favr7"]
+[ext_resource type="Texture2D" uid="uid://chb1ttynmaxqd" path="res://src/game/wepons/range/basic/uzi/uzi.png" id="6_oahc3"]
 
 [node name="UiLayer" type="CanvasLayer"]
 offset = Vector2(10, 10)
@@ -72,3 +74,28 @@ theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("3_7epsx")
 text = "20"
 horizontal_alignment = 1
+
+[node name="WeaponAndAmmo" type="HBoxContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -130.0
+offset_top = -76.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("5_favr7")
+
+[node name="AmmoCounter" type="Label" parent="WeaponAndAmmo"]
+layout_mode = 2
+text = "10/10"
+
+[node name="GunIcon" type="TextureRect" parent="WeaponAndAmmo"]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+texture = ExtResource("6_oahc3")
+expand_mode = 2
+stretch_mode = 5

@@ -42,7 +42,7 @@ func apply_knockback(hitbox):
 		actor.stun = true
 		stun_timer.start(0.03)
 		var direction = hitbox.global_position.direction_to(actor.global_position)
-		actor.velocity = -actor.velocity * knockback
+		actor.velocity = -actor.velocity * knockback * direction
 		actor.move_and_slide()
 	
 func show_damage_numbers(value, critical):

@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="RangedWeaponsStats" load_steps=3 format=3 uid="uid://bupfoauo7u6km"]
+
+[ext_resource type="Script" path="res://src/game/wepons/range/ranged_weapon_stats.gd" id="1_g1hbu"]
+[ext_resource type="PackedScene" uid="uid://d00a51jft8ga2" path="res://src/game/projectiles/basic/basic_projectile.tscn" id="1_vv8ja"]
+
+[resource]
+script = ExtResource("1_g1hbu")
+projectile_scene = ExtResource("1_vv8ja")
+reload = 1.0
+magazine = 30
+projectiles = 2
+spread = 1.5
+precision = 0.8
+penetration = 0
+projectile_speed = 1000
+damage = 3
+rate = 0.1
+crit_chance = 15
+crit_damage = 1.5
+range = 30
+knockback = 1

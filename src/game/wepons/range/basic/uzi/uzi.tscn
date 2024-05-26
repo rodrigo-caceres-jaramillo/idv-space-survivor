@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnkyc6jbiuaeo"]
+
+[ext_resource type="PackedScene" uid="uid://dn5r6qogjyaco" path="res://src/game/wepons/range/basic/basic_range_weapon.tscn" id="1_bb4r5"]
+[ext_resource type="Texture2D" uid="uid://chb1ttynmaxqd" path="res://src/game/wepons/range/basic/uzi/uzi.png" id="2_pfhbh"]
+[ext_resource type="Resource" uid="uid://bupfoauo7u6km" path="res://src/game/wepons/range/basic/uzi/uzi_stats.tres" id="2_y2f00"]
+
+[node name="Uzi" instance=ExtResource("1_bb4r5")]
+stats = ExtResource("2_y2f00")
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource("2_pfhbh")
+
+[node name="Tip" parent="." index="1"]
+position = Vector2(7, -1)
