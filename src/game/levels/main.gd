@@ -17,9 +17,7 @@ func _ready():
 	wave_timer.timeout.connect(start_next_wave)
 	
 func start_next_wave():
-	print(Global.wave)
 	Global.next_wave()
-	print(Global.wave)
 	var next_wave = game_data.waves_data[Global.wave-1]
 	wave_timer.start(next_wave.wave_duration)
 	wave_manager.start_wave(next_wave, wave_timer, tile_map)

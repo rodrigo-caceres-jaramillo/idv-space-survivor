@@ -6,13 +6,15 @@
 [resource]
 script = ExtResource("2_a62us")
 projectile_scene = ExtResource("1_sog8g")
+reload = 1.0
+magazine = 10
 projectiles = 1
 spread = 0.0
 precision = 1.0
 penetration = 1
 projectile_speed = 1000
 damage = 5
-rate = 0.4
+rate = 0.2
 crit_chance = 30
 crit_damage = 2.0
 range = 50
