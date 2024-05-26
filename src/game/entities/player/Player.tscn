@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://src/game/entities/player/player.gd" id="1_t5npn"]
 [ext_resource type="Resource" uid="uid://c0cbpcna58yav" path="res://src/game/entities/player/stats.tres" id="2_lfeoh"]
 [ext_resource type="Texture2D" uid="uid://bxvf481uc5x5j" path="res://assets/textures/player/player.png" id="2_oblfc"]
-[ext_resource type="Script" path="res://src/game/entities/player/WeaponContainer.gd" id="3_54588"]
+[ext_resource type="Script" path="res://src/game/entities/player/weapon_container.gd" id="3_54588"]
 [ext_resource type="Resource" uid="uid://c5ptco8aob6l8" path="res://src/game/wepons/range/basic/pistol/pistol.tres" id="4_f6ay3"]
 [ext_resource type="Script" path="res://src/game/components/move_input_component.gd" id="6_d4ko6"]
 [ext_resource type="Script" path="res://src/game/components/hurt_box_component.gd" id="9_kk872"]

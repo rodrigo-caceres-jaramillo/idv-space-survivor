@@ -23,7 +23,7 @@ script = ExtResource("4_hqphb")
 check_interval = 0.3
 
 [node name="HurtboxComponent" type="Area2D" parent="."]
-collision_layer = 2
+collision_layer = 4
 collision_mask = 0
 script = ExtResource("3_54b25")
 

@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://elgxofbp0pvn"]
+
+[ext_resource type="PackedScene" uid="uid://butts5geqiee5" path="res://src/game/entities/enemies/enemy.tscn" id="1_p7woj"]
+[ext_resource type="Script" path="res://src/game/entities/enemies/fast/fast_enemy.gd" id="2_hpcfs"]
+[ext_resource type="Resource" uid="uid://b514eblow7xtu" path="res://src/game/entities/enemies/fast/fast_enemy.tres" id="3_3my0f"]
+[ext_resource type="Texture2D" uid="uid://b4cjqrf2taj8s" path="res://assets/textures/enemies/fast.png" id="4_n5kau"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6cgwv"]
+radius = 8.0
+height = 32.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_olyha"]
+radius = 6.0
+height = 28.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6p8pw"]
+radius = 8.0
+height = 32.0
+
+[node name="FastEnemy" instance=ExtResource("1_p7woj")]
+scale = Vector2(0.8, 0.8)
+script = ExtResource("2_hpcfs")
+active = false
+stats = ExtResource("3_3my0f")
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource("4_n5kau")
+
+[node name="CollisionShape" parent="." index="1"]
+visible = false
+shape = SubResource("CapsuleShape2D_6cgwv")
+
+[node name="HitboxShape" type="CollisionShape2D" parent="HitboxComponent" index="0"]
+shape = SubResource("CapsuleShape2D_olyha")
+debug_color = Color(1, 0.17046, 0.446437, 0.419608)
+
+[node name="HurtboxShape" type="CollisionShape2D" parent="HurtboxComponent" index="0"]
+shape = SubResource("CapsuleShape2D_6p8pw")
