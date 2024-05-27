@@ -103,9 +103,6 @@ layer_1/tile_data = PackedInt32Array(0, 393216, 0, 65536, 393216, 0, 131072, 393
 [node name="Player" parent="." instance=ExtResource("2_8y62r")]
 position = Vector2(716, 413)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(-4, 4)
-
 [node name="UiLayer" parent="." instance=ExtResource("4_5ct87")]
 
 [node name="WaveManager" type="Node2D" parent="."]

@@ -7,6 +7,7 @@ extends Node2D
 @onready var reload_timer = $ReloadTimer
 @onready var spawn_projectile_component = $SpawnProjectileComponent as SpawnProjectileComponent
 @onready var sprite = $Sprite
+
 var can_shoot:bool = true
 var reloading:bool = false
 var magazine_size: int
@@ -42,6 +43,7 @@ func reload():
 	if current_ammo <= magazine_size and not reloading:
 		self.reloading = true
 		reload_timer.start(stats.reload)
+		start_reload.emit(stats.reload)
 	
 func _on_reload_timer_timeout():
 	self.current_ammo = self.magazine_size
@@ -50,3 +52,4 @@ func _on_reload_timer_timeout():
 	reload_timer.stop()
 	
 signal ammo_change(new_value)
+signal start_reload(reload_time)

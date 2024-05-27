@@ -5,6 +5,8 @@ extends CharacterBody2D
 @onready var hurtbox_component = $HurtboxComponent as HurtboxComponent
 @onready var weapon_container = $WeaponContainer
 @onready var move_input_component = $MoveInputComponent
+@onready var player_camera = $Camera2D
+var max_camera_offset: float = 70.0
 var stun = false
 
 func _ready():
@@ -18,6 +20,11 @@ func _ready():
 	
 func _process(_delta):
 	var mouse_position:Vector2 = get_global_mouse_position()
+	var direction = mouse_position - global_position
+	var distance = direction.length()
+	if distance > max_camera_offset:
+		direction = direction.normalized() * max_camera_offset
+	player_camera.position = direction
 	weapon_container.look_at(mouse_position)
 	if Input.is_action_pressed("fire_weapon"):
 		weapon_container.shoot_weapon()

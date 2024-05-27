@@ -22,11 +22,13 @@ func load_weapons():
 	self.add_child(weapon1)
 	weapon1.visible = false
 	weapon1.ammo_change.connect(func(value): ammo_change.emit(value))
+	weapon1.start_reload.connect(func(value): weapon_reload.emit(value))
 
 	weapon2 = weapon_resource2.weapon_scene.instantiate()
 	self.add_child(weapon2)
 	weapon2.visible = false
 	weapon2.ammo_change.connect(func(value): ammo_change.emit(value))
+	weapon2.start_reload.connect(func(value): weapon_reload.emit(value))
 
 func equip_weapon(index: int):
 	if index == 0:
@@ -49,5 +51,6 @@ func switch_weapon():
 		
 signal weapon_change(icon: Texture, magazine: int)
 signal ammo_change(new_value)
+signal weapon_reload(reload_time)
 	
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ds70pbbdbtgkc"]
+[gd_scene load_steps=15 format=3 uid="uid://ds70pbbdbtgkc"]
 
 [ext_resource type="Script" path="res://src/game/entities/player/player.gd" id="1_t5npn"]
 [ext_resource type="Resource" uid="uid://c0cbpcna58yav" path="res://src/game/entities/player/stats.tres" id="2_lfeoh"]
@@ -8,7 +8,10 @@
 [ext_resource type="Resource" uid="uid://cgfe1wrr0cn7i" path="res://src/game/wepons/range/basic/uzi/uzi.tres" id="4_m84au"]
 [ext_resource type="Script" path="res://src/game/components/move_input_component.gd" id="6_d4ko6"]
 [ext_resource type="Script" path="res://src/game/components/hurt_box_component.gd" id="9_kk872"]
+[ext_resource type="Texture2D" uid="uid://b8fiq01ltgq7w" path="res://assets/textures/ui/reload/reload_base.png" id="10_bxf7v"]
 [ext_resource type="Script" path="res://src/game/components/hurt_component.gd" id="10_xcugp"]
+[ext_resource type="Texture2D" uid="uid://b61mmn65g043m" path="res://assets/textures/ui/reload/reload_over.png" id="11_7xkux"]
+[ext_resource type="Script" path="res://src/game/entities/player/reload_bar.gd" id="12_5prya"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0mxik"]
 radius = 9.33333
@@ -18,6 +21,7 @@ height = 36.0
 radius = 8.0
 
 [node name="Player" type="CharacterBody2D"]
+position = Vector2(401, 225)
 scale = Vector2(1.5, 1.5)
 collision_layer = 0
 collision_mask = 4
@@ -57,3 +61,19 @@ actor = NodePath("..")
 [node name="MoveInputComponent" type="Node" parent="." node_paths=PackedStringArray("actor")]
 script = ExtResource("6_d4ko6")
 actor = NodePath("..")
+
+[node name="ReloadBar" type="TextureProgressBar" parent="."]
+offset_left = -16.0
+offset_top = -29.0
+offset_right = 48.0
+offset_bottom = 11.0
+scale = Vector2(0.5, 0.5)
+value = 30.0
+fill_mode = 6
+texture_under = ExtResource("10_bxf7v")
+texture_progress = ExtResource("11_7xkux")
+script = ExtResource("12_5prya")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
