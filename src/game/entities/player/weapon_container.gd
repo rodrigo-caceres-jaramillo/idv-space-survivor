@@ -1,7 +1,7 @@
 extends Node2D
 
-@export var weapon_resource1: WeaponResource
-@export var weapon_resource2: WeaponResource
+@export var weapon_resource1: StoreResource
+@export var weapon_resource2: StoreResource
 @onready var weapon1: Node2D
 @onready var weapon2: Node2D
 var current_weapon: Node2D
@@ -18,13 +18,13 @@ func reload_weapon():
 	current_weapon.reload()
 
 func load_weapons():
-	weapon1 = weapon_resource1.weapon_scene.instantiate()
+	weapon1 = weapon_resource1.scene.instantiate()
 	self.add_child(weapon1)
 	weapon1.visible = false
 	weapon1.ammo_change.connect(func(value): ammo_change.emit(value))
 	weapon1.start_reload.connect(func(value): weapon_reload.emit(value))
 
-	weapon2 = weapon_resource2.weapon_scene.instantiate()
+	weapon2 = weapon_resource2.scene.instantiate()
 	self.add_child(weapon2)
 	weapon2.visible = false
 	weapon2.ammo_change.connect(func(value): ammo_change.emit(value))

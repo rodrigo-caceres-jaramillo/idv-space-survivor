@@ -108,3 +108,5 @@ position = Vector2(716, 413)
 [node name="WaveManager" type="Node2D" parent="."]
 position = Vector2(994, 285)
 script = ExtResource("6_cwurj")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]

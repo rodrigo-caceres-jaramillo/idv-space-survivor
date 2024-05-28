@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="PoolResource" load_steps=2 format=3 uid="uid://betse8tyt0yft"]
+
+[ext_resource type="Script" path="res://src/game/store/pool_resource.gd" id="1_07lbf"]
+
+[resource]
+script = ExtResource("1_07lbf")
+level = 0
+pool = Array[Resource("res://src/game/wepons/store_resource.gd")]([])
