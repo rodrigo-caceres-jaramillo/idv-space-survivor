@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://src/game/levels/main.gd" id="1_mb85g"]
 [ext_resource type="Resource" uid="uid://cbvawfcm626sb" path="res://src/game/waves/game_data/game_1.tres" id="2_5nt0h"]
-[ext_resource type="PackedScene" uid="uid://ds70pbbdbtgkc" path="res://src/game/entities/player/player.tscn" id="2_8y62r"]
+[ext_resource type="PackedScene" uid="uid://ds70pbbdbtgkc" path="res://src/game/entities/player/Player.tscn" id="2_8y62r"]
 [ext_resource type="Texture2D" uid="uid://c4fcy8vnn5k02" path="res://assets/textures/tiles/floor.png" id="4_1yrui"]
 [ext_resource type="PackedScene" uid="uid://daba4863wb8fu" path="res://src/ui/hud/hud.tscn" id="4_5ct87"]
 [ext_resource type="Script" path="res://src/game/waves/wave_manager.gd" id="6_cwurj"]
