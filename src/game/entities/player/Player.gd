@@ -6,7 +6,7 @@ extends CharacterBody2D
 @onready var weapon_container = $WeaponContainer
 @onready var move_input_component = $MoveInputComponent
 @onready var player_camera = $Camera2D
-var max_camera_offset: float = 70.0
+var max_camera_offset: float = 40.0
 var stun = false
 
 func _ready():

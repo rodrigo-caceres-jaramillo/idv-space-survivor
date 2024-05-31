@@ -13,6 +13,7 @@ var enemies_penetrated := 0
 func _ready():
 	set_as_top_level(true)
 	hitbox_component.hit_hurtbox.connect(check_penetration)
+	hitbox_component.hit_hurtbox.connect(func(): Global.projectile_impacted.emit(global_position, direction))
 	life_time.timeout.connect(queue_free)
 	
 func _process(delta):

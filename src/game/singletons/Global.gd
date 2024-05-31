@@ -15,3 +15,4 @@ func next_wave():
 
 signal money_changed(new_value)
 signal wave_changed(new_value)
+signal projectile_impacted(position, direction)
