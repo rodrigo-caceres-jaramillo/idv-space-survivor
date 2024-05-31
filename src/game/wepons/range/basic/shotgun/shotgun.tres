@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="StoreResource" load_steps=4 format=3 uid="uid://bu5ya2hu3j7gy"]
+
+[ext_resource type="Texture2D" uid="uid://b3hw208okyl4w" path="res://src/game/wepons/range/basic/shotgun/shotgun.png" id="1_0l53j"]
+[ext_resource type="Script" path="res://src/game/wepons/store_resource.gd" id="1_rhdd7"]
+[ext_resource type="PackedScene" uid="uid://b3g5xleb0mnm4" path="res://src/game/wepons/range/basic/shotgun/shotgun.tscn" id="2_tqi5c"]
+
+[resource]
+script = ExtResource("1_rhdd7")
+name = "Shotgun"
+description = "Zombie killer"
+price = 25
+icon = ExtResource("1_0l53j")
+type = 0
+scene = ExtResource("2_tqi5c")
