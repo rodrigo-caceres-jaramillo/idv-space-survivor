@@ -9,6 +9,7 @@ extends CharacterBody2D
 @onready var spawn_invicibility_component = $SpawnInvicibilityComponent as SpawnInvicibilityComponent
 @export var money = preload("res://src/game/entities/money/money.tscn")
 var stun = false
+var base_speed = 200
 
 func _ready():
 		hurt_component.stats = stats

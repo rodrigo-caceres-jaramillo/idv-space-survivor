@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="PoolResource" load_steps=4 format=3 uid="uid://cwkk41q7oj15x"]
+[gd_resource type="Resource" script_class="PoolResource" load_steps=5 format=3 uid="uid://c2dd4g83h820w"]
 
-[ext_resource type="Script" path="res://src/game/store/pool_resource.gd" id="1_bfldv"]
-[ext_resource type="Resource" uid="uid://c5ptco8aob6l8" path="res://src/game/wepons/range/basic/pistol/pistol.tres" id="1_rho1b"]
-[ext_resource type="Resource" uid="uid://cgfe1wrr0cn7i" path="res://src/game/wepons/range/basic/uzi/uzi.tres" id="2_k7jl1"]
+[ext_resource type="Script" path="res://src/game/store/pools/pool_resource.gd" id="1_bfldv"]
+[ext_resource type="Resource" uid="uid://bemisdj1a3rrr" path="res://src/game/wepons/range/basic/pistol/pistol.tres" id="1_rho1b"]
+[ext_resource type="Resource" uid="uid://cxn3v10pikvn8" path="res://src/game/wepons/range/basic/shotgun/shotgun.tres" id="2_3p7g3"]
+[ext_resource type="Resource" uid="uid://dxq7n50mauft8" path="res://src/game/wepons/range/basic/uzi/uzi.tres" id="2_k7jl1"]
 
 [resource]
 script = ExtResource("1_bfldv")
-level = 0
-pool = Array[Resource("res://src/game/wepons/store_resource.gd")]([ExtResource("1_rho1b"), ExtResource("2_k7jl1")])
+level = 1
+pool = Array[Resource("res://src/game/store/resource/store_resource.gd")]([ExtResource("1_rho1b"), ExtResource("2_3p7g3"), ExtResource("2_k7jl1")])

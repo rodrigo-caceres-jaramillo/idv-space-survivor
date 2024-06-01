@@ -1,13 +1,14 @@
-[gd_resource type="Resource" script_class="StoreResource" load_steps=4 format=3 uid="uid://cgfe1wrr0cn7i"]
+[gd_resource type="Resource" script_class="StoreWeapon" load_steps=4 format=3 uid="uid://dxq7n50mauft8"]
 
-[ext_resource type="Script" path="res://src/game/wepons/store_resource.gd" id="1_21exg"]
 [ext_resource type="Texture2D" uid="uid://chb1ttynmaxqd" path="res://src/game/wepons/range/basic/uzi/uzi.png" id="1_kblmc"]
+[ext_resource type="Script" path="res://src/game/store/resource/store_weapon.gd" id="1_xsg3t"]
 [ext_resource type="PackedScene" uid="uid://dnkyc6jbiuaeo" path="res://src/game/wepons/range/basic/uzi/uzi.tscn" id="3_2s300"]
 
 [resource]
-script = ExtResource("1_21exg")
+script = ExtResource("1_xsg3t")
+weapon_scene = ExtResource("3_2s300")
 name = "Uzi"
-description = "Fast burst weapon"
-price = 10
+description = "Fast weapon"
+price = 15
 icon = ExtResource("1_kblmc")
-scene = ExtResource("3_2s300")
+type = 0

@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="SpaceSurvivor"
-run/main_scene="res://src/game/levels/main.tscn"
+run/main_scene="res://src/ui/main_menu/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Global="*res://src/game/singletons/Global.gd"
+Global="*res://src/main/singletons/Global.gd"
 
 [debug]
 

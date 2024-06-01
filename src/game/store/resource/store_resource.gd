@@ -3,7 +3,8 @@ extends Resource
 
 enum Types {
 	WEAPON,
-	ITEM
+	ITEM,
+	UPGRADE
 }
 
 @export var name: String
@@ -11,4 +12,3 @@ enum Types {
 @export var price: int
 @export var icon: Texture2D
 @export var type: Types
-@export var scene: PackedScene

@@ -1,14 +1,14 @@
-[gd_resource type="Resource" script_class="StoreResource" load_steps=4 format=3 uid="uid://bu5ya2hu3j7gy"]
+[gd_resource type="Resource" script_class="StoreWeapon" load_steps=4 format=3 uid="uid://cxn3v10pikvn8"]
 
-[ext_resource type="Texture2D" uid="uid://b3hw208okyl4w" path="res://src/game/wepons/range/basic/shotgun/shotgun.png" id="1_0l53j"]
-[ext_resource type="Script" path="res://src/game/wepons/store_resource.gd" id="1_rhdd7"]
-[ext_resource type="PackedScene" uid="uid://b3g5xleb0mnm4" path="res://src/game/wepons/range/basic/shotgun/shotgun.tscn" id="2_tqi5c"]
+[ext_resource type="Script" path="res://src/game/store/resource/store_weapon.gd" id="1_5fc36"]
+[ext_resource type="Texture2D" uid="uid://b3hw208okyl4w" path="res://src/game/wepons/range/basic/shotgun/shotgun.png" id="1_k45ft"]
+[ext_resource type="PackedScene" uid="uid://b3g5xleb0mnm4" path="res://src/game/wepons/range/basic/shotgun/shotgun.tscn" id="3_ouw0r"]
 
 [resource]
-script = ExtResource("1_rhdd7")
+script = ExtResource("1_5fc36")
+weapon_scene = ExtResource("3_ouw0r")
 name = "Shotgun"
-description = "Zombie killer"
-price = 25
-icon = ExtResource("1_0l53j")
+description = "SpredWeapon"
+price = 20
+icon = ExtResource("1_k45ft")
 type = 0
-scene = ExtResource("2_tqi5c")

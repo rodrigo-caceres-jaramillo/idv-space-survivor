@@ -1,13 +1,14 @@
-[gd_resource type="Resource" script_class="StoreResource" load_steps=4 format=3 uid="uid://c5ptco8aob6l8"]
+[gd_resource type="Resource" script_class="StoreWeapon" load_steps=4 format=3 uid="uid://bemisdj1a3rrr"]
 
 [ext_resource type="Texture2D" uid="uid://lsinxl4gsrnk" path="res://src/game/wepons/range/basic/pistol/pistol.png" id="1_ek4ci"]
-[ext_resource type="Script" path="res://src/game/wepons/store_resource.gd" id="1_uqldg"]
+[ext_resource type="Script" path="res://src/game/store/resource/store_weapon.gd" id="1_imipm"]
 [ext_resource type="PackedScene" uid="uid://37wsprk141e1" path="res://src/game/wepons/range/basic/pistol/pistol.tscn" id="3_8aor6"]
 
 [resource]
-script = ExtResource("1_uqldg")
+script = ExtResource("1_imipm")
+weapon_scene = ExtResource("3_8aor6")
 name = "Pistol"
-description = "Basic ass weapon"
+description = "Basic weapon"
 price = 10
 icon = ExtResource("1_ek4ci")
-scene = ExtResource("3_8aor6")
+type = 0

@@ -10,7 +10,7 @@ func _ready():
 		func():
 			active = true
 	)
-	speed = stats.speed
+	speed = stats.speed * base_speed
 	stats.no_health.connect(in_death)
 
 func in_death():

@@ -1,20 +1,32 @@
-[gd_scene load_steps=7 format=3 uid="uid://daba4863wb8fu"]
+[gd_scene load_steps=8 format=3 uid="uid://daba4863wb8fu"]
 
-[ext_resource type="Script" path="res://src/game/levels/HealthAndMoney.gd" id="1_kgeun"]
+[ext_resource type="Script" path="res://src/ui/hud/health_and_money.gd" id="1_u08b1"]
 [ext_resource type="Texture2D" uid="uid://c45p5tvcf6p2d" path="res://assets/textures/money/Money.png" id="2_flb3g"]
 [ext_resource type="FontFile" uid="uid://jd478um6wqpv" path="res://assets/fonts/Gameplay.ttf" id="3_7epsx"]
 [ext_resource type="Script" path="res://src/ui/hud/wave_progress.gd" id="4_p26kv"]
 [ext_resource type="Script" path="res://src/ui/hud/gun_and_ammo.gd" id="5_favr7"]
 [ext_resource type="Texture2D" uid="uid://chb1ttynmaxqd" path="res://src/game/wepons/range/basic/uzi/uzi.png" id="6_oahc3"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_34oor"]
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0.545446, 0.624595, 0.562764, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.0591259, 0.059126, 0.0591259, 1)
+
 [node name="UiLayer" type="CanvasLayer"]
-offset = Vector2(10, 10)
-transform = Transform2D(1, 0, 0, 1, 10, 10)
 
 [node name="HealthAndMoney" type="VBoxContainer" parent="."]
-offset_right = 160.0
-offset_bottom = 60.0
-script = ExtResource("1_kgeun")
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 170.0
+offset_bottom = 70.0
+script = ExtResource("1_u08b1")
 
 [node name="HealthBar" type="ProgressBar" parent="HealthAndMoney"]
 self_modulate = Color(0.298039, 0.854902, 0.25098, 1)
@@ -93,7 +105,11 @@ script = ExtResource("5_favr7")
 layout_mode = 2
 text = "10/10"
 
-[node name="GunIcon" type="TextureRect" parent="WeaponAndAmmo"]
+[node name="Panel" type="PanelContainer" parent="WeaponAndAmmo"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_34oor")
+
+[node name="GunIcon" type="TextureRect" parent="WeaponAndAmmo/Panel"]
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 texture = ExtResource("6_oahc3")

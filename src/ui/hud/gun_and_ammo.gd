@@ -1,7 +1,8 @@
 extends HBoxContainer
 
 @onready var ammo_counter = $AmmoCounter
-@onready var gun_icon = $GunIcon
+@onready var gun_icon = $Panel/GunIcon
+
 var max_ammo
 
 func _ready():

@@ -1,32 +1,30 @@
-extends Panel
+extends VBoxContainer
 
-@export var pools: Dictionary
-var current_pool: PoolResource
-var store_options: Array
-@onready var store_option_1 = $VBoxContainer/StoreOption
+@export var current_pool: PoolResource
+@onready var roll_button = $RollButton
+@onready var store_option_1 = $VBoxContainer/StoreOption1
 @onready var store_option_2 = $VBoxContainer/StoreOption2
 @onready var store_option_3 = $VBoxContainer/StoreOption3
 @onready var store_option_4 = $VBoxContainer/StoreOption4
-@onready var roll_button = $RollButton
+var store_options: Array[StoreOption]
 
 func _ready():
-	current_pool = pools[1]
+	store_options.append_array([store_option_1, store_option_2, store_option_3, store_option_4])
 	setup_store()
-
-func get_store_options():
-	store_options.clear()
-	for option in 4:
-		store_options.append(current_pool.pool.pick_random())
-
-func set_store_options():
-	store_option_1.set_option(store_options[0])
-	store_option_2.set_option(store_options[1])
-	store_option_3.set_option(store_options[2])
-	store_option_4.set_option(store_options[3])
 	
 func setup_store():
-	get_store_options()
-	set_store_options()
+	for option in store_options:
+		option.store_option_buy.connect(restock_option)
+	self.restock_store()
 
+func restock_store():
+	for option in store_options:
+		var recurso = current_pool.pool.pick_random()
+		print(recurso)
+		option.set_option(recurso)
+		
+func restock_option(option):
+	option.set_option(current_pool.pool.pick_random())
+	
 func _on_roll_button_pressed():
-	setup_store()
+	restock_store()

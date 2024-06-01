@@ -8,13 +8,14 @@ extends CharacterBody2D
 @onready var player_camera = $Camera2D
 var max_camera_offset: float = 40.0
 var stun = false
+var base_speed = 200
 
 func _ready():
 	hurt_component.stats = stats
-	move_input_component.speed = stats.speed
+	move_input_component.speed = base_speed * stats.speed
 	stats.no_health.connect(
 		func():
-		queue_free()
+		self.hide()
 	)
 	Global.player = self
 	

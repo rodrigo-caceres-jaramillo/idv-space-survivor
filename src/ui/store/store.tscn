@@ -1,88 +1,40 @@
-[gd_scene load_steps=8 format=3 uid="uid://banvou7ehyoxi"]
+[gd_scene load_steps=4 format=3 uid="uid://banvou7ehyoxi"]
 
-[ext_resource type="FontFile" uid="uid://jd478um6wqpv" path="res://assets/fonts/Gameplay.ttf" id="1_0pp3n"]
-[ext_resource type="Script" path="res://src/ui/store/store_panel.gd" id="1_kawfl"]
-[ext_resource type="PackedScene" uid="uid://dyrf50yc61ric" path="res://src/ui/store/store_option.tscn" id="2_3rm3l"]
-[ext_resource type="Resource" uid="uid://cwkk41q7oj15x" path="res://src/game/store/pools/level_1.tres" id="2_jigen"]
-[ext_resource type="Resource" uid="uid://betse8tyt0yft" path="res://src/game/store/pools/level_2.tres" id="3_8yy85"]
-[ext_resource type="Resource" uid="uid://vuync8ln0uju" path="res://src/game/store/pools/level_3.tres" id="4_tpunq"]
-
-[sub_resource type="Theme" id="Theme_0v5at"]
+[ext_resource type="PackedScene" uid="uid://cieyh0w75vcq7" path="res://src/ui/store/panel/store_panel.tscn" id="1_1xonm"]
+[ext_resource type="PackedScene" uid="uid://db28ox2a2lp5b" path="res://src/ui/stats/stats.tscn" id="1_ja06b"]
+[ext_resource type="Script" path="res://src/ui/store/start_wave_button.gd" id="2_0wl4q"]
 
 [node name="Store" type="CanvasLayer"]
 
-[node name="StorePanel" type="Panel" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -160.0
-offset_top = -201.0
-offset_right = 140.0
-offset_bottom = 199.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 6
-size_flags_vertical = 2
-script = ExtResource("1_kawfl")
-pools = {
-1: ExtResource("2_jigen"),
-2: ExtResource("3_8yy85"),
-3: ExtResource("4_tpunq")
-}
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 800.0
+offset_bottom = 450.0
+color = Color(0.243137, 0.364706, 0.54902, 0.388235)
 
-[node name="StoreLabel" type="Label" parent="StorePanel"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -54.0
-offset_top = 8.0
-offset_right = 41.0
-offset_bottom = 39.0
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("1_0pp3n")
-theme_override_font_sizes/font_size = 25
-text = "STORE"
+[node name="StoreContainer" type="HBoxContainer" parent="."]
+offset_right = 800.0
+offset_bottom = 450.0
+size_flags_horizontal = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="StorePanel"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 48.0
-offset_right = 292.0
-offset_bottom = 348.0
-size_flags_vertical = 4
-theme = SubResource("Theme_0v5at")
-theme_override_constants/separation = 10
+[node name="StatsPanel" type="VBoxContainer" parent="StoreContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+size_flags_horizontal = 0
+alignment = 1
 
-[node name="StoreOption" parent="StorePanel/VBoxContainer" instance=ExtResource("2_3rm3l")]
+[node name="Stats" parent="StoreContainer/StatsPanel" instance=ExtResource("1_ja06b")]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Button" type="Button" parent="StoreContainer/StatsPanel"]
+layout_mode = 2
+text = "START WAVE"
+script = ExtResource("2_0wl4q")
+
+[node name="StorePanel" parent="StoreContainer" instance=ExtResource("1_1xonm")]
 layout_mode = 2
 
-[node name="StoreOption2" parent="StorePanel/VBoxContainer" instance=ExtResource("2_3rm3l")]
+[node name="GunPanel" type="PanelContainer" parent="StoreContainer"]
 layout_mode = 2
 
-[node name="StoreOption3" parent="StorePanel/VBoxContainer" instance=ExtResource("2_3rm3l")]
-layout_mode = 2
-
-[node name="StoreOption4" parent="StorePanel/VBoxContainer" instance=ExtResource("2_3rm3l")]
-layout_mode = 2
-
-[node name="RollButton" type="Button" parent="StorePanel"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -38.0
-offset_top = -48.0
-offset_right = 38.0
-offset_bottom = -12.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("1_0pp3n")
-theme_override_font_sizes/font_size = 23
-text = "Roll"
-
-[connection signal="pressed" from="StorePanel/RollButton" to="StorePanel" method="_on_roll_button_pressed"]
+[connection signal="pressed" from="StoreContainer/StatsPanel/Button" to="StoreContainer/StatsPanel/Button" method="_on_pressed"]

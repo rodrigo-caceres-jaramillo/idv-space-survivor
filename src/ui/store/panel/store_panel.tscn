@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://cieyh0w75vcq7"]
+
+[ext_resource type="Script" path="res://src/ui/store/store_panel.gd" id="1_h8rdo"]
+[ext_resource type="PackedScene" uid="uid://dyrf50yc61ric" path="res://src/ui/store/panel/option/store_option.tscn" id="2_pla2b"]
+[ext_resource type="Resource" uid="uid://c2dd4g83h820w" path="res://src/game/store/pools/level_1.tres" id="3_3y7ey"]
+[ext_resource type="FontFile" uid="uid://jd478um6wqpv" path="res://assets/fonts/Gameplay.ttf" id="6_1es1n"]
+
+[sub_resource type="Theme" id="Theme_0v5at"]
+
+[node name="StorePanel" type="VBoxContainer"]
+size_flags_horizontal = 6
+size_flags_vertical = 4
+script = ExtResource("1_h8rdo")
+current_pool = ExtResource("3_3y7ey")
+
+[node name="StoreLabel" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("6_1es1n")
+theme_override_font_sizes/font_size = 25
+text = "STORE"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 4
+theme = SubResource("Theme_0v5at")
+theme_override_constants/separation = 10
+
+[node name="StoreOption1" parent="VBoxContainer" instance=ExtResource("2_pla2b")]
+layout_mode = 2
+
+[node name="StoreOption2" parent="VBoxContainer" instance=ExtResource("2_pla2b")]
+layout_mode = 2
+
+[node name="StoreOption3" parent="VBoxContainer" instance=ExtResource("2_pla2b")]
+layout_mode = 2
+
+[node name="StoreOption4" parent="VBoxContainer" instance=ExtResource("2_pla2b")]
+layout_mode = 2
+
+[node name="RollButton" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("6_1es1n")
+theme_override_font_sizes/font_size = 23
+text = "Roll"
+
+[connection signal="pressed" from="RollButton" to="." method="_on_roll_button_pressed"]
