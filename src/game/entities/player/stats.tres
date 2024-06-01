@@ -3,10 +3,13 @@
 [ext_resource type="Script" path="res://src/game/entities/player/player_stats.gd" id="1_booc1"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("1_booc1")
-rate_mul = 1
-damage_mul = 1
-range_mul = 1
-health = 30
-speed = 1
-knockback_resistance = 1e+06
+HEALTH = 20
+SPEED = 1.0
+DAMAGE = 1
+CRIT_CHANCE = 0
+CRIT_DAMAGE = 0
+RANGE = 0
+RATE = 1
+KB_RESISTANCE = 1000.0

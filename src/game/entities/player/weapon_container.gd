@@ -1,5 +1,6 @@
 extends Node2D
 
+@export var stats: PlayerStats
 @export var weapon_resource1: StoreWeapon
 @export var weapon_resource2: StoreWeapon
 @onready var weapon1: Node2D

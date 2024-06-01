@@ -1,12 +1,12 @@
 class_name HurtComponent
 extends Node
 
-@export var stats: CharacterStats = CharacterStats.new()
 @export var hurtbox_component: HurtboxComponent
 @export var sprite: Sprite2D
 @export var actor: CharacterBody2D
 @export var flash_duration: = 0.1
 @export var show_number = true
+var stats
 var original_sprite_material: Material
 var timer: Timer = Timer.new()
 var stun_timer: Timer = Timer.new()
@@ -26,7 +26,7 @@ func apply_damage(hitbox: HitboxComponent):
 	if randi_range (1, 100) <= hitbox.crit_chance:
 		critical = true
 		final_damage *= hitbox.crit_damage
-	stats.health -= final_damage
+	stats.HEALTH -= final_damage
 	if(!actor.stun):
 		apply_knockback(hitbox)
 	if(show_number):
@@ -37,7 +37,7 @@ func apply_damage(hitbox: HitboxComponent):
 	sprite.material = null
 	
 func apply_knockback(hitbox):
-	var knockback = hitbox.knockback - stats.knockback_resistance
+	var knockback = hitbox.knockback - stats.KB_RESISTANCE
 	if (knockback > 0): 
 		actor.stun = true
 		stun_timer.start(0.03)

@@ -4,15 +4,18 @@ extends CharacterBody2D
 @export var stats: PlayerStats
 @onready var hurtbox_component = $HurtboxComponent as HurtboxComponent
 @onready var weapon_container = $WeaponContainer
+@onready var upgrade_manager = $UpgradeManager
+@onready var items_container = $ItemsContainer
 @onready var move_input_component = $MoveInputComponent
 @onready var player_camera = $Camera2D
 var max_camera_offset: float = 40.0
 var stun = false
-var base_speed = 200
 
 func _ready():
 	hurt_component.stats = stats
-	move_input_component.speed = base_speed * stats.speed
+	upgrade_manager.stats = stats
+	weapon_container.stats = stats
+	move_input_component.stats = stats
 	stats.no_health.connect(
 		func():
 		self.hide()
@@ -33,4 +36,14 @@ func _process(_delta):
 		weapon_container.reload_weapon()
 	if Input.is_action_just_pressed("change_weapon"):
 		weapon_container.switch_weapon()
+
+func add_store_resource(resource: StoreResource):
+	match resource.type:
+		StoreResource.Types.WEAPON:
+			weapon_container.add_weapon(resource)
+		StoreResource.Types.ITEM:
+			items_container.add_item(resource)
+		StoreResource.Types.UPGRADE:
+			print("upgrade comprado")
+			upgrade_manager.apply_upgrade(resource)
 	

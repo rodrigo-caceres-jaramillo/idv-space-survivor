@@ -7,11 +7,11 @@ extends VBoxContainer
 var max_health = 1
 
 func _ready():
-	max_health = stats.health
+	max_health = stats.HEALTH
 	self.money_label.text = str(Global.money)
 	self.health_bar.max_value = max_health
 	self.health_bar.value = max_health
-	self.health_label.text = (str(stats.health) + "/" + str(max_health))
+	self.health_label.text = (str(stats.HEALTH) + "/" + str(max_health))
 	stats.health_changed.connect(self.update_health)
 	Global.money_changed.connect(self.update_money)
 	

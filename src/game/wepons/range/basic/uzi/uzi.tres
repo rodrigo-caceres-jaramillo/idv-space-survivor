@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="StoreWeapon" load_steps=4 format=3 uid="uid://dxq7n50mauft8"]
 
 [ext_resource type="Texture2D" uid="uid://chb1ttynmaxqd" path="res://src/game/wepons/range/basic/uzi/uzi.png" id="1_kblmc"]
-[ext_resource type="Script" path="res://src/game/store/resource/store_weapon.gd" id="1_xsg3t"]
+[ext_resource type="Script" path="res://src/game/store/resource/weapon.gd" id="1_xsg3t"]
 [ext_resource type="PackedScene" uid="uid://dnkyc6jbiuaeo" path="res://src/game/wepons/range/basic/uzi/uzi.tscn" id="3_2s300"]
 
 [resource]

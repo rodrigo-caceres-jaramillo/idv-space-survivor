@@ -8,6 +8,7 @@ extends PanelContainer
 @onready var buy_button = $HBoxContainer/BuyButton
 
 func set_option(_store_option: StoreResource):
+	store_option_resource = _store_option
 	sprite_option.texture = _store_option.icon
 	option_name.text = str(_store_option.name)
 	description.text = str(_store_option.description)

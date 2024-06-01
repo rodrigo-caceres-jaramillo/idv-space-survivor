@@ -20,7 +20,6 @@ func setup_store():
 func restock_store():
 	for option in store_options:
 		var recurso = current_pool.pool.pick_random()
-		print(recurso)
 		option.set_option(recurso)
 		
 func restock_option(option):

@@ -1,11 +1,14 @@
-[gd_resource type="Resource" script_class="PoolResource" load_steps=5 format=3 uid="uid://c2dd4g83h820w"]
+[gd_resource type="Resource" script_class="PoolResource" load_steps=8 format=3 uid="uid://c2dd4g83h820w"]
 
 [ext_resource type="Script" path="res://src/game/store/pools/pool_resource.gd" id="1_bfldv"]
 [ext_resource type="Resource" uid="uid://bemisdj1a3rrr" path="res://src/game/wepons/range/basic/pistol/pistol.tres" id="1_rho1b"]
 [ext_resource type="Resource" uid="uid://cxn3v10pikvn8" path="res://src/game/wepons/range/basic/shotgun/shotgun.tres" id="2_3p7g3"]
 [ext_resource type="Resource" uid="uid://dxq7n50mauft8" path="res://src/game/wepons/range/basic/uzi/uzi.tres" id="2_k7jl1"]
+[ext_resource type="Resource" uid="uid://cbwk5o4sixyod" path="res://src/game/upgrades/range/range_upgrade.tres" id="4_hcbnk"]
+[ext_resource type="Resource" uid="uid://eep8sh2ng802" path="res://src/game/upgrades/damage/damage_upgrade.tres" id="5_l8cnw"]
+[ext_resource type="Resource" uid="uid://bvtrtse3oemkg" path="res://src/game/upgrades/speed/speed_upgrade.tres" id="6_y4rw7"]
 
 [resource]
 script = ExtResource("1_bfldv")
 level = 1
-pool = Array[Resource("res://src/game/store/resource/store_resource.gd")]([ExtResource("1_rho1b"), ExtResource("2_3p7g3"), ExtResource("2_k7jl1")])
+pool = Array[Resource("res://src/game/store/resource/store_resource.gd")]([ExtResource("1_rho1b"), ExtResource("2_3p7g3"), ExtResource("2_k7jl1"), ExtResource("4_hcbnk"), ExtResource("5_l8cnw"), ExtResource("6_y4rw7")])

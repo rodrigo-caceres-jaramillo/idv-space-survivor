@@ -2,7 +2,7 @@ class_name MoveInputComponent
 extends Node
 
 @export var actor: Node2D
-@export var speed = 10
+@export var stats: PlayerStats
 var velocity: Vector2
 
 func _process(delta):
@@ -10,5 +10,5 @@ func _process(delta):
 	velocity.y = int(Input.is_action_pressed("move_down")) - int(Input.is_action_pressed("move_up"))
 	velocity = velocity.normalized()
 	
-	actor.translate(velocity * delta * speed)
+	actor.translate(velocity * delta * stats.FINAL_SPEED)
 	actor.move_and_slide()

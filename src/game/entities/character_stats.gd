@@ -1,12 +1,12 @@
 class_name CharacterStats
 extends Resource
 
-@export var health: int = 1:
+@export var HP: int = 1:
 	set(value):
-		health = value
+		HP = value
 		health_changed.emit(value)
-		if health <= 0: no_health.emit()
-@export var speed: float = 1
+		if HP <= 0: no_health.emit()
+@export var SPEED: float = 1
 @export var knockback_resistance: float = 1
 
 signal health_changed(new_value)

@@ -13,10 +13,10 @@ var base_speed = 200
 
 func _ready():
 		hurt_component.stats = stats
-		health_bar_component.initial_value = stats.health
+		health_bar_component.initial_value = stats.HEALTH
 		health_bar_component.stats = stats
 		health_bar_component.start()
-		hitbox_component.damage = stats.damage
+		hitbox_component.damage = stats.DAMAGE
 		
 func spawn_money(value):
 	var spawn_position = self.global_position

@@ -9,10 +9,11 @@ extends VBoxContainer
 func _ready():
 	update_stats()
 	Global.wave_finished.connect(update_stats)
+	Global.player.stats.stats_changed.connect(update_stats)
 
 func update_stats():
-	health.text = "Max Health: " + str(Global.player.stats.health)
-	damage.text = "Damage: " + str(Global.player.stats.damage_mul)
+	health.text = "Max Health: " + str(Global.player.stats.HEALTH)
+	damage.text = "Damage: " + str(Global.player.stats.DAMAGE)
 	#rate.text = "Rate: " + str(Global.player.stats.rate_mul)
-	#range.text = "Range: " + str(Global.player.stats.range_mul)
-	#speed.text = "Speed: " + str(Global.player.stats.speed_mul)
+	range.text = "Range: " + str(Global.player.stats.RANGE)
+	speed.text = "Speed: " + str(Global.player.stats.SPEED)
