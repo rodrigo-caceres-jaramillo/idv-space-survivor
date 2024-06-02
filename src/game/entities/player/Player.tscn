@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ds70pbbdbtgkc"]
+[gd_scene load_steps=18 format=3 uid="uid://ds70pbbdbtgkc"]
 
 [ext_resource type="Script" path="res://src/game/entities/player/player.gd" id="1_t5npn"]
 [ext_resource type="Script" path="res://src/game/entities/player/player_stats.gd" id="2_05jks"]
@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://dxq7n50mauft8" path="res://src/game/weapons/range/uzi/uzi.tres" id="6_744t8"]
 [ext_resource type="Script" path="res://src/game/components/move_input_component.gd" id="6_d4ko6"]
 [ext_resource type="Script" path="res://src/game/components/hurt_box_component.gd" id="9_kk872"]
+[ext_resource type="AudioStream" uid="uid://dyoxlhub70b8l" path="res://assets/sound/hit_player.wav" id="9_n2il3"]
 [ext_resource type="Texture2D" uid="uid://b8fiq01ltgq7w" path="res://assets/textures/ui/reload/reload_base.png" id="10_bxf7v"]
 [ext_resource type="Script" path="res://src/game/components/hurt_component.gd" id="10_xcugp"]
 [ext_resource type="Texture2D" uid="uid://b61mmn65g043m" path="res://assets/textures/ui/reload/reload_over.png" id="11_7xkux"]
@@ -64,6 +65,7 @@ visible = false
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("9_kk872")
+hit_player_sfx = ExtResource("9_n2il3")
 invincibility_duration = 0.5
 
 [node name="HurtboxShape" type="CollisionShape2D" parent="HurtboxComponent"]
@@ -96,3 +98,5 @@ script = ExtResource("12_5prya")
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 rotation_smoothing_enabled = true
+
+[node name="PlayerSfx" type="AudioStreamPlayer" parent="."]
