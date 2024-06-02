@@ -7,14 +7,14 @@
 [sub_resource type="Resource" id="Resource_ixbx3"]
 script = ExtResource("2_dltu8")
 stat = 5
-value = 0.2
+value = 0.1
 positive = true
 
 [resource]
 script = ExtResource("2_18li8")
 modifiers = Array[ExtResource("2_dltu8")]([SubResource("Resource_ixbx3")])
 name = "Range Module"
-description = "+ 20% Range"
+description = "+ 10% Range"
 price = 10
 icon = ExtResource("1_tm7a7")
 type = 2

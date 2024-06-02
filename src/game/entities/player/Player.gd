@@ -14,7 +14,7 @@ var stun = false
 func _ready():
 	hurt_component.stats = stats
 	upgrade_manager.stats = stats
-	weapon_container.stats = stats
+	weapon_container.set_up(stats)
 	move_input_component.stats = stats
 	stats.no_health.connect(
 		func():

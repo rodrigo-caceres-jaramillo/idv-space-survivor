@@ -8,9 +8,12 @@ extends Node2D
 var current_weapon: Node2D
 var current_weapon_index: int = 0
 
-func _ready():
+func set_up(_stats: PlayerStats):
+	stats = _stats
+	stats.stats_changed.connect(update_stats)
 	self.load_weapons()
 	self.equip_weapon(0)
+	self.update_stats()
 	
 func shoot_weapon():
 	current_weapon.fire()
@@ -18,6 +21,10 @@ func shoot_weapon():
 func reload_weapon():
 	current_weapon.reload()
 
+func update_stats():
+	weapon1.set_player_stats(stats)
+	weapon2.set_player_stats(stats)
+	
 func load_weapons():
 	weapon1 = weapon_resource1.weapon_scene.instantiate()
 	self.add_child(weapon1)
@@ -36,12 +43,12 @@ func equip_weapon(index: int):
 		current_weapon = weapon1
 		weapon1.visible = true
 		weapon2.visible = false
-		weapon_change.emit(weapon_resource1.icon, weapon1.stats.magazine, weapon1.current_ammo)
+		weapon_change.emit(weapon_resource1.icon, weapon1.base_stats.magazine, weapon1.current_ammo)
 	elif index == 1:
 		current_weapon = weapon2
 		weapon1.visible = false
 		weapon2.visible = true
-		weapon_change.emit(weapon_resource2.icon, weapon2.stats.magazine, weapon2.current_ammo)
+		weapon_change.emit(weapon_resource2.icon, weapon2.base_stats.magazine, weapon2.current_ammo)
 	current_weapon_index = index
 
 func switch_weapon():

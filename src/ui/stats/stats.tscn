@@ -13,6 +13,14 @@ text = "Health"
 layout_mode = 2
 text = "Damage"
 
+[node name="CritChance" type="Label" parent="."]
+layout_mode = 2
+text = "Damage"
+
+[node name="CritDamage" type="Label" parent="."]
+layout_mode = 2
+text = "Damage"
+
 [node name="Rate" type="Label" parent="."]
 layout_mode = 2
 text = "Haste"

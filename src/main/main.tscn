@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://btjax2v4qeeu3"]
+[gd_scene load_steps=16 format=3 uid="uid://btjax2v4qeeu3"]
 
 [ext_resource type="Script" path="res://src/main/main.gd" id="1_gwchs"]
 [ext_resource type="Resource" uid="uid://cbvawfcm626sb" path="res://src/game/waves/game_data/game_1.tres" id="2_t5txs"]
 [ext_resource type="Texture2D" uid="uid://c4fcy8vnn5k02" path="res://assets/textures/tiles/floor.png" id="3_3oiew"]
 [ext_resource type="PackedScene" uid="uid://ds70pbbdbtgkc" path="res://src/game/entities/player/player.tscn" id="4_e0x7x"]
+[ext_resource type="Script" path="res://src/game/entities/player/player_stats.gd" id="4_uj3x8"]
 [ext_resource type="Script" path="res://src/game/waves/wave_manager.gd" id="5_g76ig"]
 [ext_resource type="Script" path="res://src/main/particle_manager.gd" id="6_1onaa"]
 [ext_resource type="PackedScene" uid="uid://ckumljs7h0tw7" path="res://src/game/projectiles/projectile_impact.tscn" id="7_8jh40"]
@@ -92,6 +93,18 @@ terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_gjf3c")
 
+[sub_resource type="Resource" id="Resource_s7jj8"]
+resource_local_to_scene = true
+script = ExtResource("4_uj3x8")
+HEALTH = 20
+SPEED = 1.0
+DAMAGE = 1
+CRIT_CHANCE = 1.0
+CRIT_DAMAGE = 1.0
+RANGE = 1.0
+RATE = 1.0
+KB_RESISTANCE = 1000.0
+
 [node name="Main" type="Node2D"]
 position = Vector2(-308, -197)
 script = ExtResource("1_gwchs")
@@ -106,6 +119,7 @@ layer_1/tile_data = PackedInt32Array(0, 393216, 0, 65536, 393216, 0, 131072, 393
 
 [node name="Player" parent="." instance=ExtResource("4_e0x7x")]
 position = Vector2(716, 413)
+stats = SubResource("Resource_s7jj8")
 
 [node name="WaveManager" type="Node2D" parent="."]
 position = Vector2(994, 285)

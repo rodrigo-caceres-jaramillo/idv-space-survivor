@@ -10,3 +10,4 @@ extends WeaponStats
 @export var penetration: int = 1
 @export var projectile_speed: int = 1
 
+

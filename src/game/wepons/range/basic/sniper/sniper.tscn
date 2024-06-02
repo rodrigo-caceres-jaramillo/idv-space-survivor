@@ -1,7 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5uhvngjdi1ky"]
-
-[ext_resource type="PackedScene" uid="uid://dn5r6qogjyaco" path="res://src/game/wepons/range/basic/basic_range_weapon.tscn" id="1_m2tfw"]
-[ext_resource type="Resource" uid="uid://dtnmtonre5l86" path="res://src/game/wepons/range/basic/sniper/sniper_stats.tres" id="2_sdvqa"]
-
-[node name="Sniper" instance=ExtResource("1_m2tfw")]
-stats = ExtResource("2_sdvqa")

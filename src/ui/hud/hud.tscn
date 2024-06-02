@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://jd478um6wqpv" path="res://assets/fonts/Gameplay.ttf" id="3_7epsx"]
 [ext_resource type="Script" path="res://src/ui/hud/wave_progress.gd" id="4_p26kv"]
 [ext_resource type="Script" path="res://src/ui/hud/gun_and_ammo.gd" id="5_favr7"]
-[ext_resource type="Texture2D" uid="uid://chb1ttynmaxqd" path="res://src/game/wepons/range/basic/uzi/uzi.png" id="6_oahc3"]
+[ext_resource type="Texture2D" uid="uid://chb1ttynmaxqd" path="res://src/game/weapons/range/uzi/uzi.png" id="6_oahc3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_34oor"]
 content_margin_left = 3.0

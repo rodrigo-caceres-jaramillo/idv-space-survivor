@@ -1,7 +1,7 @@
 class_name PlayerStats
 extends Resource
 
-@export var HEALTH: int = 1:
+@export var HEALTH: int = 20:
 	set(value):
 		HEALTH = value
 		health_changed.emit(value)
@@ -16,19 +16,19 @@ var FINAL_SPEED: float:
 	set(value):
 		DAMAGE = value
 		stats_changed.emit()
-@export var CRIT_CHANCE = 0:
+@export var CRIT_CHANCE: float = 1:
 	set(value):
 		CRIT_CHANCE = value
 		stats_changed.emit()
-@export var CRIT_DAMAGE = 0:
+@export var CRIT_DAMAGE: float = 1:
 	set(value):
 		CRIT_DAMAGE = value
 		stats_changed.emit()
-@export var RANGE = 1:
+@export var RANGE: float = 1:
 	set(value):
 		RANGE = value
 		stats_changed.emit()
-@export var RATE = 1:
+@export var RATE: float = 1:
 	set(value):
 		RATE = value
 		stats_changed.emit()

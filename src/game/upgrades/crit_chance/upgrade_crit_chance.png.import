@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3hw208okyl4w"
-path="res://.godot/imported/shotgun.png-35e67d62b7d3886663c71f3b9fadc6d8.ctex"
+uid="uid://ugprqwgvjpib"
+path="res://.godot/imported/upgrade_crit_chance.png-55f7bb15d2b2f9268756178912068927.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/game/wepons/range/basic/shotgun/shotgun.png"
-dest_files=["res://.godot/imported/shotgun.png-35e67d62b7d3886663c71f3b9fadc6d8.ctex"]
+source_file="res://src/game/upgrades/crit_chance/upgrade_crit_chance.png"
+dest_files=["res://.godot/imported/upgrade_crit_chance.png-55f7bb15d2b2f9268756178912068927.ctex"]
 
 [params]
 

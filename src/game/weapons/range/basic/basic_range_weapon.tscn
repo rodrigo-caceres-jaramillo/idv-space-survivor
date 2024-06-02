@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://dn5r6qogjyaco"]
 
-[ext_resource type="Script" path="res://src/game/wepons/range/basic/basic_range_weapon.gd" id="1_0wld1"]
-[ext_resource type="Script" path="res://src/game/components/spawn_projectile_component.gd" id="2_p77t0"]
+[ext_resource type="Script" path="res://src/game/weapons/range/basic/basic_range_weapon.gd" id="1_1dale"]
+[ext_resource type="Script" path="res://src/game/components/spawn_projectile_component.gd" id="2_a6ejn"]
 
 [node name="BasicRangeWeapon" type="Node2D"]
 z_index = 50
-script = ExtResource("1_0wld1")
+script = ExtResource("1_1dale")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 
@@ -17,4 +17,4 @@ position = Vector2(7, 0)
 [node name="ReloadTimer" type="Timer" parent="."]
 
 [node name="SpawnProjectileComponent" type="Node" parent="."]
-script = ExtResource("2_p77t0")
+script = ExtResource("2_a6ejn")

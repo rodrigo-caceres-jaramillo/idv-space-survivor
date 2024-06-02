@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dyrf50yc61ric"]
 
 [ext_resource type="Script" path="res://src/ui/store/panel/option/store_option.gd" id="1_yqeex"]
-[ext_resource type="Texture2D" uid="uid://lsinxl4gsrnk" path="res://src/game/wepons/range/basic/pistol/pistol.png" id="2_g1gut"]
+[ext_resource type="Texture2D" uid="uid://lsinxl4gsrnk" path="res://src/game/weapons/range/pistol/pistol.png" id="2_g1gut"]
 
 [node name="StoreOption" type="PanelContainer"]
 custom_minimum_size = Vector2(0, 64)
