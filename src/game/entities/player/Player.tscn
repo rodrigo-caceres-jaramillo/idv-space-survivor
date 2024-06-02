@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://bxvf481uc5x5j" path="res://assets/textures/player/player.png" id="2_oblfc"]
 [ext_resource type="Script" path="res://src/game/entities/player/weapon_container.gd" id="3_54588"]
 [ext_resource type="Script" path="res://src/game/entities/player/upgrade_manager.gd" id="3_mi8cm"]
-[ext_resource type="Resource" uid="uid://bemisdj1a3rrr" path="res://src/game/weapons/range/pistol/pistol.tres" id="4_f6ay3"]
-[ext_resource type="Resource" uid="uid://cxn3v10pikvn8" path="res://src/game/weapons/range/shotgun/shotgun.tres" id="5_jflu8"]
+[ext_resource type="Resource" uid="uid://850ncg2qdncs" path="res://src/game/weapons/range/sniper/sniper.tres" id="5_dkkuo"]
+[ext_resource type="Resource" uid="uid://dxq7n50mauft8" path="res://src/game/weapons/range/uzi/uzi.tres" id="6_744t8"]
 [ext_resource type="Script" path="res://src/game/components/move_input_component.gd" id="6_d4ko6"]
 [ext_resource type="Script" path="res://src/game/components/hurt_box_component.gd" id="9_kk872"]
 [ext_resource type="Texture2D" uid="uid://b8fiq01ltgq7w" path="res://assets/textures/ui/reload/reload_base.png" id="10_bxf7v"]
@@ -47,8 +47,8 @@ script = ExtResource("3_mi8cm")
 
 [node name="WeaponContainer" type="Node2D" parent="."]
 script = ExtResource("3_54588")
-weapon_resource1 = ExtResource("4_f6ay3")
-weapon_resource2 = ExtResource("5_jflu8")
+weapon_resource1 = ExtResource("5_dkkuo")
+weapon_resource2 = ExtResource("6_744t8")
 
 [node name="ItemsContainer" type="Node2D" parent="."]
 

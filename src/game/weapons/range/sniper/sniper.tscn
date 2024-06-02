@@ -1,7 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5uhvngjdi1ky"]
+[gd_scene load_steps=4 format=3 uid="uid://b5uhvngjdi1ky"]
 
 [ext_resource type="PackedScene" uid="uid://dn5r6qogjyaco" path="res://src/game/weapons/range/basic/basic_range_weapon.tscn" id="1_m2tfw"]
 [ext_resource type="Resource" uid="uid://dtnmtonre5l86" path="res://src/game/weapons/range/sniper/sniper_stats.tres" id="2_sdvqa"]
+[ext_resource type="Texture2D" uid="uid://dxc6shawo5ng0" path="res://src/game/weapons/range/sniper/sniper.png" id="2_u31tc"]
 
 [node name="Sniper" instance=ExtResource("1_m2tfw")]
-stats = ExtResource("2_sdvqa")
+base_stats = ExtResource("2_sdvqa")
+
+[node name="Sprite" parent="." index="0"]
+position = Vector2(-1, 1)
+texture = ExtResource("2_u31tc")
+
+[node name="Tip" parent="." index="1"]
+position = Vector2(15, -1)

@@ -11,4 +11,4 @@ base_stats = ExtResource("2_kkby8")
 texture = ExtResource("3_2tvp3")
 
 [node name="Tip" parent="." index="1"]
-position = Vector2(7, -1)
+position = Vector2(8, -5)

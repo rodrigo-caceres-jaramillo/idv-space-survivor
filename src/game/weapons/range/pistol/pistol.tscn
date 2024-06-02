@@ -9,3 +9,6 @@ base_stats = ExtResource("2_b57yb")
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource("3_46awc")
+
+[node name="Tip" parent="." index="1"]
+position = Vector2(8, -2)

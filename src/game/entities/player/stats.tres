@@ -5,11 +5,11 @@
 [resource]
 resource_local_to_scene = true
 script = ExtResource("1_booc1")
-HEALTH = 20
+MAX_HEALTH = 20
 SPEED = 1.0
 DAMAGE = 1
-CRIT_CHANCE = 1
-CRIT_DAMAGE = 1
-RANGE = 1
-RATE = 1
+CRIT_CHANCE = 1.0
+CRIT_DAMAGE = 1.0
+RANGE = 1.0
+RATE = 1.0
 KB_RESISTANCE = 1000.0
