@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Upgrade" load_steps=5 format=3 uid="uid://bgl01li8vpp8p"]
+
+[ext_resource type="Script" path="res://src/game/store/resource/modifier.gd" id="1_7olir"]
+[ext_resource type="Texture2D" uid="uid://vayq1mnk2kbd" path="res://src/game/upgrades/crit_damage/crit_damage_upgrade_2.png" id="1_prsn1"]
+[ext_resource type="Script" path="res://src/game/store/resource/upgrade.gd" id="2_3604b"]
+
+[sub_resource type="Resource" id="Resource_kbnia"]
+script = ExtResource("1_7olir")
+stat = 4
+value = 0.2
+positive = true
+
+[resource]
+script = ExtResource("2_3604b")
+modifiers = Array[ExtResource("1_7olir")]([SubResource("Resource_kbnia")])
+name = "Critical Damage Module"
+description = "+ 20% Critical Damage"
+price = 10
+icon = ExtResource("1_prsn1")
+type = 2

@@ -2,10 +2,11 @@ extends VBoxContainer
 
 @export var current_pool: PoolResource
 @onready var roll_button = $RollButton
-@onready var store_option_1 = $VBoxContainer/StoreOption1
-@onready var store_option_2 = $VBoxContainer/StoreOption2
-@onready var store_option_3 = $VBoxContainer/StoreOption3
-@onready var store_option_4 = $VBoxContainer/StoreOption4
+@onready var store_option_1 = $Container/MarginContainer/VBoxContainer/StoreOption1
+@onready var store_option_2 = $Container/MarginContainer/VBoxContainer/StoreOption2
+@onready var store_option_3 = $Container/MarginContainer/VBoxContainer/StoreOption3
+@onready var store_option_4 = $Container/MarginContainer/VBoxContainer/StoreOption4
+
 var store_options: Array[StoreOption]
 
 func _ready():

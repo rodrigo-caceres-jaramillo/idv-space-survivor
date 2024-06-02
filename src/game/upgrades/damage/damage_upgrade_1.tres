@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Upgrade" load_steps=5 format=3 uid="uid://eep8sh2ng802"]
+
+[ext_resource type="Script" path="res://src/game/store/resource/upgrade.gd" id="1_55xbl"]
+[ext_resource type="Texture2D" uid="uid://dw8omcn8uohb" path="res://src/game/upgrades/damage/damage_upgrade_1.png" id="1_ieltw"]
+[ext_resource type="Script" path="res://src/game/store/resource/modifier.gd" id="2_s6vwu"]
+
+[sub_resource type="Resource" id="Resource_0v54n"]
+script = ExtResource("2_s6vwu")
+stat = 2
+value = 0.2
+positive = true
+
+[resource]
+script = ExtResource("1_55xbl")
+modifiers = Array[ExtResource("2_s6vwu")]([SubResource("Resource_0v54n")])
+name = "Damage Module"
+description = "+ 20% Damage"
+price = 10
+icon = ExtResource("1_ieltw")
+type = 2

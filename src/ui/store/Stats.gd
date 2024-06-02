@@ -14,7 +14,7 @@ func _ready():
 	Global.player.stats.stats_changed.connect(update_stats)
 
 func update_stats():
-	health.text = "Max Health: " + str(Global.player.stats.HEALTH)
+	health.text = "Max Health: " + str(Global.player.stats.MAX_HEALTH)
 	damage.text = "Damage: " + str(Global.player.stats.DAMAGE*100) + "%"
 	crit_chance.text = "Critical Chance: " + str(Global.player.stats.CRIT_CHANCE*100) + "%"
 	crit_damage.text = "Critical Damage: " + str(Global.player.stats.CRIT_DAMAGE*100) + "%"

@@ -1,7 +1,12 @@
 class_name PlayerStats
 extends Resource
 
-@export var HEALTH: int = 20:
+@export var MAX_HEALTH: int = 20:
+	set(value):
+		MAX_HEALTH = value
+		max_health_changed.emit(value)
+		stats_changed.emit()
+var HEALTH: int:
 	set(value):
 		HEALTH = value
 		health_changed.emit(value)
@@ -34,6 +39,9 @@ var FINAL_SPEED: float:
 		stats_changed.emit()
 @export var KB_RESISTANCE: float = 1
 
+func _init():
+	HEALTH = MAX_HEALTH
 signal stats_changed()
+signal max_health_changed(new_value)
 signal health_changed(new_value)
 signal no_health()

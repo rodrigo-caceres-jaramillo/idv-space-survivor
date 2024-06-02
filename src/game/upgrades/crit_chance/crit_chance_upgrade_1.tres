@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Upgrade" load_steps=5 format=3 uid="uid://ds58bou0r6cs4"]
+
+[ext_resource type="Texture2D" uid="uid://cagxmx4v57qyl" path="res://src/game/upgrades/crit_chance/crit_chance_upgrade_1.png" id="1_fnfhi"]
+[ext_resource type="Script" path="res://src/game/store/resource/modifier.gd" id="2_oxpr0"]
+[ext_resource type="Script" path="res://src/game/store/resource/upgrade.gd" id="3_ylpcb"]
+
+[sub_resource type="Resource" id="Resource_5h233"]
+script = ExtResource("2_oxpr0")
+stat = 3
+value = 0.3
+positive = true
+
+[resource]
+script = ExtResource("3_ylpcb")
+modifiers = Array[ExtResource("2_oxpr0")]([SubResource("Resource_5h233")])
+name = "Critical Chance Module"
+description = "+ 30% Critical Chance"
+price = 10
+icon = ExtResource("1_fnfhi")
+type = 2

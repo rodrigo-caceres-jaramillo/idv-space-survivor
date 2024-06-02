@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Upgrade" load_steps=5 format=3 uid="uid://ha4rubn55i6"]
+
+[ext_resource type="Script" path="res://src/game/store/resource/modifier.gd" id="1_3vfaj"]
+[ext_resource type="Texture2D" uid="uid://b2r55wtktw8os" path="res://src/game/upgrades/range/range_upgrade_3.png" id="1_kyogk"]
+[ext_resource type="Script" path="res://src/game/store/resource/upgrade.gd" id="2_10nor"]
+
+[sub_resource type="Resource" id="Resource_ixbx3"]
+script = ExtResource("1_3vfaj")
+stat = 5
+value = 0.3
+positive = true
+
+[resource]
+script = ExtResource("2_10nor")
+modifiers = Array[ExtResource("1_3vfaj")]([SubResource("Resource_ixbx3")])
+name = "Range Module"
+description = "+ 30% Range"
+price = 10
+icon = ExtResource("1_kyogk")
+type = 2

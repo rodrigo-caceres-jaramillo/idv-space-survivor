@@ -2,7 +2,7 @@ class_name StoreOption
 extends PanelContainer
 
 @export var store_option_resource: StoreResource
-@onready var sprite_option = $HBoxContainer/SpriteOption
+@onready var sprite_option = $HBoxContainer/PanelContainer/SpriteOption
 @onready var option_name = $HBoxContainer/VBoxContainer/OptionName
 @onready var description = $HBoxContainer/VBoxContainer/Description
 @onready var buy_button = $HBoxContainer/BuyButton

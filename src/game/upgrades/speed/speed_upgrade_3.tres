@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Upgrade" load_steps=5 format=3 uid="uid://cepq7rni8fvsu"]
+
+[ext_resource type="Texture2D" uid="uid://kpmraruf2m71" path="res://src/game/upgrades/speed/speed_upgrade_3.png" id="1_gj15e"]
+[ext_resource type="Script" path="res://src/game/store/resource/modifier.gd" id="1_munaj"]
+[ext_resource type="Script" path="res://src/game/store/resource/upgrade.gd" id="2_5uv6b"]
+
+[sub_resource type="Resource" id="Resource_3negu"]
+script = ExtResource("1_munaj")
+stat = 1
+value = 0.15
+positive = true
+
+[resource]
+script = ExtResource("2_5uv6b")
+modifiers = Array[ExtResource("1_munaj")]([SubResource("Resource_3negu")])
+name = "Speed Module"
+description = "+ 15% Speed"
+price = 10
+icon = ExtResource("1_gj15e")
+type = 2

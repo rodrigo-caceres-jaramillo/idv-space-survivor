@@ -9,7 +9,7 @@ func apply_upgrade(upgrade: Upgrade):
 func apply_modifier(modifier: Modifier):
 	match modifier.stat:
 		modifier.Stat.HEALTH:
-			stats.HP += modifier.value if modifier.positive else -modifier.value
+			stats.MAX_HEALTH += modifier.value if modifier.positive else -modifier.value
 		modifier.Stat.SPEED:
 			stats.SPEED += modifier.value if modifier.positive else -modifier.value
 			print(stats.SPEED)
