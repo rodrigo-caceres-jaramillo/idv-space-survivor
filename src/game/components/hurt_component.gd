@@ -1,6 +1,9 @@
 class_name HurtComponent
 extends Node
 
+@export var hit_player_sfx: AudioStream 
+@export var player_sfx : AudioStreamPlayer
+
 @export var hurtbox_component: HurtboxComponent
 @export var sprite: Sprite2D
 @export var actor: CharacterBody2D
@@ -22,6 +25,7 @@ func _ready() -> void:
 	
 func apply_damage(hitbox: HitboxComponent):
 	var final_damage = hitbox.damage
+	_audio_player(hit_player_sfx)
 	var critical = false
 	if randi_range (1, 100) <= hitbox.crit_chance:
 		critical = true
@@ -60,3 +64,7 @@ func show_damage_numbers(value, critical):
 	add_child(label)
 	await get_tree().create_timer(0.5).timeout
 	label.queue_free()
+
+func _audio_player(audio:AudioStream):
+	player_sfx.stream = audio
+	player_sfx.play()

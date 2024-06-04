@@ -4,7 +4,8 @@
 [ext_resource type="Resource" uid="uid://cpbk7b2tufye4" path="res://src/game/weapons/range/shotgun/shotgun_stats.tres" id="2_ocgbh"]
 [ext_resource type="Texture2D" uid="uid://b3hw208okyl4w" path="res://src/game/weapons/range/shotgun/shotgun.png" id="3_15d60"]
 
-[node name="shotgun" instance=ExtResource("1_lr1rq")]
+[node name="shotgun" node_paths=PackedStringArray("weapon_fsx") instance=ExtResource("1_lr1rq")]
+weapon_fsx = NodePath("ShotgunSfx")
 base_stats = ExtResource("2_ocgbh")
 
 [node name="Sprite" parent="." index="0"]
@@ -13,3 +14,5 @@ texture = ExtResource("3_15d60")
 
 [node name="Tip" parent="." index="1"]
 position = Vector2(7, -2)
+
+[node name="ShotgunSfx" type="AudioStreamPlayer" parent="." index="5"]

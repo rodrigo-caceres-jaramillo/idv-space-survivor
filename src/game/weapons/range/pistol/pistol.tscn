@@ -4,7 +4,8 @@
 [ext_resource type="Resource" uid="uid://dad7vyfoekxj5" path="res://src/game/weapons/range/pistol/pistol_stats.tres" id="2_b57yb"]
 [ext_resource type="Texture2D" uid="uid://lsinxl4gsrnk" path="res://src/game/weapons/range/pistol/pistol.png" id="3_46awc"]
 
-[node name="Pistol" instance=ExtResource("1_yejcx")]
+[node name="Pistol" node_paths=PackedStringArray("weapon_fsx") instance=ExtResource("1_yejcx")]
+weapon_fsx = NodePath("PistolSfx")
 base_stats = ExtResource("2_b57yb")
 
 [node name="Sprite" parent="." index="0"]
@@ -12,3 +13,5 @@ texture = ExtResource("3_46awc")
 
 [node name="Tip" parent="." index="1"]
 position = Vector2(8, -2)
+
+[node name="PistolSfx" type="AudioStreamPlayer" parent="." index="5"]

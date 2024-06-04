@@ -4,7 +4,8 @@
 [ext_resource type="Resource" uid="uid://dtnmtonre5l86" path="res://src/game/weapons/range/sniper/sniper_stats.tres" id="2_sdvqa"]
 [ext_resource type="Texture2D" uid="uid://dxc6shawo5ng0" path="res://src/game/weapons/range/sniper/sniper.png" id="2_u31tc"]
 
-[node name="Sniper" instance=ExtResource("1_m2tfw")]
+[node name="Sniper" node_paths=PackedStringArray("weapon_fsx") instance=ExtResource("1_m2tfw")]
+weapon_fsx = NodePath("SniperSfx")
 base_stats = ExtResource("2_sdvqa")
 
 [node name="Sprite" parent="." index="0"]
@@ -13,3 +14,5 @@ texture = ExtResource("2_u31tc")
 
 [node name="Tip" parent="." index="1"]
 position = Vector2(15, -1)
+
+[node name="SniperSfx" type="AudioStreamPlayer" parent="." index="5"]

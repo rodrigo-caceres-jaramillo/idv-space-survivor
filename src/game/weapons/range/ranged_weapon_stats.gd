@@ -10,4 +10,5 @@ extends WeaponStats
 @export var penetration: int = 1
 @export var projectile_speed: int = 1
 
-
+@export var reload_sfx: AudioStream
+@export var shoot_sfx: AudioStream

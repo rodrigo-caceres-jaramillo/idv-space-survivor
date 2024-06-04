@@ -1,6 +1,8 @@
 class_name Enemy
 extends CharacterBody2D
 
+@onready var enemy_sfx = $EnemySfx
+
 @export var stats: EnemyStats
 @onready var health_bar_component = $HealthBarComponent as HealthBarComponent
 @onready var hitbox_component:HitboxComponent = $HitboxComponent as HitboxComponent
@@ -28,3 +30,7 @@ func spawn_money(value):
 
 func _on_spawn_timer_timeout():
 	hurtbox_component.is_invincible = false
+	
+func _audio_enemy(audio:AudioStream):
+	enemy_sfx.stream = audio
+	enemy_sfx.play()

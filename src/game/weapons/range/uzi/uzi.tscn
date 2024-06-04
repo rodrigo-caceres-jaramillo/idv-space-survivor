@@ -4,7 +4,8 @@
 [ext_resource type="Resource" uid="uid://bupfoauo7u6km" path="res://src/game/weapons/range/uzi/uzi_stats.tres" id="2_kkby8"]
 [ext_resource type="Texture2D" uid="uid://chb1ttynmaxqd" path="res://src/game/weapons/range/uzi/uzi.png" id="3_2tvp3"]
 
-[node name="Uzi" instance=ExtResource("1_5f04n")]
+[node name="Uzi" node_paths=PackedStringArray("weapon_fsx") instance=ExtResource("1_5f04n")]
+weapon_fsx = NodePath("UziSfx")
 base_stats = ExtResource("2_kkby8")
 
 [node name="Sprite" parent="." index="0"]
@@ -12,3 +13,5 @@ texture = ExtResource("3_2tvp3")
 
 [node name="Tip" parent="." index="1"]
 position = Vector2(8, -5)
+
+[node name="UziSfx" type="AudioStreamPlayer" parent="." index="5"]

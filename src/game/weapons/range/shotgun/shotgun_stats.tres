@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="RangedWeaponsStats" load_steps=3 format=3 uid="uid://cpbk7b2tufye4"]
+[gd_resource type="Resource" script_class="RangedWeaponsStats" load_steps=5 format=3 uid="uid://cpbk7b2tufye4"]
 
 [ext_resource type="PackedScene" uid="uid://d00a51jft8ga2" path="res://src/game/projectiles/basic/basic_projectile.tscn" id="1_h8bpa"]
+[ext_resource type="AudioStream" uid="uid://8whasbfe3y6b" path="res://assets/sound/mixkit-shotgun-long-pump-1666.wav" id="2_ehgsp"]
 [ext_resource type="Script" path="res://src/game/weapons/range/ranged_weapon_stats.gd" id="2_mrol6"]
+[ext_resource type="AudioStream" uid="uid://cesywvh3cvlr4" path="res://assets/sound/shotgun.wav" id="4_fgtqc"]
 
 [resource]
 script = ExtResource("2_mrol6")
@@ -13,6 +15,8 @@ spread = 1.5
 precision = 0.8
 penetration = 1
 projectile_speed = 800
+reload_sfx = ExtResource("2_ehgsp")
+shoot_sfx = ExtResource("4_fgtqc")
 damage = 3
 rate = 0.5
 crit_chance = 3

@@ -1,6 +1,8 @@
 class_name Weapon
 extends Node2D
 
+@export var weapon_fsx: AudioStreamPlayer
+
 @export var base_stats: RangedWeaponsStats
 var player_stats: PlayerStats
 var final_stats: RangedWeaponsStats = RangedWeaponsStats.new()
@@ -48,6 +50,7 @@ func fire():
 		
 func shoot():
 	if not can_shoot: return
+	_audio_weapon(base_stats.shoot_sfx)
 	self.current_ammo -= 1
 	ammo_change.emit(current_ammo)
 	var direction = global_position.direction_to(tip.global_position)
@@ -57,6 +60,7 @@ func shoot():
 		
 func reload():
 	if current_ammo <= magazine_size and not reloading:
+		_audio_weapon(base_stats.reload_sfx)
 		self.reloading = true
 		reload_timer.start(final_stats.reload)
 		start_reload.emit(final_stats.reload)
@@ -69,3 +73,8 @@ func _on_reload_timer_timeout():
 	
 signal ammo_change(new_value)
 signal start_reload(reload_time)
+
+
+func _audio_weapon(audio:AudioStream):
+	weapon_fsx.stream = audio
+	weapon_fsx.play()

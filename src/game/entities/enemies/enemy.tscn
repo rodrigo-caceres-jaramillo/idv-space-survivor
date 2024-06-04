@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://butts5geqiee5"]
+[gd_scene load_steps=9 format=3 uid="uid://butts5geqiee5"]
 
 [ext_resource type="Script" path="res://src/game/entities/enemies/enemy.gd" id="1_1hpwl"]
 [ext_resource type="Script" path="res://src/game/components/hurt_box_component.gd" id="3_54b25"]
 [ext_resource type="Script" path="res://src/game/components/hitbox_component.gd" id="4_hqphb"]
 [ext_resource type="Script" path="res://src/game/components/health_bar_component.gd" id="5_cqd0b"]
 [ext_resource type="Script" path="res://src/game/components/hurt_component.gd" id="5_f0sbc"]
+[ext_resource type="AudioStream" uid="uid://bxikvxoe3q136" path="res://assets/sound/hit_monster.wav" id="6_hvyip"]
 [ext_resource type="Script" path="res://src/game/components/spawn_invincibilitiy_component.gd" id="7_x1hsm"]
 [ext_resource type="Script" path="res://src/game/components/spawner_component.gd" id="8_q5w0d"]
 
@@ -37,8 +38,10 @@ scale = Vector2(0.3, 0.3)
 show_percentage = false
 script = ExtResource("5_cqd0b")
 
-[node name="HurtComponent" type="Node" parent="." node_paths=PackedStringArray("hurtbox_component", "sprite", "actor")]
+[node name="HurtComponent" type="Node" parent="." node_paths=PackedStringArray("player_sfx", "hurtbox_component", "sprite", "actor")]
 script = ExtResource("5_f0sbc")
+hit_player_sfx = ExtResource("6_hvyip")
+player_sfx = NodePath("../EnemySfx")
 hurtbox_component = NodePath("../HurtboxComponent")
 sprite = NodePath("../Sprite")
 actor = NodePath("..")
@@ -51,3 +54,5 @@ spawn_duration = 2.0
 
 [node name="SpawnerComponent" type="Node2D" parent="."]
 script = ExtResource("8_q5w0d")
+
+[node name="EnemySfx" type="AudioStreamPlayer" parent="."]
