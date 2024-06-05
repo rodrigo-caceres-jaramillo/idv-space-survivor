@@ -14,34 +14,51 @@ var HEALTH: int:
 @export var SPEED: float = 1:
 	set(value):
 		SPEED = value
-		stats_changed.emit()
+		speed_changed.emit(value)
 var FINAL_SPEED: float:
 	get: return (200 * SPEED)
 @export var DAMAGE = 1:
 	set(value):
 		DAMAGE = value
-		stats_changed.emit()
+		damage_changed.emit(value)
 @export var CRIT_CHANCE: float = 1:
 	set(value):
 		CRIT_CHANCE = value
-		stats_changed.emit()
+		crit_chance_changed.emit(value)
 @export var CRIT_DAMAGE: float = 1:
 	set(value):
 		CRIT_DAMAGE = value
-		stats_changed.emit()
+		crit_damage_changed.emit(value)
 @export var RANGE: float = 1:
 	set(value):
 		RANGE = value
-		stats_changed.emit()
+		range_changed.emit(value)
 @export var RATE: float = 1:
 	set(value):
 		RATE = value
-		stats_changed.emit()
+		fire_rate_changed.emit(value)
 @export var KB_RESISTANCE: float = 1
+
+var stats = [
+	["Max Health", MAX_HEALTH, max_health_changed],
+	["Speed", SPEED, speed_changed],
+	["Damage", DAMAGE, damage_changed],
+	["Critical Chance", CRIT_CHANCE, crit_chance_changed],
+	["Critical Damage", CRIT_DAMAGE, crit_damage_changed],
+	["Fire Rate", RATE, fire_rate_changed],
+	["Range",RANGE, range_changed],
+]
 
 func _init():
 	HEALTH = MAX_HEALTH
+
 signal stats_changed()
 signal max_health_changed(new_value)
+signal speed_changed(new_value)
+signal damage_changed(new_value)
+signal crit_chance_changed(new_value)
+signal crit_damage_changed(new_value)
+signal fire_rate_changed(new_value)
+signal range_changed(new_value)
 signal health_changed(new_value)
 signal no_health()

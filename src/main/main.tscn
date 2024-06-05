@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://src/main/main.gd" id="1_gwchs"]
 [ext_resource type="Resource" uid="uid://cbvawfcm626sb" path="res://src/game/waves/game_data/game_1.tres" id="2_t5txs"]
 [ext_resource type="Texture2D" uid="uid://c4fcy8vnn5k02" path="res://assets/textures/tiles/floor.png" id="3_3oiew"]
-[ext_resource type="PackedScene" uid="uid://ds70pbbdbtgkc" path="res://src/game/entities/player/Player.tscn" id="4_e0x7x"]
+[ext_resource type="PackedScene" uid="uid://ds70pbbdbtgkc" path="res://src/game/entities/player/player.tscn" id="4_e0x7x"]
 [ext_resource type="Script" path="res://src/game/entities/player/player_stats.gd" id="4_uj3x8"]
 [ext_resource type="Script" path="res://src/game/waves/wave_manager.gd" id="5_g76ig"]
 [ext_resource type="Script" path="res://src/main/particle_manager.gd" id="6_1onaa"]

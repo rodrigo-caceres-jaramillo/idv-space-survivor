@@ -27,14 +27,14 @@ func _process(delta):
 	look_at(position + direction)
 	
 func initialize(stats, mouse_direction):
-	hitbox_component.crit_chance = stats.crit_chance
-	hitbox_component.damage = stats.damage
-	hitbox_component.crit_damage = stats.crit_damage
-	hitbox_component.knockback = stats.knockback
-	self.speed = stats.projectile_speed
+	hitbox_component.crit_chance = stats.CRIT_CHANCE
+	hitbox_component.damage = stats.DAMAGE
+	hitbox_component.crit_damage = stats.CRIT_DAMAGE
+	hitbox_component.knockback = stats.KNOCKBACK
+	self.speed = stats.PROJECTILE_SPEED
 	self.direction = mouse_direction
-	self.max_penetration = stats.penetration
-	self.max_distance = (stats.range * 5)
+	self.max_penetration = stats.PENETRATION
+	self.max_distance = (stats.RANGE * 5)
 	life_time.start(1000)
 	
 func check_penetration():

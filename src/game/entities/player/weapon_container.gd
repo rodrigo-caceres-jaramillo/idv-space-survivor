@@ -43,12 +43,12 @@ func equip_weapon(index: int):
 		current_weapon = weapon1
 		weapon1.visible = true
 		weapon2.visible = false
-		weapon_change.emit(weapon_resource1.icon, weapon1.base_stats.magazine, weapon1.current_ammo)
+		weapon_change.emit(weapon_resource1.icon, weapon1.base_stats.MAGAZINE, weapon1.current_ammo)
 	elif index == 1:
 		current_weapon = weapon2
 		weapon1.visible = false
 		weapon2.visible = true
-		weapon_change.emit(weapon_resource2.icon, weapon2.base_stats.magazine, weapon2.current_ammo)
+		weapon_change.emit(weapon_resource2.icon, weapon2.base_stats.MAGAZINE, weapon2.current_ammo)
 	current_weapon_index = index
 
 func switch_weapon():

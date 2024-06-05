@@ -5,55 +5,61 @@
 [ext_resource type="Resource" uid="uid://c2dd4g83h820w" path="res://src/game/store/pools/level_1.tres" id="3_3y7ey"]
 [ext_resource type="FontFile" uid="uid://jd478um6wqpv" path="res://assets/fonts/Gameplay.ttf" id="6_1es1n"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_82uxb"]
-bg_color = Color(0.0862745, 0.478431, 0.478431, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_adfe4"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0, 0, 0, 0.588235)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="Theme" id="Theme_0v5at"]
 
-[node name="StorePanel" type="VBoxContainer"]
+[node name="StorePanel" type="PanelContainer"]
+custom_minimum_size = Vector2(300, 0)
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -141.0
+offset_right = 141.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_adfe4")
 script = ExtResource("1_h8rdo")
 current_pool = ExtResource("3_3y7ey")
 
-[node name="Container" type="PanelContainer" parent="."]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_82uxb")
-
-[node name="MarginContainer" type="MarginContainer" parent="Container"]
-layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Container/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
 size_flags_vertical = 4
 theme = SubResource("Theme_0v5at")
 theme_override_constants/separation = 10
 
-[node name="StoreLabel" type="Label" parent="Container/MarginContainer/VBoxContainer"]
+[node name="StoreLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("6_1es1n")
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 20
 text = "STORE"
 
-[node name="StoreOption1" parent="Container/MarginContainer/VBoxContainer" instance=ExtResource("2_pla2b")]
+[node name="StoreOption1" parent="VBoxContainer" instance=ExtResource("2_pla2b")]
 layout_mode = 2
 
-[node name="StoreOption2" parent="Container/MarginContainer/VBoxContainer" instance=ExtResource("2_pla2b")]
+[node name="StoreOption2" parent="VBoxContainer" instance=ExtResource("2_pla2b")]
 layout_mode = 2
 
-[node name="StoreOption3" parent="Container/MarginContainer/VBoxContainer" instance=ExtResource("2_pla2b")]
+[node name="StoreOption3" parent="VBoxContainer" instance=ExtResource("2_pla2b")]
 layout_mode = 2
 
-[node name="StoreOption4" parent="Container/MarginContainer/VBoxContainer" instance=ExtResource("2_pla2b")]
+[node name="StoreOption4" parent="VBoxContainer" instance=ExtResource("2_pla2b")]
 layout_mode = 2
 
-[node name="RollButton" type="Button" parent="Container/MarginContainer/VBoxContainer"]
+[node name="RollButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -61,4 +67,4 @@ theme_override_fonts/font = ExtResource("6_1es1n")
 theme_override_font_sizes/font_size = 23
 text = "Roll"
 
-[connection signal="pressed" from="Container/MarginContainer/VBoxContainer/RollButton" to="." method="_on_roll_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/RollButton" to="." method="_on_roll_button_pressed"]

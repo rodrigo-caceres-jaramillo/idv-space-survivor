@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dyrf50yc61ric"]
+[gd_scene load_steps=7 format=3 uid="uid://dyrf50yc61ric"]
 
 [ext_resource type="Script" path="res://src/ui/store/panel/option/store_option.gd" id="1_yqeex"]
 [ext_resource type="Texture2D" uid="uid://lsinxl4gsrnk" path="res://src/game/weapons/range/pistol/pistol.png" id="2_g1gut"]
@@ -9,12 +9,27 @@ content_margin_left = 5.0
 content_margin_top = 5.0
 content_margin_right = 5.0
 content_margin_bottom = 5.0
-bg_color = Color(0.211705, 0.449293, 0.874181, 1)
+bg_color = Color(0.113725, 0.105882, 0.141176, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(0.359069, 0.359069, 0.359069, 1)
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s4kyf"]
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0.598525, 0.598525, 0.598524, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_moaep"]
 content_margin_left = 2.0
@@ -25,15 +40,20 @@ bg_color = Color(0.0705882, 0.698039, 0.215686, 1)
 
 [node name="StoreOption" type="PanelContainer"]
 custom_minimum_size = Vector2(0, 64)
+offset_right = 290.0
+offset_bottom = 64.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_j23l0")
 script = ExtResource("1_yqeex")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
-theme_override_constants/separation = 3
+theme_override_constants/separation = 2
+alignment = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_s4kyf")
 
 [node name="SpriteOption" type="TextureRect" parent="HBoxContainer/PanelContainer"]
 layout_mode = 2
@@ -42,8 +62,8 @@ expand_mode = 3
 stretch_mode = 4
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
-custom_minimum_size = Vector2(170, 0)
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="OptionName" type="Label" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -59,6 +79,7 @@ text = "Descripcion"
 
 [node name="BuyButton" type="Button" parent="HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 8
 size_flags_vertical = 4
 theme_override_styles/normal = SubResource("StyleBoxFlat_moaep")
 text = "10$"
