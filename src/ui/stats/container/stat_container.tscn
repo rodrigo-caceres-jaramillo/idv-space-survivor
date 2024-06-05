@@ -4,9 +4,15 @@
 
 [node name="StatContainer" type="HBoxContainer"]
 custom_minimum_size = Vector2(190, 0)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.5
+offset_top = -11.5
+offset_right = 41.5
+offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -15,11 +21,11 @@ script = ExtResource("1_v7et3")
 
 [node name="StatLabel" type="Label" parent="."]
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 2
 text = "Stat: "
 
 [node name="AmountLabel" type="Label" parent="."]
 layout_mode = 2
-size_flags_horizontal = 8
+size_flags_horizontal = 10
 text = "10%"
 horizontal_alignment = 2

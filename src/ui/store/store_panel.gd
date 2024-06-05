@@ -5,12 +5,14 @@ extends PanelContainer
 @onready var store_option_2 = $VBoxContainer/StoreOption2
 @onready var store_option_3 = $VBoxContainer/StoreOption3
 @onready var store_option_4 = $VBoxContainer/StoreOption4
+@onready var store_option_5 = $VBoxContainer/StoreOption5
+
 @onready var roll_button = $VBoxContainer/RollButton
 
 var store_options: Array[StoreOption]
 
 func _ready():
-	store_options.append_array([store_option_1, store_option_2, store_option_3, store_option_4])
+	store_options.append_array([store_option_1, store_option_2, store_option_3, store_option_4, store_option_5])
 	setup_store()
 	
 func setup_store():

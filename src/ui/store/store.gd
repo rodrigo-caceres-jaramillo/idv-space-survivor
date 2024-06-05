@@ -5,4 +5,4 @@ extends CanvasLayer
 
 func _ready():
 	player_stats.set_up("PLAYER", Global.player.stats)
-	weapon_stats.set_up("WEAPON", Global.player.weapon_container.current_weapon.final_stats)
+	weapon_stats.set_up("WEAPON", Global.weapon_selected.stats)

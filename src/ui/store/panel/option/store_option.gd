@@ -6,6 +6,7 @@ extends PanelContainer
 @onready var option_name = $HBoxContainer/VBoxContainer/OptionName
 @onready var description = $HBoxContainer/VBoxContainer/Description
 @onready var buy_button = $HBoxContainer/BuyButton
+@onready var select_button = $SelectButton
 
 func set_option(_store_option: StoreResource):
 	store_option_resource = _store_option
@@ -19,3 +20,8 @@ func _on_buy_button_pressed():
 	store_option_buy.emit(self)
 	
 signal store_option_buy(option: StoreOption)
+
+func _on_select_button_pressed():
+	if (store_option_resource.type == store_option_resource.Types.WEAPON):
+		print("select")
+		Global.weapon_selected = store_option_resource

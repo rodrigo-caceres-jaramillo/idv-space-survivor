@@ -1,6 +1,7 @@
 extends Node
 
 var player = null
+var weapon_selected
 var wave_timer
 var wave_container
 var money: int = 0:

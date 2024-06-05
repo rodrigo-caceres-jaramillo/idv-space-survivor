@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cieyh0w75vcq7"]
+[gd_scene load_steps=8 format=3 uid="uid://cieyh0w75vcq7"]
 
 [ext_resource type="Script" path="res://src/ui/store/store_panel.gd" id="1_h8rdo"]
 [ext_resource type="PackedScene" uid="uid://dyrf50yc61ric" path="res://src/ui/store/panel/option/store_option.tscn" id="2_pla2b"]
@@ -18,18 +18,23 @@ corner_radius_bottom_left = 5
 
 [sub_resource type="Theme" id="Theme_0v5at"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i8q5t"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.113725, 0.407843, 0.764706, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [node name="StorePanel" type="PanelContainer"]
 custom_minimum_size = Vector2(300, 0)
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -141.0
-offset_right = 141.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
+offset_right = 300.0
+offset_bottom = 377.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_adfe4")
 script = ExtResource("1_h8rdo")
 current_pool = ExtResource("3_3y7ey")
@@ -38,7 +43,7 @@ current_pool = ExtResource("3_3y7ey")
 layout_mode = 2
 size_flags_vertical = 4
 theme = SubResource("Theme_0v5at")
-theme_override_constants/separation = 10
+theme_override_constants/separation = 5
 
 [node name="StoreLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -59,12 +64,18 @@ layout_mode = 2
 [node name="StoreOption4" parent="VBoxContainer" instance=ExtResource("2_pla2b")]
 layout_mode = 2
 
+[node name="StoreOption5" parent="VBoxContainer" instance=ExtResource("2_pla2b")]
+layout_mode = 2
+
 [node name="RollButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("6_1es1n")
-theme_override_font_sizes/font_size = 23
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_i8q5t")
 text = "Roll"
 
 [connection signal="pressed" from="VBoxContainer/RollButton" to="." method="_on_roll_button_pressed"]

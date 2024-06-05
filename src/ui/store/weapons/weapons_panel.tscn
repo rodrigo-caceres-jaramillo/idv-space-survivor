@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4kx661vvd6fc"]
+[gd_scene load_steps=4 format=3 uid="uid://c4kx661vvd6fc"]
 
+[ext_resource type="Script" path="res://src/ui/store/weapons/weapons_panel.gd" id="1_6y4kp"]
 [ext_resource type="PackedScene" uid="uid://vkkjqwcihxbh" path="res://src/ui/store/weapons/weapon/weapon_container.tscn" id="1_vlxmh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dksmm"]
@@ -27,6 +28,7 @@ grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 8
 theme_override_styles/panel = SubResource("StyleBoxFlat_dksmm")
+script = ExtResource("1_6y4kp")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2

@@ -49,6 +49,7 @@ func equip_weapon(index: int):
 		weapon1.visible = false
 		weapon2.visible = true
 		weapon_change.emit(weapon_resource2.icon, weapon2.base_stats.MAGAZINE, weapon2.current_ammo)
+	Global.weapon_selected = current_weapon
 	current_weapon_index = index
 
 func switch_weapon():
