@@ -1,12 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://banvou7ehyoxi"]
+[gd_scene load_steps=10 format=3 uid="uid://banvou7ehyoxi"]
 
 [ext_resource type="PackedScene" uid="uid://cieyh0w75vcq7" path="res://src/ui/store/panel/store_panel.tscn" id="1_1xonm"]
-[ext_resource type="PackedScene" uid="uid://db28ox2a2lp5b" path="res://src/ui/stats/stats_panel.tscn" id="1_ja06b"]
 [ext_resource type="Script" path="res://src/ui/store/store.gd" id="1_pd84c"]
 [ext_resource type="Script" path="res://src/ui/store/start_wave_button.gd" id="2_0wl4q"]
 [ext_resource type="PackedScene" uid="uid://j1hv0mdwq75c" path="res://src/ui/hud/health_money/health_money.tscn" id="2_aeiqx"]
+[ext_resource type="PackedScene" uid="uid://cdfbgd6j3n8mg" path="res://src/ui/stats/player/player_stats_panel.tscn" id="3_ooqn4"]
 [ext_resource type="FontFile" uid="uid://jd478um6wqpv" path="res://assets/fonts/Gameplay.ttf" id="4_b0qy1"]
 [ext_resource type="PackedScene" uid="uid://c4kx661vvd6fc" path="res://src/ui/store/weapons/weapons_panel.tscn" id="5_iqs65"]
+[ext_resource type="PackedScene" uid="uid://db28ox2a2lp5b" path="res://src/ui/stats/weapon/weapon_stats_panel.tscn" id="6_mjfog"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8hugo"]
 content_margin_left = 5.0
@@ -52,7 +53,7 @@ theme_override_constants/separation = 10
 [node name="HealthMoneyPanel" parent="MarginContainer/StoreContainer/LeftContainer" instance=ExtResource("2_aeiqx")]
 layout_mode = 2
 
-[node name="PlayerStats" parent="MarginContainer/StoreContainer/LeftContainer" instance=ExtResource("1_ja06b")]
+[node name="PlayerStatsPanel" parent="MarginContainer/StoreContainer/LeftContainer" instance=ExtResource("3_ooqn4")]
 layout_mode = 2
 
 [node name="StartWaveButton" type="Button" parent="MarginContainer/StoreContainer/LeftContainer"]
@@ -72,7 +73,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="WeaponStats" parent="MarginContainer/StoreContainer/RigthContainer" instance=ExtResource("1_ja06b")]
+[node name="WeaponStats" parent="MarginContainer/StoreContainer/RigthContainer" instance=ExtResource("6_mjfog")]
 layout_mode = 2
 
 [node name="WeaponsPanel" parent="MarginContainer/StoreContainer/RigthContainer" instance=ExtResource("5_iqs65")]

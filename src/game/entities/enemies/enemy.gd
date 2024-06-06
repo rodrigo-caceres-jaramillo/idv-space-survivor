@@ -4,12 +4,14 @@ extends CharacterBody2D
 @onready var enemy_sfx = $EnemySfx
 
 @export var stats: EnemyStats
+@export var money: PackedScene
 @onready var health_bar_component = $HealthBarComponent as HealthBarComponent
 @onready var hitbox_component:HitboxComponent = $HitboxComponent as HitboxComponent
 @onready var hurtbox_component:HurtboxComponent = $HurtboxComponent as HurtboxComponent
 @onready var hurt_component = $HurtComponent
 @onready var spawn_invicibility_component = $SpawnInvicibilityComponent as SpawnInvicibilityComponent
-@export var money = preload("res://src/game/entities/money/money.tscn")
+
+
 var stun = false
 var base_speed = 200
 

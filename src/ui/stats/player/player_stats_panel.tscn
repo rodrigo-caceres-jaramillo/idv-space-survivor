@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdfbgd6j3n8mg"]
+
+[ext_resource type="Script" path="res://src/ui/stats/player/player_stats_panel.gd" id="1_durss"]
+[ext_resource type="FontFile" uid="uid://jd478um6wqpv" path="res://assets/fonts/Gameplay.ttf" id="2_gfqtp"]
+[ext_resource type="PackedScene" uid="uid://5gpwcqpsnti4" path="res://src/ui/stats/container/stat_container.tscn" id="2_vo4u5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0pbg5"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0, 0, 0, 0.588235)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="PlayerStatsPanel" type="PanelContainer"]
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_0pbg5")
+script = ExtResource("1_durss")
+stat_container_scene = ExtResource("2_vo4u5")
+
+[node name="StatsContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Title" type="Label" parent="StatsContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_gfqtp")
+theme_override_font_sizes/font_size = 20
+text = "PLAYER
+"
+horizontal_alignment = 1
+
+[node name="stats" type="VBoxContainer" parent="StatsContainer"]
+layout_mode = 2

@@ -4,10 +4,9 @@
 [ext_resource type="Script" path="res://src/game/entities/money/money.gd" id="2_u0unf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wbw55"]
-radius = 84.0
+radius = 18.0278
 
 [node name="Money" type="Sprite2D"]
-scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_0wr4a")
 script = ExtResource("2_u0unf")
 

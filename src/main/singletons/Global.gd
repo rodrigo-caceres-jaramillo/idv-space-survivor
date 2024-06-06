@@ -1,7 +1,10 @@
 extends Node
 
 var player = null
-var weapon_selected
+var weapon_selected_resource:StoreWeapon = StoreWeapon.new() :
+	set(value):
+		weapon_selected_resource = value
+		weapon_selected_resource_changed.emit(weapon_selected_resource)
 var wave_timer
 var wave_container
 var money: int = 0:
@@ -9,8 +12,14 @@ var money: int = 0:
 		money = value
 		money_changed.emit(value)
 
+signal weapon_selected_resource_changed(new_weapon)
 signal money_changed(new_value)
+#Wave Signals
 signal start_wave()
 signal wave_start(wave_number: int)
 signal wave_finished()
+#Weapons Signals
+signal current_weapon_changed(weapon: PackedScene)
+signal weapon_reload_start(reload_time: int)
+signal weapon_ammo_changed(ammo_amount: int)
 signal projectile_impacted(position, direction)

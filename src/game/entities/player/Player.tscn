@@ -5,9 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://bxvf481uc5x5j" path="res://assets/textures/player/player.png" id="2_oblfc"]
 [ext_resource type="Script" path="res://src/game/entities/player/weapon_container.gd" id="3_54588"]
 [ext_resource type="Script" path="res://src/game/entities/player/upgrade_manager.gd" id="3_mi8cm"]
-[ext_resource type="Resource" uid="uid://850ncg2qdncs" path="res://src/game/weapons/range/sniper/sniper.tres" id="5_dkkuo"]
+[ext_resource type="Resource" uid="uid://bemisdj1a3rrr" path="res://src/game/weapons/range/pistol/pistol.tres" id="5_jmpwg"]
 [ext_resource type="Script" path="res://src/game/components/move_input_component.gd" id="6_d4ko6"]
-[ext_resource type="Resource" uid="uid://dxq7n50mauft8" path="res://src/game/weapons/range/uzi/uzi.tres" id="6_pcwqm"]
+[ext_resource type="Resource" uid="uid://850ncg2qdncs" path="res://src/game/weapons/range/sniper/sniper.tres" id="6_h3d4d"]
 [ext_resource type="Script" path="res://src/game/components/hurt_box_component.gd" id="9_kk872"]
 [ext_resource type="AudioStream" uid="uid://dyoxlhub70b8l" path="res://assets/sound/hit_player.wav" id="9_n2il3"]
 [ext_resource type="Texture2D" uid="uid://b8fiq01ltgq7w" path="res://assets/textures/ui/reload/reload_base.png" id="10_bxf7v"]
@@ -46,10 +46,12 @@ stats = SubResource("Resource_c05jr")
 [node name="UpgradeManager" type="Node2D" parent="."]
 script = ExtResource("3_mi8cm")
 
-[node name="WeaponContainer" type="Node2D" parent="."]
+[node name="WeaponManager" type="Node2D" parent="."]
 script = ExtResource("3_54588")
-weapon_resource1 = ExtResource("5_dkkuo")
-weapon_resource2 = ExtResource("6_pcwqm")
+weapons_resource = {
+1: ExtResource("5_jmpwg"),
+2: ExtResource("6_h3d4d")
+}
 
 [node name="ItemsContainer" type="Node2D" parent="."]
 

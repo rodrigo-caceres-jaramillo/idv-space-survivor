@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://butts5geqiee5"]
+[gd_scene load_steps=10 format=3 uid="uid://butts5geqiee5"]
 
 [ext_resource type="Script" path="res://src/game/entities/enemies/enemy.gd" id="1_1hpwl"]
+[ext_resource type="PackedScene" uid="uid://jl3lbb3ikuhm" path="res://src/game/entities/money/money.tscn" id="2_cjfdy"]
 [ext_resource type="Script" path="res://src/game/components/hurt_box_component.gd" id="3_54b25"]
 [ext_resource type="Script" path="res://src/game/components/hitbox_component.gd" id="4_hqphb"]
 [ext_resource type="Script" path="res://src/game/components/health_bar_component.gd" id="5_cqd0b"]
@@ -12,6 +13,7 @@
 [node name="Enemy" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_1hpwl")
+money = ExtResource("2_cjfdy")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 

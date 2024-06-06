@@ -24,4 +24,4 @@ signal store_option_buy(option: StoreOption)
 func _on_select_button_pressed():
 	if (store_option_resource.type == store_option_resource.Types.WEAPON):
 		print("select")
-		Global.weapon_selected = store_option_resource
+		Global.weapon_selected_resource = store_option_resource

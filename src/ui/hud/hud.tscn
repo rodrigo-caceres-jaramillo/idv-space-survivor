@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://daba4863wb8fu"]
+[gd_scene load_steps=9 format=3 uid="uid://daba4863wb8fu"]
 
 [ext_resource type="PackedScene" uid="uid://j1hv0mdwq75c" path="res://src/ui/hud/health_money/health_money.tscn" id="1_22fa2"]
 [ext_resource type="FontFile" uid="uid://jd478um6wqpv" path="res://assets/fonts/Gameplay.ttf" id="3_7epsx"]
@@ -6,17 +6,23 @@
 [ext_resource type="Script" path="res://src/ui/hud/gun_and_ammo.gd" id="5_favr7"]
 [ext_resource type="Texture2D" uid="uid://chb1ttynmaxqd" path="res://src/game/weapons/range/uzi/uzi.png" id="6_oahc3"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_knykf"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0, 0, 0, 0.588235)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_34oor"]
 content_margin_left = 3.0
 content_margin_top = 3.0
 content_margin_right = 3.0
 content_margin_bottom = 3.0
-bg_color = Color(0.545446, 0.624595, 0.562764, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.0591259, 0.059126, 0.0591259, 1)
+bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2btti"]
 content_margin_left = 5.0
@@ -42,47 +48,50 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="PanelContainer2" type="PanelContainer" parent="MarginContainer"]
-visible = false
+[node name="WeaponStatusPanel" type="PanelContainer" parent="MarginContainer"]
 layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_knykf")
 
-[node name="WeaponAndAmmo" type="HBoxContainer" parent="MarginContainer/PanelContainer2"]
+[node name="WeaponAndAmmo" type="HBoxContainer" parent="MarginContainer/WeaponStatusPanel"]
 layout_mode = 2
+size_flags_vertical = 8
 script = ExtResource("5_favr7")
 
-[node name="AmmoCounter" type="Label" parent="MarginContainer/PanelContainer2/WeaponAndAmmo"]
+[node name="AmmoCounter" type="Label" parent="MarginContainer/WeaponStatusPanel/WeaponAndAmmo"]
 layout_mode = 2
 text = "10/10"
 
-[node name="Panel" type="PanelContainer" parent="MarginContainer/PanelContainer2/WeaponAndAmmo"]
+[node name="Panel" type="PanelContainer" parent="MarginContainer/WeaponStatusPanel/WeaponAndAmmo"]
+custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_34oor")
 
-[node name="GunIcon" type="TextureRect" parent="MarginContainer/PanelContainer2/WeaponAndAmmo/Panel"]
-custom_minimum_size = Vector2(36, 36)
+[node name="GunIcon" type="TextureRect" parent="MarginContainer/WeaponStatusPanel/WeaponAndAmmo/Panel"]
 layout_mode = 2
 texture = ExtResource("6_oahc3")
-expand_mode = 2
+expand_mode = 3
 stretch_mode = 5
 
-[node name="PanelContainer" parent="MarginContainer" instance=ExtResource("1_22fa2")]
+[node name="HealthMoneyPanel" parent="MarginContainer" instance=ExtResource("1_22fa2")]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="PanelContainer3" type="PanelContainer" parent="MarginContainer"]
+[node name="WaveProgressPanel" type="PanelContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_2btti")
 
-[node name="WaveProgress" type="VBoxContainer" parent="MarginContainer/PanelContainer3"]
+[node name="WaveProgress" type="VBoxContainer" parent="MarginContainer/WaveProgressPanel"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 script = ExtResource("4_p26kv")
 
-[node name="Wave" type="Label" parent="MarginContainer/PanelContainer3/WaveProgress"]
+[node name="Wave" type="Label" parent="MarginContainer/WaveProgressPanel/WaveProgress"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
@@ -91,7 +100,7 @@ theme_override_font_sizes/font_size = 15
 text = "WAVE 1"
 horizontal_alignment = 1
 
-[node name="TimeLeft" type="Label" parent="MarginContainer/PanelContainer3/WaveProgress"]
+[node name="TimeLeft" type="Label" parent="MarginContainer/WaveProgressPanel/WaveProgress"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
