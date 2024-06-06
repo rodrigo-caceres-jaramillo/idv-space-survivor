@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dn5r6qogjyaco" path="res://src/game/weapons/range/basic/basic_range_weapon.tscn" id="1_lr1rq"]
 [ext_resource type="Resource" uid="uid://cpbk7b2tufye4" path="res://src/game/weapons/range/shotgun/shotgun_stats.tres" id="2_ocgbh"]
-[ext_resource type="Texture2D" uid="uid://b3hw208okyl4w" path="res://src/game/weapons/range/shotgun/shotgun.png" id="3_15d60"]
+[ext_resource type="Texture2D" uid="uid://lhr66kbdfjdb" path="res://src/game/weapons/range/shotgun/shotgun.png" id="3_15d60"]
 
 [node name="shotgun" node_paths=PackedStringArray("weapon_fsx") instance=ExtResource("1_lr1rq")]
 weapon_fsx = NodePath("ShotgunSfx")
@@ -13,6 +13,6 @@ position = Vector2(0, -2)
 texture = ExtResource("3_15d60")
 
 [node name="Tip" parent="." index="1"]
-position = Vector2(7, -2)
+position = Vector2(15, -5)
 
 [node name="ShotgunSfx" type="AudioStreamPlayer" parent="." index="5"]
