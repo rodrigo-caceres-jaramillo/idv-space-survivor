@@ -1,18 +1,16 @@
-[gd_resource type="Resource" script_class="RangedWeaponsStats" load_steps=5 format=3 uid="uid://bupfoauo7u6km"]
+[gd_resource type="Resource" script_class="RangedWeaponsStats" load_steps=4 format=3 uid="uid://bupfoauo7u6km"]
 
 [ext_resource type="Script" path="res://src/game/weapons/range/ranged_weapon_stats.gd" id="1_g1hbu"]
-[ext_resource type="PackedScene" uid="uid://d00a51jft8ga2" path="res://src/game/projectiles/basic/basic_projectile.tscn" id="1_vv8ja"]
 [ext_resource type="AudioStream" uid="uid://dwqs8uxlfwcry" path="res://assets/sound/pistol_reload.mp3" id="2_eks5j"]
 [ext_resource type="AudioStream" uid="uid://y28k54ngy87t" path="res://assets/sound/pistol_shoot.mp3" id="4_su1cn"]
 
 [resource]
 script = ExtResource("1_g1hbu")
-projectile_scene = ExtResource("1_vv8ja")
 RELOAD = 1.0
 MAGAZINE = 20
 PROJECTILES = 1.0
 SPREAD = 2.0
-PRESICION = 0.7
+PRESICION = 0.4
 PENETRATION = 0
 PROJECTILE_SPEED = 500.0
 reload_sfx = ExtResource("2_eks5j")

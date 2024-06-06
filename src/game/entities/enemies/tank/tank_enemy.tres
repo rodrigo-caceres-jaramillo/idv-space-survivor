@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://src/game/entities/enemies/stats/enemy_stats.gd" id="1_bb2d6"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("1_bb2d6")
 HEALTH = 40
 SPEED = 0.5
