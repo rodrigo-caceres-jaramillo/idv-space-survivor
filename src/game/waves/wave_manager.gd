@@ -25,6 +25,7 @@ func start_first_wave():
 	self.max_enemies = wave_data.max_enemies
 	spawn_timer.start(wave_data.wave_intensity)
 	wave_timer.start(wave_data.wave_duration)
+	Global.wave_start.emit(self.current_wave)
 	
 func start_next_wave():
 	self.wave_data = game_data.waves_data[self.current_wave]

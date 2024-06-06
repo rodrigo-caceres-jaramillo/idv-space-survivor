@@ -8,7 +8,7 @@ var stats_resource: Resource
 func _ready():
 	self.stats_resource = Global.player.stats
 	title.text = "PLAYER"
-	for stat in stats_resource.stats:
+	for stat in stats_resource.get_labels():
 		var stat_container = stat_container_scene.instantiate()
 		stats.add_child(stat_container)
 		stat_container.set_up(stat)

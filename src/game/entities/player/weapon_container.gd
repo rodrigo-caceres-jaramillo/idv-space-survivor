@@ -19,26 +19,29 @@ func reload_weapon():
 	self.current_weapon.reload()
 	
 func remove_weapon(index: int):
-	var weapon = weapons[index]
-	weapons.erase(index)
-	weapons_resource.erase(index)
-	weapon.queue_free()
-	if (index == 1):
-		equip_weapon(2)
-	else:
-		equip_weapon(1)
+	if(weapons.size() > 1):
+		var weapon = weapons[index]
+		weapons.erase(index)
+		weapons_resource.erase(index)
+		weapon.queue_free()
+		if (index == 1):
+			equip_weapon(2)
+		else:
+			equip_weapon(1)
 
 func load_weapon(index: int):
-	var weapon = weapons_resource[index].weapon_scene.instantiate()
+	var weapon_resource = weapons_resource[index]
+	var weapon = weapon_resource.weapon_scene.instantiate()
 	weapons[index] = weapon
+	weapon.set_up(weapon_resource.stats, stats)
 	self.add_child(weapon)
 	weapon.visible = false
 	
 func add_weapon(weapon_resource):
-	if(weapons_resource[1]):
+	if(weapons_resource.has(1)):
 		weapons_resource[2] = weapon_resource
 		load_weapon(2)
-	else:
+	elif(weapons_resource.has(2)):
 		weapons_resource[1] = weapon_resource
 		load_weapon(1)
 	new_weapon_add.emit()

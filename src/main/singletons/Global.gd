@@ -1,13 +1,13 @@
 extends Node
 
 var player = null
-var weapon_selected_resource:StoreWeapon = StoreWeapon.new() :
+var weapon_selected_resource:StoreWeapon :
 	set(value):
 		weapon_selected_resource = value
-		weapon_selected_resource_changed.emit(weapon_selected_resource)
+		weapon_selected_resource_changed.emit(value)
 var wave_timer
 var wave_container
-var money: int = 0:
+var money: int = 50:
 	set(value):
 		money = value
 		money_changed.emit(value)

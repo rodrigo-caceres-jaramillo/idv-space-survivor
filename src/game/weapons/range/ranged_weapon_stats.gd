@@ -1,7 +1,6 @@
 class_name RangedWeaponsStats
 extends WeaponStats
 
-@export var projectile_scene: PackedScene
 @export var RELOAD: float = 1:
 	set(value):
 		RELOAD = value
@@ -19,14 +18,15 @@ extends WeaponStats
 @export var PENETRATION: int = 1
 @export var PROJECTILE_SPEED: float = 500.0
 
-var stats = [
-	["Damage", DAMAGE, damage_changed],
-	["Critical Chance", CRIT_CHANCE, crit_chance_changed],
-	["Critical Damage", CRIT_DAMAGE, crit_damage_changed],
-	["Fire Rate", RATE, fire_rate_changed],
-	["Range", RANGE, range_changed],
-	["Magazine", MAGAZINE, magazine_changed],
-	["Reload", RELOAD, reload_changed],
+func get_labels(): 
+	return [
+	["Damage", DAMAGE, 0, damage_changed],
+	["Critical Chance", CRIT_CHANCE, 0, crit_chance_changed],
+	["Critical Damage", CRIT_DAMAGE, 0, crit_damage_changed],
+	["Fire Rate", RATE, 0, fire_rate_changed],
+	["Range", RANGE, 0, range_changed],
+	["Magazine", MAGAZINE, 0, magazine_changed],
+	["Reload", RELOAD, 0, reload_changed],
 ]
 
 signal reload_changed(new_value)

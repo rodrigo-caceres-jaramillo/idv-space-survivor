@@ -16,8 +16,10 @@ func set_option(_store_option: StoreResource):
 	buy_button.text = str(_store_option.price)
 
 func _on_buy_button_pressed():
-	Global.player.add_store_resource(store_option_resource)
-	store_option_buy.emit(self)
+	if (Global.money >= store_option_resource.price):
+		Global.money = Global.money - store_option_resource.price
+		Global.player.add_store_resource(store_option_resource)
+		store_option_buy.emit(self)
 	
 signal store_option_buy(option: StoreOption)
 

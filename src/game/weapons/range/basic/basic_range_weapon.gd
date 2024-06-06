@@ -2,10 +2,10 @@ class_name Weapon
 extends Node2D
 
 @export var weapon_fsx: AudioStreamPlayer
-
-@export var base_stats: RangedWeaponsStats
+@export var projectile: PackedScene
+var base_stats
+var stats: RangedWeaponsStats
 var player_stats: PlayerStats
-var stats: RangedWeaponsStats = RangedWeaponsStats.new()
 @onready var tip = $Tip
 @onready var fire_rate_timer = $FireRateTimer
 @onready var reload_timer = $ReloadTimer
@@ -17,29 +17,26 @@ var magazine_size: int
 var current_ammo: int
 
 func _ready():
-	self.magazine_size = base_stats.MAGAZINE
-	self.current_ammo = base_stats.MAGAZINE
-	spawn_projectile_component.projectile_scene = base_stats.projectile_scene
 	fire_rate_timer.timeout.connect(func(): can_shoot = true)
 	reload_timer.timeout.connect(_on_reload_timer_timeout)
-	
-func set_player_stats(p_stats: PlayerStats):
-	player_stats = p_stats
-	combine_stats()
+	spawn_projectile_component.projectile_scene = projectile
 
-func combine_stats():
+func set_up(b_stast:RangedWeaponsStats, p_stats: PlayerStats):
+	base_stats = b_stast
+	stats = b_stast
+	player_stats = p_stats
+	update_stats()
+	Global.start_wave.connect(update_stats)
+	self.magazine_size = stats.MAGAZINE
+	self.current_ammo = stats.MAGAZINE
+
+func update_stats():
+	print("wave_start")
 	stats.DAMAGE = base_stats.DAMAGE * player_stats.DAMAGE
 	stats.RATE = base_stats.RATE / player_stats.RATE
 	stats.CRIT_CHANCE = base_stats.CRIT_CHANCE * player_stats.CRIT_CHANCE
 	stats.CRIT_DAMAGE = base_stats.CRIT_DAMAGE * player_stats.CRIT_DAMAGE
 	stats.RANGE = base_stats.RANGE * player_stats.RANGE
-	stats.KNOCKBACK = base_stats.KNOCKBACK
-	stats.RELOAD = base_stats.RELOAD
-	stats.PROJECTILES = base_stats.PROJECTILES
-	stats.SPREAD = base_stats.SPREAD
-	stats.PRESICION = base_stats.PRESICION
-	stats.PENETRATION = base_stats.PENETRATION
-	stats.PROJECTILE_SPEED = base_stats.PROJECTILE_SPEED
 
 func fire():
 	if self.reloading: return
@@ -48,7 +45,7 @@ func fire():
 		
 func shoot():
 	if not can_shoot: return
-	_audio_weapon(base_stats.shoot_sfx)
+	_audio_weapon(stats.shoot_sfx)
 	self.current_ammo -= 1
 	Global.weapon_ammo_changed.emit(current_ammo)
 	var direction = global_position.direction_to(tip.global_position)
@@ -58,7 +55,7 @@ func shoot():
 		
 func reload():
 	if current_ammo <= magazine_size and not reloading:
-		_audio_weapon(base_stats.reload_sfx)
+		_audio_weapon(stats.reload_sfx)
 		self.reloading = true
 		reload_timer.start(stats.RELOAD)
 		Global.weapon_reload_start.emit(stats.RELOAD)

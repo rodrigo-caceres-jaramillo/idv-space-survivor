@@ -25,4 +25,6 @@ func _on_sell_button_pressed():
 
 func _on_select_button_pressed():
 	if(weapon_resource):
+		for stat in weapon_resource.stats.get_labels():
+			print(stat)
 		Global.weapon_selected_resource = weapon_resource
