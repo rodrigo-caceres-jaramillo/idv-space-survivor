@@ -29,4 +29,6 @@ func restock_option(option):
 	option.set_option(current_pool.pool.pick_random())
 	
 func _on_roll_button_pressed():
-	restock_store()
+	if (Global.money >= 5):
+		restock_store()
+		Global.money = Global.money - 5

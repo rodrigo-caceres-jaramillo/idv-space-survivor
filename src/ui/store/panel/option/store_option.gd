@@ -17,13 +17,18 @@ func set_option(_store_option: StoreResource):
 
 func _on_buy_button_pressed():
 	if (Global.money >= store_option_resource.price):
-		Global.money = Global.money - store_option_resource.price
-		Global.player.add_store_resource(store_option_resource)
-		store_option_buy.emit(self)
-	
-signal store_option_buy(option: StoreOption)
+		if (store_option_resource.type == store_option_resource.Types.WEAPON):
+			if (Global.player.weapon_manager.weapons.size() < 2):
+				Global.money = Global.money - store_option_resource.price
+				Global.player.add_store_resource(store_option_resource)
+				store_option_buy.emit(self)
+		if (store_option_resource.type == store_option_resource.Types.UPGRADE):
+			Global.money = Global.money - store_option_resource.price
+			Global.player.add_store_resource(store_option_resource)
+			store_option_buy.emit(self)
 
 func _on_select_button_pressed():
 	if (store_option_resource.type == store_option_resource.Types.WEAPON):
-		print("select")
 		Global.weapon_selected_resource = store_option_resource
+		
+signal store_option_buy(option: StoreOption)

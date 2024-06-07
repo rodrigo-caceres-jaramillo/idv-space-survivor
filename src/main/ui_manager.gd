@@ -9,7 +9,12 @@ func _ready():
 	Global.wave_finished.connect(show_store)
 	Global.start_wave.connect(show_ui)
 	Global.player.stats.no_health.connect(show_game_over)
+	Global.game_finish.connect(show_game_finish)
 	Input.set_custom_mouse_cursor(CROSSHAIR, Input.CURSOR_ARROW, Vector2(8,8))
+
+func show_game_finish():
+	show_game_over()
+	store.hide()
 	
 func show_store():
 	get_tree().paused = true
@@ -26,5 +31,6 @@ func show_ui():
 func show_game_over():
 	get_tree().paused = true
 	ui_layer.hide()
+	store.hide()
 	game_over.show()
 	Input.set_custom_mouse_cursor(null)

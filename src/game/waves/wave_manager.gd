@@ -42,10 +42,8 @@ func finish_wave():
 	add_child(wave_container)
 	Global.wave_container = wave_container
 	Global.wave_finished.emit()
-	print(game_data.waves_data.size())
-	print(current_wave)
 	if game_data.waves_data.size() == current_wave :
-		get_tree().change_scene_to_file("res://src/ui/gameover/game_over.tscn") 
+		Global.game_finish.emit()
 	
 func spawn_group():
 	for wave_enemy in wave_data.wave_enemies:

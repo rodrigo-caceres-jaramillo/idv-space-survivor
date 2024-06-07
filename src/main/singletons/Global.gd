@@ -10,18 +10,19 @@ var weapon_selected_resource:StoreWeapon :
 		weapon_selected_resource_changed.emit(value)
 var wave_timer
 var wave_container
-var money: int = 50:
+var money: int = 10:
 	set(value):
 		money = value
 		money_changed.emit(value)
 
 signal player_ready()
-signal weapon_selected_resource_changed(new_weapon)
+signal weapon_selected_resource_changed(newS_weapon)
 signal money_changed(new_value)
 #Wave Signals
 signal start_wave()
 signal wave_start(wave_number: int)
 signal wave_finished()
+signal game_finish()
 #Weapons Signals
 signal current_weapon_changed(weapon: PackedScene)
 signal weapon_reload_start(reload_time: int)

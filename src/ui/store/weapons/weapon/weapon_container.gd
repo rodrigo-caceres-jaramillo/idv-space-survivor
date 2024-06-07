@@ -9,8 +9,9 @@ var weapon_index
 
 func set_up(_weapon_index):
 	self.weapon_index = _weapon_index
-	self.weapon_resource = weapon_manager.weapons_resource[weapon_index]
-	weapon_icon.texture = weapon_resource.icon
+	if(weapon_manager.weapons_resource.has(weapon_index)):
+		self.weapon_resource = weapon_manager.weapons_resource[weapon_index]
+		weapon_icon.texture = weapon_resource.icon
 	weapon_manager.new_weapon_add.connect(update_resource)
 
 func update_resource():

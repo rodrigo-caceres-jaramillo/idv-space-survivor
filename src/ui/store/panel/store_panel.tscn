@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cieyh0w75vcq7"]
+[gd_scene load_steps=9 format=3 uid="uid://cieyh0w75vcq7"]
 
 [ext_resource type="Script" path="res://src/ui/store/store_panel.gd" id="1_h8rdo"]
 [ext_resource type="PackedScene" uid="uid://dyrf50yc61ric" path="res://src/ui/store/panel/option/store_option.tscn" id="2_pla2b"]
 [ext_resource type="Resource" uid="uid://c2dd4g83h820w" path="res://src/game/store/pools/level_1.tres" id="3_3y7ey"]
+[ext_resource type="Texture2D" uid="uid://c45p5tvcf6p2d" path="res://assets/textures/money/Money.png" id="5_uo75h"]
 [ext_resource type="FontFile" uid="uid://jd478um6wqpv" path="res://assets/fonts/Gameplay.ttf" id="6_1es1n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_adfe4"]
@@ -76,6 +77,8 @@ theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("6_1es1n")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_i8q5t")
-text = "Roll"
+text = "Roll 5"
+icon = ExtResource("5_uo75h")
+icon_alignment = 2
 
 [connection signal="pressed" from="VBoxContainer/RollButton" to="." method="_on_roll_button_pressed"]

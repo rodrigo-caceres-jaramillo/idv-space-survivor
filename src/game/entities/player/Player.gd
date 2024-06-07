@@ -7,6 +7,7 @@ extends CharacterBody2D
 @onready var upgrade_manager = $UpgradeManager
 @onready var items_container = $ItemsContainer
 @onready var move_input_component = $MoveInputComponent
+@export var initial_weapon: StoreWeapon
 
 @onready var player_camera = $Camera2D
 var max_camera_offset: float = 40.0
@@ -15,7 +16,7 @@ var stun = false
 func _ready():
 	hurt_component.stats = stats
 	upgrade_manager.stats = stats
-	weapon_manager.set_up(stats)
+	weapon_manager.set_up(stats, initial_weapon)
 	move_input_component.stats = stats
 	stats.no_health.connect(
 		func():
@@ -24,6 +25,7 @@ func _ready():
 	Global.player = self
 	Global.player_ready.emit()
 	Global.start_wave.connect(health_to_max)
+	
 	
 func _process(_delta):
 	var mouse_position:Vector2 = get_global_mouse_position()

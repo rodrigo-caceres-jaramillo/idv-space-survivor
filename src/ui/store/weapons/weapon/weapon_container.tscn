@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://vkkjqwcihxbh"]
+[gd_scene load_steps=5 format=3 uid="uid://vkkjqwcihxbh"]
 
 [ext_resource type="Script" path="res://src/ui/store/weapons/weapon/weapon_container.gd" id="1_1hhbs"]
-[ext_resource type="Texture2D" uid="uid://lsinxl4gsrnk" path="res://src/game/weapons/range/pistol/pistol.png" id="1_48vjl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nwkxn"]
 content_margin_left = 5.0
@@ -58,7 +57,6 @@ layout_mode = 2
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
 mouse_filter = 2
-texture = ExtResource("1_48vjl")
 expand_mode = 5
 stretch_mode = 5
 

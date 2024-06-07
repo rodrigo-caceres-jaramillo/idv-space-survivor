@@ -1,15 +1,15 @@
 extends Node2D
 
 @export var stats: PlayerStats
-@export var weapons_resource =  Dictionary()
+var weapons_resource =  {}
 var weapons =  Dictionary()
 var current_weapon: Node2D
 var current_weapon_index: int = 1
 
-func set_up(_stats: PlayerStats):
-	stats = _stats
-	for key in weapons_resource.keys():
-		self.load_weapon(key)
+func set_up(_stats: PlayerStats, _initial_weapon):
+	self.stats = _stats
+	weapons_resource[1] = _initial_weapon
+	self.load_weapon(1)
 	self.equip_weapon(current_weapon_index)
 	
 func shoot_weapon():

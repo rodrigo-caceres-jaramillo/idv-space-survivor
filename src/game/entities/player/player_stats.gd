@@ -46,6 +46,7 @@ var FINAL_SPEED: float:
 		stats_changed.emit()
 @export var KB_RESISTANCE: float = 1
 
+
 func get_labels():
 	return [
 	["Max Health", MAX_HEALTH, 0, max_health_changed],

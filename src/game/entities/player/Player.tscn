@@ -1,8 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://ds70pbbdbtgkc"]
+[gd_scene load_steps=16 format=3 uid="uid://ds70pbbdbtgkc"]
 
 [ext_resource type="Script" path="res://src/game/entities/player/player.gd" id="1_t5npn"]
-[ext_resource type="Script" path="res://src/game/entities/player/player_stats.gd" id="2_05jks"]
 [ext_resource type="Texture2D" uid="uid://bxvf481uc5x5j" path="res://assets/textures/player/player.png" id="2_oblfc"]
+[ext_resource type="Resource" uid="uid://cltvjnuq5jeon" path="res://src/game/entities/player/player_1.tres" id="2_v3i3u"]
 [ext_resource type="Script" path="res://src/game/entities/player/weapon_container.gd" id="3_54588"]
 [ext_resource type="Script" path="res://src/game/entities/player/upgrade_manager.gd" id="3_mi8cm"]
 [ext_resource type="Resource" uid="uid://bemisdj1a3rrr" path="res://src/game/weapons/range/pistol/pistol.tres" id="5_jmpwg"]
@@ -13,18 +13,6 @@
 [ext_resource type="Script" path="res://src/game/components/hurt_component.gd" id="10_xcugp"]
 [ext_resource type="Texture2D" uid="uid://b61mmn65g043m" path="res://assets/textures/ui/reload/reload_over.png" id="11_7xkux"]
 [ext_resource type="Script" path="res://src/game/entities/player/reload_bar.gd" id="12_5prya"]
-
-[sub_resource type="Resource" id="Resource_c05jr"]
-resource_local_to_scene = true
-script = ExtResource("2_05jks")
-MAX_HEALTH = 20
-SPEED = 1.0
-DAMAGE = 1
-CRIT_CHANCE = 1.0
-CRIT_DAMAGE = 1.0
-RANGE = 1.0
-RATE = 1.0
-KB_RESISTANCE = 1.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0mxik"]
 radius = 5.33334
@@ -39,16 +27,14 @@ scale = Vector2(1.5, 1.5)
 collision_mask = 5
 motion_mode = 1
 script = ExtResource("1_t5npn")
-stats = SubResource("Resource_c05jr")
+stats = ExtResource("2_v3i3u")
+initial_weapon = ExtResource("5_jmpwg")
 
 [node name="UpgradeManager" type="Node2D" parent="."]
 script = ExtResource("3_mi8cm")
 
 [node name="WeaponManager" type="Node2D" parent="."]
 script = ExtResource("3_54588")
-weapons_resource = {
-1: ExtResource("5_jmpwg")
-}
 
 [node name="ItemsContainer" type="Node2D" parent="."]
 
