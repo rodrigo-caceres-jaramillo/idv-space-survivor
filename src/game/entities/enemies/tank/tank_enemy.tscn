@@ -6,11 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://pdbqcuvourov" path="res://assets/textures/enemies/tank.png" id="4_3qtpc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lcj8p"]
-radius = 9.0
-height = 36.0
+radius = 6.15385
+height = 21.5385
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0wkdi"]
 radius = 7.0
+height = 32.3077
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j14b5"]
 radius = 9.0
@@ -26,6 +27,7 @@ stats = ExtResource("3_8num7")
 texture = ExtResource("4_3qtpc")
 
 [node name="CollisionShape" parent="." index="1"]
+position = Vector2(0, 4.61539)
 shape = SubResource("CapsuleShape2D_lcj8p")
 
 [node name="HitboxShape" type="CollisionShape2D" parent="HitboxComponent" index="0"]
@@ -33,4 +35,5 @@ shape = SubResource("CapsuleShape2D_0wkdi")
 debug_color = Color(0.906287, 0.238013, 0.481607, 0.42)
 
 [node name="HurtboxShape" type="CollisionShape2D" parent="HurtboxComponent" index="0"]
+visible = false
 shape = SubResource("CapsuleShape2D_j14b5")

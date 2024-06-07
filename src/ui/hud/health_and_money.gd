@@ -3,19 +3,26 @@ extends VBoxContainer
 @onready var health_bar = $HealthBar
 @onready var health_label = $HealthBar/HealthLabel
 @onready var money_label = $MoneyContainer/MoneyLabel
-@onready var stats = Global.player.stats
+var stats
 var max_health = 1
 var health
 
 func _ready():
+	Global.player_ready.connect(set_up)
+	self.money_label.text = str(Global.money)
+	Global.money_changed.connect(self.update_money)
+
+func set_up(player):
+	stats = player.stats
+	print("Set_up")
 	max_health = stats.MAX_HEALTH
 	health = stats.HEALTH
 	update_max_health(max_health)
 	update_health(health)
-	self.money_label.text = str(Global.money)
+	
 	stats.health_changed.connect(self.update_health)
 	stats.max_health_changed.connect(self.update_max_health)
-	Global.money_changed.connect(self.update_money)
+	
 	
 func update_money(new_value):
 	self.money_label.text = str(new_value)

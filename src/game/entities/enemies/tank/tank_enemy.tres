@@ -5,9 +5,9 @@
 [resource]
 resource_local_to_scene = true
 script = ExtResource("1_bb2d6")
-HEALTH = 40
-SPEED = 0.5
-DAMAGE = 5
-KB_RESISTANCE = 2.0
+HEALTH = 50
+SPEED = 0.7
+DAMAGE = 10
+KB_RESISTANCE = 3.0
 min_value = 5
 max_value = 2

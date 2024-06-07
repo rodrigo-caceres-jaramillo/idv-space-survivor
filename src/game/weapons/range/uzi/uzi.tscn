@@ -17,3 +17,4 @@ texture = ExtResource("3_2tvp3")
 position = Vector2(14.2857, -4.28571)
 
 [node name="UziSfx" type="AudioStreamPlayer" parent="." index="5"]
+volume_db = -0.5

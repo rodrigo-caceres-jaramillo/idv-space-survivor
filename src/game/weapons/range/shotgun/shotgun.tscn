@@ -18,3 +18,4 @@ texture = ExtResource("3_15d60")
 position = Vector2(22, -6)
 
 [node name="ShotgunSfx" type="AudioStreamPlayer" parent="." index="5"]
+volume_db = -0.8

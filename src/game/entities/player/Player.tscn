@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ds70pbbdbtgkc"]
+[gd_scene load_steps=17 format=3 uid="uid://ds70pbbdbtgkc"]
 
 [ext_resource type="Script" path="res://src/game/entities/player/player.gd" id="1_t5npn"]
 [ext_resource type="Script" path="res://src/game/entities/player/player_stats.gd" id="2_05jks"]
@@ -7,7 +7,6 @@
 [ext_resource type="Script" path="res://src/game/entities/player/upgrade_manager.gd" id="3_mi8cm"]
 [ext_resource type="Resource" uid="uid://bemisdj1a3rrr" path="res://src/game/weapons/range/pistol/pistol.tres" id="5_jmpwg"]
 [ext_resource type="Script" path="res://src/game/components/move_input_component.gd" id="6_d4ko6"]
-[ext_resource type="Resource" uid="uid://cxn3v10pikvn8" path="res://src/game/weapons/range/shotgun/shotgun.tres" id="6_i0gol"]
 [ext_resource type="Script" path="res://src/game/components/hurt_box_component.gd" id="9_kk872"]
 [ext_resource type="AudioStream" uid="uid://dyoxlhub70b8l" path="res://assets/sound/hit_player.wav" id="9_n2il3"]
 [ext_resource type="Texture2D" uid="uid://b8fiq01ltgq7w" path="res://assets/textures/ui/reload/reload_base.png" id="10_bxf7v"]
@@ -28,8 +27,8 @@ RATE = 1.0
 KB_RESISTANCE = 1.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0mxik"]
-radius = 8.0
-height = 32.0
+radius = 5.33334
+height = 28.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_erdwi"]
 radius = 8.0
@@ -37,8 +36,7 @@ radius = 8.0
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(401, 225)
 scale = Vector2(1.5, 1.5)
-collision_layer = 0
-collision_mask = 4
+collision_mask = 5
 motion_mode = 1
 script = ExtResource("1_t5npn")
 stats = SubResource("Resource_c05jr")
@@ -49,8 +47,7 @@ script = ExtResource("3_mi8cm")
 [node name="WeaponManager" type="Node2D" parent="."]
 script = ExtResource("3_54588")
 weapons_resource = {
-1: ExtResource("5_jmpwg"),
-2: ExtResource("6_i0gol")
+1: ExtResource("5_jmpwg")
 }
 
 [node name="ItemsContainer" type="Node2D" parent="."]
@@ -59,6 +56,7 @@ weapons_resource = {
 texture = ExtResource("2_oblfc")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.33333)
 shape = SubResource("CapsuleShape2D_0mxik")
 
 [node name="HurtboxComponent" type="Area2D" parent="."]

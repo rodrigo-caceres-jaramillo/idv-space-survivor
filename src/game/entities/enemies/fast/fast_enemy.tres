@@ -6,8 +6,8 @@
 resource_local_to_scene = true
 script = ExtResource("1_jdw2q")
 HEALTH = 10
-SPEED = 1.2
+SPEED = 1.0
 DAMAGE = 2
 KB_RESISTANCE = 0.0
-min_value = 2
-max_value = 4
+min_value = 1
+max_value = 3

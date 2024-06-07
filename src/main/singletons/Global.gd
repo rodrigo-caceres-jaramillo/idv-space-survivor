@@ -1,6 +1,9 @@
 extends Node
 
-var player = null
+var player = null:
+	set(value):
+		player = value
+		player_ready.emit(value)
 var weapon_selected_resource:StoreWeapon :
 	set(value):
 		weapon_selected_resource = value
@@ -12,6 +15,7 @@ var money: int = 50:
 		money = value
 		money_changed.emit(value)
 
+signal player_ready()
 signal weapon_selected_resource_changed(new_weapon)
 signal money_changed(new_value)
 #Wave Signals

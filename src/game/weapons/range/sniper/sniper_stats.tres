@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("2_crt0x")
-RELOAD = 3.0
+RELOAD = 2.0
 MAGAZINE = 4
 PROJECTILES = 1.0
 SPREAD = 0.0

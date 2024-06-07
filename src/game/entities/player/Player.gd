@@ -22,6 +22,8 @@ func _ready():
 		self.hide()
 	)
 	Global.player = self
+	Global.player_ready.emit()
+	Global.start_wave.connect(health_to_max)
 	
 func _process(_delta):
 	var mouse_position:Vector2 = get_global_mouse_position()
@@ -42,6 +44,8 @@ func _process(_delta):
 	if Input.is_action_just_pressed("change_weapon"):
 		weapon_manager.switch_weapon()
 
+func health_to_max():
+	stats.HEALTH = stats.MAX_HEALTH
 func add_store_resource(resource: StoreResource):
 	match resource.type:
 		StoreResource.Types.WEAPON:
