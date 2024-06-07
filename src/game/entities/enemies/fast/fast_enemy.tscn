@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://b4cjqrf2taj8s" path="res://assets/textures/enemies/fast.png" id="4_n5kau"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6cgwv"]
-radius = 8.0
-height = 32.0
+radius = 7.5
+height = 22.5
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_olyha"]
 radius = 6.0
@@ -27,12 +27,14 @@ stats = ExtResource("3_3my0f")
 texture = ExtResource("4_n5kau")
 
 [node name="CollisionShape" parent="." index="1"]
-visible = false
+position = Vector2(0, 3.75)
 shape = SubResource("CapsuleShape2D_6cgwv")
 
 [node name="HitboxShape" type="CollisionShape2D" parent="HitboxComponent" index="0"]
+visible = false
 shape = SubResource("CapsuleShape2D_olyha")
 debug_color = Color(1, 0.17046, 0.446437, 0.419608)
 
 [node name="HurtboxShape" type="CollisionShape2D" parent="HurtboxComponent" index="0"]
+visible = false
 shape = SubResource("CapsuleShape2D_6p8pw")

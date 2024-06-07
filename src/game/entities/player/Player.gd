@@ -31,6 +31,10 @@ func _process(_delta):
 		direction = direction.normalized() * max_camera_offset
 	player_camera.position = direction
 	weapon_manager.look_at(mouse_position)
+	if mouse_position.x > global_position.x: 
+		weapon_manager.scale.y = 1 
+	else: 
+		weapon_manager.scale.y = -1
 	if Input.is_action_pressed("fire_weapon"):
 		weapon_manager.shoot_weapon()
 	if Input.is_action_just_pressed("reload"):

@@ -28,8 +28,8 @@ RATE = 1.0
 KB_RESISTANCE = 1.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0mxik"]
-radius = 9.33333
-height = 36.0
+radius = 8.0
+height = 32.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_erdwi"]
 radius = 8.0
@@ -59,7 +59,6 @@ weapons_resource = {
 texture = ExtResource("2_oblfc")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("CapsuleShape2D_0mxik")
 
 [node name="HurtboxComponent" type="Area2D" parent="."]
