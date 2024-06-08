@@ -1,16 +1,16 @@
+class_name Character
 extends CharacterBody2D
 
 @onready var hurt_component = $HurtComponent
-@export var stats: PlayerStats
 @onready var hurtbox_component = $HurtboxComponent as HurtboxComponent
 @onready var weapon_manager = $WeaponManager
 @onready var upgrade_manager = $UpgradeManager
 @onready var items_container = $ItemsContainer
 @onready var move_input_component = $MoveInputComponent
-@export var initial_weapon: StoreWeapon
-
-@onready var player_camera = $Camera2D
+@onready var player_camera = $PlayerCamera
 var max_camera_offset: float = 40.0
+var initial_weapon: StoreWeapon
+var stats: PlayerStats
 var stun = false
 
 func _ready():
@@ -22,11 +22,9 @@ func _ready():
 		func():
 		self.hide()
 	)
-	Global.player = self
-	Global.player_ready.emit()
-	Global.start_wave.connect(health_to_max)
-	
-	
+	Events.player_ready.emit()
+	Events.wave_started.connect(health_to_max)
+
 func _process(_delta):
 	var mouse_position:Vector2 = get_global_mouse_position()
 	var direction = mouse_position - global_position

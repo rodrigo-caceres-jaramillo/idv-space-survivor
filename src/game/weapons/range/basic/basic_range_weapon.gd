@@ -26,12 +26,11 @@ func set_up(b_stast:RangedWeaponsStats, p_stats: PlayerStats):
 	stats = b_stast
 	player_stats = p_stats
 	update_stats()
-	Global.start_wave.connect(update_stats)
+	Events.wave_started.connect(update_stats.unbind(1))
 	self.magazine_size = stats.MAGAZINE
 	self.current_ammo = stats.MAGAZINE
 
 func update_stats():
-	print("wave_start")
 	stats.DAMAGE = base_stats.DAMAGE * player_stats.DAMAGE
 	stats.RATE = base_stats.RATE / player_stats.RATE
 	stats.CRIT_CHANCE = base_stats.CRIT_CHANCE * player_stats.CRIT_CHANCE
@@ -47,7 +46,7 @@ func shoot():
 	if not can_shoot: return
 	_audio_weapon(stats.shoot_sfx)
 	self.current_ammo -= 1
-	Global.weapon_ammo_changed.emit(current_ammo)
+	Events.weapon_ammo_changed.emit(current_ammo)
 	var direction = global_position.direction_to(tip.global_position)
 	spawn_projectile_component.spawn_projectile(stats, direction, global_rotation, tip.global_position)
 	self.can_shoot = false
@@ -58,12 +57,12 @@ func reload():
 		_audio_weapon(stats.reload_sfx)
 		self.reloading = true
 		reload_timer.start(stats.RELOAD)
-		Global.weapon_reload_start.emit(stats.RELOAD)
+		Events.weapon_reload_start.emit(stats.RELOAD)
 	
 func _on_reload_timer_timeout():
 	self.current_ammo = self.magazine_size
 	self.reloading = false
-	Global.weapon_ammo_changed.emit(current_ammo)
+	Events.weapon_ammo_changed.emit(current_ammo)
 	reload_timer.stop()
 
 func _audio_weapon(audio:AudioStream):

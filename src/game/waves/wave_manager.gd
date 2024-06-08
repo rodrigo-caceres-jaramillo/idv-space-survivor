@@ -2,48 +2,30 @@ class_name WaveManager
 extends Node2D
 
 @export var game_data: GameData
-var wave_data:WaveData
-var spawn_timer:Timer = Timer.new()
-var wave_container: Node = Node.new()
-var max_enemies = 10
-var wave_timer:Timer = Timer.new()
+@onready var wave_timer = $WaveTimer
+@onready var spawn_timer = $SpawnTimer
+@onready var enemies_container = $EnemiesContainer
+var wave_data: WaveData
 var current_wave = 1
 
 func _ready():
-	add_child(spawn_timer)
-	add_child(wave_timer)
 	Global.wave_timer = wave_timer
-	wave_timer.one_shot = true
-	add_child(wave_container)
-	Global.wave_container = wave_container
 	spawn_timer.timeout.connect(spawn_group)
 	wave_timer.timeout.connect(finish_wave)
-	Global.start_wave.connect(start_next_wave)
+	Events.start_next_wave.connect(start_wave)
 	
-func start_first_wave():
-	self.wave_data = game_data.waves_data[0]
-	self.max_enemies = wave_data.max_enemies
+func start_wave():
+	self.wave_data = game_data.waves_data[current_wave-1]
 	spawn_timer.start(wave_data.wave_intensity)
 	wave_timer.start(wave_data.wave_duration)
-	Global.wave_start.emit(self.current_wave)
-	
-func start_next_wave():
-	self.wave_data = game_data.waves_data[self.current_wave]
-	self.current_wave += 1
-	self.max_enemies = wave_data.max_enemies
-	wave_timer.start(wave_data.wave_duration)
-	spawn_timer.start(wave_data.wave_intensity)
-	Global.wave_start.emit(self.current_wave)
+	Events.wave_started.emit(current_wave)
 
 func finish_wave():
 	spawn_timer.stop()
-	wave_container.queue_free()
-	self.wave_container = Node.new()
-	add_child(wave_container)
-	Global.wave_container = wave_container
-	Global.wave_finished.emit()
+	Events.wave_finished.emit(current_wave)
 	if game_data.waves_data.size() == current_wave :
-		Global.game_finish.emit()
+		Events.game_finish.emit()
+	self.current_wave += 1
 	
 func spawn_group():
 	for wave_enemy in wave_data.wave_enemies:
@@ -51,9 +33,9 @@ func spawn_group():
 
 func spawn_enemy(wave_enemy):
 	for spawn in wave_enemy.quantity:
-		if(max_enemies > self.wave_container.get_child_count()):
+		if(wave_data.max_enemies > self.enemies_container.get_child_count()):
 			var enemy = wave_enemy.enemy_scene.instantiate()
-			wave_container.add_child(enemy)
+			enemies_container.add_child(enemy)
 			enemy.global_position = self.get_spawn_position()
 		
 func get_spawn_position():

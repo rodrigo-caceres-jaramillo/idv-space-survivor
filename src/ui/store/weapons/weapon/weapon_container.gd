@@ -3,11 +3,12 @@ extends PanelContainer
 @onready var select_button = $VBoxContainer/PanelContainer/SelectButton
 @onready var sell_button = $VBoxContainer/SellButton
 @onready var weapon_icon = $VBoxContainer/PanelContainer/WeaponIcon
-@onready var weapon_manager = Global.player.weapon_manager
+var weapon_manager 
 var weapon_resource
 var weapon_index
 
 func set_up(_weapon_index):
+	self.weapon_manager = Global.player.weapon_manager
 	self.weapon_index = _weapon_index
 	if(weapon_manager.weapons_resource.has(weapon_index)):
 		self.weapon_resource = weapon_manager.weapons_resource[weapon_index]

@@ -6,7 +6,7 @@ var is_reloading = false
 
 func _ready():
 	self.visible = false
-	Global.weapon_reload_start.connect(start_reload)
+	Events.weapon_reload_start.connect(start_reload)
 	
 func start_reload(time):
 	reload_time = time

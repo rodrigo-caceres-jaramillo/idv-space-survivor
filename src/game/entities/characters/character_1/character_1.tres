@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CharacterResource" load_steps=6 format=3 uid="uid://r2xe12hve2mu"]
+
+[ext_resource type="PackedScene" uid="uid://l4o40vj2b5k4" path="res://src/game/entities/characters/character_1/character_1.tscn" id="1_6awxk"]
+[ext_resource type="Script" path="res://src/game/entities/characters/character_resource.gd" id="1_x5xfb"]
+[ext_resource type="Texture2D" uid="uid://bxvf481uc5x5j" path="res://assets/textures/player/player.png" id="2_i81kr"]
+[ext_resource type="Resource" uid="uid://bemisdj1a3rrr" path="res://src/game/weapons/range/pistol/pistol.tres" id="3_acx0c"]
+[ext_resource type="Resource" uid="uid://cltvjnuq5jeon" path="res://src/game/entities/characters/character_1/character_1_stats.tres" id="5_akwlj"]
+
+[resource]
+script = ExtResource("1_x5xfb")
+name = "Character 1"
+description = "Basic"
+icon = ExtResource("2_i81kr")
+stats = ExtResource("5_akwlj")
+initial_weapon = ExtResource("3_acx0c")
+character_scene = ExtResource("1_6awxk")

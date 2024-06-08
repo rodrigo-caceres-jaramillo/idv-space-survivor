@@ -6,6 +6,9 @@ extends PanelContainer
 var stats_resource: Resource
 
 func _ready():
+	Events.player_ready.connect(update_stats)
+	
+func update_stats():
 	self.stats_resource = Global.player.stats
 	title.text = "PLAYER"
 	for stat in stats_resource.get_labels():

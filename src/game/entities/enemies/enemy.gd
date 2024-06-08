@@ -21,10 +21,14 @@ func _ready():
 		health_bar_component.stats = stats
 		health_bar_component.start()
 		hitbox_component.damage = stats.DAMAGE
-		
+		Events.wave_finished.connect(die.unbind(1))
+
+func die():
+	queue_free()		
+	
 func spawn_money(value):
 	var spawn_position = self.global_position
-	var parent = Global.wave_container
+	var parent = Global
 	var instance = money.instantiate()
 	instance.global_position = spawn_position
 	instance.value = value

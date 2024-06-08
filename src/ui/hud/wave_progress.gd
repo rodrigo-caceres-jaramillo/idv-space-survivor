@@ -5,7 +5,7 @@ extends VBoxContainer
 
 func _ready():
 	self.wave.text = "Wave" + str(1)
-	Global.wave_start.connect(self.update_wave)
+	Events.wave_started.connect(self.update_wave)
 	
 func _process(_delta):
 	if(Global.wave_timer):

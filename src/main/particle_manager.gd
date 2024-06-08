@@ -3,7 +3,7 @@ extends Node2D
 @export var projectile_impact: PackedScene
 
 func _ready():
-	Global.projectile_impacted.connect(emit_hit_particle)
+	Events.projectile_impacted.connect(emit_hit_particle)
 	
 func emit_hit_particle(_position, direction):
 	var impact = projectile_impact.instantiate()

@@ -6,10 +6,11 @@ extends Node2D
 const CROSSHAIR = preload("res://assets/textures/ui/crooshair/crosshair.png")
 
 func _ready():
-	Global.wave_finished.connect(show_store)
-	Global.start_wave.connect(show_ui)
+	Events.wave_finished.connect(show_store.unbind(1))
+	Events.wave_started.connect(show_ui.unbind(1))
+	Events
 	Global.player.stats.no_health.connect(show_game_over)
-	Global.game_finish.connect(show_game_finish)
+	Events.game_finish.connect(show_game_finish.unbind(1))
 	Input.set_custom_mouse_cursor(CROSSHAIR, Input.CURSOR_ARROW, Vector2(8,8))
 
 func show_game_finish():
@@ -17,6 +18,7 @@ func show_game_finish():
 	store.hide()
 	
 func show_store():
+	await get_tree().create_timer(2).timeout
 	get_tree().paused = true
 	ui_layer.hide()
 	store.show()

@@ -5,9 +5,9 @@ extends HBoxContainer
 var max_ammo
 
 func _ready():
-	Global.weapon_ammo_changed.connect(update_ammo)
-	Global.current_weapon_changed.connect(update_gun_icon)
-	update_gun_icon(Global.player.weapon_manager.current_weapon)
+	Events.weapon_ammo_changed.connect(update_ammo)
+	Events.current_weapon_changed.connect(update_gun_icon)
+	Events.player_ready.connect(func (): update_gun_icon(Global.player.weapon_manager.current_weapon))
 	
 func update_ammo(ammo):
 	self.ammo_counter.text = (str(ammo) + "/" + str(max_ammo))

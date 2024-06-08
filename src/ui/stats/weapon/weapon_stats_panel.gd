@@ -6,7 +6,7 @@ extends PanelContainer
 @onready var title = $StatsContainer/Title
 
 func _ready():
-	Global.weapon_selected_resource_changed.connect(update_stats)
+	Global.store_option_selected_changed.connect(update_stats)
 
 func update_stats(weapon):
 	title.text = weapon.name

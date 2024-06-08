@@ -53,9 +53,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -302.5
-offset_top = -84.0
-offset_right = 302.5
+offset_left = -235.0
+offset_top = -85.0
+offset_right = 235.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 40
@@ -73,15 +73,5 @@ theme_override_fonts/font = ExtResource("2_ii74a")
 theme_override_font_sizes/font_size = 35
 text = "Try again"
 
-[node name="QuitButton" type="Button" parent="Panel/HBoxContainer"]
-modulate = Color(1, 0, 0, 1)
-custom_minimum_size = Vector2(220, 0)
-layout_mode = 2
-theme_override_constants/outline_size = 3
-theme_override_fonts/font = ExtResource("2_ii74a")
-theme_override_font_sizes/font_size = 35
-text = "Quit"
-
 [connection signal="pressed" from="Panel/HBoxContainer/MainMenuButton" to="Panel" method="_on_main_menu_button_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/TryAgainButton" to="Panel" method="_on_try_again_button_pressed"]
-[connection signal="pressed" from="Panel/HBoxContainer/QuitButton" to="Panel" method="_on_quit_button_pressed"]

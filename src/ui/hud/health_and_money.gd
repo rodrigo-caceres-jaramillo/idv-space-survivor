@@ -8,12 +8,12 @@ var max_health = 1
 var health
 
 func _ready():
-	Global.player_ready.connect(set_up)
+	Events.player_ready.connect(set_up)
 	self.money_label.text = str(Global.money)
 	Global.money_changed.connect(self.update_money)
 
-func set_up(player):
-	stats = player.stats
+func set_up():
+	stats = Global.player.stats
 	print("Set_up")
 	max_health = stats.MAX_HEALTH
 	health = stats.HEALTH

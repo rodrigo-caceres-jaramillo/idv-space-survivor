@@ -4,29 +4,17 @@
 [ext_resource type="FontFile" uid="uid://jd478um6wqpv" path="res://assets/fonts/Gameplay.ttf" id="1_vt1jm"]
 [ext_resource type="PackedScene" uid="uid://bs4uh6ctjo53y" path="res://src/ui/options/options_menu.tscn" id="3_2g2ue"]
 
-[node name="MainMenu" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1.0
-offset_top = 2.0
-offset_right = 1.0
-offset_bottom = 2.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="MainMenu" type="CanvasLayer"]
 
 [node name="Background" type="ColorRect" parent="."]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.279967, 0.279967, 0.279967, 1)
+color = Color(0.0352941, 0.0588235, 0.141176, 1)
 
 [node name="Title" type="Label" parent="."]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -42,49 +30,44 @@ theme_override_fonts/font = ExtResource("1_vt1jm")
 theme_override_font_sizes/font_size = 50
 text = "Space Survivor"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Container" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Buttons" type="VBoxContainer" parent="CanvasLayer/Container"]
-layout_mode = 1
+[node name="Buttons" type="VBoxContainer" parent="."]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 317.0
-offset_top = 266.0
-offset_right = 445.0
-offset_bottom = 394.0
+offset_left = -63.0
+offset_top = -144.0
+offset_right = 65.0
+offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 0
+size_flags_vertical = 8
 script = ExtResource("1_3sbce")
 
-[node name="StartButton" type="Button" parent="CanvasLayer/Container/Buttons"]
+[node name="StartButton" type="Button" parent="Buttons"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_vt1jm")
 theme_override_font_sizes/font_size = 25
 text = "Start"
 
-[node name="OptionsButton" type="Button" parent="CanvasLayer/Container/Buttons"]
+[node name="OptionsButton" type="Button" parent="Buttons"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_vt1jm")
 theme_override_font_sizes/font_size = 25
 text = "Options"
 
-[node name="QuitButton" type="Button" parent="CanvasLayer/Container/Buttons"]
+[node name="QuitButton" type="Button" parent="Buttons"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_vt1jm")
 theme_override_font_sizes/font_size = 25
 text = "Quit"
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
 [node name="OptionsMenu" parent="CanvasLayer" instance=ExtResource("3_2g2ue")]
 
-[connection signal="pressed" from="CanvasLayer/Container/Buttons/StartButton" to="CanvasLayer/Container/Buttons" method="_on_start_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Container/Buttons/OptionsButton" to="CanvasLayer/Container/Buttons" method="_on_options_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Container/Buttons/QuitButton" to="CanvasLayer/Container/Buttons" method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Buttons/StartButton" to="Buttons" method="_on_start_button_pressed"]
+[connection signal="pressed" from="Buttons/OptionsButton" to="Buttons" method="_on_options_button_pressed"]
+[connection signal="pressed" from="Buttons/QuitButton" to="Buttons" method="_on_quit_button_pressed"]

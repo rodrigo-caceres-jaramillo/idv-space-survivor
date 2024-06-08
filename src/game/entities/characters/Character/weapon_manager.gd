@@ -50,7 +50,7 @@ func equip_weapon(index: int):
 	self.current_weapon = weapons[index]
 	self.current_weapon.visible = true
 	self.current_weapon_index = index
-	Global.current_weapon_changed.emit(current_weapon)
+	Events.current_weapon_changed.emit(current_weapon)
 	
 func switch_weapon():
 	if(weapons.size() > 1):

@@ -1,49 +1,35 @@
-[gd_scene load_steps=16 format=3 uid="uid://ds70pbbdbtgkc"]
+[gd_scene load_steps=11 format=3 uid="uid://ds70pbbdbtgkc"]
 
-[ext_resource type="Script" path="res://src/game/entities/player/player.gd" id="1_t5npn"]
-[ext_resource type="Texture2D" uid="uid://bxvf481uc5x5j" path="res://assets/textures/player/player.png" id="2_oblfc"]
-[ext_resource type="Resource" uid="uid://cltvjnuq5jeon" path="res://src/game/entities/player/player_1.tres" id="2_v3i3u"]
-[ext_resource type="Script" path="res://src/game/entities/player/weapon_container.gd" id="3_54588"]
-[ext_resource type="Script" path="res://src/game/entities/player/upgrade_manager.gd" id="3_mi8cm"]
-[ext_resource type="Resource" uid="uid://bemisdj1a3rrr" path="res://src/game/weapons/range/pistol/pistol.tres" id="5_jmpwg"]
+[ext_resource type="Script" path="res://src/game/entities/characters/Character/character.gd" id="1_t5npn"]
+[ext_resource type="Script" path="res://src/game/entities/characters/Character/weapon_manager.gd" id="3_54588"]
+[ext_resource type="Script" path="res://src/game/entities/characters/Character/upgrade_manager.gd" id="4_5ataj"]
 [ext_resource type="Script" path="res://src/game/components/move_input_component.gd" id="6_d4ko6"]
 [ext_resource type="Script" path="res://src/game/components/hurt_box_component.gd" id="9_kk872"]
 [ext_resource type="AudioStream" uid="uid://dyoxlhub70b8l" path="res://assets/sound/hit_player.wav" id="9_n2il3"]
 [ext_resource type="Texture2D" uid="uid://b8fiq01ltgq7w" path="res://assets/textures/ui/reload/reload_base.png" id="10_bxf7v"]
 [ext_resource type="Script" path="res://src/game/components/hurt_component.gd" id="10_xcugp"]
 [ext_resource type="Texture2D" uid="uid://b61mmn65g043m" path="res://assets/textures/ui/reload/reload_over.png" id="11_7xkux"]
-[ext_resource type="Script" path="res://src/game/entities/player/reload_bar.gd" id="12_5prya"]
+[ext_resource type="Script" path="res://src/game/entities/characters/Character/reload_bar.gd" id="12_5prya"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0mxik"]
-radius = 5.33334
-height = 28.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_erdwi"]
-radius = 8.0
-
-[node name="Player" type="CharacterBody2D"]
+[node name="Character" type="CharacterBody2D"]
 position = Vector2(401, 225)
 scale = Vector2(1.5, 1.5)
 collision_mask = 5
 motion_mode = 1
 script = ExtResource("1_t5npn")
-stats = ExtResource("2_v3i3u")
-initial_weapon = ExtResource("5_jmpwg")
 
 [node name="UpgradeManager" type="Node2D" parent="."]
-script = ExtResource("3_mi8cm")
+script = ExtResource("4_5ataj")
 
 [node name="WeaponManager" type="Node2D" parent="."]
 script = ExtResource("3_54588")
 
-[node name="ItemsContainer" type="Node2D" parent="."]
+[node name="ItemsManager" type="Node2D" parent="."]
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_oblfc")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.33333)
-shape = SubResource("CapsuleShape2D_0mxik")
 
 [node name="HurtboxComponent" type="Area2D" parent="."]
 visible = false
@@ -51,10 +37,6 @@ collision_layer = 2
 collision_mask = 0
 script = ExtResource("9_kk872")
 invincibility_duration = 0.5
-
-[node name="HurtboxShape" type="CollisionShape2D" parent="HurtboxComponent"]
-shape = SubResource("CapsuleShape2D_erdwi")
-debug_color = Color(0.848908, 0.340529, 0.415049, 0.42)
 
 [node name="HurtComponent" type="Node" parent="." node_paths=PackedStringArray("player_sfx", "hurtbox_component", "sprite", "actor")]
 script = ExtResource("10_xcugp")
@@ -80,9 +62,6 @@ texture_under = ExtResource("10_bxf7v")
 texture_progress = ExtResource("11_7xkux")
 script = ExtResource("12_5prya")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position_smoothing_enabled = true
-position_smoothing_speed = 10.0
-rotation_smoothing_enabled = true
-
 [node name="PlayerSfx" type="AudioStreamPlayer" parent="."]
+
+[node name="PlayerCamera" type="Camera2D" parent="."]

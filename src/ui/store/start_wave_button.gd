@@ -1,4 +1,4 @@
 extends Button
 
 func _on_pressed():
-	Global.start_wave.emit()
+	Events.start_next_wave.emit()
