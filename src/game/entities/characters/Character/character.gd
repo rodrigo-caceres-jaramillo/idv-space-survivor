@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var hurtbox_component = $HurtboxComponent as HurtboxComponent
 @onready var weapon_manager = $WeaponManager
 @onready var upgrade_manager = $UpgradeManager
-@onready var items_container = $ItemsContainer
+@onready var items_manager = $ItemsManager
 @onready var move_input_component = $MoveInputComponent
 @onready var player_camera = $PlayerCamera
 var max_camera_offset: float = 40.0
@@ -23,7 +23,7 @@ func _ready():
 		self.hide()
 	)
 	Events.player_ready.emit()
-	Events.wave_started.connect(health_to_max)
+	Events.wave_started.connect(health_to_max.unbind(1))
 
 func _process(_delta):
 	var mouse_position:Vector2 = get_global_mouse_position()
@@ -51,7 +51,7 @@ func add_store_resource(resource: StoreResource):
 		StoreResource.Types.WEAPON:
 			weapon_manager.add_weapon(resource)
 		StoreResource.Types.ITEM:
-			items_container.add_item(resource)
+			items_manager.add_item(resource)
 		StoreResource.Types.UPGRADE:
 			print("upgrade comprado")
 			upgrade_manager.apply_upgrade(resource)

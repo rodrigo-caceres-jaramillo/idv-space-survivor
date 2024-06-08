@@ -14,7 +14,7 @@ var store_option_selected:StoreResource :
 		store_option_selected = value
 		store_option_selected_changed.emit(value)
 var wave_timer
-var wave_container
+var pick_up_container = Node.new()
 
 signal money_changed(value)
 signal store_option_selected_changed(value)

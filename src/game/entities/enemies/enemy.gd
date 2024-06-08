@@ -28,7 +28,7 @@ func die():
 	
 func spawn_money(value):
 	var spawn_position = self.global_position
-	var parent = Global
+	var parent = Global.pick_up_container
 	var instance = money.instantiate()
 	instance.global_position = spawn_position
 	instance.value = value
