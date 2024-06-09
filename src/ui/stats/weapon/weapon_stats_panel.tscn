@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://db28ox2a2lp5b"]
 
 [ext_resource type="Script" path="res://src/ui/stats/weapon/weapon_stats_panel.gd" id="1_an8wd"]
-[ext_resource type="PackedScene" uid="uid://5gpwcqpsnti4" path="res://src/ui/stats/container/stat_container.tscn" id="2_kirs2"]
+[ext_resource type="PackedScene" uid="uid://cjvpxjv2g0wmw" path="res://src/ui/stats/weapon/stat/weapon_stat_container.tscn" id="2_ourgl"]
 [ext_resource type="FontFile" uid="uid://jd478um6wqpv" path="res://assets/fonts/Gameplay.ttf" id="3_4a63w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c5tu8"]
@@ -25,7 +25,7 @@ grow_vertical = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_c5tu8")
 script = ExtResource("1_an8wd")
-stat_container_scene = ExtResource("2_kirs2")
+stat_container_scene = ExtResource("2_ourgl")
 
 [node name="StatsContainer" type="VBoxContainer" parent="."]
 layout_mode = 2

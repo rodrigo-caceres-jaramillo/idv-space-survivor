@@ -1,9 +1,11 @@
 extends Node2D
 
+@onready var pause_menu = $PauseMenu
 @onready var store = $Store
 @onready var ui_layer = $UiLayer
 @onready var game_over = $GameOver
 const CROSSHAIR = preload("res://assets/textures/ui/crooshair/crosshair.png")
+var paused = false
 
 func _ready():
 	Events.wave_finished.connect(show_store.unbind(1))
@@ -12,6 +14,19 @@ func _ready():
 	Events.game_finish.connect(show_game_finish.unbind(1))
 	Input.set_custom_mouse_cursor(CROSSHAIR, Input.CURSOR_ARROW, Vector2(8,8))
 
+func _process(_delta):
+	if Input.is_action_just_pressed("escape"):
+		show_pause_menu()
+		
+func show_pause_menu():
+	if(paused):
+		pause_menu.hide()
+		get_tree().paused = false
+	else:
+		pause_menu.show()
+		get_tree().paused = true
+	paused = !paused
+	
 func show_game_finish():
 	show_game_over()
 	store.hide()

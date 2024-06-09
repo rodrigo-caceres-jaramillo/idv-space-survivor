@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://src/game/store/resource/modifier.gd" id="1_3vfaj"]
 [ext_resource type="Texture2D" uid="uid://b2r55wtktw8os" path="res://src/game/upgrades/range/range_upgrade_3.png" id="1_kyogk"]
-[ext_resource type="Script" path="res://src/game/store/resource/upgrade.gd" id="2_10nor"]
+[ext_resource type="Script" path="res://src/game/upgrades/upgrade_resource.gd" id="2_10nor"]
 
 [sub_resource type="Resource" id="Resource_ixbx3"]
 script = ExtResource("1_3vfaj")

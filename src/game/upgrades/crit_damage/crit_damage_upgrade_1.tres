@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://lxgvmct7g80r" path="res://src/game/upgrades/crit_damage/crit_damage_upgrade_1.png" id="1_ij0h5"]
 [ext_resource type="Script" path="res://src/game/store/resource/modifier.gd" id="2_tywu1"]
-[ext_resource type="Script" path="res://src/game/store/resource/upgrade.gd" id="3_a8xfk"]
+[ext_resource type="Script" path="res://src/game/upgrades/upgrade_resource.gd" id="3_a8xfk"]
 
 [sub_resource type="Resource" id="Resource_kbnia"]
 script = ExtResource("2_tywu1")
@@ -17,4 +17,3 @@ name = "Critical Damage Module"
 description = "+ 10% Critical Damage"
 price = 10
 icon = ExtResource("1_ij0h5")
-type = 2

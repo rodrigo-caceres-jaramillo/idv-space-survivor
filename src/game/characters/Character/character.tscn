@@ -1,0 +1,87 @@
+[gd_scene load_steps=12 format=3 uid="uid://ds70pbbdbtgkc"]
+
+[ext_resource type="Script" path="res://src/game/characters/Character/character.gd" id="1_t5npn"]
+[ext_resource type="Script" path="res://src/game/characters/Character/weapon_manager.gd" id="3_54588"]
+[ext_resource type="Script" path="res://src/game/characters/Character/upgrade_manager.gd" id="4_5ataj"]
+[ext_resource type="Script" path="res://src/game/components/move_input_component.gd" id="6_d4ko6"]
+[ext_resource type="Script" path="res://src/game/components/hurt_box_component.gd" id="9_kk872"]
+[ext_resource type="AudioStream" uid="uid://dyoxlhub70b8l" path="res://assets/sound/hit_player.wav" id="9_n2il3"]
+[ext_resource type="Texture2D" uid="uid://b8fiq01ltgq7w" path="res://assets/textures/ui/reload/reload_base.png" id="10_bxf7v"]
+[ext_resource type="Script" path="res://src/game/components/hurt_component.gd" id="10_xcugp"]
+[ext_resource type="Texture2D" uid="uid://b61mmn65g043m" path="res://assets/textures/ui/reload/reload_over.png" id="11_7xkux"]
+[ext_resource type="Script" path="res://src/game/characters/Character/reload_bar.gd" id="12_5prya"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cfa88"]
+radius = 52.6709
+
+[node name="Character" type="CharacterBody2D"]
+position = Vector2(401, 225)
+scale = Vector2(1.5, 1.5)
+collision_mask = 5
+motion_mode = 1
+script = ExtResource("1_t5npn")
+
+[node name="UpgradeManager" type="Node2D" parent="."]
+script = ExtResource("4_5ataj")
+
+[node name="WeaponManager" type="Node2D" parent="."]
+script = ExtResource("3_54588")
+weapons_resource = {
+0: null,
+1: null,
+2: null
+}
+weapons = {
+0: null,
+1: null,
+2: null
+}
+
+[node name="ItemsManager" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite2D" parent="."]
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.33333)
+
+[node name="HurtboxComponent" type="Area2D" parent="."]
+visible = false
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("9_kk872")
+invincibility_duration = 0.5
+
+[node name="HurtComponent" type="Node" parent="." node_paths=PackedStringArray("player_sfx", "hurtbox_component", "sprite", "actor")]
+script = ExtResource("10_xcugp")
+hit_player_sfx = ExtResource("9_n2il3")
+player_sfx = NodePath("../PlayerSfx")
+hurtbox_component = NodePath("../HurtboxComponent")
+sprite = NodePath("../Sprite")
+actor = NodePath("..")
+
+[node name="MoveInputComponent" type="Node" parent="." node_paths=PackedStringArray("actor")]
+script = ExtResource("6_d4ko6")
+actor = NodePath("..")
+
+[node name="ReloadBar" type="TextureProgressBar" parent="."]
+offset_left = -16.0
+offset_top = -29.0
+offset_right = 48.0
+offset_bottom = 11.0
+scale = Vector2(0.5, 0.5)
+value = 30.0
+fill_mode = 6
+texture_under = ExtResource("10_bxf7v")
+texture_progress = ExtResource("11_7xkux")
+script = ExtResource("12_5prya")
+
+[node name="PlayerSfx" type="AudioStreamPlayer" parent="."]
+
+[node name="PlayerCamera" type="Camera2D" parent="."]
+
+[node name="PickUpArea" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUpArea"]
+shape = SubResource("CircleShape2D_cfa88")

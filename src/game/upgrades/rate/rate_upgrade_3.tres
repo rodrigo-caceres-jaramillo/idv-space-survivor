@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://qa7riho8g42n" path="res://src/game/upgrades/rate/rate_upgrade_3.png" id="1_8kro6"]
 [ext_resource type="Script" path="res://src/game/store/resource/modifier.gd" id="1_42mb5"]
-[ext_resource type="Script" path="res://src/game/store/resource/upgrade.gd" id="2_xd5kt"]
+[ext_resource type="Script" path="res://src/game/upgrades/upgrade_resource.gd" id="2_xd5kt"]
 
 [sub_resource type="Resource" id="Resource_216pj"]
 script = ExtResource("1_42mb5")

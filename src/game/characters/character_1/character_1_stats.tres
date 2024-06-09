@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PlayerStats" load_steps=3 format=3 uid="uid://cltvjnuq5jeon"]
+
+[ext_resource type="Script" path="res://src/game/characters/character_stats.gd" id="1_2i8wt"]
+[ext_resource type="Resource" uid="uid://bemisdj1a3rrr" path="res://src/game/weapons/secondary/pistol/pistol.tres" id="1_gg4cj"]
+
+[resource]
+script = ExtResource("1_2i8wt")
+initial_weapon = ExtResource("1_gg4cj")
+MAX_HEALTH = 20
+SPEED = 1.0
+DAMAGE = 1
+CRIT_CHANCE = 1.0
+CRIT_DAMAGE = 1.0
+RANGE = 1.0
+RATE = 1.0
+KB_RESISTANCE = 1.0

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="WaveEnemy" load_steps=3 format=3 uid="uid://cf3ugehpg6m1"]
 
-[ext_resource type="PackedScene" uid="uid://bg51w5vbn6vps" path="res://src/game/entities/enemies/basic/basic_enemy.tscn" id="1_rtkk6"]
+[ext_resource type="PackedScene" uid="uid://bg51w5vbn6vps" path="res://src/game/enemies/basic/basic_enemy.tscn" id="1_rtkk6"]
 [ext_resource type="Script" path="res://src/game/waves/wave_enemy.gd" id="2_50jil"]
 
 [resource]

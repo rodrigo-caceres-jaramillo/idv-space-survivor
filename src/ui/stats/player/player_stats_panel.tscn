@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://src/ui/stats/player/player_stats_panel.gd" id="1_durss"]
 [ext_resource type="FontFile" uid="uid://jd478um6wqpv" path="res://assets/fonts/Gameplay.ttf" id="2_gfqtp"]
-[ext_resource type="PackedScene" uid="uid://5gpwcqpsnti4" path="res://src/ui/stats/container/stat_container.tscn" id="2_vo4u5"]
+[ext_resource type="PackedScene" uid="uid://5gpwcqpsnti4" path="res://src/ui/stats/player/stat/player_stat_container.tscn" id="3_s6yyd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0pbg5"]
 content_margin_left = 5.0
@@ -19,7 +19,6 @@ corner_radius_bottom_left = 5
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_0pbg5")
 script = ExtResource("1_durss")
-stat_container_scene = ExtResource("2_vo4u5")
 
 [node name="StatsContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -34,4 +33,19 @@ text = "PLAYER
 horizontal_alignment = 1
 
 [node name="stats" type="VBoxContainer" parent="StatsContainer"]
+layout_mode = 2
+
+[node name="Damage" parent="StatsContainer/stats" instance=ExtResource("3_s6yyd")]
+layout_mode = 2
+
+[node name="CritChance" parent="StatsContainer/stats" instance=ExtResource("3_s6yyd")]
+layout_mode = 2
+
+[node name="CritDamage" parent="StatsContainer/stats" instance=ExtResource("3_s6yyd")]
+layout_mode = 2
+
+[node name="Rate" parent="StatsContainer/stats" instance=ExtResource("3_s6yyd")]
+layout_mode = 2
+
+[node name="Range" parent="StatsContainer/stats" instance=ExtResource("3_s6yyd")]
 layout_mode = 2

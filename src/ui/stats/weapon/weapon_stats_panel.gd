@@ -6,16 +6,27 @@ extends PanelContainer
 @onready var title = $StatsContainer/Title
 
 func _ready():
-	Global.store_option_selected_changed.connect(update_stats)
+	Global.weapon_selected_changed.connect(show_weapon_stats)
+	Global.weapon_resource_selected.connect(compare_stats)
 
-func update_stats(weapon):
-	title.text = weapon.name
+func clean_stats():
 	for n in stats.get_children():
 		stats.remove_child(n)
 		n.queue_free()
+	
+func show_weapon_stats(weapon):
+	title.text = weapon.name
+	self.clean_stats()
 	for stat in weapon.stats.get_labels():
-		#print(stat)
 		var stat_container = stat_container_scene.instantiate()
 		stats.add_child(stat_container)
 		stat_container.set_up(stat)
+		
+func compare_stats(new_weapon):
+	var current_weapon = Global.player.weapon_manager.get_weapon(new_weapon.weapon_type)
+	if (current_weapon):
+		self.clean_stats()
+		title.text = current_weapon.name + "->" + new_weapon.name
+	else:
+		show_weapon_stats(new_weapon)
 		

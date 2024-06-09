@@ -65,9 +65,6 @@ layout_mode = 2
 [node name="StoreOption4" parent="VBoxContainer" instance=ExtResource("2_pla2b")]
 layout_mode = 2
 
-[node name="StoreOption5" parent="VBoxContainer" instance=ExtResource("2_pla2b")]
-layout_mode = 2
-
 [node name="RollButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4

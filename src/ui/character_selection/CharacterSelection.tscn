@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://src/ui/character_selection/character_selection.gd" id="1_t0s1k"]
 [ext_resource type="Texture2D" uid="uid://bxvf481uc5x5j" path="res://assets/textures/player/player.png" id="2_7yn36"]
-[ext_resource type="Resource" uid="uid://r2xe12hve2mu" path="res://src/game/entities/characters/character_1/character_1.tres" id="2_nteq1"]
+[ext_resource type="Resource" uid="uid://r2xe12hve2mu" path="res://src/game/characters/character_1/character_1.tres" id="2_nteq1"]
 [ext_resource type="Script" path="res://src/ui/character_selection/character_container.gd" id="2_rmotl"]
-[ext_resource type="Texture2D" uid="uid://lsinxl4gsrnk" path="res://src/game/weapons/range/pistol/pistol.png" id="3_5pras"]
+[ext_resource type="Texture2D" uid="uid://lsinxl4gsrnk" path="res://src/game/weapons/secondary/pistol/pistol.png" id="3_5pras"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ck602"]
 content_margin_left = 5.0

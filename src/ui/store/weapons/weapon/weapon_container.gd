@@ -10,23 +10,16 @@ var weapon_index
 func set_up(_weapon_index):
 	self.weapon_manager = Global.player.weapon_manager
 	self.weapon_index = _weapon_index
-	if(weapon_manager.weapons_resource.has(weapon_index)):
+	if(weapon_manager.weapons_resource[weapon_index]):
 		self.weapon_resource = weapon_manager.weapons_resource[weapon_index]
 		weapon_icon.texture = weapon_resource.icon
-	weapon_manager.new_weapon_add.connect(update_resource)
+	Events.new_weapon_add.connect(update_resource)
 
-func update_resource():
-	self.weapon_resource = weapon_manager.weapons_resource[weapon_index]
-	weapon_icon.texture = weapon_resource.icon
-	
-func _on_sell_button_pressed():
-	if (weapon_resource):
-		weapon_resource = null
-		weapon_icon.texture = null
-		weapon_manager.remove_weapon(weapon_index)
+func update_resource(_weapon_resource):
+	if(_weapon_resource.weapon_type == weapon_index):
+		self.weapon_resource = _weapon_resource
+		weapon_icon.texture = weapon_resource.icon
 
 func _on_select_button_pressed():
 	if(weapon_resource):
-		for stat in weapon_resource.stats.get_labels():
-			print(stat)
-		Global.weapon_selected_resource = weapon_resource
+		Global.weapon_selected = weapon_resource

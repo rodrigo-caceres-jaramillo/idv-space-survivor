@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://kpmraruf2m71" path="res://src/game/upgrades/speed/speed_upgrade_3.png" id="1_gj15e"]
 [ext_resource type="Script" path="res://src/game/store/resource/modifier.gd" id="1_munaj"]
-[ext_resource type="Script" path="res://src/game/store/resource/upgrade.gd" id="2_5uv6b"]
+[ext_resource type="Script" path="res://src/game/upgrades/upgrade_resource.gd" id="2_5uv6b"]
 
 [sub_resource type="Resource" id="Resource_3negu"]
 script = ExtResource("1_munaj")
