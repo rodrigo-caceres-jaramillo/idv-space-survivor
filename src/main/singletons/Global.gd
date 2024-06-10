@@ -1,6 +1,7 @@
 extends Node
 
 var charater_resource = null
+var camera
 var player = null:
 	set(value):
 		player = value

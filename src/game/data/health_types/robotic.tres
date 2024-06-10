@@ -9,3 +9,4 @@ script = ExtResource("2_dcyq2")
 name = "Robotic"
 resistance = ExtResource("1_8d76e")
 weakness = ExtResource("3_rklq8")
+color = Color(0, 0, 0.807843, 1)

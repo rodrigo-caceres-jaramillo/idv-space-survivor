@@ -6,6 +6,7 @@ var initial_value = 10000
 
 func start():
 	self.max_value = initial_value
+	self.modulate = stats.HEALTH_TYPE.color
 	self.value = initial_value
 	self.visible = false
 	stats.health_changed.connect(self.update_health)

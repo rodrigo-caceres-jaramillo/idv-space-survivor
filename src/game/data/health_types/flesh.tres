@@ -9,3 +9,4 @@ script = ExtResource("2_55ypb")
 name = "Flesh"
 resistance = ExtResource("1_lr1yd")
 weakness = ExtResource("3_lkx6x")
+color = Color(0.827451, 0, 0, 1)

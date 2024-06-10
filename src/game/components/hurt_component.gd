@@ -25,6 +25,8 @@ func _ready() -> void:
 	
 func apply_damage(hitbox: HitboxComponent):
 	var damage = hitbox.damage
+	if(!actor.stun):
+		apply_knockback(hitbox)
 	if(hitbox.damage_type == stats.HEALTH_TYPE.resistance):
 		damage *= 0.75
 	if(hitbox.damage_type == stats.HEALTH_TYPE.weakness):
@@ -35,8 +37,6 @@ func apply_damage(hitbox: HitboxComponent):
 		is_critical = true
 		damage *= hitbox.crit_damage
 	stats.HEALTH -= damage
-	if(!actor.stun):
-		apply_knockback(hitbox)
 	if(show_number):
 		show_damage_numbers(damage, is_critical)
 	sprite.material = FLASH_MATERIAL
@@ -48,9 +48,9 @@ func apply_knockback(hitbox):
 	var knockback = hitbox.knockback - stats.KB_RESISTANCE
 	if (knockback > 0): 
 		actor.stun = true
-		stun_timer.start(0.03)
-		var direction = hitbox.global_position.direction_to(actor.global_position)
-		actor.velocity = -actor.velocity * knockback * direction
+		stun_timer.start(0.05 * knockback)
+		var direction = (actor.global_position - hitbox.global_position).normalized()
+		actor.velocity = -direction * knockback * 10
 		actor.move_and_slide()
 	
 func show_damage_numbers(value, critical):

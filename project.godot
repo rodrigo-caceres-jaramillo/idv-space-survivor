@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Global="*res://src/main/singletons/Global.gd"
 Events="*res://src/main/singletons/Events.gd"
+PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 
 [debug]
 
@@ -33,6 +34,10 @@ window/size/window_height_override=675
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 mouse_cursor/custom_image_hotspot=Vector2(8, 8)
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/phantom_camera/plugin.cfg")
 
 [input]
 
@@ -100,6 +105,6 @@ melee_weapon={
 
 [rendering]
 
-textures/canvas_textures/default_texture_filter=3
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"

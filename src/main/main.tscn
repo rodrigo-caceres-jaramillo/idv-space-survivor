@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://btjax2v4qeeu3"]
+[gd_scene load_steps=20 format=3 uid="uid://btjax2v4qeeu3"]
 
 [ext_resource type="Script" path="res://src/main/main.gd" id="1_gwchs"]
 [ext_resource type="Resource" uid="uid://cbvawfcm626sb" path="res://src/game/waves/game_data/game_1.tres" id="2_t5txs"]
@@ -11,6 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://daba4863wb8fu" path="res://src/ui/hud/hud.tscn" id="10_sd2tt"]
 [ext_resource type="PackedScene" uid="uid://cgswhy432i7af" path="res://src/ui/gameover/game_over.tscn" id="11_67g0d"]
 [ext_resource type="PackedScene" uid="uid://beiox4ea7o1wd" path="res://src/ui/pause_menu/pause_menu.tscn" id="11_vjvsd"]
+[ext_resource type="Script" path="res://src/main/camera.gd" id="12_rcq3p"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="12_xg1mj"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="13_xlvnm"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="14_xwc28"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gjf3c"]
 texture = ExtResource("3_3oiew")
@@ -92,8 +96,17 @@ terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_gjf3c")
 
+[sub_resource type="Resource" id="Resource_8r3oj"]
+script = ExtResource("14_xwc28")
+duration = 1.0
+transition = 0
+ease = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bnke5"]
+size = Vector2(1466, 895)
+
 [node name="Main" type="Node2D"]
-position = Vector2(-308, -197)
+position = Vector2(-288, -197)
 script = ExtResource("1_gwchs")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -138,3 +151,36 @@ visible = false
 [node name="PauseMenu" parent="UIManager" instance=ExtResource("11_vjvsd")]
 process_mode = 3
 visible = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(688, 421)
+limit_left = -298
+limit_top = -207
+limit_right = 1168
+limit_bottom = 688
+script = ExtResource("12_rcq3p")
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
+script = ExtResource("12_xg1mj")
+
+[node name="ShakeTimer" type="Timer" parent="Camera2D"]
+
+[node name="PhantomCamera2D" type="Node2D" parent="."]
+position = Vector2(688, 421)
+script = ExtResource("13_xlvnm")
+follow_mode = 5
+tween_resource = SubResource("Resource_8r3oj")
+follow_damping = true
+follow_damping_value = Vector2(0.2, 0.2)
+dead_zone_width = 0.1
+dead_zone_height = 0.15
+limit_target = NodePath("../CameraBounds/Collision")
+
+[node name="CameraBounds" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="CameraBounds"]
+position = Vector2(723, 437.5)
+shape = SubResource("RectangleShape2D_bnke5")
+disabled = true
+
+[connection signal="timeout" from="Camera2D/ShakeTimer" to="Camera2D" method="_on_shake_timer_timeout"]

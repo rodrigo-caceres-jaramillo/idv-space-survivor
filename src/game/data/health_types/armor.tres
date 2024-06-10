@@ -9,3 +9,4 @@ script = ExtResource("2_pdrhx")
 name = "Amor"
 resistance = ExtResource("1_d80b1")
 weakness = ExtResource("3_5nw0b")
+color = Color(1, 0.858824, 0, 1)

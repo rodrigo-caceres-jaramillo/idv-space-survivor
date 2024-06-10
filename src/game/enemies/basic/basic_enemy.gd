@@ -23,7 +23,9 @@ func in_death():
 func _physics_process(_delta):
 	if not active:
 		return
-	if !stun:	
+	if stun:
+		move_and_slide()
+	else:
 		self.velocity = speed * global_position.direction_to(Global.player.global_position).normalized()
 		move_and_slide()
 	

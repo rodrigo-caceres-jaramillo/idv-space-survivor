@@ -7,8 +7,6 @@ extends CharacterBody2D
 @onready var upgrade_manager = $UpgradeManager
 @onready var items_manager = $ItemsManager
 @onready var move_input_component = $MoveInputComponent
-@onready var player_camera = $PlayerCamera
-var max_camera_offset: float = 40.0
 var initial_weapon: WeaponResource
 var stats: PlayerStats
 var stun = false
@@ -27,11 +25,6 @@ func _ready():
 
 func _process(_delta):
 	var mouse_position:Vector2 = get_global_mouse_position()
-	var direction = mouse_position - global_position
-	var distance = direction.length()
-	if distance > max_camera_offset:
-		direction = direction.normalized() * max_camera_offset
-	player_camera.position = direction
 	weapon_manager.look_at(mouse_position)
 	if mouse_position.x > global_position.x: 
 		weapon_manager.scale.y = 1 

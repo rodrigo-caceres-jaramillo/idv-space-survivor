@@ -11,7 +11,6 @@ extends CharacterBody2D
 @onready var hurt_component = $HurtComponent
 @onready var spawn_invicibility_component = $SpawnInvicibilityComponent as SpawnInvicibilityComponent
 
-
 var stun = false
 var base_speed = 200
 

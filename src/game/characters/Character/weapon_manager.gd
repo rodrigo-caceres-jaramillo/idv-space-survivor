@@ -36,6 +36,7 @@ func load_weapon(weapon_resource):
 	weapon.set_up(weapon_resource.stats, stats)
 	self.add_child(weapon)
 	weapon.visible = false
+	self.current_weapon = weapon
 	
 func add_weapon(weapon_resource):
 	if(weapons[weapon_resource.weapon_type]):

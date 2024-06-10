@@ -44,6 +44,7 @@ func fire():
 		
 func shoot():
 	if not can_shoot: return
+	Global.camera.shake(0.1, stats.KNOCKBACK*0.3)
 	_audio_weapon(stats.shoot_sfx)
 	self.current_ammo -= 1
 	Events.weapon_ammo_changed.emit(current_ammo)

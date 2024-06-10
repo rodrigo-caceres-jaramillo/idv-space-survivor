@@ -77,8 +77,6 @@ script = ExtResource("12_5prya")
 
 [node name="PlayerSfx" type="AudioStreamPlayer" parent="."]
 
-[node name="PlayerCamera" type="Camera2D" parent="."]
-
 [node name="PickUpArea" type="Area2D" parent="."]
 collision_layer = 8
 collision_mask = 0
