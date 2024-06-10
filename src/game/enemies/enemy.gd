@@ -21,6 +21,7 @@ func _ready():
 		health_bar_component.stats = stats
 		health_bar_component.start()
 		hitbox_component.damage = stats.DAMAGE
+		hitbox_component.damage_type = stats.DAMAGE_TYPE
 		Events.wave_finished.connect(die.unbind(1))
 
 func die():

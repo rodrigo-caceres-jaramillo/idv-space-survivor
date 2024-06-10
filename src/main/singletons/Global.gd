@@ -16,9 +16,9 @@ var weapon_selected: WeaponResource:
 var store_option_selected: StoreResource:
 	set(value):
 		store_option_selected = value
-		if(value.type == StoreResource.Types.WEAPON):
+		if(value.type == StoreResource.ResourceTypes.WEAPON):
 			weapon_resource_selected.emit(value)
-		if(value.type == StoreResource.Types.UPGRADE):
+		if(value.type == StoreResource.ResourceTypes.UPGRADE):
 			upgrade_resource_selected.emit(value)
 var wave_timer
 var pick_up_container = Node.new()

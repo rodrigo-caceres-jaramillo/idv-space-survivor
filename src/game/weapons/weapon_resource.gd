@@ -7,7 +7,7 @@ enum WeaponTypes {
 	MELEE,
 }
 
-var type: Types = Types.WEAPON
+var type = ResourceTypes.WEAPON
 @export var weapon_scene: PackedScene
 @export var stats: WeaponStats = WeaponStats.new()
 @export var weapon_type: WeaponTypes

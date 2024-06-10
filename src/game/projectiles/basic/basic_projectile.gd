@@ -29,6 +29,7 @@ func _process(delta):
 func initialize(stats, mouse_direction):
 	hitbox_component.crit_chance = stats.CRIT_CHANCE
 	hitbox_component.damage = stats.DAMAGE
+	hitbox_component.damage_type = stats.DAMAGE_TYPE
 	hitbox_component.crit_damage = stats.CRIT_DAMAGE
 	hitbox_component.knockback = stats.KNOCKBACK
 	self.speed = stats.PROJECTILE_SPEED

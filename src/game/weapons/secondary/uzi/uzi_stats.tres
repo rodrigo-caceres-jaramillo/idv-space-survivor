@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="RangedWeaponsStats" load_steps=4 format=3 uid="uid://bupfoauo7u6km"]
+[gd_resource type="Resource" script_class="RangedWeaponsStats" load_steps=5 format=3 uid="uid://bupfoauo7u6km"]
 
 [ext_resource type="Script" path="res://src/game/weapons/base/range/ranged_weapon_stats.gd" id="1_g1hbu"]
+[ext_resource type="Resource" uid="uid://cgmatvoybq8xa" path="res://src/game/data/damage_types/puncture.tres" id="1_v82vr"]
 [ext_resource type="AudioStream" uid="uid://dwqs8uxlfwcry" path="res://assets/sound/pistol_reload.mp3" id="2_eks5j"]
 [ext_resource type="AudioStream" uid="uid://y28k54ngy87t" path="res://assets/sound/pistol_shoot.mp3" id="4_su1cn"]
 
@@ -10,12 +11,12 @@ RELOAD = 1.0
 MAGAZINE = 20
 PROJECTILES = 1.0
 SPREAD = 0.5
-PRESICION = 0.0
 PENETRATION = 0
 PROJECTILE_SPEED = 750.0
 reload_sfx = ExtResource("2_eks5j")
 shoot_sfx = ExtResource("4_su1cn")
 DAMAGE = 8.0
+DAMAGE_TYPE = ExtResource("1_v82vr")
 RATE = 0.1
 CRIT_CHANCE = 10.0
 CRIT_DAMAGE = 1.5

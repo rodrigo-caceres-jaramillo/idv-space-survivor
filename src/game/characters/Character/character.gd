@@ -53,9 +53,9 @@ func health_to_max():
 
 func add_store_resource(resource: StoreResource):
 	match resource.type:
-		StoreResource.Types.WEAPON:
+		StoreResource.ResourceTypes.WEAPON:
 			return weapon_manager.add_weapon(resource)
-		StoreResource.Types.ITEM:
+		StoreResource.ResourceTypes.ITEM:
 			return items_manager.add_item(resource)
-		StoreResource.Types.UPGRADE:
+		StoreResource.ResourceTypes.UPGRADE:
 			return upgrade_manager.apply_upgrade(resource)

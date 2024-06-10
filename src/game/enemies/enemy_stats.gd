@@ -6,8 +6,10 @@ extends Resource
 		HEALTH = value
 		health_changed.emit(value)
 		if HEALTH <= 0: no_health.emit()
+@export var HEALTH_TYPE: HealthType
 @export var SPEED: float = 1
-@export var DAMAGE: int = 1
+@export var DAMAGE: float
+@export var DAMAGE_TYPE: DamageType
 @export var KB_RESISTANCE: float = 1
 @export var min_value: int = 1
 @export var max_value: int = 2

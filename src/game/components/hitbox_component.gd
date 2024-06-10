@@ -1,7 +1,8 @@
 class_name HitboxComponent
 extends Area2D
 
-@export var damage: int = 1
+@export var damage: float
+@export var damage_type: DamageType
 @export var crit_chance: int = 0
 @export var crit_damage: float = 1
 @export var knockback: float = 1

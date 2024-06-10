@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="RangedWeaponsStats" load_steps=4 format=3 uid="uid://cpbk7b2tufye4"]
+[gd_resource type="Resource" script_class="RangedWeaponsStats" load_steps=5 format=3 uid="uid://cpbk7b2tufye4"]
 
+[ext_resource type="Resource" uid="uid://b8tlfv3eycwwy" path="res://src/game/data/damage_types/impact.tres" id="1_sk2or"]
 [ext_resource type="AudioStream" uid="uid://8whasbfe3y6b" path="res://assets/sound/mixkit-shotgun-long-pump-1666.wav" id="2_ehgsp"]
 [ext_resource type="Script" path="res://src/game/weapons/base/range/ranged_weapon_stats.gd" id="2_mrol6"]
 [ext_resource type="AudioStream" uid="uid://cesywvh3cvlr4" path="res://assets/sound/shotgun.wav" id="4_fgtqc"]
@@ -14,7 +15,8 @@ PENETRATION = 0
 PROJECTILE_SPEED = 500.0
 reload_sfx = ExtResource("2_ehgsp")
 shoot_sfx = ExtResource("4_fgtqc")
-DAMAGE = 5.0
+DAMAGE = 10.0
+DAMAGE_TYPE = ExtResource("1_sk2or")
 RATE = 1.0
 CRIT_CHANCE = 10.0
 CRIT_DAMAGE = 1.5

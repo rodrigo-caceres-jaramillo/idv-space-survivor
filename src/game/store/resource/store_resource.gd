@@ -1,7 +1,7 @@
 class_name StoreResource
 extends Resource
 
-enum Types {
+enum ResourceTypes {
 	WEAPON,
 	ITEM,
 	UPGRADE

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="DamageType" load_steps=2 format=3 uid="uid://b8tlfv3eycwwy"]
+
+[ext_resource type="Script" path="res://src/game/data/damage_types/damage_types.gd" id="1_w8xvg"]
+
+[resource]
+script = ExtResource("1_w8xvg")
+name = "Impact"

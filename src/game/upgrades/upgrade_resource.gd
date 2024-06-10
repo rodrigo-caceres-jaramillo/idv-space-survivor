@@ -1,6 +1,6 @@
 class_name Upgrade
 extends StoreResource
 
-var type: Types = Types.UPGRADE
+var type = ResourceTypes.UPGRADE
 @export var modifiers: Array[Modifier]
 

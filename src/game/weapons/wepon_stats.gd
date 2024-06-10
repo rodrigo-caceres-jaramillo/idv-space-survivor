@@ -1,10 +1,11 @@
 class_name  WeaponStats
 extends Resource
 
-@export var DAMAGE: float = 1.0:
+@export var DAMAGE: float:
 	set(value):
 		DAMAGE = value
 		damage_changed.emit(value)
+@export var DAMAGE_TYPE: DamageType
 @export var RATE: float = 1.0:
 	set(value):
 		RATE = value

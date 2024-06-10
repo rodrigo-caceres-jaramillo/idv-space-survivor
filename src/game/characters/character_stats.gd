@@ -6,6 +6,7 @@ extends Resource
 		MAX_HEALTH = value
 		max_health_changed.emit(value)
 		stats_changed.emit()
+var HEALTH_TYPE = HealthType.new()
 var HEALTH: int:
 	set(value):
 		HEALTH = value

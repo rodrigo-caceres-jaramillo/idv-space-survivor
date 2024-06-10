@@ -24,17 +24,21 @@ func _ready() -> void:
 	hurtbox_component.hurt.connect(apply_damage	)
 	
 func apply_damage(hitbox: HitboxComponent):
-	var final_damage = hitbox.damage
+	var damage = hitbox.damage
+	if(hitbox.damage_type == stats.HEALTH_TYPE.resistance):
+		damage *= 0.75
+	if(hitbox.damage_type == stats.HEALTH_TYPE.weakness):
+		damage *= 1.25
 	_audio_player(hit_player_sfx)
-	var critical = false
+	var is_critical = false
 	if randi_range (1, 100) <= hitbox.crit_chance:
-		critical = true
-		final_damage *= hitbox.crit_damage
-	stats.HEALTH -= final_damage
+		is_critical = true
+		damage *= hitbox.crit_damage
+	stats.HEALTH -= damage
 	if(!actor.stun):
 		apply_knockback(hitbox)
 	if(show_number):
-		show_damage_numbers(final_damage, critical)
+		show_damage_numbers(damage, is_critical)
 	sprite.material = FLASH_MATERIAL
 	timer.start(flash_duration)
 	await timer.timeout
