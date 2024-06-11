@@ -7,18 +7,18 @@
 
 [resource]
 script = ExtResource("1_g1hbu")
+DAMAGE = 5.0
+DAMAGE_TYPE = ExtResource("1_v82vr")
+CRITICAL_CHANCE = 5.0
+CRITICAL_DAMAGE = 1.5
+MULTISHOT = 1.0
+PENETRATION = 0.0
+FIRE_RATE = 5.0
 RELOAD = 1.0
-MAGAZINE = 20
-PROJECTILES = 1.0
+MAGAZINE = 30
+RANGE = 40.0
+KNOCKBACK = 1
 SPREAD = 0.5
-PENETRATION = 0
-PROJECTILE_SPEED = 750.0
+PROJECTILE_SPEED = 1000.0
 reload_sfx = ExtResource("2_eks5j")
 shoot_sfx = ExtResource("4_su1cn")
-DAMAGE = 8.0
-DAMAGE_TYPE = ExtResource("1_v82vr")
-RATE = 0.1
-CRIT_CHANCE = 10.0
-CRIT_DAMAGE = 1.5
-RANGE = 50.0
-KNOCKBACK = 1

@@ -9,7 +9,7 @@ enum WeaponTypes {
 
 var type = ResourceTypes.WEAPON
 @export var weapon_scene: PackedScene
-@export var stats: WeaponStats = WeaponStats.new()
+@export var stats: RangedWeaponsStats
 @export var weapon_type: WeaponTypes
 var weapon_index = get_weapon_index()
 

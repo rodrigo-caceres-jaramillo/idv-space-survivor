@@ -8,6 +8,14 @@ var current_weapon: Node2D
 var current_weapon_type: int = 0
 var weapons_types = WeaponResource.WeaponTypes
 
+func _process(_delta):
+	var mouse_position:Vector2 = get_global_mouse_position()
+	if mouse_position.x > global_position.x: 
+		current_weapon.scale.y = 1 
+	else: 
+		current_weapon.scale.y = -1
+	current_weapon.look_at(mouse_position)
+
 func set_up(_stats: PlayerStats, _initial_weapon: WeaponResource):
 	self.stats = _stats
 	self.load_weapon(_initial_weapon)
@@ -15,7 +23,7 @@ func set_up(_stats: PlayerStats, _initial_weapon: WeaponResource):
 	self.current_weapon.visible = true
 	Events.current_weapon_changed.emit(current_weapon)
 
-func get_weapon(weapon_type):
+func get_weapon_resource(weapon_type):
 	return weapons_resource[weapon_type]
 	
 func shoot_weapon():

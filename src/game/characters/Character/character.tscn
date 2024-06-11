@@ -39,10 +39,12 @@ weapons = {
 
 [node name="Hand" type="Sprite2D" parent="WeaponManager"]
 z_index = 10
+scale = Vector2(2, 2)
 
 [node name="ItemsManager" type="Node2D" parent="."]
 
 [node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.33333)

@@ -5,16 +5,15 @@
 [ext_resource type="Texture2D" uid="uid://lsinxl4gsrnk" path="res://src/game/weapons/secondary/pistol/pistol.png" id="3_46awc"]
 
 [node name="Pistol" node_paths=PackedStringArray("weapon_fsx") instance=ExtResource("1_yejcx")]
-z_index = 5
-scale = Vector2(0.7, 0.7)
 weapon_fsx = NodePath("PistolSfx")
 projectile = ExtResource("2_ufui6")
 
 [node name="Sprite" parent="." index="0"]
-position = Vector2(8, -2)
+position = Vector2(7.62939e-06, 9.53674e-07)
 texture = ExtResource("3_46awc")
+offset = Vector2(8.57143, -2.85714)
 
 [node name="Tip" parent="." index="1"]
-position = Vector2(14.2857, -7.14286)
+position = Vector2(21.4286, -8.57143)
 
 [node name="PistolSfx" type="AudioStreamPlayer" parent="." index="5"]

@@ -32,9 +32,9 @@ func set_up(b_stast:RangedWeaponsStats, p_stats: PlayerStats):
 
 func update_stats():
 	stats.DAMAGE = base_stats.DAMAGE * player_stats.DAMAGE
-	stats.RATE = base_stats.RATE / player_stats.RATE
-	stats.CRIT_CHANCE = base_stats.CRIT_CHANCE * player_stats.CRIT_CHANCE
-	stats.CRIT_DAMAGE = base_stats.CRIT_DAMAGE * player_stats.CRIT_DAMAGE
+	stats.FIRE_RATE = base_stats.FIRE_RATE * player_stats.RATE
+	stats.CRITICAL_CHANCE = base_stats.CRITICAL_CHANCE * player_stats.CRIT_CHANCE
+	stats.CRITICAL_DAMAGE = base_stats.CRITICAL_DAMAGE * player_stats.CRIT_DAMAGE
 	stats.RANGE = base_stats.RANGE * player_stats.RANGE
 
 func fire():
@@ -51,7 +51,7 @@ func shoot():
 	var direction = global_position.direction_to(tip.global_position)
 	spawn_projectile_component.spawn_projectile(stats, direction, global_rotation, tip.global_position)
 	self.can_shoot = false
-	fire_rate_timer.start(stats.RATE)
+	fire_rate_timer.start(1.0/stats.FIRE_RATE)
 		
 func reload():
 	if current_ammo <= magazine_size and not reloading:
