@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://lsinxl4gsrnk" path="res://src/game/weapons/secondary/pistol/pistol.png" id="3_46awc"]
 
 [node name="Pistol" node_paths=PackedStringArray("weapon_fsx") instance=ExtResource("1_yejcx")]
+z_index = 5
 scale = Vector2(0.7, 0.7)
 weapon_fsx = NodePath("PistolSfx")
 projectile = ExtResource("2_ufui6")

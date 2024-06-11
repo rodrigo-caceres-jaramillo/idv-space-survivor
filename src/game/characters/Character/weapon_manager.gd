@@ -3,6 +3,7 @@ extends Node2D
 @export var stats: PlayerStats
 @export var weapons_resource =  {}
 @export var weapons= {} #Primary=0, Secondary=1, Melee=2
+@onready var hand = $Hand
 var current_weapon: Node2D
 var current_weapon_type: int = 0
 var weapons_types = WeaponResource.WeaponTypes
@@ -36,6 +37,7 @@ func load_weapon(weapon_resource):
 	weapon.set_up(weapon_resource.stats, stats)
 	self.add_child(weapon)
 	weapon.visible = false
+	weapon.position = hand.position
 	self.current_weapon = weapon
 	
 func add_weapon(weapon_resource):

@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://src/game/components/spawn_projectile_component.gd" id="2_ypra5"]
 
 [node name="RangeWeapon" type="Node2D"]
-z_index = 50
+z_index = 5
 script = ExtResource("1_w3q8x")
 
 [node name="Sprite" type="Sprite2D" parent="."]
