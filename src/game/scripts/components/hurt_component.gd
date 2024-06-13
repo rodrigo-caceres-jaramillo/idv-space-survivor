@@ -25,12 +25,15 @@ func _ready() -> void:
 	
 func apply_damage(hitbox: HitboxComponent):
 	var damage = hitbox.damage
+	var effectiveness = 0 #-1: ineffective 0: neutral 1: effective
 	if(!actor.stun):
 		apply_knockback(hitbox)
 	if(hitbox.damage_type == stats.HEALTH_TYPE.resistance):
 		damage *= 0.75
+		effectiveness = -1
 	if(hitbox.damage_type == stats.HEALTH_TYPE.weakness):
 		damage *= 1.25
+		effectiveness = 1
 	_audio_player(hit_player_sfx)
 	var is_critical = false
 	if randi_range (1, 100) <= hitbox.crit_chance:
@@ -38,7 +41,7 @@ func apply_damage(hitbox: HitboxComponent):
 		damage *= hitbox.crit_damage
 	stats.HEALTH -= damage
 	if(show_number):
-		show_damage_numbers(damage, is_critical)
+		show_damage_numbers(damage, is_critical, effectiveness)
 	sprite.material = FLASH_MATERIAL
 	timer.start(flash_duration)
 	await timer.timeout
@@ -53,10 +56,15 @@ func apply_knockback(hitbox):
 		actor.velocity = -direction * knockback * 10
 		actor.move_and_slide()
 	
-func show_damage_numbers(value, critical):
+func show_damage_numbers(value, critical, effectiveness):
 	var label = Label.new()
 	label.global_position = self.sprite.global_position
-	label.text = str(value)
+	if(effectiveness == 1):
+		label.text = str(value) + "!"
+	elif (effectiveness == -1):
+		label.text = str(value) + "-"
+	else:
+		label.text = str(value)
 	label.z_index = 5
 	label.label_settings = LabelSettings.new()
 	label.label_settings.outline_color = Color.BLACK

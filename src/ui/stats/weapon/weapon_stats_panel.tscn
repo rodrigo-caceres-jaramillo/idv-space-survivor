@@ -29,7 +29,6 @@ stat_container_scene = ExtResource("2_ourgl")
 
 [node name="StatsContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
-size_flags_horizontal = 4
 
 [node name="Title" type="Label" parent="StatsContainer"]
 layout_mode = 2
@@ -39,5 +38,9 @@ text = "WEAPON
 "
 horizontal_alignment = 1
 
-[node name="stats" type="VBoxContainer" parent="StatsContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="StatsContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="stats" type="VBoxContainer" parent="StatsContainer/ScrollContainer"]
 layout_mode = 2

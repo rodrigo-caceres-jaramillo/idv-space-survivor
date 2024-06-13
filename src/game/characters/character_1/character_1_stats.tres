@@ -1,12 +1,11 @@
-[gd_resource type="Resource" script_class="PlayerStats" load_steps=3 format=3 uid="uid://cltvjnuq5jeon"]
+[gd_resource type="Resource" script_class="PlayerStats" load_steps=2 format=3 uid="uid://cltvjnuq5jeon"]
 
 [ext_resource type="Script" path="res://src/game/characters/character_stats.gd" id="1_2i8wt"]
-[ext_resource type="Resource" uid="uid://bemisdj1a3rrr" path="res://src/game/weapons/secondary/pistol/pistol.tres" id="1_gg4cj"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("1_2i8wt")
-initial_weapon = ExtResource("1_gg4cj")
-MAX_HEALTH = 20
+MAX_HEALTH = 1
 SPEED = 1.0
 DAMAGE = 1
 CRIT_CHANCE = 1.0

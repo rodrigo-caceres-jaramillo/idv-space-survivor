@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://l4o40vj2b5k4"]
+[gd_scene load_steps=7 format=3 uid="uid://l4o40vj2b5k4"]
 
 [ext_resource type="PackedScene" uid="uid://ds70pbbdbtgkc" path="res://src/game/characters/Character/character.tscn" id="1_5gu0q"]
 [ext_resource type="Texture2D" uid="uid://mcyunttshb8f" path="res://assets/textures/player/blue_char_hand.png" id="2_4288j"]
+[ext_resource type="Resource" uid="uid://cltvjnuq5jeon" path="res://src/game/characters/character_1/character_1_stats.tres" id="2_dg7w5"]
 [ext_resource type="Texture2D" uid="uid://dfusadsw6h8t2" path="res://assets/textures/player/blue_char.png" id="2_y6kb3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_br3sc"]
@@ -14,26 +15,24 @@ height = 58.0
 
 [node name="Character1" instance=ExtResource("1_5gu0q")]
 scale = Vector2(1, 1)
+stats = ExtResource("2_dg7w5")
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource("2_y6kb3")
+
+[node name="CollisionShape" parent="." index="2"]
+visible = false
+position = Vector2(-1, 2)
+shape = SubResource("CapsuleShape2D_br3sc")
 
 [node name="Hand" parent="WeaponManager" index="0"]
 z_as_relative = false
 position = Vector2(18, 4)
 texture = ExtResource("2_4288j")
 
-[node name="Sprite" parent="." index="3"]
-texture = ExtResource("2_y6kb3")
-
-[node name="CollisionShape" parent="." index="4"]
-visible = false
-position = Vector2(-1, 2)
-shape = SubResource("CapsuleShape2D_br3sc")
-
-[node name="HurtboxComponent" parent="." index="5"]
-visible = true
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" index="0"]
 position = Vector2(-1, 0)
 shape = SubResource("CapsuleShape2D_tukxg")
 
-[node name="PickUpArea" parent="." index="10"]
+[node name="PickUpArea" parent="." index="8"]
 visible = false

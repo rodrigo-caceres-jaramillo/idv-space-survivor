@@ -7,18 +7,18 @@
 
 [resource]
 script = ExtResource("2_mrol6")
+DAMAGE = 10.0
+DAMAGE_TYPE = ExtResource("1_sk2or")
+CRITICAL_CHANCE = 5.0
+CRITICAL_DAMAGE = 1.5
+MULTISHOT = 5.0
+PENETRATION = 0.0
+FIRE_RATE = 1.0
 RELOAD = 1.5
 MAGAZINE = 6
-PROJECTILES = 5.0
+RANGE = 40.0
+KNOCKBACK = 8
 SPREAD = 0.2
-PENETRATION = 0
 PROJECTILE_SPEED = 500.0
 reload_sfx = ExtResource("2_ehgsp")
 shoot_sfx = ExtResource("4_fgtqc")
-DAMAGE = 10.0
-DAMAGE_TYPE = ExtResource("1_sk2or")
-RATE = 1.0
-CRIT_CHANCE = 10.0
-CRIT_DAMAGE = 1.5
-RANGE = 40.0
-KNOCKBACK = 8

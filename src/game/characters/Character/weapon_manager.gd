@@ -1,13 +1,18 @@
 extends Node2D
 
-@export var stats: PlayerStats
-@export var weapons_resource =  {}
-@export var weapons= {} #Primary=0, Secondary=1, Melee=2
+@export var actor: CharacterBody2D
 @onready var hand = $Hand
+var stats: PlayerStats
+var weapons_resource =  {0:null, 1:null, 2:null}
+var weapons= {0:null, 1:null, 2:null}
 var current_weapon: Node2D
 var current_weapon_type: int = 0
 var weapons_types = WeaponResource.WeaponTypes
 
+func _ready():
+	self.stats = actor.stats
+	self.set_up(actor.initial_weapon)
+	
 func _process(_delta):
 	var mouse_position:Vector2 = get_global_mouse_position()
 	if mouse_position.x > global_position.x: 
@@ -16,8 +21,7 @@ func _process(_delta):
 		current_weapon.scale.y = -1
 	current_weapon.look_at(mouse_position)
 
-func set_up(_stats: PlayerStats, _initial_weapon: WeaponResource):
-	self.stats = _stats
+func set_up(_initial_weapon: WeaponResource):
 	self.load_weapon(_initial_weapon)
 	self.current_weapon = weapons[_initial_weapon.weapon_type]
 	self.current_weapon.visible = true

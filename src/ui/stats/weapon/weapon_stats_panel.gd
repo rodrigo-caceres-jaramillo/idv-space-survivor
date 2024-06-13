@@ -1,7 +1,7 @@
 extends PanelContainer
 
 @export var stats_resource: Resource
-@onready var stats = $StatsContainer/stats
+@onready var stats = $StatsContainer/ScrollContainer/stats
 @export var stat_container_scene: PackedScene
 @onready var title = $StatsContainer/Title
 
@@ -17,22 +17,45 @@ func clean_stats():
 func show_weapon_stats(weapon):
 	title.text = weapon.name
 	self.clean_stats()
+	var damage_instance = stat_container_scene.instantiate()
+	stats.add_child(damage_instance)
+	damage_instance.show_damage_stat(weapon.stats.DAMAGE_TYPE, weapon.stats.DAMAGE)
 	for stat_info in weapon.stats.get_property_list():
-		if stat_info.name != "resource_path" and stat_info.type == TYPE_FLOAT:
-			var stat_instance = stat_container_scene.instantiate()
-			stats.add_child(stat_instance)
-			stat_instance.show_stat(stat_info.name, weapon.stats.get(stat_info.name))
+		if stat_info.name != "resource_path" and stat_info.name != "DAMAGE" and stat_info.type == TYPE_FLOAT:
+			var stat_value = weapon.stats.get(stat_info.name)
+			if stat_value != 0:
+				var stat_instance = stat_container_scene.instantiate()
+				stats.add_child(stat_instance)
+				stat_instance.show_stat(stat_info.name, stat_value)
 
 func compare_stats(new_weapon):
 	var current_weapon = Global.player.weapon_manager.get_weapon_resource(new_weapon.weapon_type)
-	if current_weapon:
+	if current_weapon and (!current_weapon.name == new_weapon.name):
 		self.clean_stats()
 		title.text = current_weapon.name + " | " + new_weapon.name
+		
+		# Comparar daño
+		if current_weapon.stats.DAMAGE_TYPE == new_weapon.stats.DAMAGE_TYPE:
+			var damage_instance = stat_container_scene.instantiate()
+			stats.add_child(damage_instance)
+			damage_instance.compare_damage_stat(current_weapon.stats.DAMAGE_TYPE, current_weapon.stats.DAMAGE, new_weapon.stats.DAMAGE)
+		else:
+			var damage_instance_current = stat_container_scene.instantiate()
+			stats.add_child(damage_instance_current)
+			damage_instance_current.compare_damage_stat(current_weapon.stats.DAMAGE_TYPE, current_weapon.stats.DAMAGE, 0)
+			
+			var damage_instance_new = stat_container_scene.instantiate()
+			stats.add_child(damage_instance_new)
+			damage_instance_new.compare_damage_stat(new_weapon.stats.DAMAGE_TYPE, 0, new_weapon.stats.DAMAGE)
+		
+		# Comparar otras estadísticas
 		for stat_info in current_weapon.stats.get_property_list():
-			if stat_info.name != "resource_path" and stat_info.type == TYPE_FLOAT:
+			if stat_info.name != "resource_path" and stat_info.name != "DAMAGE" and stat_info.type == TYPE_FLOAT:
 				var stat_instance = stat_container_scene.instantiate()
 				stats.add_child(stat_instance)
-				stat_instance.compare_stats(stat_info.name, current_weapon.stats.get(stat_info.name), new_weapon.stats.get(stat_info.name))
+				var current_value = current_weapon.stats.get(stat_info.name)
+				var new_value = new_weapon.stats.get(stat_info.name)
+				if current_value != 0 or new_value != 0:
+					stat_instance.compare_stats(stat_info.name, current_value, new_value)
 	else:
 		show_weapon_stats(new_weapon)
-		

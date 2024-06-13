@@ -6,6 +6,7 @@ var start_position= Vector2(693, 403)
 @onready var phantom_camera_2d = $PhantomCamera2D
 
 func _ready():
+	print("START GAME")
 	var player = Global.player
 	add_child(Global.pick_up_container)
 	add_child(player)
@@ -14,5 +15,6 @@ func _ready():
 	start_game()
 	
 func start_game():
+	Events.player_ready.emit()
 	wave_manager.start_wave()
 

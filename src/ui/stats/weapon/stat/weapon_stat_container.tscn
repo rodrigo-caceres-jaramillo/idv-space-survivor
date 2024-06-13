@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cjvpxjv2g0wmw"]
+[gd_scene load_steps=3 format=3 uid="uid://cjvpxjv2g0wmw"]
 
 [ext_resource type="Script" path="res://src/ui/stats/weapon/stat/weapon_stat_container.gd" id="1_vldri"]
+[ext_resource type="Texture2D" uid="uid://yxxjwwuaa8gn" path="res://src/game/data/damage_types/impact.png" id="2_bhw71"]
 
 [node name="WeaponStatContainer" type="HBoxContainer"]
 custom_minimum_size = Vector2(190, 0)
@@ -16,8 +17,14 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 10
 script = ExtResource("1_vldri")
+
+[node name="DamageIcon" type="TextureRect" parent="."]
+visible = false
+layout_mode = 2
+texture = ExtResource("2_bhw71")
+expand_mode = 3
+stretch_mode = 5
 
 [node name="Stat" type="Label" parent="."]
 layout_mode = 2
@@ -31,5 +38,6 @@ text = "10"
 horizontal_alignment = 2
 
 [node name="New" type="Label" parent="."]
+visible = false
 layout_mode = 2
 text = "20"

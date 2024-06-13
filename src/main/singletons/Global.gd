@@ -1,11 +1,9 @@
 extends Node
 
 var charater_resource = null
+var initial_stats = null
 var camera
-var player = null:
-	set(value):
-		player = value
-		Events.player_ready.emit()
+var player = null
 var money: int = 100:
 	set(value):
 		money = value
@@ -24,6 +22,17 @@ var store_option_selected: StoreResource:
 var wave_timer
 var pick_up_container = Node.new()
 
+func set_up():
+	money = 100
+	pick_up_container = Node.new()
+	if(!player == null): player.queue_free()
+	var new_player = charater_resource.character_scene.instantiate()
+	new_player.initial_weapon = charater_resource.initial_weapon
+	player = new_player
+	
+
+	
+	
 signal money_changed(value)
 signal selected_resource_changed(value)
 signal weapon_selected_changed(value)

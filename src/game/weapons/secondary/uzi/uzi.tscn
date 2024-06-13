@@ -6,7 +6,6 @@
 
 [node name="Uzi" node_paths=PackedStringArray("weapon_fsx") instance=ExtResource("1_5f04n")]
 position = Vector2(3, 0)
-scale = Vector2(0.7, 0.7)
 weapon_fsx = NodePath("UziSfx")
 projectile = ExtResource("2_uutln")
 

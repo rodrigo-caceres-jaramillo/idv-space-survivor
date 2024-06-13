@@ -14,7 +14,7 @@ func _ready():
 
 func set_up():
 	stats = Global.player.stats
-	print("Set_up")
+	print(stats.MAX_HEALTH)
 	max_health = stats.MAX_HEALTH
 	health = stats.HEALTH
 	update_max_health(max_health)
