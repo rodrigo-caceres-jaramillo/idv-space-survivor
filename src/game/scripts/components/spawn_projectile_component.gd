@@ -1,7 +1,7 @@
 class_name SpawnProjectileComponent
 extends Node
 
-@export var projectile_scene: PackedScene
+var projectile_scene: PackedScene
 
 func spawn_projectile(stats, direction, rotation, global_spawn_position, parent: Node = get_tree().current_scene):
 	for i in range(stats.MULTISHOT):

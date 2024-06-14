@@ -1,14 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://b5uhvngjdi1ky"]
 
 [ext_resource type="PackedScene" uid="uid://dn5r6qogjyaco" path="res://src/game/weapons/base/range/range_weapon.tscn" id="1_m2tfw"]
-[ext_resource type="PackedScene" uid="uid://d00a51jft8ga2" path="res://src/game/projectiles/basic/basic_projectile.tscn" id="2_74qtd"]
+[ext_resource type="PackedScene" uid="uid://ibw35q6xdypf" path="res://src/game/projectiles/bullet/bullet_projectile.tscn" id="2_jv26i"]
 [ext_resource type="Texture2D" uid="uid://dxc6shawo5ng0" path="res://src/game/weapons/primary/sniper/sniper.png" id="2_u31tc"]
 
 [node name="Sniper" node_paths=PackedStringArray("weapon_fsx") instance=ExtResource("1_m2tfw")]
 position = Vector2(8, -1)
-scale = Vector2(0.7, 0.7)
 weapon_fsx = NodePath("SniperSfx")
-projectile = ExtResource("2_74qtd")
+projectile = ExtResource("2_jv26i")
 
 [node name="Sprite" parent="." index="0"]
 position = Vector2(-1, 1)

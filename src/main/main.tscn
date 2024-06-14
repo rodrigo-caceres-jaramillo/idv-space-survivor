@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://btjax2v4qeeu3"]
+[gd_scene load_steps=21 format=3 uid="uid://btjax2v4qeeu3"]
 
 [ext_resource type="Script" path="res://src/main/main.gd" id="1_gwchs"]
 [ext_resource type="Resource" uid="uid://cbvawfcm626sb" path="res://src/game/waves/game_data/game_1.tres" id="2_t5txs"]
@@ -15,6 +15,13 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="12_xg1mj"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="13_xlvnm"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="14_xwc28"]
+
+[sub_resource type="Environment" id="Environment_gd5by"]
+background_mode = 3
+glow_enabled = true
+glow_normalized = true
+glow_blend_mode = 1
+glow_hdr_threshold = 0.5
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gjf3c"]
 texture = ExtResource("3_3oiew")
@@ -108,6 +115,9 @@ size = Vector2(1466, 895)
 [node name="Main" type="Node2D"]
 position = Vector2(-288, -197)
 script = ExtResource("1_gwchs")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_gd5by")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_3y124")

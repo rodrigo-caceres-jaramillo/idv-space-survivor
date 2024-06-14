@@ -25,7 +25,7 @@ func _ready():
 	Events.player_ready.emit()
 	Events.wave_started.connect(health_to_max.unbind(1))
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if Input.is_action_just_pressed("primary_weapon"):
 		weapon_manager.equip_weapon(0)
 	if Input.is_action_just_pressed("secondary_weapon"):

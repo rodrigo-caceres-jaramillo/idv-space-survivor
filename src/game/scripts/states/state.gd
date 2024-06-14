@@ -13,7 +13,7 @@ func exit():
 func update(_delta):
 	pass
 
-func physics_update(delta):
+func physics_update(_delta):
 	pass
 	
 signal state_transition
