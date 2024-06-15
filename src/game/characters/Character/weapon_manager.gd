@@ -20,6 +20,7 @@ func _process(_delta):
 	else: 
 		current_weapon.scale.y = -1
 	current_weapon.look_at(mouse_position)
+	hand.look_at(mouse_position)
 
 func set_up(_initial_weapon: WeaponResource):
 	self.load_weapon(_initial_weapon)
@@ -48,16 +49,18 @@ func load_weapon(weapon_resource):
 	weapons[weapon_resource.weapon_type] = weapon
 	weapon.set_up(weapon_resource.stats, stats)
 	self.add_child(weapon)
-	weapon.visible = false
 	weapon.position = hand.position
+	weapon.visible = false
+	if(current_weapon):
+		self.current_weapon.visible = false
 	self.current_weapon = weapon
+	self.current_weapon.visible = true
+	Events.current_weapon_changed.emit(current_weapon)
 	
 func add_weapon(weapon_resource):
 	if(weapons[weapon_resource.weapon_type]):
 		remove_weapon(weapon_resource.weapon_type)
-	weapons_resource[weapon_resource.weapon_type] = weapon_resource
 	self.load_weapon(weapon_resource)
-	self.equip_weapon(weapon_resource.weapon_type)
 	Events.new_weapon_add.emit(weapon_resource)
 	return true
 

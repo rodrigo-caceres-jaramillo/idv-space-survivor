@@ -19,9 +19,9 @@ func show_weapon_stats(weapon):
 	self.clean_stats()
 	var damage_instance = stat_container_scene.instantiate()
 	stats.add_child(damage_instance)
-	damage_instance.show_damage_stat(weapon.stats.DAMAGE_TYPE, weapon.stats.DAMAGE)
+	damage_instance.show_damage_stat(weapon.stats.DAMAGE_TYPE, weapon.stats.DAMAGE, weapon.stats.MULTISHOT)
 	for stat_info in weapon.stats.get_property_list():
-		if stat_info.name != "resource_path" and stat_info.name != "DAMAGE" and stat_info.type == TYPE_FLOAT:
+		if !["resource_path", "DAMAGE", "MULTISHOT"].has(stat_info.name) and stat_info.type == TYPE_FLOAT:
 			var stat_value = weapon.stats.get(stat_info.name)
 			if stat_value != 0:
 				var stat_instance = stat_container_scene.instantiate()
@@ -33,24 +33,21 @@ func compare_stats(new_weapon):
 	if current_weapon and (!current_weapon.name == new_weapon.name):
 		self.clean_stats()
 		title.text = current_weapon.name + " | " + new_weapon.name
-		
-		# Comparar daño
 		if current_weapon.stats.DAMAGE_TYPE == new_weapon.stats.DAMAGE_TYPE:
 			var damage_instance = stat_container_scene.instantiate()
 			stats.add_child(damage_instance)
-			damage_instance.compare_damage_stat(current_weapon.stats.DAMAGE_TYPE, current_weapon.stats.DAMAGE, new_weapon.stats.DAMAGE)
+			damage_instance.compare_damage_stat(current_weapon.stats.DAMAGE_TYPE, current_weapon.stats.DAMAGE, current_weapon.stats.MULTISHOT, new_weapon.stats.DAMAGE, new_weapon.stats.MULTISHOT)
 		else:
 			var damage_instance_current = stat_container_scene.instantiate()
 			stats.add_child(damage_instance_current)
-			damage_instance_current.compare_damage_stat(current_weapon.stats.DAMAGE_TYPE, current_weapon.stats.DAMAGE, 0)
+			damage_instance_current.compare_damage_stat(current_weapon.stats.DAMAGE_TYPE, current_weapon.stats.DAMAGE, current_weapon.stats.MULTISHOT, 0, 0)
 			
 			var damage_instance_new = stat_container_scene.instantiate()
 			stats.add_child(damage_instance_new)
-			damage_instance_new.compare_damage_stat(new_weapon.stats.DAMAGE_TYPE, 0, new_weapon.stats.DAMAGE)
+			damage_instance_new.compare_damage_stat(new_weapon.stats.DAMAGE_TYPE, 0, 0, new_weapon.stats.DAMAGE, new_weapon.stats.MULTISHOT)
 		
-		# Comparar otras estadísticas
 		for stat_info in current_weapon.stats.get_property_list():
-			if stat_info.name != "resource_path" and stat_info.name != "DAMAGE" and stat_info.type == TYPE_FLOAT:
+			if !["resource_path", "DAMAGE", "MULTISHOT"].has(stat_info.name) and stat_info.type == TYPE_FLOAT:
 				var stat_instance = stat_container_scene.instantiate()
 				stats.add_child(stat_instance)
 				var current_value = current_weapon.stats.get(stat_info.name)

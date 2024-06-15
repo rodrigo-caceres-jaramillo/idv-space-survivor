@@ -60,6 +60,7 @@ theme_override_constants/separation = 2
 alignment = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(54, 54)
 layout_mode = 2
 size_flags_horizontal = 0
 mouse_filter = 2

@@ -10,6 +10,7 @@ var store_options: Array[StoreOption]
 
 func _ready():
 	store_options.append_array([store_option_1, store_option_2, store_option_3, store_option_4])
+	Events.wave_finished.connect(restock_store.unbind(1))
 	setup_store()
 	
 func setup_store():
@@ -23,7 +24,8 @@ func restock_store():
 		option.set_option(recurso)
 		
 func restock_option(option):
-	option.set_option(current_pool.pool.pick_random())
+	pass
+	#option.set_option(current_pool.pool.pick_random())
 	
 func _on_roll_button_pressed():
 	if (Global.money >= 5):

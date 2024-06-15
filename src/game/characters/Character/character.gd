@@ -23,7 +23,7 @@ func _ready():
 		self.hide()
 	)
 	Events.player_ready.emit()
-	Events.wave_started.connect(health_to_max.unbind(1))
+	Events.wave_finished.connect(health_to_max.unbind(1))
 
 func _physics_process(_delta):
 	if Input.is_action_just_pressed("primary_weapon"):

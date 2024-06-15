@@ -13,15 +13,22 @@ func set_option(_store_option: StoreResource):
 	sprite_option.texture = _store_option.icon
 	option_name.text = str(_store_option.name)
 	description.text = str(_store_option.description)
+	buy_button.show()
 	buy_button.text = str(_store_option.price)
 
 func _on_buy_button_pressed():
 	if (Global.money >= store_option_resource.price):
 		if(Global.player.add_store_resource(store_option_resource)):
 			Global.money = Global.money - store_option_resource.price
+			store_option_resource = null
+			sprite_option.texture = null
+			option_name.text = ""
+			description.text = ""
+			buy_button.hide()
 			store_option_buy.emit(self)
 
 func _on_select_button_pressed():
-	Global.store_option_selected = store_option_resource
+	if(!store_option_resource == null):
+		Global.store_option_selected = store_option_resource
 		
 signal store_option_buy(option: StoreOption)
