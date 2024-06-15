@@ -5,7 +5,7 @@
 [resource]
 resource_local_to_scene = true
 script = ExtResource("1_2i8wt")
-MAX_HEALTH = 1
+MAX_HEALTH = 20
 SPEED = 1.0
 DAMAGE = 1
 CRIT_CHANCE = 1.0
