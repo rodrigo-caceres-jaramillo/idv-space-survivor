@@ -17,10 +17,13 @@ height = 58.0
 scale = Vector2(1, 1)
 stats = ExtResource("2_dg7w5")
 
-[node name="Sprite" parent="." index="1"]
+[node name="DashBar" parent="." index="0"]
+max_value = 100.0
+
+[node name="Sprite" parent="." index="2"]
 texture = ExtResource("2_y6kb3")
 
-[node name="CollisionShape" parent="." index="2"]
+[node name="CollisionShape" parent="." index="3"]
 visible = false
 position = Vector2(-1, 2)
 shape = SubResource("CapsuleShape2D_br3sc")
@@ -34,5 +37,5 @@ texture = ExtResource("2_4288j")
 position = Vector2(-1, 0)
 shape = SubResource("CapsuleShape2D_tukxg")
 
-[node name="PickUpArea" parent="." index="8"]
+[node name="PickUpArea" parent="." index="9"]
 visible = false

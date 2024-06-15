@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://cbvawfcm626sb" path="res://src/game/waves/game_data/game_1.tres" id="2_t5txs"]
 [ext_resource type="Texture2D" uid="uid://c4fcy8vnn5k02" path="res://assets/textures/tiles/floor.png" id="3_3oiew"]
 [ext_resource type="Script" path="res://src/game/waves/wave_manager.gd" id="5_g76ig"]
-[ext_resource type="Script" path="res://src/main/particle_manager.gd" id="6_1onaa"]
+[ext_resource type="Script" path="res://src/main/impact_manager.gd" id="6_1onaa"]
 [ext_resource type="PackedScene" uid="uid://ckumljs7h0tw7" path="res://src/game/projectiles/projectile_impact.tscn" id="7_8jh40"]
 [ext_resource type="Script" path="res://src/main/ui_manager.gd" id="8_8d8qw"]
 [ext_resource type="PackedScene" uid="uid://banvou7ehyoxi" path="res://src/ui/store/store.tscn" id="9_xpwpq"]
@@ -139,7 +139,7 @@ one_shot = true
 
 [node name="EnemiesContainer" type="Node" parent="WaveManager"]
 
-[node name="ParticleManager" type="Node2D" parent="."]
+[node name="ImpactManager" type="Node2D" parent="."]
 script = ExtResource("6_1onaa")
 projectile_impact = ExtResource("7_8jh40")
 

@@ -14,8 +14,6 @@ var original_sprite_material: Material
 var timer: Timer = Timer.new()
 var stun_timer: Timer = Timer.new()
 const FLASH_MATERIAL = preload("res://src/game/effects/white_flash_material.tres")
-var damage_color = "#FFF"
-var critical_color = Color.YELLOW
 
 func _ready() -> void:
 	add_child(timer)
@@ -25,6 +23,7 @@ func _ready() -> void:
 	
 func apply_damage(hitbox: HitboxComponent):
 	var damage = hitbox.damage
+	var impact_position = hitbox.global_position
 	var effectiveness = 0 #-1: ineffective 0: neutral 1: effective
 	if(!actor.stun):
 		apply_knockback(hitbox)
@@ -39,13 +38,12 @@ func apply_damage(hitbox: HitboxComponent):
 	if randi_range (1, 100) <= hitbox.crit_chance:
 		is_critical = true
 		damage *= hitbox.crit_damage
-	stats.HEALTH -= damage
-	if(show_number):
-		show_damage_numbers(damage, is_critical, effectiveness)
 	sprite.material = FLASH_MATERIAL
 	timer.start(flash_duration)
 	await timer.timeout
 	sprite.material = null
+	Events.damage_take.emit(impact_position, damage, is_critical, effectiveness)
+	stats.HEALTH -= damage
 	
 func apply_knockback(hitbox):
 	var knockback = hitbox.knockback - stats.KB_RESISTANCE
@@ -55,27 +53,6 @@ func apply_knockback(hitbox):
 		var direction = (actor.global_position - hitbox.global_position).normalized()
 		actor.velocity = -direction * knockback * 10
 		actor.move_and_slide()
-	
-func show_damage_numbers(value, critical, effectiveness):
-	var label = Label.new()
-	label.global_position = self.sprite.global_position
-	if(effectiveness == 1):
-		label.text = str(value) + "!"
-	elif (effectiveness == -1):
-		label.text = str(value) + "-"
-	else:
-		label.text = str(value)
-	label.z_index = 5
-	label.label_settings = LabelSettings.new()
-	label.label_settings.outline_color = Color.BLACK
-	label.label_settings.outline_size = 1
-	if(critical):
-		label.label_settings.font_color = critical_color
-	else:
-		label.label_settings.font_color = damage_color
-	add_child(label)
-	await get_tree().create_timer(0.5).timeout
-	label.queue_free()
 
 func _audio_player(audio:AudioStream):
 	player_sfx.stream = audio

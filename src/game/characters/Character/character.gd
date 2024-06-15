@@ -52,6 +52,7 @@ func add_store_resource(resource: StoreResource):
 
 func start_dash_delay():
 	dash_delay_timer.start(dash_delay)
+	Events.dash_finished.emit(dash_delay)
 
 func _on_dash_delay_timeout():
 	print("dash")

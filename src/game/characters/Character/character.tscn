@@ -1,10 +1,13 @@
-[gd_scene load_steps=16 format=3 uid="uid://ds70pbbdbtgkc"]
+[gd_scene load_steps=19 format=3 uid="uid://ds70pbbdbtgkc"]
 
 [ext_resource type="Script" path="res://src/game/characters/Character/character.gd" id="1_t5npn"]
+[ext_resource type="Texture2D" uid="uid://c0f5vmqc2aydb" path="res://assets/textures/player/dash_meter.png" id="2_272cq"]
 [ext_resource type="Script" path="res://src/game/scripts/states/state_machine.gd" id="2_ijblu"]
 [ext_resource type="Script" path="res://src/game/characters/Character/weapon_manager.gd" id="3_54588"]
 [ext_resource type="Script" path="res://src/game/characters/Character/states/idle_state.gd" id="3_eoqu7"]
+[ext_resource type="Texture2D" uid="uid://c8ceseoxkdnpp" path="res://assets/textures/player/dash_meter_under.png" id="3_i6mxq"]
 [ext_resource type="Script" path="res://src/game/characters/Character/upgrade_manager.gd" id="4_5ataj"]
+[ext_resource type="Script" path="res://src/game/characters/Character/dash_bar.gd" id="4_h5d68"]
 [ext_resource type="Script" path="res://src/game/characters/Character/states/movement_state.gd" id="4_nl2ik"]
 [ext_resource type="Script" path="res://src/game/characters/Character/dash_state.gd" id="5_eluuy"]
 [ext_resource type="PackedScene" uid="uid://coxol6ouwyseu" path="res://src/game/effects/ghost.tscn" id="6_axiyh"]
@@ -24,6 +27,20 @@ scale = Vector2(2, 2)
 collision_mask = 5
 motion_mode = 1
 script = ExtResource("1_t5npn")
+
+[node name="DashBar" type="TextureProgressBar" parent="."]
+offset_left = -10.0
+offset_top = -55.5
+offset_right = 30.0
+offset_bottom = -15.5
+scale = Vector2(0.5, 0.5)
+max_value = 10.0
+value = 5.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_over = ExtResource("2_272cq")
+texture_progress = ExtResource("3_i6mxq")
+script = ExtResource("4_h5d68")
 
 [node name="DashDelayTimer" type="Timer" parent="."]
 one_shot = true
@@ -92,9 +109,9 @@ actor = NodePath("..")
 
 [node name="ReloadBar" type="TextureProgressBar" parent="."]
 offset_left = -16.0
-offset_top = -29.0
+offset_top = -36.0
 offset_right = 48.0
-offset_bottom = 11.0
+offset_bottom = 4.0
 scale = Vector2(0.5, 0.5)
 value = 30.0
 fill_mode = 6
