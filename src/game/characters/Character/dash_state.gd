@@ -28,6 +28,9 @@ func create_ghost():
 	var ghost = ghost_scene.instantiate()
 	ghost.set_property(actor.global_position, sprite.scale)
 	ghost.texture = sprite.texture
+	ghost.vframes = sprite.vframes
+	ghost.hframes = sprite.hframes
+	ghost.frame = sprite.frame
 	actor.add_child(ghost)
 	
 func _on_dash_duration_timeout():

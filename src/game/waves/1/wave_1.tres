@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_ddj7x")
-wave_duration = 2
-wave_intensity = 0.5
-max_enemies = 20
+wave_duration = 100
+wave_intensity = 1.0
+max_enemies = 1
 wave_enemies = Array[Resource("res://src/game/waves/wave_enemy.gd")]([ExtResource("2_da7i4")])

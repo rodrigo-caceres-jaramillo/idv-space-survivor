@@ -8,8 +8,9 @@ extends CharacterBody2D
 @onready var items_manager = $ItemsManager
 @onready var dash_delay_timer = $DashDelayTimer
 @onready var sprite = $Sprite
-var initial_weapon: WeaponResource
+@onready var state_machine = $StateMachine
 @export var stats: PlayerStats
+var initial_weapon: WeaponResource
 var dash_delay = 1
 var stun = false
 var can_dash = true

@@ -2,20 +2,23 @@ class_name PlayerMovementState
 extends State
 
 var velocity: Vector2
-var friction = 0.5
+var accel = 1000
 
 func enter():
-	print("enter movement")
-	pass
+	update_look_direction()
+	play_animation("walk")
 
-func physics_update(_delta : float):
-	var direction = Vector2(
-		Input.get_action_strength("move_right") - Input.get_action_strength("move_left"),
-		Input.get_action_strength("move_down") - Input.get_action_strength("move_up"),
-	)
+func physics_update(_delta: float):
+	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	direction.normalized()
-	actor.velocity = actor.velocity.lerp(direction * actor.stats.FINAL_SPEED, 0.1)
-	actor.velocity *= 1.0 - (friction *_delta)
+	actor.velocity = (direction * actor.stats.FINAL_SPEED)
 	actor.move_and_slide()
+
+	if direction != Vector2.ZERO:
+		update_look_direction()
+		play_animation("walk") 
+	else:
+		state_transition.emit(self, "idle")
+
 	if Input.is_action_pressed("dash") and actor.can_dash:
 		state_transition.emit(self, "dash")

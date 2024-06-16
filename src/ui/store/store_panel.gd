@@ -23,7 +23,7 @@ func restock_store():
 		var recurso = current_pool.pool.pick_random()
 		option.set_option(recurso)
 		
-func restock_option(option):
+func restock_option(_option):
 	pass
 	#option.set_option(current_pool.pool.pick_random())
 	

@@ -12,7 +12,6 @@ func show_damage_numbers(_position, value, critical, effectiveness):
 	var label = Label.new()
 	add_child(label)
 	label.global_position = _position
-	print(label.global_position)
 	if(effectiveness == 1):
 		label.text = str(value) + "!"
 	elif (effectiveness == -1):
