@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://ckumljs7h0tw7"]
+
+[ext_resource type="Script" path="res://src/scripts/effects/projectile_impact.gd" id="1_1asvi"]
+
+[sub_resource type="Gradient" id="Gradient_be3wy"]
+offsets = PackedFloat32Array(0, 0.66474, 1)
+colors = PackedColorArray(0, 0.8, 0.380392, 1, 0.172549, 0.8, 0.152941, 0.72549, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_idm8h"]
+gradient = SubResource("Gradient_be3wy")
+
+[sub_resource type="Curve" id="Curve_5xim1"]
+_data = [Vector2(0.0546875, 0.698113), 0.0, 0.0, 0, 0, Vector2(0.424479, 0.909434), 0.0, 0.0, 0, 0, Vector2(0.622396, 0.290566), 0.0, 0.0, 0, 0, Vector2(0.992187, 0.184906), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_67rqn"]
+curve = SubResource("Curve_5xim1")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uq2a6"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(1, 0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 200.0
+angular_velocity_min = 254.8
+angular_velocity_max = 254.8
+gravity = Vector3(0, 0, 0)
+damping_min = 400.0
+damping_max = 500.0
+scale_min = 10.0
+scale_max = 10.0
+scale_curve = SubResource("CurveTexture_67rqn")
+color_ramp = SubResource("GradientTexture1D_idm8h")
+
+[node name="ProjectileImpact" type="GPUParticles2D"]
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_uq2a6")
+lifetime = 0.2
+one_shot = true
+explosiveness = 0.8
+script = ExtResource("1_1asvi")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

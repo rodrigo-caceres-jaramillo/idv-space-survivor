@@ -4,7 +4,7 @@ extends State
 @onready var ghost_timer = $GhostTimer
 @onready var dash_duration = $DashDuration
 @export var ghost_scene: PackedScene
-const FLASH_MATERIAL = preload("res://src/game/effects/white_flash_material.tres")
+const FLASH_MATERIAL = preload("res://src/scripts/effects/white_flash_material.tres")
 var dash_direction = Vector2()
 var dash_speed = 2
 var delay

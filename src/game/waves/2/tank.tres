@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="WaveEnemy" load_steps=3 format=3 uid="uid://6ests2lgm0jt"]
 
-[ext_resource type="PackedScene" uid="uid://isjmxgfbgpan" path="res://src/game/enemies/tank/tank_enemy.tscn" id="1_4qndo"]
+[ext_resource type="PackedScene" uid="uid://isjmxgfbgpan" path="res://src/game/enemies/invaiders/soldier/soldier.tscn" id="1_4qndo"]
 [ext_resource type="Script" path="res://src/game/waves/wave_enemy.gd" id="1_h3l6v"]
 
 [resource]

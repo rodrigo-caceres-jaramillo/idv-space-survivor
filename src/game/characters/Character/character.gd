@@ -61,7 +61,7 @@ func start_dash_delay():
 	
 func change_invencibility(state):
 	hurtbox_component.is_invincible = state
-	collision_shape.disabled = state
+	#collision_shape.disabled = state
 
 func _on_dash_delay_timeout():
 	print("dash")

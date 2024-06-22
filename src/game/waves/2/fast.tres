@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="WaveEnemy" load_steps=3 format=3 uid="uid://bynbfbmtbpl3k"]
 
 [ext_resource type="Script" path="res://src/game/waves/wave_enemy.gd" id="1_h3l6v"]
-[ext_resource type="PackedScene" uid="uid://elgxofbp0pvn" path="res://src/game/enemies/fast/fast_enemy.tscn" id="1_nuul4"]
+[ext_resource type="PackedScene" uid="uid://elgxofbp0pvn" path="res://src/game/enemies/invaiders/tropper/fast_enemy.tscn" id="1_nuul4"]
 
 [resource]
 script = ExtResource("1_h3l6v")

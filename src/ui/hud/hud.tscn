@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://src/ui/hud/wave_progress.gd" id="4_p26kv"]
 [ext_resource type="Script" path="res://src/ui/hud/gun_and_ammo.gd" id="5_favr7"]
 [ext_resource type="Shader" path="res://src/ui/hud/vignette.gdshader" id="6_f6l2o"]
-[ext_resource type="Texture2D" uid="uid://chb1ttynmaxqd" path="res://src/game/weapons/secondary/uzi/uzi.png" id="6_oahc3"]
+[ext_resource type="Texture2D" uid="uid://chb1ttynmaxqd" path="res://src/game/weapons/player/secondary/uzi/uzi.png" id="6_oahc3"]
 [ext_resource type="StyleBox" uid="uid://b1hkw1f348phd" path="res://src/ui/style_box/hud_panel.tres" id="6_pd3lu"]
 [ext_resource type="Script" path="res://src/ui/hud/vignette.gd" id="7_pqur5"]
 

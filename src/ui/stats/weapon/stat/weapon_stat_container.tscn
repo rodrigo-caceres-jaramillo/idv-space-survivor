@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cjvpxjv2g0wmw"]
 
 [ext_resource type="Script" path="res://src/ui/stats/weapon/stat/weapon_stat_container.gd" id="1_vldri"]
-[ext_resource type="Texture2D" uid="uid://yxxjwwuaa8gn" path="res://src/game/data/damage_types/impact.png" id="2_bhw71"]
+[ext_resource type="Texture2D" uid="uid://yxxjwwuaa8gn" path="res://src/scripts/data/damage_types/impact.png" id="2_bhw71"]
 [ext_resource type="FontFile" uid="uid://dpiss5y70c657" path="res://assets/fonts/PixeloidSans-mLxMm.ttf" id="3_ogi22"]
 
 [node name="WeaponStatContainer" type="HBoxContainer"]

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cv7813u0l66ew"]
+
+[ext_resource type="Script" path="res://src/scripts/components/spawn_projectile_component.gd" id="1_1ytxl"]
+[ext_resource type="Script" path="res://src/game/weapons/enemy/base/range/range_enemy_weapon.gd" id="1_uci6k"]
+
+[node name="RangeEnemyWeapon" type="Sprite2D"]
+script = ExtResource("1_uci6k")
+
+[node name="HandSprite" type="Sprite2D" parent="."]
+
+[node name="Tip" type="Marker2D" parent="."]
+position = Vector2(7, 0)
+
+[node name="FireRate" type="Timer" parent="."]
+
+[node name="SpawnProjectileComponent" type="Node" parent="."]
+script = ExtResource("1_1ytxl")

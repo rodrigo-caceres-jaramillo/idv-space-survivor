@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="WaveData" load_steps=3 format=3 uid="uid://yv1baaijtpoc"]
 
 [ext_resource type="Script" path="res://src/game/waves/wave_data.gd" id="1_ddj7x"]
-[ext_resource type="Resource" uid="uid://cjkguty1phi6r" path="res://src/game/waves/1/basic.tres" id="2_da7i4"]
+[ext_resource type="Resource" uid="uid://dl8ru1feby56j" path="res://src/game/waves/1/soldier.tres" id="3_205ju"]
 
 [resource]
 script = ExtResource("1_ddj7x")
-wave_duration = 60
+wave_duration = 2
 wave_intensity = 0.5
-max_enemies = 20
-wave_enemies = Array[Resource("res://src/game/waves/wave_enemy.gd")]([ExtResource("2_da7i4")])
+max_enemies = 10
+wave_enemies = Array[Resource("res://src/game/waves/wave_enemy.gd")]([ExtResource("3_205ju")])

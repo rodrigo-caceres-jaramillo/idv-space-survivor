@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://coxol6ouwyseu"]
+
+[ext_resource type="Script" path="res://src/scripts/effects/ghost.gd" id="1_jqgcx"]
+
+[node name="Ghost" type="Sprite2D"]
+modulate = Color(0.329158, 0.329158, 0.329158, 1)
+show_behind_parent = true
+top_level = true
+script = ExtResource("1_jqgcx")

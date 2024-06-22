@@ -186,6 +186,7 @@ _data = {
 }
 
 [node name="Character1" instance=ExtResource("1_5gu0q")]
+collision_mask = 1
 stats = ExtResource("2_dg7w5")
 
 [node name="DashBar" parent="." index="0"]

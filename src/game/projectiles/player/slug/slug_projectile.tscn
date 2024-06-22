@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://7eds165421hr"]
+
+[ext_resource type="PackedScene" uid="uid://d00a51jft8ga2" path="res://src/game/projectiles/base/base_projectile.tscn" id="1_u5ip6"]
+[ext_resource type="Texture2D" uid="uid://xkxgfdcy0oyj" path="res://src/game/projectiles/player/slug/slug.png" id="2_5lcge"]
+
+[node name="SlugProjectile" instance=ExtResource("1_u5ip6")]
+scale = Vector2(2, 2)
+texture = ExtResource("2_5lcge")

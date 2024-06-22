@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://src/ui/store/weapons/weapon/weapon_container.gd" id="1_1hhbs"]
 [ext_resource type="StyleBox" uid="uid://bg7ra0k2c1ef0" path="res://src/ui/style_box/store_option.tres" id="1_ogret"]
-[ext_resource type="Texture2D" uid="uid://lsinxl4gsrnk" path="res://src/game/weapons/secondary/pistol/pistol.png" id="3_1a0cx"]
+[ext_resource type="Texture2D" uid="uid://lsinxl4gsrnk" path="res://src/game/weapons/player/secondary/pistol/pistol.png" id="3_1a0cx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ykt4d"]
 bg_color = Color(0.250818, 0.250818, 0.250818, 1)

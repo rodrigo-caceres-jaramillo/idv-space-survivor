@@ -45,6 +45,7 @@ folder_colors={
 "res://assets/": "red",
 "res://src/game/": "green",
 "res://src/main/": "purple",
+"res://src/scripts/": "orange",
 "res://src/ui/": "blue"
 }
 

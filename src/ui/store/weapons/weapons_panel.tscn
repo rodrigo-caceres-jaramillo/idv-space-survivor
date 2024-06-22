@@ -6,31 +6,20 @@
 
 [node name="WeaponsPanel" type="PanelContainer"]
 custom_minimum_size = Vector2(75, 0)
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -320.0
-offset_top = -360.0
-offset_right = -245.0
-offset_bottom = -162.0
-grow_horizontal = 2
-grow_vertical = 0
+offset_right = 75.0
+offset_bottom = 137.0
 size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 2
 theme_override_styles/panel = ExtResource("1_gyu5r")
 script = ExtResource("1_6y4kp")
 
 [node name="HBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
+size_flags_vertical = 0
 theme_override_constants/separation = 1
 
 [node name="PrimaryWeapon" parent="HBoxContainer" instance=ExtResource("1_vlxmh")]
 layout_mode = 2
 
 [node name="SecondaryWeapon" parent="HBoxContainer" instance=ExtResource("1_vlxmh")]
-layout_mode = 2
-
-[node name="MeleeWeapon" parent="HBoxContainer" instance=ExtResource("1_vlxmh")]
 layout_mode = 2

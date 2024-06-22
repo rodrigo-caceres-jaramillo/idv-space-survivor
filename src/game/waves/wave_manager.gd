@@ -39,4 +39,4 @@ func spawn_enemy(wave_enemy):
 			enemy.global_position = self.get_spawn_position()
 		
 func get_spawn_position():
-	return Vector2(randf_range(-260, 1080), randf_range(-160, 640))
+	return Vector2(randf_range(16, 624), randf_range(-40, 336))
