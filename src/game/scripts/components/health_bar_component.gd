@@ -1,13 +1,12 @@
 class_name HealthBarComponent
-extends ProgressBar
+extends TextureProgressBar
 
-@export var stats: EnemyStats = EnemyStats.new()
+var stats
 var initial_value = 10000
 
 func start():
-	self.max_value = initial_value
-	self.modulate = stats.HEALTH_TYPE.color
-	self.value = initial_value
+	self.max_value = stats.HEALTH
+	self.value = stats.HEALTH
 	self.visible = false
 	stats.health_changed.connect(self.update_health)
 	

@@ -15,7 +15,7 @@ func _ready():
 			child.animation_player = animation_player
 			child.state_transition.connect(on_child_transition)
 	if initial_state:
-		initial_state.enter()
+		initial_state.enter(null)
 		current_state = initial_state
 
 func _process(delta):
@@ -26,7 +26,7 @@ func _physics_process(delta):
 	if current_state:
 		current_state.physics_update(delta)
 
-func on_child_transition(state, new_state_name):
+func on_child_transition(state, new_state_name, data=null):
 	if state != current_state:
 		return
 	var new_state = states.get(new_state_name.to_lower())
@@ -34,5 +34,6 @@ func on_child_transition(state, new_state_name):
 		return
 	if current_state:
 		current_state.exit()
-	new_state.enter()
+		
+	new_state.enter(data)
 	current_state = new_state

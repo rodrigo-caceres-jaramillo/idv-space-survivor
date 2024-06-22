@@ -1,36 +1,37 @@
-[gd_scene load_steps=8 format=3 uid="uid://dyrf50yc61ric"]
+[gd_scene load_steps=12 format=3 uid="uid://dyrf50yc61ric"]
 
+[ext_resource type="StyleBox" uid="uid://bg7ra0k2c1ef0" path="res://src/ui/style_box/store_option.tres" id="1_8k3nv"]
 [ext_resource type="Script" path="res://src/ui/store/panel/option/store_option.gd" id="1_yqeex"]
 [ext_resource type="Texture2D" uid="uid://lsinxl4gsrnk" path="res://src/game/weapons/secondary/pistol/pistol.png" id="2_g1gut"]
 [ext_resource type="FontFile" uid="uid://jd478um6wqpv" path="res://assets/fonts/Gameplay.ttf" id="3_3e06n"]
 [ext_resource type="Texture2D" uid="uid://c45p5tvcf6p2d" path="res://assets/textures/money/Money.png" id="4_3tn2f"]
+[ext_resource type="FontFile" uid="uid://dpiss5y70c657" path="res://assets/fonts/PixeloidSans-mLxMm.ttf" id="5_dpy8b"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j23l0"]
-content_margin_left = 5.0
-content_margin_top = 5.0
-content_margin_right = 5.0
-content_margin_bottom = 5.0
-bg_color = Color(0.113725, 0.105882, 0.141176, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gmxn3"]
+bg_color = Color(0.235294, 0.235294, 0.235294, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kgv35"]
+bg_color = Color(0.174028, 0.174028, 0.174028, 1)
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w55r2"]
+bg_color = Color(0.109322, 0.0910168, 0.0816658, 0.835294)
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+shadow_color = Color(1, 1, 1, 0.219608)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s4kyf"]
+bg_color = Color(0.250818, 0.250818, 0.250818, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s4kyf"]
-content_margin_left = 3.0
-content_margin_top = 3.0
-content_margin_right = 3.0
-content_margin_bottom = 3.0
-bg_color = Color(0.598525, 0.598525, 0.598524, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_moaep"]
 content_margin_left = 5.0
@@ -38,29 +39,32 @@ content_margin_top = 5.0
 content_margin_right = 5.0
 content_margin_bottom = 5.0
 bg_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
 
 [node name="StoreOption" type="PanelContainer"]
-custom_minimum_size = Vector2(0, 64)
-offset_right = 290.0
-offset_bottom = 64.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_j23l0")
+custom_minimum_size = Vector2(150, 60)
+offset_right = 250.0
+offset_bottom = 56.0
+theme_override_styles/panel = ExtResource("1_8k3nv")
 script = ExtResource("1_yqeex")
 
 [node name="SelectButton" type="Button" parent="."]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_gmxn3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kgv35")
+theme_override_styles/focus = SubResource("StyleBoxFlat_w55r2")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
 mouse_filter = 2
-theme_override_constants/separation = 2
+theme_override_constants/separation = 3
 alignment = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
-custom_minimum_size = Vector2(54, 54)
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 0
 mouse_filter = 2
@@ -70,23 +74,24 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_s4kyf")
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("2_g1gut")
-expand_mode = 3
-stretch_mode = 4
+expand_mode = 5
+stretch_mode = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
+theme_override_constants/separation = 0
 
 [node name="OptionName" type="Label" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_3e06n")
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 10
 text = "Nombre de item"
 
 [node name="Description" type="Label" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_3e06n")
+theme_override_fonts/font = ExtResource("5_dpy8b")
 theme_override_font_sizes/font_size = 10
 text = "Descripcion"
 

@@ -13,4 +13,3 @@ func check_low_health(value):
 		show()
 	if(value > twentyPercentOfMax):
 		hide()
-	

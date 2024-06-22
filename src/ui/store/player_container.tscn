@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=3 uid="uid://bdahheoi8ox0p"]
+
+[ext_resource type="StyleBox" uid="uid://bg7ra0k2c1ef0" path="res://src/ui/style_box/store_option.tres" id="1_tqwis"]
+[ext_resource type="StyleBox" uid="uid://b1hkw1f348phd" path="res://src/ui/style_box/hud_panel.tres" id="1_wk6um"]
+[ext_resource type="Texture2D" uid="uid://bs3852in2q82w" path="res://src/game/characters/blue/blue_icon.png" id="2_4ayfa"]
+[ext_resource type="Script" path="res://src/ui/store/player_container.gd" id="2_xhx4m"]
+[ext_resource type="PackedScene" uid="uid://5gpwcqpsnti4" path="res://src/ui/stats/player/stat/player_stat_container.tscn" id="3_q838w"]
+[ext_resource type="FontFile" uid="uid://jd478um6wqpv" path="res://assets/fonts/Gameplay.ttf" id="5_qfxq5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nq6sf"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.250818, 0.250818, 0.250818, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[node name="player_container" type="PanelContainer"]
+custom_minimum_size = Vector2(300, 0)
+offset_right = 66.0
+offset_bottom = 66.0
+theme_override_styles/panel = ExtResource("1_wk6um")
+script = ExtResource("2_xhx4m")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_tqwis")
+
+[node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nq6sf")
+
+[node name="PlayerIcon" type="TextureRect" parent="HBoxContainer/PanelContainer/PanelContainer2"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_4ayfa")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="stats" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="HBoxContainer/stats"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_qfxq5")
+theme_override_font_sizes/font_size = 15
+text = "Blue"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/stats"]
+layout_mode = 2
+
+[node name="Health" parent="HBoxContainer/stats/HBoxContainer" instance=ExtResource("3_q838w")]
+layout_mode = 2
+
+[node name="CritChance" parent="HBoxContainer/stats/HBoxContainer" instance=ExtResource("3_q838w")]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/stats"]
+layout_mode = 2
+
+[node name="Speed" parent="HBoxContainer/stats/HBoxContainer2" instance=ExtResource("3_q838w")]
+layout_mode = 2
+
+[node name="Damage" parent="HBoxContainer/stats/HBoxContainer2" instance=ExtResource("3_q838w")]
+layout_mode = 2

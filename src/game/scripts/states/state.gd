@@ -7,7 +7,7 @@ var blend_position : Vector2 = Vector2.ZERO
 
 signal state_transition
 
-func enter():
+func enter(_data):
 	pass
 
 func exit():

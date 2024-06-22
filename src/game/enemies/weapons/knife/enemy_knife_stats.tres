@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="MeleeWeaponStats" load_steps=3 format=3 uid="uid://o10dmm5pe51e"]
+
+[ext_resource type="Script" path="res://src/game/weapons/base/melee/melee_weapon_stats.gd" id="1_ebqvw"]
+[ext_resource type="Resource" uid="uid://cj3s7nat1aaar" path="res://src/game/data/damage_types/slash.tres" id="1_w8nq0"]
+
+[resource]
+script = ExtResource("1_ebqvw")
+DAMAGE = 2.0
+DAMAGE_TYPE = ExtResource("1_w8nq0")
+CRITICAL_CHANCE = 5.0
+CRITICAL_DAMAGE = 1.5
+ATTACK_RATE = 1.0
+RANGE = 20.0
+KNOCKBACK = 1

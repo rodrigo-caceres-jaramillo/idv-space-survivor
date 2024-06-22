@@ -4,7 +4,7 @@ extends State
 var velocity: Vector2
 var accel = 1000
 
-func enter():
+func enter(_data):
 	update_look_direction()
 	play_animation("walk")
 

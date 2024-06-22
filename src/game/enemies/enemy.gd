@@ -2,7 +2,6 @@ class_name Enemy
 extends CharacterBody2D
 
 @onready var enemy_sfx = $EnemySfx
-
 @export var stats: EnemyStats
 @export var money: PackedScene
 @onready var health_bar_component = $HealthBarComponent as HealthBarComponent
@@ -10,17 +9,14 @@ extends CharacterBody2D
 @onready var hurtbox_component:HurtboxComponent = $HurtboxComponent as HurtboxComponent
 @onready var hurt_component = $HurtComponent
 @onready var spawn_invicibility_component = $SpawnInvicibilityComponent as SpawnInvicibilityComponent
-
+@onready var attack_manager = $AttackManager
 var stun = false
-var base_speed = 200
 
 func _ready():
 		hurt_component.stats = stats
-		health_bar_component.initial_value = stats.HEALTH
 		health_bar_component.stats = stats
+		attack_manager.set_up(stats.weapon)
 		health_bar_component.start()
-		hitbox_component.damage = stats.DAMAGE
-		hitbox_component.damage_type = stats.DAMAGE_TYPE
 		Events.wave_finished.connect(die.unbind(1))
 
 func die():

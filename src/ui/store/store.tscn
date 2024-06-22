@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://banvou7ehyoxi"]
+[gd_scene load_steps=9 format=3 uid="uid://banvou7ehyoxi"]
 
 [ext_resource type="PackedScene" uid="uid://cieyh0w75vcq7" path="res://src/ui/store/panel/store_panel.tscn" id="1_1xonm"]
 [ext_resource type="Script" path="res://src/ui/store/store.gd" id="1_pd84c"]
 [ext_resource type="Script" path="res://src/ui/store/start_wave_button.gd" id="2_0wl4q"]
-[ext_resource type="PackedScene" uid="uid://j1hv0mdwq75c" path="res://src/ui/hud/health_money/health_money.tscn" id="2_aeiqx"]
-[ext_resource type="PackedScene" uid="uid://cdfbgd6j3n8mg" path="res://src/ui/stats/player/player_stats_panel.tscn" id="3_ooqn4"]
+[ext_resource type="PackedScene" uid="uid://bdahheoi8ox0p" path="res://src/ui/store/player_container.tscn" id="2_uim6j"]
 [ext_resource type="FontFile" uid="uid://jd478um6wqpv" path="res://assets/fonts/Gameplay.ttf" id="4_b0qy1"]
 [ext_resource type="PackedScene" uid="uid://c4kx661vvd6fc" path="res://src/ui/store/weapons/weapons_panel.tscn" id="5_iqs65"]
 [ext_resource type="PackedScene" uid="uid://db28ox2a2lp5b" path="res://src/ui/stats/weapon/weapon_stats_panel.tscn" id="6_mjfog"]
@@ -34,7 +33,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.212305, 0.212305, 0.212305, 1)
+color = Color(0.319255, 0.319255, 0.319255, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -42,26 +41,36 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
 
 [node name="StoreContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_constants/separation = 10
 
-[node name="LeftContainer" type="VBoxContainer" parent="MarginContainer/StoreContainer"]
-layout_mode = 2
-theme_override_constants/separation = 10
-
-[node name="HealthMoneyPanel" parent="MarginContainer/StoreContainer/LeftContainer" instance=ExtResource("2_aeiqx")]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/StoreContainer"]
 layout_mode = 2
 
-[node name="PlayerStatsPanel" parent="MarginContainer/StoreContainer/LeftContainer" instance=ExtResource("3_ooqn4")]
+[node name="player_container" parent="MarginContainer/StoreContainer/VBoxContainer2" instance=ExtResource("2_uim6j")]
 layout_mode = 2
 
-[node name="StartWaveButton" type="Button" parent="MarginContainer/StoreContainer/LeftContainer"]
+[node name="LeftContainer" type="HBoxContainer" parent="MarginContainer/StoreContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="WeaponsPanel" parent="MarginContainer/StoreContainer/VBoxContainer2/LeftContainer" instance=ExtResource("5_iqs65")]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="WeaponStatsPanel" parent="MarginContainer/StoreContainer/VBoxContainer2/LeftContainer" instance=ExtResource("6_mjfog")]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+
+[node name="StartWaveButton" type="Button" parent="MarginContainer/StoreContainer/VBoxContainer2"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 2
@@ -71,17 +80,10 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_8hugo")
 text = "START WAVE"
 script = ExtResource("2_0wl4q")
 
-[node name="StorePanel" parent="MarginContainer/StoreContainer" instance=ExtResource("1_1xonm")]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/StoreContainer"]
 layout_mode = 2
 
-[node name="RigthContainer" type="VBoxContainer" parent="MarginContainer/StoreContainer"]
-layout_mode = 2
-theme_override_constants/separation = 10
-
-[node name="WeaponStats" parent="MarginContainer/StoreContainer/RigthContainer" instance=ExtResource("6_mjfog")]
+[node name="StorePanel" parent="MarginContainer/StoreContainer/VBoxContainer" instance=ExtResource("1_1xonm")]
 layout_mode = 2
 
-[node name="WeaponsPanel" parent="MarginContainer/StoreContainer/RigthContainer" instance=ExtResource("5_iqs65")]
-layout_mode = 2
-
-[connection signal="pressed" from="MarginContainer/StoreContainer/LeftContainer/StartWaveButton" to="MarginContainer/StoreContainer/LeftContainer/StartWaveButton" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/StoreContainer/VBoxContainer2/StartWaveButton" to="MarginContainer/StoreContainer/VBoxContainer2/StartWaveButton" method="_on_pressed"]

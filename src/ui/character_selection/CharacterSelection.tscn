@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://3b5nmm8mlesk"]
 
 [ext_resource type="Script" path="res://src/ui/character_selection/character_selection.gd" id="1_t0s1k"]
-[ext_resource type="Texture2D" uid="uid://bxvf481uc5x5j" path="res://assets/textures/player/player.png" id="2_7yn36"]
-[ext_resource type="Resource" uid="uid://r2xe12hve2mu" path="res://src/game/characters/character_1/character_1.tres" id="2_nteq1"]
+[ext_resource type="Resource" uid="uid://r2xe12hve2mu" path="res://src/game/characters/blue/character_1.tres" id="2_nteq1"]
 [ext_resource type="Script" path="res://src/ui/character_selection/character_container.gd" id="2_rmotl"]
 [ext_resource type="Texture2D" uid="uid://lsinxl4gsrnk" path="res://src/game/weapons/secondary/pistol/pistol.png" id="3_5pras"]
+[ext_resource type="Texture2D" uid="uid://cy0yl1skksibi" path="res://assets/textures/player/blue_char.png" id="4_uuity"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ck602"]
 content_margin_left = 5.0
@@ -63,17 +63,16 @@ layout_mode = 2
 
 [node name="CharacterName" type="Label" parent="MarginContainer/CharacterContainer/VBoxContainer"]
 layout_mode = 2
-text = "Player Name"
+text = "Blue Character"
 
 [node name="Icon" type="PanelContainer" parent="MarginContainer/CharacterContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_bqxnd")
 
 [node name="IconTexture" type="TextureRect" parent="MarginContainer/CharacterContainer/VBoxContainer/Icon"]
 layout_mode = 2
-texture = ExtResource("2_7yn36")
-expand_mode = 5
+texture = ExtResource("4_uuity")
+stretch_mode = 2
 
 [node name="Initialweaon" type="PanelContainer" parent="MarginContainer/CharacterContainer/VBoxContainer"]
 layout_mode = 2
@@ -81,7 +80,7 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/CharacterContainer/VBoxContainer/Initialweaon"]
 layout_mode = 2
 texture = ExtResource("3_5pras")
-expand_mode = 5
+stretch_mode = 3
 
 [node name="StartGameButton" type="Button" parent="MarginContainer"]
 layout_mode = 2

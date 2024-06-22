@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Gameplay.ttf-9ec71459a817ec8867cc9d3a1a509c7a
 [params]
 
 Rendering=null
-antialiasing=1
+antialiasing=0
 generate_mipmaps=false
 multichannel_signed_distance_field=false
 msdf_pixel_range=8

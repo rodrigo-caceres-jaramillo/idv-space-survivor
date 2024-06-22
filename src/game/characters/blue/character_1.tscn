@@ -2,16 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://ds70pbbdbtgkc" path="res://src/game/characters/Character/character.tscn" id="1_5gu0q"]
 [ext_resource type="Texture2D" uid="uid://mcyunttshb8f" path="res://assets/textures/player/blue_char_hand.png" id="2_4288j"]
-[ext_resource type="Resource" uid="uid://cltvjnuq5jeon" path="res://src/game/characters/character_1/character_1_stats.tres" id="2_dg7w5"]
-[ext_resource type="Texture2D" uid="uid://cg6fstd07mhmq" path="res://src/game/characters/character_1/blue_character.png" id="3_snc6i"]
+[ext_resource type="Resource" uid="uid://cltvjnuq5jeon" path="res://src/game/characters/blue/character_1_stats.tres" id="2_dg7w5"]
+[ext_resource type="Texture2D" uid="uid://cg6fstd07mhmq" path="res://src/game/characters/blue/blue.png" id="3_snc6i"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_br3sc"]
 radius = 5.0
-height = 56.0
+height = 12.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tukxg"]
-radius = 6.66666
-height = 58.0
+radius = 4.0
+height = 26.0
 
 [sub_resource type="Animation" id="Animation_xrlke"]
 length = 0.001
@@ -186,38 +186,48 @@ _data = {
 }
 
 [node name="Character1" instance=ExtResource("1_5gu0q")]
-scale = Vector2(1, 1)
 stats = ExtResource("2_dg7w5")
 
-[node name="Sprite" parent="." index="2"]
+[node name="DashBar" parent="." index="0"]
+offset_left = -4.0
+offset_top = -27.0
+offset_right = 3.0
+offset_bottom = -20.0
+
+[node name="ReloadBar" parent="." index="1"]
+offset_left = -9.0
+offset_top = -19.0
+offset_right = 8.0
+offset_bottom = -14.0
+
+[node name="HealthBarComponent" parent="." index="2"]
+offset_top = 16.0
+offset_right = 9.0
+
+[node name="Sprite" parent="." index="4"]
 texture = ExtResource("3_snc6i")
 hframes = 6
 vframes = 4
 
-[node name="CollisionShape" parent="." index="3"]
-visible = false
-position = Vector2(-1, 2)
+[node name="CollisionShape" parent="." index="5"]
+position = Vector2(0, 10)
 shape = SubResource("CapsuleShape2D_br3sc")
 
-[node name="StateMachine" parent="." index="4" node_paths=PackedStringArray("animation_player")]
+[node name="StateMachine" parent="." index="6" node_paths=PackedStringArray("animation_player")]
 animation_player = NodePath("../AnimationPlayer")
 
 [node name="Hand" parent="WeaponManager" index="0"]
 z_as_relative = false
-position = Vector2(12, 4)
+position = Vector2(8, 3)
 texture = ExtResource("2_4288j")
 
-[node name="HurtboxComponent" parent="." index="8"]
+[node name="HurtboxComponent" parent="." index="10"]
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" index="0"]
-position = Vector2(-1, 0)
 shape = SubResource("CapsuleShape2D_tukxg")
 
-[node name="PickUpArea" parent="." index="9"]
-visible = false
-
-[node name="AnimationPlayer" parent="." index="13"]
+[node name="AnimationPlayer" parent="." index="14"]
 libraries = {
 "": SubResource("AnimationLibrary_ktvfw")
 }

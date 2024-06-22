@@ -10,8 +10,8 @@ extends Area2D
 @export var is_active = true :
 	set(value):
 		is_active = value
-		self.monitorable = value
-		self.monitoring = value
+		set_deferred("monitorable", value)
+		set_deferred("monitoring", value)
 var check_timer: Timer = Timer.new()
 
 func _ready():

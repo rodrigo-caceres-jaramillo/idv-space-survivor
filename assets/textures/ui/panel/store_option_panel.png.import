@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0f5vmqc2aydb"
-path="res://.godot/imported/dash_meter.png-30114a60f14a394b96724b4ea89c4a27.ctex"
+uid="uid://b2uv05mridc4e"
+path="res://.godot/imported/store_option_panel.png-a3f084ed3c8642ed5475f417616af98b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/player/dash_meter.png"
-dest_files=["res://.godot/imported/dash_meter.png-30114a60f14a394b96724b4ea89c4a27.ctex"]
+source_file="res://assets/textures/ui/panel/store_option_panel.png"
+dest_files=["res://.godot/imported/store_option_panel.png-a3f084ed3c8642ed5475f417616af98b.ctex"]
 
 [params]
 

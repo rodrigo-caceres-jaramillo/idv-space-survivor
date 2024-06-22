@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8fiq01ltgq7w"
-path="res://.godot/imported/reload_base.png-154a75a14ab19dea311d662d1209c9e8.ctex"
+uid="uid://cif442vjpp4ok"
+path="res://.godot/imported/alien_hand.png-3da78d3168ff736b03265d4173460f00.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/ui/reload/reload_base.png"
-dest_files=["res://.godot/imported/reload_base.png-154a75a14ab19dea311d662d1209c9e8.ctex"]
+source_file="res://src/game/enemies/basic/alien_hand.png"
+dest_files=["res://.godot/imported/alien_hand.png-3da78d3168ff736b03265d4173460f00.ctex"]
 
 [params]
 

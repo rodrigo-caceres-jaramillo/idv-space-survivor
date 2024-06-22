@@ -2,6 +2,7 @@ class_name Character
 extends CharacterBody2D
 
 @onready var hurt_component = $HurtComponent
+@onready var collision_shape = $CollisionShape
 @onready var hurtbox_component = $HurtboxComponent as HurtboxComponent
 @onready var weapon_manager = $WeaponManager
 @onready var upgrade_manager = $UpgradeManager
@@ -10,6 +11,7 @@ extends CharacterBody2D
 @onready var sprite = $Sprite
 @onready var state_machine = $StateMachine
 @export var stats: PlayerStats
+@onready var health_bar_component = $HealthBarComponent
 var initial_weapon: WeaponResource
 var dash_delay = 1
 var stun = false
@@ -19,6 +21,8 @@ var can_shoot = true
 func _ready():
 	hurt_component.stats = stats
 	upgrade_manager.stats = stats
+	health_bar_component.stats = stats
+	health_bar_component.start()
 	stats.no_health.connect(
 		func():
 		self.hide()
@@ -54,6 +58,10 @@ func add_store_resource(resource: StoreResource):
 func start_dash_delay():
 	dash_delay_timer.start(dash_delay)
 	Events.dash_finished.emit(dash_delay)
+	
+func change_invencibility(state):
+	hurtbox_component.is_invincible = state
+	collision_shape.disabled = state
 
 func _on_dash_delay_timeout():
 	print("dash")

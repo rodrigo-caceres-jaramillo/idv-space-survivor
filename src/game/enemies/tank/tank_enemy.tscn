@@ -37,3 +37,9 @@ debug_color = Color(0.906287, 0.238013, 0.481607, 0.42)
 [node name="HurtboxShape" type="CollisionShape2D" parent="HurtboxComponent" index="0"]
 visible = false
 shape = SubResource("CapsuleShape2D_j14b5")
+
+[node name="HealthBarComponent" parent="." index="8"]
+offset_left = -9.23077
+offset_top = 16.9231
+offset_right = 9.76923
+offset_bottom = 21.9231

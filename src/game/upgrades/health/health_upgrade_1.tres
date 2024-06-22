@@ -14,6 +14,6 @@ positive = true
 script = ExtResource("3_own0l")
 modifiers = Array[ExtResource("2_0q1en")]([SubResource("Resource_honb7")])
 name = "Health Module"
-description = "+ 10 Max Health"
+description = "+10 Max Health"
 price = 10
 icon = ExtResource("1_r67nx")

@@ -19,7 +19,7 @@ var HEALTH: int:
 		speed_changed.emit(value)
 		stats_changed.emit()
 var FINAL_SPEED: float:
-	get: return (200 * SPEED)
+	get: return (100 * SPEED)
 @export var DAMAGE = 1:
 	set(value):
 		DAMAGE = value

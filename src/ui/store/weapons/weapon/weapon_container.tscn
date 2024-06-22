@@ -1,28 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://vkkjqwcihxbh"]
+[gd_scene load_steps=7 format=3 uid="uid://vkkjqwcihxbh"]
 
 [ext_resource type="Script" path="res://src/ui/store/weapons/weapon/weapon_container.gd" id="1_1hhbs"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nwkxn"]
-content_margin_left = 5.0
-content_margin_top = 5.0
-content_margin_right = 5.0
-content_margin_bottom = 5.0
-bg_color = Color(0, 0, 0, 0.392157)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
+[ext_resource type="StyleBox" uid="uid://bg7ra0k2c1ef0" path="res://src/ui/style_box/store_option.tres" id="1_ogret"]
+[ext_resource type="Texture2D" uid="uid://lsinxl4gsrnk" path="res://src/game/weapons/secondary/pistol/pistol.png" id="3_1a0cx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ykt4d"]
-content_margin_left = 5.0
-content_margin_top = 5.0
-content_margin_right = 5.0
-content_margin_bottom = 5.0
-bg_color = Color(0.265361, 0.265361, 0.26536, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
+bg_color = Color(0.250818, 0.250818, 0.250818, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7pi83"]
+bg_color = Color(0.0313726, 0.0313726, 0.0313726, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fr7ae"]
 content_margin_left = 3.0
@@ -36,9 +26,10 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [node name="WeaponContainer" type="PanelContainer"]
-offset_right = 70.0
-offset_bottom = 70.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_nwkxn")
+custom_minimum_size = Vector2(0, 60)
+offset_right = 58.0
+offset_bottom = 58.0
+theme_override_styles/panel = ExtResource("1_ogret")
 script = ExtResource("1_1hhbs")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -52,11 +43,13 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_ykt4d")
 
 [node name="SelectButton" type="Button" parent="VBoxContainer/PanelContainer"]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_7pi83")
 
 [node name="WeaponIcon" type="TextureRect" parent="VBoxContainer/PanelContainer"]
-custom_minimum_size = Vector2(50, 50)
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 mouse_filter = 2
+texture = ExtResource("3_1a0cx")
 expand_mode = 5
 stretch_mode = 5
 

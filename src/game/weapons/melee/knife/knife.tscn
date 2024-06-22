@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqnd8fnh4kvfh"]
+
+[ext_resource type="PackedScene" uid="uid://ns6rmtijx3dc" path="res://src/game/weapons/base/melee/melee_weapon.tscn" id="1_rj4sq"]
+[ext_resource type="Texture2D" uid="uid://b0irrl5l81xnl" path="res://src/game/weapons/melee/knife/knife.png" id="2_8eigb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_abeim"]
+radius = 3.0
+height = 18.0
+
+[node name="Knife" instance=ExtResource("1_rj4sq")]
+texture = ExtResource("2_8eigb")
+offset = Vector2(0, -9)
+
+[node name="HitboxComponent" parent="." index="1"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="HitboxShape" type="CollisionShape2D" parent="HitboxComponent" index="0"]
+position = Vector2(0, -12)
+shape = SubResource("CapsuleShape2D_abeim")

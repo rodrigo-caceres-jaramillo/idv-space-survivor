@@ -8,8 +8,9 @@ extends Resource
 		if HEALTH <= 0: no_health.emit()
 @export var HEALTH_TYPE: HealthType
 @export var SPEED: float = 1
-@export var DAMAGE: float
-@export var DAMAGE_TYPE: DamageType
+var FINAL_SPEED: float:
+	get: return (100 * SPEED)
+@export var weapon: WeaponResource
 @export var KB_RESISTANCE: float = 1
 @export var min_value: int = 1
 @export var max_value: int = 2

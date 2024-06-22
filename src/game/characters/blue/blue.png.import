@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8ceseoxkdnpp"
-path="res://.godot/imported/dash_meter_under.png-9750cf5b8e436a336962d12ef6483f67.ctex"
+uid="uid://cg6fstd07mhmq"
+path="res://.godot/imported/blue.png-63603b31aaffc2235cbf82ee07efbce0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/player/dash_meter_under.png"
-dest_files=["res://.godot/imported/dash_meter_under.png-9750cf5b8e436a336962d12ef6483f67.ctex"]
+source_file="res://src/game/characters/blue/blue.png"
+dest_files=["res://.godot/imported/blue.png-63603b31aaffc2235cbf82ee07efbce0.ctex"]
 
 [params]
 

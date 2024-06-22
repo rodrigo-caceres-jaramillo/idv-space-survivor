@@ -1,51 +1,74 @@
-[gd_scene load_steps=19 format=3 uid="uid://ds70pbbdbtgkc"]
+[gd_scene load_steps=22 format=3 uid="uid://ds70pbbdbtgkc"]
 
 [ext_resource type="Script" path="res://src/game/characters/Character/character.gd" id="1_t5npn"]
-[ext_resource type="Texture2D" uid="uid://c0f5vmqc2aydb" path="res://assets/textures/player/dash_meter.png" id="2_272cq"]
+[ext_resource type="Texture2D" uid="uid://dbqaxxd3uvuyh" path="res://assets/textures/player/dash_over.png" id="2_gwk3m"]
 [ext_resource type="Script" path="res://src/game/scripts/states/state_machine.gd" id="2_ijblu"]
 [ext_resource type="Script" path="res://src/game/characters/Character/weapon_manager.gd" id="3_54588"]
+[ext_resource type="Texture2D" uid="uid://thhg61lksrvx" path="res://assets/textures/player/dash_progress.png" id="3_e8kud"]
 [ext_resource type="Script" path="res://src/game/characters/Character/states/idle_state.gd" id="3_eoqu7"]
-[ext_resource type="Texture2D" uid="uid://c8ceseoxkdnpp" path="res://assets/textures/player/dash_meter_under.png" id="3_i6mxq"]
 [ext_resource type="Script" path="res://src/game/characters/Character/upgrade_manager.gd" id="4_5ataj"]
 [ext_resource type="Script" path="res://src/game/characters/Character/dash_bar.gd" id="4_h5d68"]
 [ext_resource type="Script" path="res://src/game/characters/Character/states/movement_state.gd" id="4_nl2ik"]
 [ext_resource type="Script" path="res://src/game/characters/Character/dash_state.gd" id="5_eluuy"]
 [ext_resource type="PackedScene" uid="uid://coxol6ouwyseu" path="res://src/game/effects/ghost.tscn" id="6_axiyh"]
+[ext_resource type="Texture2D" uid="uid://ccrutbgt8vgfp" path="res://assets/textures/player/reaload_progress.png" id="6_gnjio"]
+[ext_resource type="Texture2D" uid="uid://b2c3e1l13v4j7" path="res://assets/textures/ui/health_bar/health_bar_under.png" id="8_fs52k"]
 [ext_resource type="Script" path="res://src/game/scripts/components/hurt_box_component.gd" id="9_kk872"]
 [ext_resource type="AudioStream" uid="uid://dyoxlhub70b8l" path="res://assets/sound/hit_player.wav" id="9_n2il3"]
-[ext_resource type="Texture2D" uid="uid://b8fiq01ltgq7w" path="res://assets/textures/ui/reload/reload_base.png" id="10_bxf7v"]
+[ext_resource type="Texture2D" uid="uid://dp3455beb64d4" path="res://assets/textures/ui/health_bar/health_bar_progress.png" id="9_oiyga"]
+[ext_resource type="Script" path="res://src/game/scripts/components/health_bar_component.gd" id="10_vqqyp"]
 [ext_resource type="Script" path="res://src/game/scripts/components/hurt_component.gd" id="10_xcugp"]
-[ext_resource type="Texture2D" uid="uid://b61mmn65g043m" path="res://assets/textures/ui/reload/reload_over.png" id="11_7xkux"]
+[ext_resource type="Texture2D" uid="uid://dd41ceep0cheh" path="res://assets/textures/ui/reload/reload_over.png" id="11_7xkux"]
 [ext_resource type="Script" path="res://src/game/characters/Character/reload_bar.gd" id="12_5prya"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cfa88"]
 radius = 52.6709
 
 [node name="Character" type="CharacterBody2D"]
-position = Vector2(401, 225)
-scale = Vector2(2, 2)
 collision_mask = 5
 motion_mode = 1
 script = ExtResource("1_t5npn")
 
 [node name="DashBar" type="TextureProgressBar" parent="."]
-offset_left = -10.0
-offset_top = -55.5
-offset_right = 30.0
-offset_bottom = -15.5
-scale = Vector2(0.5, 0.5)
+custom_minimum_size = Vector2(7, 7)
+offset_left = -3.0
+offset_top = -47.0
+offset_right = 4.0
+offset_bottom = -40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 value = 100.0
 fill_mode = 3
 nine_patch_stretch = true
-texture_over = ExtResource("2_272cq")
-texture_progress = ExtResource("3_i6mxq")
+texture_over = ExtResource("2_gwk3m")
+texture_progress = ExtResource("3_e8kud")
 script = ExtResource("4_h5d68")
+
+[node name="ReloadBar" type="TextureProgressBar" parent="."]
+offset_left = -8.0
+offset_top = -40.0
+offset_right = 9.0
+offset_bottom = -35.0
+value = 100.0
+fill_mode = 6
+texture_under = ExtResource("11_7xkux")
+texture_progress = ExtResource("6_gnjio")
+script = ExtResource("12_5prya")
+
+[node name="HealthBarComponent" type="TextureProgressBar" parent="."]
+offset_left = -10.0
+offset_top = -19.0
+offset_right = 30.0
+offset_bottom = 21.0
+value = 100.0
+texture_under = ExtResource("8_fs52k")
+texture_progress = ExtResource("9_oiyga")
+script = ExtResource("10_vqqyp")
 
 [node name="DashDelayTimer" type="Timer" parent="."]
 one_shot = true
 
 [node name="Sprite" type="Sprite2D" parent="."]
-scale = Vector2(2, 2)
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.33333)
@@ -81,7 +104,6 @@ actor = NodePath("..")
 
 [node name="Hand" type="Sprite2D" parent="WeaponManager"]
 z_index = 10
-scale = Vector2(2, 2)
 
 [node name="ItemsManager" type="Node2D" parent="."]
 
@@ -92,10 +114,12 @@ script = ExtResource("9_kk872")
 invincibility_duration = 0.5
 
 [node name="PickUpArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickUpArea"]
+visible = false
 shape = SubResource("CircleShape2D_cfa88")
 
 [node name="HurtComponent" type="Node" parent="." node_paths=PackedStringArray("player_sfx", "hurtbox_component", "sprite", "actor")]
@@ -105,18 +129,6 @@ player_sfx = NodePath("../PlayerSfx")
 hurtbox_component = NodePath("../HurtboxComponent")
 sprite = NodePath("../Sprite")
 actor = NodePath("..")
-
-[node name="ReloadBar" type="TextureProgressBar" parent="."]
-offset_left = -16.0
-offset_top = -36.0
-offset_right = 48.0
-offset_bottom = 4.0
-scale = Vector2(0.5, 0.5)
-value = 30.0
-fill_mode = 6
-texture_under = ExtResource("10_bxf7v")
-texture_progress = ExtResource("11_7xkux")
-script = ExtResource("12_5prya")
 
 [node name="PlayerSfx" type="AudioStreamPlayer" parent="."]
 

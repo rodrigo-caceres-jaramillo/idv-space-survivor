@@ -9,11 +9,10 @@ weapon_fsx = NodePath("PistolSfx")
 projectile = ExtResource("4_njtau")
 
 [node name="Sprite" parent="." index="0"]
-position = Vector2(7.62939e-06, 9.53674e-07)
 texture = ExtResource("3_46awc")
 offset = Vector2(8.57143, -2.85714)
 
 [node name="Tip" parent="." index="1"]
-position = Vector2(21.4286, -8.57143)
+position = Vector2(20, -8)
 
 [node name="PistolSfx" type="AudioStreamPlayer" parent="." index="5"]

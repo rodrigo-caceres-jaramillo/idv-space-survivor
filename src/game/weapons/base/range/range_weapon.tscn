@@ -5,7 +5,6 @@
 
 [node name="RangeWeapon" type="Node2D"]
 z_index = 5
-scale = Vector2(0.8, 0.8)
 script = ExtResource("1_w3q8x")
 
 [node name="Sprite" type="Sprite2D" parent="."]

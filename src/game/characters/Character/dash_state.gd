@@ -10,18 +10,21 @@ var dash_speed = 2
 var delay
 var sprite
 
-func enter():
+func enter(_data):
 	actor.sprite.material = FLASH_MATERIAL
+	actor.change_invencibility(true)
 	self.sprite = actor.sprite
 	actor.can_shoot = false
 	actor.can_dash = false
 	dash_duration.start(0.3)
 	ghost_timer.start()
+	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	direction.normalized()
+	actor.velocity = (direction * actor.stats.FINAL_SPEED * dash_speed)
 	create_ghost()
-	dash_direction = (get_global_mouse_position() - actor.global_position).normalized()
-	actor.velocity = dash_direction * dash_speed * actor.stats.FINAL_SPEED
 
-func update(_delta : float):
+func physics_update(_delta : float):
+	
 	actor.move_and_slide()
 
 func create_ghost():
@@ -38,6 +41,7 @@ func _on_dash_duration_timeout():
 	actor.start_dash_delay()
 	ghost_timer.stop()
 	actor.sprite.material = null
+	actor.change_invencibility(false)
 	state_transition.emit(self, "idle")
 
 func _on_ghost_timer_timeout():

@@ -3,7 +3,7 @@ extends State
 
 @export var weapon_manager: Node2D
 
-func enter():
+func enter(_data):
 	update_look_direction()
 	play_animation("idle")
 
@@ -12,8 +12,6 @@ func update(_delta : float):
 	direction.normalized()
 	if direction != Vector2.ZERO:
 		state_transition.emit(self, "movement")
-	elif Input.is_action_pressed("dash") and actor.can_dash:
-		state_transition.emit(self, "dash")
 	else:
 		update_look_direction()
 		play_animation("idle")

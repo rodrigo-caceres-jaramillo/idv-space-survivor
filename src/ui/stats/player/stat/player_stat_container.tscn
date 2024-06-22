@@ -1,18 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://5gpwcqpsnti4"]
+[gd_scene load_steps=3 format=3 uid="uid://5gpwcqpsnti4"]
 
 [ext_resource type="Script" path="res://src/ui/stats/player/stat/player_stat_container.gd" id="1_wc32l"]
+[ext_resource type="FontFile" uid="uid://dpiss5y70c657" path="res://assets/fonts/PixeloidSans-mLxMm.ttf" id="2_bo7iv"]
 
 [node name="PlayerStatContainer" type="HBoxContainer"]
-custom_minimum_size = Vector2(190, 0)
+custom_minimum_size = Vector2(100, 0)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -41.5
-offset_top = -11.5
-offset_right = 41.5
-offset_bottom = 11.5
+offset_left = -320.0
+offset_top = -180.0
+offset_right = -186.0
+offset_bottom = -157.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -22,14 +23,20 @@ script = ExtResource("1_wc32l")
 [node name="Stat" type="Label" parent="."]
 layout_mode = 2
 size_flags_horizontal = 2
+theme_override_fonts/font = ExtResource("2_bo7iv")
+theme_override_font_sizes/font_size = 12
 text = "Stat: "
 
 [node name="Base" type="Label" parent="."]
 layout_mode = 2
 size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("2_bo7iv")
+theme_override_font_sizes/font_size = 12
 text = "10%"
 horizontal_alignment = 2
 
 [node name="Upgrade" type="Label" parent="."]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bo7iv")
+theme_override_font_sizes/font_size = 12
 text = "20"

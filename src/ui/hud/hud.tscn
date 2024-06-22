@@ -2,46 +2,31 @@
 
 [ext_resource type="PackedScene" uid="uid://j1hv0mdwq75c" path="res://src/ui/hud/health_money/health_money.tscn" id="1_22fa2"]
 [ext_resource type="FontFile" uid="uid://jd478um6wqpv" path="res://assets/fonts/Gameplay.ttf" id="3_7epsx"]
+[ext_resource type="FontFile" uid="uid://d0syovoiiok0x" path="res://assets/fonts/joystix monospace.otf" id="3_tomkk"]
 [ext_resource type="Script" path="res://src/ui/hud/wave_progress.gd" id="4_p26kv"]
 [ext_resource type="Script" path="res://src/ui/hud/gun_and_ammo.gd" id="5_favr7"]
 [ext_resource type="Shader" path="res://src/ui/hud/vignette.gdshader" id="6_f6l2o"]
 [ext_resource type="Texture2D" uid="uid://chb1ttynmaxqd" path="res://src/game/weapons/secondary/uzi/uzi.png" id="6_oahc3"]
+[ext_resource type="StyleBox" uid="uid://b1hkw1f348phd" path="res://src/ui/style_box/hud_panel.tres" id="6_pd3lu"]
 [ext_resource type="Script" path="res://src/ui/hud/vignette.gd" id="7_pqur5"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_knykf"]
-content_margin_left = 5.0
-content_margin_top = 5.0
-content_margin_right = 5.0
-content_margin_bottom = 5.0
-bg_color = Color(0, 0, 0, 0.588235)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_34oor"]
-content_margin_left = 3.0
-content_margin_top = 3.0
-content_margin_right = 3.0
-content_margin_bottom = 3.0
-bg_color = Color(1, 1, 1, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2btti"]
-content_margin_left = 5.0
-content_margin_top = 5.0
-content_margin_right = 5.0
-content_margin_bottom = 5.0
-bg_color = Color(0, 0, 0, 0.588235)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.250818, 0.250818, 0.250818, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n5vov"]
 shader = ExtResource("6_f6l2o")
-shader_parameter/alpha = 0.3
-shader_parameter/inner_radius = 0.0
-shader_parameter/outer_radius = 1.0
+shader_parameter/vignette_intensity = 0.5
+shader_parameter/vignette_opacity = 0.5
+shader_parameter/vignette_rgb = Color(0.74902, 0, 0, 1)
 
 [node name="UiLayer" type="CanvasLayer"]
 
@@ -57,10 +42,11 @@ theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
 [node name="WeaponStatusPanel" type="PanelContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(130, 0)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
-theme_override_styles/panel = SubResource("StyleBoxFlat_knykf")
+theme_override_styles/panel = ExtResource("6_pd3lu")
 
 [node name="WeaponAndAmmo" type="HBoxContainer" parent="MarginContainer/WeaponStatusPanel"]
 layout_mode = 2
@@ -69,10 +55,16 @@ script = ExtResource("5_favr7")
 
 [node name="AmmoCounter" type="Label" parent="MarginContainer/WeaponStatusPanel/WeaponAndAmmo"]
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_tomkk")
+theme_override_font_sizes/font_size = 16
 text = "10/10"
+horizontal_alignment = 2
 
 [node name="Panel" type="PanelContainer" parent="MarginContainer/WeaponStatusPanel/WeaponAndAmmo"]
-custom_minimum_size = Vector2(30, 30)
+custom_minimum_size = Vector2(35, 35)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_34oor")
 
@@ -91,7 +83,7 @@ size_flags_vertical = 0
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_2btti")
+theme_override_styles/panel = ExtResource("6_pd3lu")
 
 [node name="WaveProgress" type="VBoxContainer" parent="MarginContainer/WaveProgressPanel"]
 layout_mode = 2
@@ -104,9 +96,10 @@ layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("3_7epsx")
-theme_override_font_sizes/font_size = 15
-text = "WAVE 1"
+theme_override_font_sizes/font_size = 17
+text = "WAVE"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="TimeLeft" type="Label" parent="MarginContainer/WaveProgressPanel/WaveProgress"]
 layout_mode = 2
@@ -118,6 +111,7 @@ text = "20"
 horizontal_alignment = 1
 
 [node name="Vignette" type="ColorRect" parent="."]
+visible = false
 z_index = -1
 material = SubResource("ShaderMaterial_n5vov")
 anchors_preset = 15

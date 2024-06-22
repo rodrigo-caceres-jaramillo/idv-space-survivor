@@ -8,6 +8,7 @@ var weapon_resource
 var weapon_index
 
 func set_up(_weapon_index):
+	weapon_icon.texture = null
 	self.weapon_manager = Global.player.weapon_manager
 	self.weapon_index = _weapon_index
 	if(weapon_manager.weapons_resource[weapon_index]):

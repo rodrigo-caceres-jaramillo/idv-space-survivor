@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var wave_manager = $WaveManager
 @onready var tile_map = $TileMap
-var start_position= Vector2(693, 403)
+var start_position= Vector2(512/2, 288/2)
 @onready var phantom_camera_2d = $PhantomCamera2D
 
 func _ready():
