@@ -15,4 +15,4 @@ func update_ammo(ammo):
 func update_gun_icon(weapon):
 	max_ammo = weapon.magazine_size
 	update_ammo(weapon.current_ammo)
-	self.gun_icon.texture = weapon.sprite.texture
+	self.gun_icon.texture = weapon.texture

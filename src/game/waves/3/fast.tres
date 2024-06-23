@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="WaveEnemy" load_steps=3 format=3 uid="uid://bwwmflw2q0m85"]
 
-[ext_resource type="PackedScene" uid="uid://elgxofbp0pvn" path="res://src/game/enemies/invaiders/tropper/tropper.tscn" id="1_mbfp5"]
+[ext_resource type="PackedScene" uid="uid://elgxofbp0pvn" path="res://src/game/enemies/stratos/tropper/tropper.tscn" id="1_mbfp5"]
 [ext_resource type="Script" path="res://src/game/waves/wave_enemy.gd" id="2_ttb37"]
 
 [resource]

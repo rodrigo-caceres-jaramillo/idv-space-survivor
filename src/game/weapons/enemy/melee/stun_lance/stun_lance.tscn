@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://cctsf1dsajlkt"]
+
+[ext_resource type="PackedScene" uid="uid://iecw0xkvtuvb" path="res://src/game/weapons/enemy/base/melee/melee_enemy_weapon.tscn" id="1_cnkqu"]
+[ext_resource type="Texture2D" uid="uid://dmv084xk2pco8" path="res://src/game/weapons/enemy/melee/stun_lance/stun_lance.png" id="2_b54cc"]
+[ext_resource type="Resource" uid="uid://b2m4xygijfe0e" path="res://src/game/weapons/enemy/melee/stun_lance/stun_lance_stats.tres" id="3_w7ar0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h3cdv"]
+radius = 3.0
+height = 10.0
+
+[sub_resource type="Animation" id="Animation_0b8an"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-0.077446, -0.521486)]
+}
+
+[sub_resource type="Animation" id="Animation_j8vnq"]
+resource_name = "attack"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 0.9),
+"transitions": PackedFloat32Array(0.406126, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(9, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fsmob"]
+_data = {
+"RESET": SubResource("Animation_0b8an"),
+"attack": SubResource("Animation_j8vnq")
+}
+
+[node name="StunLance" instance=ExtResource("1_cnkqu")]
+position = Vector2(-0.077446, -0.521486)
+rotation = 1.5708
+texture = ExtResource("2_b54cc")
+offset = Vector2(1, -7)
+stats = ExtResource("3_w7ar0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" index="0"]
+position = Vector2(1, -16)
+shape = SubResource("CapsuleShape2D_h3cdv")
+
+[node name="AnimationPlayer" parent="." index="3"]
+libraries = {
+"": SubResource("AnimationLibrary_fsmob")
+}

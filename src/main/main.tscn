@@ -285,7 +285,7 @@ visible = false
 [node name="Camera2D" type="Camera2D" parent="."]
 visible = false
 position = Vector2(688, 421)
-zoom = Vector2(1.7, 1.7)
+zoom = Vector2(1.5, 1.5)
 limit_left = -32
 limit_top = -104
 limit_right = 672
@@ -302,7 +302,7 @@ visible = false
 position = Vector2(688, 421)
 script = ExtResource("13_xlvnm")
 follow_mode = 5
-zoom = Vector2(1.7, 1.7)
+zoom = Vector2(1.5, 1.5)
 tween_resource = SubResource("Resource_8r3oj")
 follow_damping = true
 follow_damping_value = Vector2(0.2, 0.2)

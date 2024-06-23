@@ -3,12 +3,14 @@
 [ext_resource type="Script" path="res://src/game/weapons/player/base/range/range_weapon.gd" id="1_w3q8x"]
 [ext_resource type="Script" path="res://src/scripts/components/spawn_projectile_component.gd" id="2_bp3st"]
 
-[node name="RangeWeapon" type="Node2D"]
+[node name="RangeWeapon" type="Sprite2D"]
 z_index = 5
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_w3q8x")
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="MainHand" type="Sprite2D" parent="."]
+
+[node name="SecondHand" type="Sprite2D" parent="."]
 
 [node name="Tip" type="Marker2D" parent="."]
 position = Vector2(7, 0)

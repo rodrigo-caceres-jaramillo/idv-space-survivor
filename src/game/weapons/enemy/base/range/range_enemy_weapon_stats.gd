@@ -1,13 +1,10 @@
-class_name RangedEnemyWeaponStats
+class_name RangeEnemyWeaponStats
 extends Resource
 
-enum Type {PRIMARY, SECONDARY}
-@export var type: Type
 @export var DAMAGE: float = 5
 @export var DAMAGE_TYPE: DamageType
 @export var MULTISHOT: float = 1.0
 @export var FIRE_RATE: float = 1.0
-@export var RELOAD: float = 1
 @export var RANGE: float = 20.0
 @export var KNOCKBACK: int = 1
 @export var SPREAD: float = 0.0

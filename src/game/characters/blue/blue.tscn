@@ -1,0 +1,232 @@
+[gd_scene load_steps=17 format=3 uid="uid://l4o40vj2b5k4"]
+
+[ext_resource type="PackedScene" uid="uid://ds70pbbdbtgkc" path="res://src/game/characters/Character/character.tscn" id="1_5gu0q"]
+[ext_resource type="Texture2D" uid="uid://mcyunttshb8f" path="res://src/game/characters/blue/blue_hand.png" id="2_4288j"]
+[ext_resource type="Resource" uid="uid://cltvjnuq5jeon" path="res://src/game/characters/blue/blue_stats.tres" id="2_dg7w5"]
+[ext_resource type="Texture2D" uid="uid://cg6fstd07mhmq" path="res://src/game/characters/blue/blue.png" id="3_snc6i"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_br3sc"]
+radius = 5.0
+height = 12.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tukxg"]
+radius = 4.0
+height = 26.0
+
+[sub_resource type="Animation" id="Animation_xrlke"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_4ipne"]
+resource_name = "idle_back"
+length = 0.6
+loop_mode = 1
+step = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_q2glm"]
+resource_name = "idle_front"
+length = 0.6
+loop_mode = 1
+step = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_anysi"]
+resource_name = "idle_left"
+length = 0.6
+loop_mode = 1
+step = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [18, 19]
+}
+
+[sub_resource type="Animation" id="Animation_k7e16"]
+resource_name = "idle_right"
+length = 0.6
+loop_mode = 1
+step = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [12, 13]
+}
+
+[sub_resource type="Animation" id="Animation_rprqy"]
+resource_name = "walk_back"
+length = 0.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_kt0st"]
+resource_name = "walk_front"
+length = 0.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [2, 3, 5, 4]
+}
+
+[sub_resource type="Animation" id="Animation_xb7li"]
+resource_name = "walk_left"
+length = 0.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [20, 21, 22, 23]
+}
+
+[sub_resource type="Animation" id="Animation_54b7o"]
+resource_name = "walk_right"
+length = 0.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [14, 15, 16, 17]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ktvfw"]
+_data = {
+"RESET": SubResource("Animation_xrlke"),
+"idle_back": SubResource("Animation_4ipne"),
+"idle_front": SubResource("Animation_q2glm"),
+"idle_left": SubResource("Animation_anysi"),
+"idle_right": SubResource("Animation_k7e16"),
+"walk_back": SubResource("Animation_rprqy"),
+"walk_front": SubResource("Animation_kt0st"),
+"walk_left": SubResource("Animation_xb7li"),
+"walk_right": SubResource("Animation_54b7o")
+}
+
+[node name="BlueChararcter" instance=ExtResource("1_5gu0q")]
+collision_mask = 1
+stats = ExtResource("2_dg7w5")
+
+[node name="WeaponManager" parent="." index="0"]
+hand_sprite = ExtResource("2_4288j")
+
+[node name="DashBar" parent="." index="1"]
+offset_left = -4.0
+offset_top = -27.0
+offset_right = 3.0
+offset_bottom = -20.0
+
+[node name="ReloadBar" parent="." index="2"]
+offset_left = -9.0
+offset_top = -19.0
+offset_right = 8.0
+offset_bottom = -14.0
+
+[node name="HealthBarComponent" parent="." index="3"]
+offset_top = 16.0
+offset_right = 9.0
+
+[node name="Sprite" parent="." index="5"]
+texture = ExtResource("3_snc6i")
+hframes = 6
+vframes = 4
+
+[node name="CollisionShape" parent="." index="6"]
+position = Vector2(0, 10)
+shape = SubResource("CapsuleShape2D_br3sc")
+
+[node name="StateMachine" parent="." index="7" node_paths=PackedStringArray("animation_player")]
+animation_player = NodePath("../AnimationPlayer")
+
+[node name="HurtboxComponent" parent="." index="10"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" index="0"]
+shape = SubResource("CapsuleShape2D_tukxg")
+
+[node name="AnimationPlayer" parent="." index="14"]
+libraries = {
+"": SubResource("AnimationLibrary_ktvfw")
+}

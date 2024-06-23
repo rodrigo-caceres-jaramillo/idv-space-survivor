@@ -29,6 +29,12 @@ collision_mask = 5
 motion_mode = 1
 script = ExtResource("1_t5npn")
 
+[node name="WeaponManager" type="Node2D" parent="." node_paths=PackedStringArray("actor")]
+script = ExtResource("3_54588")
+actor = NodePath("..")
+
+[node name="HandPosition" type="Marker2D" parent="WeaponManager"]
+
 [node name="DashBar" type="TextureProgressBar" parent="."]
 custom_minimum_size = Vector2(7, 7)
 offset_left = -3.0
@@ -97,13 +103,6 @@ wait_time = 0.1
 
 [node name="UpgradeManager" type="Node2D" parent="."]
 script = ExtResource("4_5ataj")
-
-[node name="WeaponManager" type="Node2D" parent="." node_paths=PackedStringArray("actor")]
-script = ExtResource("3_54588")
-actor = NodePath("..")
-
-[node name="Hand" type="Sprite2D" parent="WeaponManager"]
-z_index = 10
 
 [node name="ItemsManager" type="Node2D" parent="."]
 

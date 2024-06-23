@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="EnemyWeapon" load_steps=3 format=3 uid="uid://cofhr16osmj2b"]
+
+[ext_resource type="Script" path="res://src/game/weapons/enemy/base/resource/enemy_weapon.gd" id="1_n38cu"]
+[ext_resource type="PackedScene" uid="uid://byylpvereykxf" path="res://src/game/weapons/enemy/range/plasma_shotgun/plasma_shotgun.tscn" id="2_lub8o"]
+
+[resource]
+script = ExtResource("1_n38cu")
+name = "Plama Shotgun"
+weapon_scene = ExtResource("2_lub8o")

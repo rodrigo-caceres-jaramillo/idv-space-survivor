@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="RangeEnemyWeaponStats" load_steps=2 format=3 uid="uid://c3heao5jp1i57"]
+
+[ext_resource type="Script" path="res://src/game/weapons/enemy/base/range/range_enemy_weapon_stats.gd" id="1_nii8j"]
+
+[resource]
+script = ExtResource("1_nii8j")
+DAMAGE = 3.0
+MULTISHOT = 1.0
+FIRE_RATE = 1.0
+RANGE = 25.0
+KNOCKBACK = 1
+SPREAD = 0.0
+PROJECTILE_SPEED = 200.0

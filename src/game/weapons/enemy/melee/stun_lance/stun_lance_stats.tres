@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MeleeEnemyWeaponStats" load_steps=2 format=3 uid="uid://b2m4xygijfe0e"]
+
+[ext_resource type="Script" path="res://src/game/weapons/enemy/base/melee/melee_enemy_weapon_stats.gd" id="1_vls6n"]
+
+[resource]
+script = ExtResource("1_vls6n")
+DAMAGE = 5.0
+ATTACK_RATE = 0.5
+RANGE = 20.0
+KNOCKBACK = 1

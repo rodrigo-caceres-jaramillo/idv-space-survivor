@@ -10,7 +10,6 @@ extends Resource
 @export var SPEED: float = 1
 var FINAL_SPEED: float:
 	get: return (100 * SPEED)
-@export var weapon: WeaponResource
 @export var KB_RESISTANCE: float = 1
 @export var min_value: int = 1
 @export var max_value: int = 2

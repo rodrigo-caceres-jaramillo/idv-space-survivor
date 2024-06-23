@@ -4,7 +4,7 @@
 [ext_resource type="StyleBox" uid="uid://b1hkw1f348phd" path="res://src/ui/style_box/hud_panel.tres" id="1_e07og"]
 [ext_resource type="Script" path="res://src/ui/hud/health_and_money.gd" id="1_kupsd"]
 [ext_resource type="Texture2D" uid="uid://c45p5tvcf6p2d" path="res://assets/textures/money/Money.png" id="2_d3g4o"]
-[ext_resource type="FontFile" uid="uid://d0syovoiiok0x" path="res://assets/fonts/joystix monospace.otf" id="2_k45tp"]
+[ext_resource type="FontFile" uid="uid://jd478um6wqpv" path="res://assets/fonts/Gameplay.ttf" id="4_vfnar"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k4w7q"]
 bg_color = Color(0.250818, 0.250818, 0.250818, 1)
@@ -32,8 +32,8 @@ border_color = Color(0, 0, 0, 1)
 
 [node name="HealthMoneyPanel" type="PanelContainer"]
 custom_minimum_size = Vector2(160, 0)
-offset_right = 211.0
-offset_bottom = 78.0
+offset_right = 192.0
+offset_bottom = 57.0
 theme_override_styles/panel = ExtResource("1_e07og")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
@@ -56,7 +56,7 @@ theme_override_constants/separation = 0
 script = ExtResource("1_kupsd")
 
 [node name="HealthBar" type="ProgressBar" parent="HBoxContainer/HealthAndMoney"]
-custom_minimum_size = Vector2(110, 24)
+custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_4hvky")
 theme_override_styles/fill = SubResource("StyleBoxFlat_7a3di")
@@ -70,10 +70,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_k45tp")
-theme_override_font_sizes/font_size = 16
+theme_override_fonts/font = ExtResource("4_vfnar")
+theme_override_font_sizes/font_size = 13
 text = "10/10"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -91,7 +89,7 @@ stretch_mode = 4
 
 [node name="MoneyLabel" type="Label" parent="HBoxContainer/HealthAndMoney/MoneyContainer"]
 layout_mode = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 3
-theme_override_fonts/font = ExtResource("2_k45tp")
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_vfnar")
+theme_override_font_sizes/font_size = 14
 text = "MONEY"

@@ -3,20 +3,26 @@ extends CharacterBody2D
 
 @onready var enemy_sfx = $EnemySfx
 @export var stats: EnemyStats
+@export var weapon: EnemyWeapon
+@export var hand_sprite: Texture
 @export var money: PackedScene
 @onready var health_bar_component = $HealthBarComponent as HealthBarComponent
 @onready var hurtbox_component:HurtboxComponent = $HurtboxComponent as HurtboxComponent
 @onready var hurt_component = $HurtComponent
-@onready var spawn_invicibility_component = $SpawnInvicibilityComponent as SpawnInvicibilityComponent
 @onready var attack_manager = $AttackManager
 var stun = false
 
 func _ready():
 		hurt_component.stats = stats
 		health_bar_component.stats = stats
-		attack_manager.set_up(stats.weapon)
+		attack_manager.set_up(weapon, hand_sprite)
 		health_bar_component.start()
 		Events.wave_finished.connect(die.unbind(1))
+		stats.no_health.connect(in_death)
+
+func in_death():
+	spawn_money(randi_range(stats.min_value, stats.max_value))
+	die()
 
 func die():
 	queue_free()

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="RangeEnemyWeaponStats" load_steps=2 format=3 uid="uid://dk6cudnrt2ch0"]
+
+[ext_resource type="Script" path="res://src/game/weapons/enemy/base/range/range_enemy_weapon_stats.gd" id="1_impkw"]
+
+[resource]
+script = ExtResource("1_impkw")
+DAMAGE = 2.0
+MULTISHOT = 3.0
+FIRE_RATE = 2.0
+RANGE = 20.0
+KNOCKBACK = 1
+SPREAD = 0.15
+PROJECTILE_SPEED = 200.0

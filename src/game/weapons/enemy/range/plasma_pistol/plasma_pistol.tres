@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EnemyWeapon" load_steps=3 format=3 uid="uid://dyt1mekwdyngi"]
+
+[ext_resource type="Script" path="res://src/game/weapons/enemy/base/resource/enemy_weapon.gd" id="1_8jo7v"]
+[ext_resource type="PackedScene" uid="uid://dxtshdxgs80e5" path="res://src/game/weapons/enemy/range/plasma_pistol/plasma_pistol.tscn" id="2_pyp7k"]
+
+[resource]
+script = ExtResource("1_8jo7v")
+name = "Plasma Pistol"
+weapon_scene = ExtResource("2_pyp7k")
+type = 0

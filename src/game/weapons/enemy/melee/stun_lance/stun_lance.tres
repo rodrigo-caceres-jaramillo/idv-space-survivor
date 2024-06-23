@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EnemyWeapon" load_steps=3 format=3 uid="uid://d3ldt786msguw"]
+
+[ext_resource type="Script" path="res://src/game/weapons/enemy/base/resource/enemy_weapon.gd" id="1_xsxsm"]
+[ext_resource type="PackedScene" uid="uid://cctsf1dsajlkt" path="res://src/game/weapons/enemy/melee/stun_lance/stun_lance.tscn" id="2_0g32i"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_xsxsm")
+name = "Stun Lance"
+weapon_scene = ExtResource("2_0g32i")

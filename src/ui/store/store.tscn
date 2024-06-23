@@ -1,7 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://banvou7ehyoxi"]
+[gd_scene load_steps=10 format=3 uid="uid://banvou7ehyoxi"]
 
 [ext_resource type="PackedScene" uid="uid://cieyh0w75vcq7" path="res://src/ui/store/panel/store_panel.tscn" id="1_1xonm"]
-[ext_resource type="Script" path="res://src/ui/store/store.gd" id="1_pd84c"]
 [ext_resource type="Script" path="res://src/ui/store/start_wave_button.gd" id="2_0wl4q"]
 [ext_resource type="PackedScene" uid="uid://bdahheoi8ox0p" path="res://src/ui/store/player_container.tscn" id="2_uim6j"]
 [ext_resource type="FontFile" uid="uid://jd478um6wqpv" path="res://assets/fonts/Gameplay.ttf" id="4_b0qy1"]
@@ -20,7 +19,6 @@ texture_margin_bottom = 6.0
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Store" type="CanvasLayer"]
-script = ExtResource("1_pd84c")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15

@@ -19,7 +19,7 @@ func set_up(hand_texture):
 func attack():
 	if(can_attack):
 		hitbox_component.is_active = true
-		attack_rate.start(stats.ATTACK_RATE)
+		attack_rate.start(1.0/stats.ATTACK_RATE)
 		animation_player.play("attack")
 		await animation_player.animation_finished
 		hitbox_component.is_active = false

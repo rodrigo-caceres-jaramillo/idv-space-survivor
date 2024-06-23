@@ -1,7 +1,8 @@
 extends Node2D
 
 @export var actor: CharacterBody2D
-@onready var hand = $Hand
+@export var hand_sprite: Texture
+@onready var hand_position = $HandPosition
 var stats: PlayerStats
 var weapons_resource =  {0:null, 1:null, 2:null}
 var weapons= {0:null, 1:null, 2:null}
@@ -20,7 +21,7 @@ func _process(_delta):
 	else: 
 		current_weapon.scale.y = -1
 	current_weapon.look_at(mouse_position)
-	hand.look_at(mouse_position)
+	hand_position.look_at(mouse_position)
 
 func set_up(_initial_weapon: WeaponResource):
 	self.load_weapon(_initial_weapon)
@@ -46,10 +47,10 @@ func remove_weapon(weapon_type):
 func load_weapon(weapon_resource):
 	weapons_resource[weapon_resource.weapon_type] = weapon_resource
 	var weapon = weapon_resource.weapon_scene.instantiate()
-	weapons[weapon_resource.weapon_type] = weapon
-	weapon.set_up(weapon_resource.stats, stats)
 	self.add_child(weapon)
-	weapon.position = hand.position
+	weapons[weapon_resource.weapon_type] = weapon
+	weapon.set_up(weapon_resource.stats, stats, hand_sprite)
+	weapon.position = hand_position.position
 	weapon.visible = false
 	if(current_weapon):
 		self.current_weapon.visible = false

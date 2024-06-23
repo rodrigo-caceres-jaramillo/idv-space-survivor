@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://butts5geqiee5"]
+[gd_scene load_steps=12 format=3 uid="uid://butts5geqiee5"]
 
 [ext_resource type="Script" path="res://src/game/enemies/base/enemy.gd" id="1_1hpwl"]
 [ext_resource type="PackedScene" uid="uid://jl3lbb3ikuhm" path="res://src/game/pickups/money/money.tscn" id="2_cjfdy"]
@@ -8,13 +8,13 @@
 [ext_resource type="Script" path="res://src/scripts/components/health_bar_component.gd" id="5_cqd0b"]
 [ext_resource type="Script" path="res://src/scripts/components/hurt_component.gd" id="5_f0sbc"]
 [ext_resource type="AudioStream" uid="uid://bxikvxoe3q136" path="res://assets/sound/hit_monster.wav" id="6_hvyip"]
-[ext_resource type="Script" path="res://src/scripts/components/spawn_invincibilitiy_component.gd" id="7_x1hsm"]
 [ext_resource type="Script" path="res://src/scripts/components/spawner_component.gd" id="8_q5w0d"]
 [ext_resource type="Texture2D" uid="uid://b2c3e1l13v4j7" path="res://assets/textures/ui/health_bar/health_bar_under.png" id="9_ptn0d"]
 [ext_resource type="Texture2D" uid="uid://dp3455beb64d4" path="res://assets/textures/ui/health_bar/health_bar_progress.png" id="10_orxg7"]
 
 [node name="Enemy" type="CharacterBody2D"]
-collision_layer = 0
+collision_layer = 4
+collision_mask = 5
 motion_mode = 1
 script = ExtResource("1_1hpwl")
 money = ExtResource("2_cjfdy")
@@ -27,7 +27,7 @@ script = ExtResource("3_8qs2j")
 [node name="Sprite" type="Sprite2D" parent="."]
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
-debug_color = Color(0.544127, 0.000902933, 0.666825, 0.42)
+debug_color = Color(1, 0.396078, 0, 0.117647)
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("3_7biin")
@@ -40,6 +40,7 @@ script = ExtResource("3_54b25")
 [node name="AttackRange" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 2
+monitorable = false
 
 [node name="HurtComponent" type="Node" parent="." node_paths=PackedStringArray("player_sfx", "hurtbox_component", "sprite", "actor")]
 script = ExtResource("5_f0sbc")
@@ -48,11 +49,6 @@ player_sfx = NodePath("../EnemySfx")
 hurtbox_component = NodePath("../HurtboxComponent")
 sprite = NodePath("../Sprite")
 actor = NodePath("..")
-
-[node name="SpawnInvicibilityComponent" type="Node" parent="." node_paths=PackedStringArray("hurtbox_component")]
-script = ExtResource("7_x1hsm")
-hurtbox_component = NodePath("../HurtboxComponent")
-spawn_duration = 2.0
 
 [node name="SpawnerComponent" type="Node2D" parent="."]
 script = ExtResource("8_q5w0d")

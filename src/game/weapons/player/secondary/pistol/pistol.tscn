@@ -6,15 +6,11 @@
 
 [node name="Pistol" node_paths=PackedStringArray("weapon_fsx") instance=ExtResource("1_yejcx")]
 scale = Vector2(1, 1)
+texture = ExtResource("3_46awc")
 weapon_fsx = NodePath("PistolSfx")
 projectile = ExtResource("4_njtau")
 
-[node name="Sprite" parent="." index="0"]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_46awc")
-offset = Vector2(8.57143, -2.85714)
-
-[node name="Tip" parent="." index="1"]
+[node name="Tip" parent="." index="2"]
 position = Vector2(20, -8)
 
 [node name="PistolSfx" type="AudioStreamPlayer" parent="." index="5"]

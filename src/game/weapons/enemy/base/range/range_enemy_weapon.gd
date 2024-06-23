@@ -1,7 +1,9 @@
 extends Sprite2D
 
 @export var projectile: PackedScene
-@export var stats: RangedEnemyWeaponStats
+@export var stats: RangeEnemyWeaponStats
+@export var two_hands: bool
+@onready var animation_player = $AnimationPlayer
 @onready var main_hand = $MainHand
 @onready var second_hand = $SecondHand
 @onready var tip = $Tip
@@ -15,11 +17,12 @@ func _ready():
 
 func set_up(hand_texture):
 	self.main_hand.texture = hand_texture
-	if stats.type == 0: self.second_hand.texture = hand_texture
+	if two_hands: self.second_hand.texture = hand_texture
 
 func attack():
 	if can_shoot:
 		var direction = global_position.direction_to(tip.global_position)
+		animation_player.play("shot")
 		spawn_projectile_component.spawn_projectile(stats, direction, global_rotation, tip.global_position)
 		self.can_shoot = false
 		fire_rate.start(1.0/stats.FIRE_RATE)

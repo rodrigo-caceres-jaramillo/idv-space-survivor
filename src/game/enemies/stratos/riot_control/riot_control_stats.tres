@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=4 format=3 uid="uid://bkghjgeh42q5k"]
+
+[ext_resource type="Resource" uid="uid://c8gk45drndbdg" path="res://src/scripts/data/health_types/alien.tres" id="1_ejskq"]
+[ext_resource type="Script" path="res://src/game/enemies/base/enemy_stats.gd" id="2_442k8"]
+[ext_resource type="Resource" uid="uid://dc4jciol25e4r" path="res://src/game/weapons/enemy/melee/baton/baton.tres" id="3_jwjic"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("2_442k8")
+HEALTH = 20
+HEALTH_TYPE = ExtResource("1_ejskq")
+SPEED = 0.6
+weapon = ExtResource("3_jwjic")
+KB_RESISTANCE = 1.0
+min_value = 1
+max_value = 2
