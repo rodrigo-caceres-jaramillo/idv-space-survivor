@@ -1,0 +1,164 @@
+[gd_scene load_steps=18 format=3 uid="uid://b7pxpqnnvxjpt"]
+
+[ext_resource type="PackedScene" uid="uid://butts5geqiee5" path="res://src/game/enemies/base/enemy.tscn" id="1_ebiba"]
+[ext_resource type="Script" path="res://src/game/enemies/invaiders/tank/tank.gd" id="2_n8qld"]
+[ext_resource type="Resource" uid="uid://d3wk83dc7idgi" path="res://src/game/enemies/invaiders/tank/tank.tres" id="2_wb2j4"]
+[ext_resource type="Texture2D" uid="uid://bwrtgc8bxlbi6" path="res://src/game/enemies/invaiders/tank/tank_hand.png" id="3_2ngvo"]
+[ext_resource type="Texture2D" uid="uid://xl20qbht0u1f" path="res://src/game/enemies/invaiders/tank/tank.png" id="3_eeheh"]
+[ext_resource type="Script" path="res://src/game/enemies/base/states/enemy_follow_player.gd" id="4_y3tc0"]
+[ext_resource type="Script" path="res://src/game/enemies/base/states/enemy_melee_state.gd" id="5_0vlim"]
+[ext_resource type="Script" path="res://src/game/enemies/base/states/enemy_knockback_state.gd" id="6_f1lxj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rtm3o"]
+radius = 5.0
+height = 20.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6hy3p"]
+radius = 7.0
+height = 28.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yi1lk"]
+radius = 15.0
+
+[sub_resource type="Animation" id="Animation_ch32g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ao67h"]
+resource_name = "move_down"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 5]
+}
+
+[sub_resource type="Animation" id="Animation_8qhx7"]
+resource_name = "move_left"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [18, 19, 20, 21, 23]
+}
+
+[sub_resource type="Animation" id="Animation_gbc8i"]
+resource_name = "move_right"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15, 17]
+}
+
+[sub_resource type="Animation" id="Animation_j3be3"]
+resource_name = "move_up"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [6, 7, 8, 9, 11]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wq7wd"]
+_data = {
+"RESET": SubResource("Animation_ch32g"),
+"move_down": SubResource("Animation_ao67h"),
+"move_left": SubResource("Animation_8qhx7"),
+"move_right": SubResource("Animation_gbc8i"),
+"move_up": SubResource("Animation_j3be3")
+}
+
+[node name="TankInvader" instance=ExtResource("1_ebiba")]
+script = ExtResource("2_n8qld")
+stats = ExtResource("2_wb2j4")
+
+[node name="AttackManager" parent="." index="0"]
+hand_sprite = ExtResource("3_2ngvo")
+
+[node name="HandPosition" parent="AttackManager" index="0"]
+position = Vector2(5, 4)
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource("3_eeheh")
+hframes = 6
+vframes = 4
+
+[node name="CollisionShape" parent="." index="2"]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_rtm3o")
+
+[node name="StateMachine" parent="." index="3" node_paths=PackedStringArray("actor", "initial_state", "animation_player")]
+actor = NodePath("..")
+initial_state = NodePath("Follow")
+animation_player = NodePath("../AnimationPlayer")
+
+[node name="Follow" type="Node2D" parent="StateMachine" index="0" node_paths=PackedStringArray("attack_range", "hurtbox")]
+script = ExtResource("4_y3tc0")
+attack_range = NodePath("../../AttackRange")
+hurtbox = NodePath("../../HurtboxComponent")
+
+[node name="Attack" type="Node2D" parent="StateMachine" index="1" node_paths=PackedStringArray("attack_manager", "attack_range")]
+script = ExtResource("5_0vlim")
+attack_manager = NodePath("../../AttackManager")
+attack_range = NodePath("../../AttackRange")
+
+[node name="Knockback" type="Node2D" parent="StateMachine" index="2"]
+script = ExtResource("6_f1lxj")
+
+[node name="HurtboxShape" type="CollisionShape2D" parent="HurtboxComponent" index="0"]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_6hy3p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange" index="0"]
+shape = SubResource("CircleShape2D_yi1lk")
+
+[node name="HealthBarComponent" parent="." index="10"]
+offset_left = -9.0
+offset_top = 17.0
+offset_right = 10.0
+offset_bottom = 22.0
+
+[node name="AnimationPlayer" parent="." index="11"]
+libraries = {
+"": SubResource("AnimationLibrary_wq7wd")
+}
