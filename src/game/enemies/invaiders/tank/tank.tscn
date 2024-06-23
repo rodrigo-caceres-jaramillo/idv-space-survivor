@@ -145,9 +145,15 @@ attack_range = NodePath("../../AttackRange")
 [node name="Knockback" type="Node2D" parent="StateMachine" index="2"]
 script = ExtResource("6_f1lxj")
 
+[node name="HurtboxComponent" parent="." index="4"]
+visible = false
+
 [node name="HurtboxShape" type="CollisionShape2D" parent="HurtboxComponent" index="0"]
 position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_6hy3p")
+
+[node name="AttackRange" parent="." index="5"]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange" index="0"]
 shape = SubResource("CircleShape2D_yi1lk")

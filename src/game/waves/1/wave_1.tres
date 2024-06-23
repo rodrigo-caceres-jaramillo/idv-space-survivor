@@ -1,13 +1,11 @@
-[gd_resource type="Resource" script_class="WaveData" load_steps=5 format=3 uid="uid://yv1baaijtpoc"]
+[gd_resource type="Resource" script_class="WaveData" load_steps=3 format=3 uid="uid://yv1baaijtpoc"]
 
 [ext_resource type="Script" path="res://src/game/waves/wave_data.gd" id="1_ddj7x"]
-[ext_resource type="Resource" uid="uid://6ests2lgm0jt" path="res://src/game/waves/1/tank.tres" id="3_6jrss"]
 [ext_resource type="Resource" uid="uid://dl8ru1feby56j" path="res://src/game/waves/1/soldier.tres" id="3_205ju"]
-[ext_resource type="Resource" uid="uid://bynbfbmtbpl3k" path="res://src/game/waves/1/tropper.tres" id="4_hkwn5"]
 
 [resource]
 script = ExtResource("1_ddj7x")
 wave_duration = 15
 wave_intensity = 0.5
 max_enemies = 10
-wave_enemies = Array[Resource("res://src/game/waves/wave_enemy.gd")]([ExtResource("3_205ju"), ExtResource("3_6jrss"), ExtResource("4_hkwn5")])
+wave_enemies = Array[Resource("res://src/game/waves/wave_enemy.gd")]([ExtResource("3_205ju")])

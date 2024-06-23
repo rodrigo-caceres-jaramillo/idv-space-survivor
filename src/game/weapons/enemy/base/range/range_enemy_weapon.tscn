@@ -6,7 +6,9 @@
 [node name="RangeEnemyWeapon" type="Sprite2D"]
 script = ExtResource("1_uci6k")
 
-[node name="HandSprite" type="Sprite2D" parent="."]
+[node name="MainHand" type="Sprite2D" parent="."]
+
+[node name="SecondHand" type="Sprite2D" parent="."]
 
 [node name="Tip" type="Marker2D" parent="."]
 position = Vector2(7, 0)

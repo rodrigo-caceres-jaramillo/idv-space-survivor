@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="RangedEnemyWeaponStats" load_steps=2 format=3 uid="uid://c3heao5jp1i57"]
+
+[ext_resource type="Script" path="res://src/game/weapons/enemy/base/range/range_enemy_weapon_stats.gd" id="1_7m0vu"]
+
+[resource]
+script = ExtResource("1_7m0vu")
+type = 0
+DAMAGE = 5.0
+MULTISHOT = 1.0
+FIRE_RATE = 1.0
+RELOAD = 1.0
+RANGE = 20.0
+KNOCKBACK = 1
+SPREAD = 0.0
+PROJECTILE_SPEED = 1000.0

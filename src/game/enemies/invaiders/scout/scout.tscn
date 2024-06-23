@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://butts5geqiee5" path="res://src/game/enemies/base/enemy.tscn" id="1_ogaie"]
 [ext_resource type="Script" path="res://src/game/enemies/invaiders/scout/scout.gd" id="2_ydl3m"]
-[ext_resource type="Resource" uid="uid://cvgkchogh2u15" path="res://src/game/enemies/invaiders/scout/scout.tres" id="3_qx536"]
+[ext_resource type="Resource" uid="uid://bb218xfyn10a" path="res://src/game/enemies/invaiders/gunner/gunner_stats.tres" id="3_tlttj"]
 [ext_resource type="Texture2D" uid="uid://cif442vjpp4ok" path="res://src/game/enemies/invaiders/scout/scout_hand.png" id="4_7i4wf"]
 [ext_resource type="Texture2D" uid="uid://bqeufcbtvar0i" path="res://src/game/enemies/invaiders/scout/scout.png" id="5_toym7"]
 [ext_resource type="Script" path="res://src/game/enemies/base/states/enemy_follow_player.gd" id="6_0s78j"]
@@ -186,7 +186,7 @@ _data = {
 
 [node name="ScoutInvaider" instance=ExtResource("1_ogaie")]
 script = ExtResource("2_ydl3m")
-stats = ExtResource("3_qx536")
+stats = ExtResource("3_tlttj")
 
 [node name="AttackManager" parent="." index="0"]
 hand_sprite = ExtResource("4_7i4wf")

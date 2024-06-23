@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=4 format=3 uid="uid://bb218xfyn10a"]
+
+[ext_resource type="Resource" uid="uid://c8gk45drndbdg" path="res://src/scripts/data/health_types/alien.tres" id="1_glsy8"]
+[ext_resource type="Script" path="res://src/game/enemies/base/enemy_stats.gd" id="1_p2fqj"]
+[ext_resource type="Resource" uid="uid://bluxiswve5p8c" path="res://src/game/weapons/enemy/range/pulse_rifle/pulse_rifle.tres" id="3_xtybg"]
+
+[resource]
+script = ExtResource("1_p2fqj")
+HEALTH = 30
+HEALTH_TYPE = ExtResource("1_glsy8")
+SPEED = 1.0
+weapon = ExtResource("3_xtybg")
+KB_RESISTANCE = 1.0
+min_value = 1
+max_value = 2

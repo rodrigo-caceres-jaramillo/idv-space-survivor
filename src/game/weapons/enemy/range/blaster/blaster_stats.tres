@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource("1_h22iu")
+type = 1
 DAMAGE = 5.0
 MULTISHOT = 1.0
 FIRE_RATE = 1.0

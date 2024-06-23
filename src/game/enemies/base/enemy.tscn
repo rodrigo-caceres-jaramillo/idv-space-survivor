@@ -27,6 +27,7 @@ script = ExtResource("3_8qs2j")
 [node name="Sprite" type="Sprite2D" parent="."]
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
+debug_color = Color(0.544127, 0.000902933, 0.666825, 0.42)
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("3_7biin")

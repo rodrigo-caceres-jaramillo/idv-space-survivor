@@ -2,7 +2,8 @@ extends Sprite2D
 
 @export var projectile: PackedScene
 @export var stats: RangedEnemyWeaponStats
-@onready var hand_sprite = $HandSprite
+@onready var main_hand = $MainHand
+@onready var second_hand = $SecondHand
 @onready var tip = $Tip
 @onready var fire_rate = $FireRate
 @onready var spawn_projectile_component = $SpawnProjectileComponent
@@ -13,7 +14,8 @@ func _ready():
 	spawn_projectile_component.projectile_scene = projectile
 
 func set_up(hand_texture):
-	self.hand_sprite.texture = hand_texture
+	self.main_hand.texture = hand_texture
+	if stats.type == 0: self.second_hand.texture = hand_texture
 
 func attack():
 	if can_shoot:
