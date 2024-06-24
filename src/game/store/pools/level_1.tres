@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="PoolResource" load_steps=14 format=3 uid="uid://c2dd4g83h820w"]
+[gd_resource type="Resource" script_class="PoolResource" load_steps=16 format=3 uid="uid://c2dd4g83h820w"]
 
 [ext_resource type="Script" path="res://src/game/store/pools/pool_resource.gd" id="1_bfldv"]
 [ext_resource type="Resource" uid="uid://bemisdj1a3rrr" path="res://src/game/weapons/player/secondary/pistol/pistol.tres" id="1_rho1b"]
@@ -13,8 +13,10 @@
 [ext_resource type="Resource" uid="uid://ds58bou0r6cs4" path="res://src/game/upgrades/crit_chance/crit_chance_upgrade_1.tres" id="10_o561b"]
 [ext_resource type="Resource" uid="uid://850ncg2qdncs" path="res://src/game/weapons/player/primary/sniper/sniper.tres" id="11_23k1y"]
 [ext_resource type="Resource" uid="uid://diuc6qkgvsfsa" path="res://src/game/weapons/player/primary/tactical_shotgun/tactical_shotgun.tres" id="12_jcwg6"]
+[ext_resource type="Resource" uid="uid://wo1nb0i51lbl" path="res://src/game/weapons/player/secondary/p90/p90.tres" id="13_dqosx"]
+[ext_resource type="Resource" uid="uid://b7bgyrnp5tb3b" path="res://src/game/weapons/player/secondary/smg_rt/smg_rt.tres" id="14_lrerp"]
 
 [resource]
 script = ExtResource("1_bfldv")
 level = 1
-pool = Array[Resource("res://src/game/store/resource/store_resource.gd")]([ExtResource("1_rho1b"), ExtResource("2_3p7g3"), ExtResource("2_k7jl1"), ExtResource("4_hcbnk"), ExtResource("5_l8cnw"), ExtResource("6_y4rw7"), ExtResource("7_p6htf"), ExtResource("8_x0emq"), ExtResource("9_trdjb"), ExtResource("10_o561b"), ExtResource("11_23k1y"), ExtResource("12_jcwg6")])
+pool = Array[Resource("res://src/game/store/resource/store_resource.gd")]([ExtResource("1_rho1b"), ExtResource("2_3p7g3"), ExtResource("2_k7jl1"), ExtResource("4_hcbnk"), ExtResource("5_l8cnw"), ExtResource("6_y4rw7"), ExtResource("7_p6htf"), ExtResource("8_x0emq"), ExtResource("9_trdjb"), ExtResource("10_o561b"), ExtResource("11_23k1y"), ExtResource("12_jcwg6"), ExtResource("13_dqosx"), ExtResource("14_lrerp")])

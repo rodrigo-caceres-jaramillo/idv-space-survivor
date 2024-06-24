@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5mfsvpl6ljvp"]
+
+[ext_resource type="PackedScene" uid="uid://dn5r6qogjyaco" path="res://src/game/weapons/player/base/range/range_weapon.tscn" id="1_lc61k"]
+[ext_resource type="Texture2D" uid="uid://dmgbavkm75df6" path="res://src/game/weapons/player/secondary/smg_rt/SMG-3(Espacial).png" id="2_qwc20"]
+[ext_resource type="PackedScene" uid="uid://ibw35q6xdypf" path="res://src/game/projectiles/player/bullet/bullet_projectile.tscn" id="3_f1b53"]
+
+[node name="smg_rt" node_paths=PackedStringArray("weapon_fsx") instance=ExtResource("1_lc61k")]
+position = Vector2(0, 2)
+texture = ExtResource("2_qwc20")
+weapon_fsx = NodePath("smg_rtfx")
+projectile = ExtResource("3_f1b53")
+
+[node name="Tip" parent="." index="2"]
+position = Vector2(22, -6)
+
+[node name="smg_rtfx" type="AudioStreamPlayer" parent="." index="6"]

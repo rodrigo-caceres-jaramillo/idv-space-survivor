@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://gh4j4pak8j5y"]
+
+[ext_resource type="PackedScene" uid="uid://dn5r6qogjyaco" path="res://src/game/weapons/player/base/range/range_weapon.tscn" id="1_iw2bi"]
+[ext_resource type="PackedScene" uid="uid://ibw35q6xdypf" path="res://src/game/projectiles/player/bullet/bullet_projectile.tscn" id="2_ecaq6"]
+[ext_resource type="Texture2D" uid="uid://b7mknyjxyi01x" path="res://src/game/weapons/player/secondary/p90/p90.png" id="2_hoi1s"]
+
+[node name="P90" node_paths=PackedStringArray("weapon_fsx") instance=ExtResource("1_iw2bi")]
+texture = ExtResource("2_hoi1s")
+weapon_fsx = NodePath("P90fx")
+projectile = ExtResource("2_ecaq6")
+
+[node name="Tip" parent="." index="2"]
+position = Vector2(22, 0)
+
+[node name="P90fx" type="AudioStreamPlayer" parent="." index="6"]

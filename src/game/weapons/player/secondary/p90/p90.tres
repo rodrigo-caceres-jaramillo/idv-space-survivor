@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=5 format=3 uid="uid://wo1nb0i51lbl"]
+
+[ext_resource type="Texture2D" uid="uid://b7mknyjxyi01x" path="res://src/game/weapons/player/secondary/p90/p90.png" id="1_8j6sy"]
+[ext_resource type="Script" path="res://src/game/weapons/weapon_resource.gd" id="1_jn1vd"]
+[ext_resource type="Resource" uid="uid://dew02sladbspt" path="res://src/game/weapons/player/secondary/p90/p90_stats.tres" id="3_8ucii"]
+[ext_resource type="PackedScene" uid="uid://gh4j4pak8j5y" path="res://src/game/weapons/player/secondary/p90/p90.tscn" id="4_wa0n4"]
+
+[resource]
+script = ExtResource("1_jn1vd")
+weapon_scene = ExtResource("4_wa0n4")
+stats = ExtResource("3_8ucii")
+weapon_type = 1
+name = "P90"
+description = "Rush B"
+price = 20
+icon = ExtResource("1_8j6sy")

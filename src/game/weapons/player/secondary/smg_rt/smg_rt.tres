@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=5 format=3 uid="uid://b7bgyrnp5tb3b"]
+
+[ext_resource type="Script" path="res://src/game/weapons/weapon_resource.gd" id="1_8icaa"]
+[ext_resource type="Texture2D" uid="uid://dmgbavkm75df6" path="res://src/game/weapons/player/secondary/smg_rt/SMG-3(Espacial).png" id="1_ufhm6"]
+[ext_resource type="Resource" uid="uid://dhueo00csw851" path="res://src/game/weapons/player/secondary/smg_rt/smg_rt_stats.tres" id="3_c6my0"]
+[ext_resource type="PackedScene" uid="uid://c5mfsvpl6ljvp" path="res://src/game/weapons/player/secondary/smg_rt/smg_rt.tscn" id="4_x4ylp"]
+
+[resource]
+script = ExtResource("1_8icaa")
+weapon_scene = ExtResource("4_x4ylp")
+stats = ExtResource("3_c6my0")
+weapon_type = 1
+name = "Smg RT"
+description = "Smg but spacial"
+price = 20
+icon = ExtResource("1_ufhm6")

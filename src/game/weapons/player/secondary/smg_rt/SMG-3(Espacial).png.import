@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4jehqdhq563t"
-path="res://.godot/imported/Pistol.png-4256e24cd96c082f036e99b070e54e22.ctex"
+uid="uid://dmgbavkm75df6"
+path="res://.godot/imported/SMG-3(Espacial).png-c7777cafebb9fcf1451473cad6b58c4a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/game/weapons/player/secondary/pistol/Pistol.png"
-dest_files=["res://.godot/imported/Pistol.png-4256e24cd96c082f036e99b070e54e22.ctex"]
+source_file="res://src/game/weapons/player/secondary/smg_rt/SMG-3(Espacial).png"
+dest_files=["res://.godot/imported/SMG-3(Espacial).png-c7777cafebb9fcf1451473cad6b58c4a.ctex"]
 
 [params]
 
