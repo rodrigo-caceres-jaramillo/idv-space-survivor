@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=5 format=3 uid="uid://diuc6qkgvsfsa"]
+
+[ext_resource type="Script" path="res://src/game/weapons/weapon_resource.gd" id="1_8xejs"]
+[ext_resource type="Texture2D" uid="uid://xf7dnsxq2t3o" path="res://src/game/weapons/player/primary/tactical_shotgun/tactical_shotgun.png" id="1_bda0i"]
+[ext_resource type="Resource" uid="uid://2fwfhljbucjo" path="res://src/game/weapons/player/primary/tactical_shotgun/tactical_shotgun_stats.tres" id="3_fo2l1"]
+[ext_resource type="PackedScene" uid="uid://46qt1bixs5v6" path="res://src/game/weapons/player/primary/tactical_shotgun/tactical_shotgun.tscn" id="4_qi1ju"]
+
+[resource]
+script = ExtResource("1_8xejs")
+weapon_scene = ExtResource("4_qi1ju")
+stats = ExtResource("3_fo2l1")
+weapon_type = 0
+name = "Tactical Shotgun"
+description = "A Real Shotgun"
+price = 20
+icon = ExtResource("1_bda0i")

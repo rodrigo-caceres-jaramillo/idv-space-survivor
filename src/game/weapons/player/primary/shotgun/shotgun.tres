@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="WeaponResource" load_steps=5 format=3 uid="uid://cxn3v10pikvn8"]
 
-[ext_resource type="Texture2D" uid="uid://lhr66kbdfjdb" path="res://src/game/weapons/player/primary/shotgun/shotgun.png" id="1_4sbej"]
+[ext_resource type="Texture2D" uid="uid://bhdiyqlien13o" path="res://src/game/weapons/player/primary/shotgun/Shotgun.png" id="1_buvb3"]
 [ext_resource type="Script" path="res://src/game/weapons/weapon_resource.gd" id="2_52yln"]
 [ext_resource type="Resource" uid="uid://cpbk7b2tufye4" path="res://src/game/weapons/player/primary/shotgun/shotgun_stats.tres" id="3_y5s83"]
 [ext_resource type="PackedScene" uid="uid://b3g5xleb0mnm4" path="res://src/game/weapons/player/primary/shotgun/shotgun.tscn" id="4_5dwby"]
@@ -11,6 +11,6 @@ weapon_scene = ExtResource("4_5dwby")
 stats = ExtResource("3_y5s83")
 weapon_type = 0
 name = "Shotgun"
-description = "SpredWeapon"
+description = "Riot gear"
 price = 20
-icon = ExtResource("1_4sbej")
+icon = ExtResource("1_buvb3")
