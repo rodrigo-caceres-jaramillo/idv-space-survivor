@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="PoolResource" load_steps=16 format=3 uid="uid://c2dd4g83h820w"]
+[gd_resource type="Resource" script_class="PoolResource" load_steps=18 format=3 uid="uid://c2dd4g83h820w"]
 
 [ext_resource type="Script" path="res://src/game/store/pools/pool_resource.gd" id="1_bfldv"]
 [ext_resource type="Resource" uid="uid://bemisdj1a3rrr" path="res://src/game/weapons/player/secondary/pistol/pistol.tres" id="1_rho1b"]
@@ -15,8 +15,10 @@
 [ext_resource type="Resource" uid="uid://diuc6qkgvsfsa" path="res://src/game/weapons/player/primary/tactical_shotgun/tactical_shotgun.tres" id="12_jcwg6"]
 [ext_resource type="Resource" uid="uid://wo1nb0i51lbl" path="res://src/game/weapons/player/secondary/p90/p90.tres" id="13_dqosx"]
 [ext_resource type="Resource" uid="uid://b7bgyrnp5tb3b" path="res://src/game/weapons/player/secondary/smg_rt/smg_rt.tres" id="14_lrerp"]
+[ext_resource type="Resource" uid="uid://dcurfe4wuvwk3" path="res://src/game/weapons/player/secondary/combat_pistol/combat_pistol.tres" id="15_1113i"]
+[ext_resource type="Resource" uid="uid://bh5nx6sulc75o" path="res://src/game/weapons/player/secondary/laser_pistol/laser_pistol.tres" id="16_p7x3n"]
 
 [resource]
 script = ExtResource("1_bfldv")
 level = 1
-pool = Array[Resource("res://src/game/store/resource/store_resource.gd")]([ExtResource("1_rho1b"), ExtResource("2_3p7g3"), ExtResource("2_k7jl1"), ExtResource("4_hcbnk"), ExtResource("5_l8cnw"), ExtResource("6_y4rw7"), ExtResource("7_p6htf"), ExtResource("8_x0emq"), ExtResource("9_trdjb"), ExtResource("10_o561b"), ExtResource("11_23k1y"), ExtResource("12_jcwg6"), ExtResource("13_dqosx"), ExtResource("14_lrerp")])
+pool = Array[Resource("res://src/game/store/resource/store_resource.gd")]([ExtResource("1_rho1b"), ExtResource("2_3p7g3"), ExtResource("2_k7jl1"), ExtResource("4_hcbnk"), ExtResource("5_l8cnw"), ExtResource("6_y4rw7"), ExtResource("7_p6htf"), ExtResource("8_x0emq"), ExtResource("9_trdjb"), ExtResource("10_o561b"), ExtResource("11_23k1y"), ExtResource("12_jcwg6"), ExtResource("13_dqosx"), ExtResource("14_lrerp"), ExtResource("15_1113i"), ExtResource("16_p7x3n")])

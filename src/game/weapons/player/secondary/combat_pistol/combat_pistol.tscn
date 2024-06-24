@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bo6yvfcvxts5n"]
+
+[ext_resource type="PackedScene" uid="uid://dn5r6qogjyaco" path="res://src/game/weapons/player/base/range/range_weapon.tscn" id="1_1iecw"]
+[ext_resource type="Texture2D" uid="uid://30uheahqk2rr" path="res://src/game/weapons/player/secondary/combat_pistol/combat_pistol.png" id="2_wpir1"]
+[ext_resource type="PackedScene" uid="uid://ibw35q6xdypf" path="res://src/game/projectiles/player/bullet/bullet_projectile.tscn" id="3_e74m8"]
+
+[node name="combat_pistol" node_paths=PackedStringArray("weapon_fsx") instance=ExtResource("1_1iecw")]
+texture = ExtResource("2_wpir1")
+weapon_fsx = NodePath("combat_pistol")
+projectile = ExtResource("3_e74m8")
+
+[node name="Tip" parent="." index="2"]
+position = Vector2(12, -6)
+
+[node name="combat_pistol" type="AudioStreamPlayer" parent="." index="6"]

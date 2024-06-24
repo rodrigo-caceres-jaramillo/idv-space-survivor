@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=5 format=3 uid="uid://dcurfe4wuvwk3"]
+
+[ext_resource type="Script" path="res://src/game/weapons/weapon_resource.gd" id="1_c1hty"]
+[ext_resource type="Texture2D" uid="uid://30uheahqk2rr" path="res://src/game/weapons/player/secondary/combat_pistol/combat_pistol.png" id="1_f0p5c"]
+[ext_resource type="Resource" uid="uid://2fwfhljbucjo" path="res://src/game/weapons/player/primary/tactical_shotgun/tactical_shotgun_stats.tres" id="3_damqg"]
+[ext_resource type="PackedScene" uid="uid://bo6yvfcvxts5n" path="res://src/game/weapons/player/secondary/combat_pistol/combat_pistol.tscn" id="4_w0pyd"]
+
+[resource]
+script = ExtResource("1_c1hty")
+weapon_scene = ExtResource("4_w0pyd")
+stats = ExtResource("3_damqg")
+weapon_type = 0
+name = "Combat pistol"
+description = "Lion´s pistol"
+price = 20
+icon = ExtResource("1_f0p5c")
