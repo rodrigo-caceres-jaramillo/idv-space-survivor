@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jcitfpig33ox"
-path="res://.godot/imported/rifle.png-53e74aa4bc837f3ac54c2b46cd7c9fba.ctex"
+uid="uid://cuqsfri0bww05"
+path="res://.godot/imported/orange_sniper.png-fd3c52b33e7554d39e5f797c933c65c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/game/weapons/player/primary/rifle/rifle.png"
-dest_files=["res://.godot/imported/rifle.png-53e74aa4bc837f3ac54c2b46cd7c9fba.ctex"]
+source_file="res://src/game/weapons/player/primary/orange_sniper/orange_sniper.png"
+dest_files=["res://.godot/imported/orange_sniper.png-fd3c52b33e7554d39e5f797c933c65c9.ctex"]
 
 [params]
 

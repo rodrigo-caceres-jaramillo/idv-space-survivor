@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=5 format=3 uid="uid://be0p2ukh7867q"]
+
+[ext_resource type="Script" path="res://src/game/weapons/weapon_resource.gd" id="1_6qi3g"]
+[ext_resource type="Texture2D" uid="uid://8k2jwxk4qgkg" path="res://src/game/weapons/player/primary/m16/m16.png" id="1_hrm6b"]
+[ext_resource type="Resource" uid="uid://c78ovggkl3cl1" path="res://src/game/weapons/player/primary/m16/m16_stats.tres" id="3_rdg1i"]
+[ext_resource type="PackedScene" uid="uid://cilixq015l03t" path="res://src/game/weapons/player/primary/m16/m16.tscn" id="4_2mxui"]
+
+[resource]
+script = ExtResource("1_6qi3g")
+weapon_scene = ExtResource("4_2mxui")
+stats = ExtResource("3_rdg1i")
+weapon_type = 0
+name = "M16"
+description = "The classic one"
+price = 30
+icon = ExtResource("1_hrm6b")

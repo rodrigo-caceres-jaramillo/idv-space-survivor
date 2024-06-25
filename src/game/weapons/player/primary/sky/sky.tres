@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=5 format=3 uid="uid://dreqncs4a6fyj"]
+
+[ext_resource type="Texture2D" uid="uid://dcapwnwvcxt2d" path="res://src/game/weapons/player/primary/sky/sky.png" id="1_btstm"]
+[ext_resource type="Script" path="res://src/game/weapons/weapon_resource.gd" id="1_o64si"]
+[ext_resource type="Resource" uid="uid://cxqoi8pa1owrc" path="res://src/game/weapons/player/primary/sky/sky_stats.tres" id="3_qsyxi"]
+[ext_resource type="PackedScene" uid="uid://q82n6blymgbs" path="res://src/game/weapons/player/primary/sky/sky.tscn" id="4_ukskw"]
+
+[resource]
+script = ExtResource("1_o64si")
+weapon_scene = ExtResource("4_ukskw")
+stats = ExtResource("3_qsyxi")
+weapon_type = 0
+name = "Sky"
+description = "Sky"
+price = 50
+icon = ExtResource("1_btstm")

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="RangedWeaponsStats" load_steps=3 format=3 uid="uid://c78ovggkl3cl1"]
+
+[ext_resource type="Resource" uid="uid://cgmatvoybq8xa" path="res://src/scripts/data/damage_types/puncture.tres" id="1_mmapv"]
+[ext_resource type="Script" path="res://src/game/weapons/player/base/range/ranged_weapon_stats.gd" id="1_r8vno"]
+
+[resource]
+script = ExtResource("1_r8vno")
+DAMAGE = 14.0
+DAMAGE_TYPE = ExtResource("1_mmapv")
+CRITICAL_CHANCE = 8.0
+CRITICAL_DAMAGE = 1.8
+MULTISHOT = 1.0
+PENETRATION = 1.0
+FIRE_RATE = 1.2
+RELOAD = 0.4
+MAGAZINE = 30
+RANGE = 20.0
+KNOCKBACK = 1
+SPREAD = 0.0
+PROJECTILE_SPEED = 900.0

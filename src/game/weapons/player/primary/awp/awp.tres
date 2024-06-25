@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=5 format=3 uid="uid://dshclcsumgrij"]
+
+[ext_resource type="Texture2D" uid="uid://4gkax2xitp5i" path="res://src/game/weapons/player/primary/awp/awp.png" id="1_mj02c"]
+[ext_resource type="Script" path="res://src/game/weapons/weapon_resource.gd" id="1_v636n"]
+[ext_resource type="Resource" uid="uid://cmscra7d0csr2" path="res://src/game/weapons/player/primary/awp/awp_stats.tres" id="3_hs7sv"]
+[ext_resource type="PackedScene" uid="uid://dr6netneosmj8" path="res://src/game/weapons/player/primary/awp/awp.tscn" id="4_m61hu"]
+
+[resource]
+script = ExtResource("1_v636n")
+weapon_scene = ExtResource("4_m61hu")
+stats = ExtResource("3_hs7sv")
+weapon_type = 0
+name = "AWP"
+description = "ONE Shot"
+price = 40
+icon = ExtResource("1_mj02c")

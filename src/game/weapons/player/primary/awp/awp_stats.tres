@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="RangedWeaponsStats" load_steps=5 format=3 uid="uid://cmscra7d0csr2"]
+
+[ext_resource type="Resource" uid="uid://cgmatvoybq8xa" path="res://src/scripts/data/damage_types/puncture.tres" id="1_mgro2"]
+[ext_resource type="Script" path="res://src/game/weapons/player/base/range/ranged_weapon_stats.gd" id="1_o2vfu"]
+[ext_resource type="AudioStream" uid="uid://b848cb3p15jxb" path="res://assets/sound/sniper_reload.mp3" id="2_xgvgy"]
+[ext_resource type="AudioStream" uid="uid://7unmhtmqwlsp" path="res://assets/sound/sniper_shoot.mp3" id="4_gxvsg"]
+
+[resource]
+script = ExtResource("1_o2vfu")
+DAMAGE = 20.0
+DAMAGE_TYPE = ExtResource("1_mgro2")
+CRITICAL_CHANCE = 10.0
+CRITICAL_DAMAGE = 1.8
+MULTISHOT = 1.0
+PENETRATION = 4.0
+FIRE_RATE = 1.2
+RELOAD = 1.8
+MAGAZINE = 4
+RANGE = 120.0
+KNOCKBACK = 12
+SPREAD = 0.0
+PROJECTILE_SPEED = 1200.0
+reload_sfx = ExtResource("2_xgvgy")
+shoot_sfx = ExtResource("4_gxvsg")

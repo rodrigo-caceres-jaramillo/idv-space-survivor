@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jcitfpig33ox"
-path="res://.godot/imported/rifle.png-53e74aa4bc837f3ac54c2b46cd7c9fba.ctex"
+uid="uid://dcapwnwvcxt2d"
+path="res://.godot/imported/sky.png-dfc2ad5f346d02fed4abb35505b9e3a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/game/weapons/player/primary/rifle/rifle.png"
-dest_files=["res://.godot/imported/rifle.png-53e74aa4bc837f3ac54c2b46cd7c9fba.ctex"]
+source_file="res://src/game/weapons/player/primary/sky/sky.png"
+dest_files=["res://.godot/imported/sky.png-dfc2ad5f346d02fed4abb35505b9e3a2.ctex"]
 
 [params]
 

@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://q82n6blymgbs"]
+
+[ext_resource type="PackedScene" uid="uid://dn5r6qogjyaco" path="res://src/game/weapons/player/base/range/range_weapon.tscn" id="1_mv35n"]
+[ext_resource type="Texture2D" uid="uid://dcapwnwvcxt2d" path="res://src/game/weapons/player/primary/sky/sky.png" id="2_qbd7p"]
+[ext_resource type="PackedScene" uid="uid://cwn44fakb1tkg" path="res://src/game/projectiles/player/buckshot/buckshot_projectile.tscn" id="3_bx5uq"]
+
+[node name="sky" node_paths=PackedStringArray("weapon_fsx") instance=ExtResource("1_mv35n")]
+texture = ExtResource("2_qbd7p")
+weapon_fsx = NodePath("skyfx")
+projectile = ExtResource("3_bx5uq")
+
+[node name="Tip" parent="." index="2"]
+position = Vector2(28, -4)
+
+[node name="skyfx" type="AudioStreamPlayer" parent="." index="6"]

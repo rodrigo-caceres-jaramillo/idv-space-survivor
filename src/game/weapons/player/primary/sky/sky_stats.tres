@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="RangedWeaponsStats" load_steps=5 format=3 uid="uid://cxqoi8pa1owrc"]
+
+[ext_resource type="Resource" uid="uid://b8tlfv3eycwwy" path="res://src/scripts/data/damage_types/impact.tres" id="1_eh550"]
+[ext_resource type="Script" path="res://src/game/weapons/player/base/range/ranged_weapon_stats.gd" id="1_i1irq"]
+[ext_resource type="AudioStream" uid="uid://8whasbfe3y6b" path="res://assets/sound/mixkit-shotgun-long-pump-1666.wav" id="2_e06cp"]
+[ext_resource type="AudioStream" uid="uid://cesywvh3cvlr4" path="res://assets/sound/shotgun.wav" id="4_ca3f5"]
+
+[resource]
+script = ExtResource("1_i1irq")
+DAMAGE = 16.0
+DAMAGE_TYPE = ExtResource("1_eh550")
+CRITICAL_CHANCE = 10.0
+CRITICAL_DAMAGE = 1.8
+MULTISHOT = 8.0
+PENETRATION = 0.0
+FIRE_RATE = 1.2
+RELOAD = 1.1
+MAGAZINE = 8
+RANGE = 50.0
+KNOCKBACK = 8
+SPREAD = 0.2
+PROJECTILE_SPEED = 850.0
+reload_sfx = ExtResource("2_e06cp")
+shoot_sfx = ExtResource("4_ca3f5")

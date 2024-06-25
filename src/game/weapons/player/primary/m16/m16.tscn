@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cilixq015l03t"]
+
+[ext_resource type="PackedScene" uid="uid://dn5r6qogjyaco" path="res://src/game/weapons/player/base/range/range_weapon.tscn" id="1_ffgco"]
+[ext_resource type="Texture2D" uid="uid://8k2jwxk4qgkg" path="res://src/game/weapons/player/primary/m16/m16.png" id="2_kkyi8"]
+[ext_resource type="PackedScene" uid="uid://ibw35q6xdypf" path="res://src/game/projectiles/player/bullet/bullet_projectile.tscn" id="3_h4a06"]
+
+[node name="m16" node_paths=PackedStringArray("weapon_fsx") instance=ExtResource("1_ffgco")]
+texture = ExtResource("2_kkyi8")
+weapon_fsx = NodePath("m16fx")
+projectile = ExtResource("3_h4a06")
+
+[node name="Tip" parent="." index="2"]
+position = Vector2(26, -4)
+
+[node name="m16fx" type="AudioStreamPlayer" parent="." index="6"]

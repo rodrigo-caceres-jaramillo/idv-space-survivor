@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jcitfpig33ox"
-path="res://.godot/imported/rifle.png-53e74aa4bc837f3ac54c2b46cd7c9fba.ctex"
+uid="uid://bf7hhdq1e27hx"
+path="res://.godot/imported/Orange_assaut.png-23892f9ab8f40e069bfb588e9998c1bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/game/weapons/player/primary/rifle/rifle.png"
-dest_files=["res://.godot/imported/rifle.png-53e74aa4bc837f3ac54c2b46cd7c9fba.ctex"]
+source_file="res://src/game/weapons/player/primary/orange_assaut/Orange_assaut.png"
+dest_files=["res://.godot/imported/Orange_assaut.png-23892f9ab8f40e069bfb588e9998c1bd.ctex"]
 
 [params]
 

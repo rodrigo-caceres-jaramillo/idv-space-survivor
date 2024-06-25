@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=5 format=3 uid="uid://djlb8nt3tc01c"]
+
+[ext_resource type="Texture2D" uid="uid://cuqsfri0bww05" path="res://src/game/weapons/player/primary/orange_sniper/orange_sniper.png" id="1_bqg3o"]
+[ext_resource type="Script" path="res://src/game/weapons/weapon_resource.gd" id="1_v6mpt"]
+[ext_resource type="Resource" uid="uid://dq1q60p08yg6j" path="res://src/game/weapons/player/primary/orange_sniper/orange_sniper_stats.tres" id="3_8fh2m"]
+[ext_resource type="PackedScene" uid="uid://dglab8ihy6l1s" path="res://src/game/weapons/player/primary/orange_sniper/orange_sniper.tscn" id="4_1728m"]
+
+[resource]
+script = ExtResource("1_v6mpt")
+weapon_scene = ExtResource("4_1728m")
+stats = ExtResource("3_8fh2m")
+weapon_type = 0
+name = "Orange sniper"
+description = "Orange dead"
+price = 50
+icon = ExtResource("1_bqg3o")
