@@ -17,4 +17,3 @@ name = "Health Module"
 description = "+ 20 Max Health"
 price = 10
 icon = ExtResource("1_ibcd2")
-type = 2

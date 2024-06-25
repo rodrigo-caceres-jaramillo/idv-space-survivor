@@ -17,4 +17,3 @@ name = "Range Module"
 description = "+ 30% Range"
 price = 10
 icon = ExtResource("1_kyogk")
-type = 2

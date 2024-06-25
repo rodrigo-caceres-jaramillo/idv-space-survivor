@@ -17,4 +17,3 @@ name = "Critical Chance Module"
 description = "+ 90% Critical Chance"
 price = 10
 icon = ExtResource("1_ov5hy")
-type = 2

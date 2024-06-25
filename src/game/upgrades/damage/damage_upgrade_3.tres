@@ -17,4 +17,3 @@ name = "Damage Module"
 description = "+ 60% Damage"
 price = 10
 icon = ExtResource("1_aidxj")
-type = 2

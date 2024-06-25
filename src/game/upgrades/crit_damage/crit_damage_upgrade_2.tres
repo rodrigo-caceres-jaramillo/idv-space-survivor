@@ -17,4 +17,3 @@ name = "Critical Damage Module"
 description = "+ 20% Critical Damage"
 price = 10
 icon = ExtResource("1_prsn1")
-type = 2

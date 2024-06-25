@@ -17,4 +17,3 @@ name = "Range Module"
 description = "+ 20% Range"
 price = 10
 icon = ExtResource("1_7mi1b")
-type = 2

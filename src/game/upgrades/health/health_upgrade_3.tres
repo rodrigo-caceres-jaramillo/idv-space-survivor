@@ -17,4 +17,3 @@ name = "Health Module"
 description = "+ 30 Max Health"
 price = 10
 icon = ExtResource("1_vhsj1")
-type = 2

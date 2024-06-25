@@ -17,4 +17,3 @@ name = "Speed Module"
 description = "+ 10% Speed"
 price = 10
 icon = ExtResource("1_qlmt6")
-type = 2
