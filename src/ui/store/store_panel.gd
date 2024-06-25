@@ -1,6 +1,7 @@
 extends PanelContainer
 
 @export var current_pool: PoolResource
+@export var pools: Array[PoolResource]
 @onready var store_option_1 = $VBoxContainer/StoreOption1
 @onready var store_option_2 = $VBoxContainer/StoreOption2
 @onready var store_option_3 = $VBoxContainer/StoreOption3
@@ -31,3 +32,10 @@ func _on_roll_button_pressed():
 	if (Global.money >= 5):
 		restock_store()
 		Global.money = Global.money - 5
+
+
+func _on_update_button_pressed():
+	#pass
+	if current_pool.level < pools.size():
+		current_pool = pools[current_pool.level]
+	restock_store()
