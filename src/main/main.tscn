@@ -1,10 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://btjax2v4qeeu3"]
+[gd_scene load_steps=23 format=3 uid="uid://btjax2v4qeeu3"]
 
 [ext_resource type="Script" path="res://src/main/main.gd" id="1_gwchs"]
 [ext_resource type="Resource" uid="uid://cbvawfcm626sb" path="res://src/game/waves/game_data/game_1.tres" id="2_t5txs"]
 [ext_resource type="Texture2D" uid="uid://0dhpoqbrs2oc" path="res://assets/textures/tiles/tile_set.png" id="2_vhjei"]
 [ext_resource type="Script" path="res://src/game/waves/wave_manager.gd" id="5_g76ig"]
 [ext_resource type="Script" path="res://src/main/impact_manager.gd" id="6_1onaa"]
+[ext_resource type="PackedScene" uid="uid://c3l1vobhw8bkc" path="res://src/ui/hud/damage_label/damage_label.tscn" id="7_3j06x"]
 [ext_resource type="PackedScene" uid="uid://ckumljs7h0tw7" path="res://src/scripts/effects/projectile_impact.tscn" id="7_8jh40"]
 [ext_resource type="Script" path="res://src/main/ui_manager.gd" id="8_8d8qw"]
 [ext_resource type="PackedScene" uid="uid://banvou7ehyoxi" path="res://src/ui/store/store.tscn" id="9_xpwpq"]
@@ -262,6 +263,7 @@ one_shot = true
 [node name="ImpactManager" type="Node2D" parent="."]
 script = ExtResource("6_1onaa")
 projectile_impact = ExtResource("7_8jh40")
+damage_label = ExtResource("7_3j06x")
 
 [node name="UIManager" type="Node2D" parent="."]
 process_mode = 3

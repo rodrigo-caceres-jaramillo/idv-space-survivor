@@ -5,10 +5,10 @@
 
 [node name="laser_pistol" node_paths=PackedStringArray("weapon_fsx") instance=ExtResource("1_golcl")]
 texture = ExtResource("2_v3vav")
+offset = Vector2(9, -4)
 weapon_fsx = NodePath("laser_pistolfx")
-projectile = null
 
 [node name="Tip" parent="." index="2"]
-position = Vector2(12, -6)
+position = Vector2(22, -9)
 
 [node name="laser_pistolfx" type="AudioStreamPlayer" parent="." index="6"]

@@ -1,9 +1,30 @@
-[gd_scene load_steps=5 format=3 uid="uid://bngqp1vja7siw"]
+[gd_scene load_steps=10 format=3 uid="uid://bngqp1vja7siw"]
 
 [ext_resource type="Script" path="res://src/ui/main_menu/Buttons.gd" id="1_3sbce"]
 [ext_resource type="FontFile" uid="uid://jd478um6wqpv" path="res://assets/fonts/Gameplay.ttf" id="1_vt1jm"]
 [ext_resource type="PackedScene" uid="uid://bs4uh6ctjo53y" path="res://src/ui/options/options_menu.tscn" id="3_2g2ue"]
-[ext_resource type="StyleBox" uid="uid://dkcbet73vbmhf" path="res://src/ui/style_box/blue_panel.tres" id="3_l5o7w"]
+[ext_resource type="Resource" uid="uid://r2xe12hve2mu" path="res://src/game/characters/blue/blue.tres" id="3_20wsg"]
+[ext_resource type="StyleBox" uid="uid://bg7ra0k2c1ef0" path="res://src/ui/style_box/store_option.tres" id="4_nc1oe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r0mvb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rr2i2"]
+bg_color = Color(0.054902, 0.121569, 0.372549, 0.564706)
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8tcd8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u07au"]
+bg_color = Color(0.054902, 0.121569, 0.372549, 0.564706)
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
 
 [node name="MainMenu" type="CanvasLayer"]
 
@@ -48,13 +69,31 @@ grow_vertical = 0
 scale = Vector2(1.5, 1.5)
 size_flags_vertical = 8
 script = ExtResource("1_3sbce")
+char = ExtResource("3_20wsg")
 
-[node name="StartButton" type="Button" parent="Buttons"]
+[node name="PanelContainer" type="PanelContainer" parent="Buttons"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_nc1oe")
+
+[node name="StartButton" type="Button" parent="Buttons/PanelContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_vt1jm")
 theme_override_font_sizes/font_size = 15
-theme_override_styles/normal = ExtResource("3_l5o7w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_r0mvb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rr2i2")
 text = "Start"
+
+[node name="PanelContainer2" type="PanelContainer" parent="Buttons"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_nc1oe")
+
+[node name="QuitButton" type="Button" parent="Buttons/PanelContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_vt1jm")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_8tcd8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_u07au")
+text = "Quit"
 
 [node name="OptionsButton" type="Button" parent="Buttons"]
 visible = false
@@ -63,21 +102,15 @@ theme_override_fonts/font = ExtResource("1_vt1jm")
 theme_override_font_sizes/font_size = 15
 text = "Options"
 
-[node name="QuitButton" type="Button" parent="Buttons"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_vt1jm")
-theme_override_font_sizes/font_size = 15
-theme_override_styles/normal = ExtResource("3_l5o7w")
-text = "Quit"
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="OptionsMenu" parent="CanvasLayer" instance=ExtResource("3_2g2ue")]
+visible = false
 offset_left = -2.0
 offset_top = 15.0
 offset_right = 39.0
 offset_bottom = 56.0
 
-[connection signal="pressed" from="Buttons/StartButton" to="Buttons" method="_on_start_button_pressed"]
+[connection signal="pressed" from="Buttons/PanelContainer/StartButton" to="Buttons" method="_on_start_button_pressed"]
+[connection signal="pressed" from="Buttons/PanelContainer2/QuitButton" to="Buttons" method="_on_quit_button_pressed"]
 [connection signal="pressed" from="Buttons/OptionsButton" to="CanvasLayer/OptionsMenu" method="show"]
-[connection signal="pressed" from="Buttons/QuitButton" to="Buttons" method="_on_quit_button_pressed"]

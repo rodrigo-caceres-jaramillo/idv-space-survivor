@@ -1,6 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://ckgyuvjejrxtl"]
+[gd_scene load_steps=3 format=3 uid="uid://ckgyuvjejrxtl"]
 
 [ext_resource type="Script" path="res://src/ui/tutorial/tutorial.gd" id="1_g36v0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2dowe"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0, 0, 0, 0.45098)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
 
 [node name="Tutorial" type="CanvasLayer"]
 script = ExtResource("1_g36v0")
@@ -18,10 +30,22 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_2dowe")
 
-[node name="Label" type="Label" parent="Container"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Container"]
 layout_mode = 2
-text = "wasd move"
+
+[node name="Action" type="Label" parent="Container/HBoxContainer"]
+layout_mode = 2
+text = "WASD - MOVE
+LEFT CLICK - DASH
+RIGHT CLICK - SHOOT
+1- CHANGE TO PRIMARY
+2 - CHANGE TO SECONDARY
+"
+
+[node name="Control" type="Label" parent="Container/HBoxContainer"]
+layout_mode = 2
 
 [node name="Duration" type="Timer" parent="."]
 one_shot = true

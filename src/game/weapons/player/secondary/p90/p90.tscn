@@ -6,10 +6,11 @@
 
 [node name="P90" node_paths=PackedStringArray("weapon_fsx") instance=ExtResource("1_iw2bi")]
 texture = ExtResource("2_hoi1s")
+offset = Vector2(-3, -4)
 weapon_fsx = NodePath("P90fx")
 projectile = ExtResource("2_ecaq6")
 
 [node name="Tip" parent="." index="2"]
-position = Vector2(22, 0)
+position = Vector2(15, -6)
 
 [node name="P90fx" type="AudioStreamPlayer" parent="." index="6"]

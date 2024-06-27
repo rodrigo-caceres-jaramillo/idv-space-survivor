@@ -2,7 +2,6 @@ extends CanvasLayer
 
 @onready var duration = $Duration
 
-
 func _ready():
 	duration.start(5)
 

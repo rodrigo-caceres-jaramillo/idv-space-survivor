@@ -6,10 +6,14 @@
 
 [node name="m16" node_paths=PackedStringArray("weapon_fsx") instance=ExtResource("1_ffgco")]
 texture = ExtResource("2_kkyi8")
+offset = Vector2(9, -2)
 weapon_fsx = NodePath("m16fx")
 projectile = ExtResource("3_h4a06")
 
+[node name="SecondHand" parent="." index="1"]
+position = Vector2(17, -4)
+
 [node name="Tip" parent="." index="2"]
-position = Vector2(26, -4)
+position = Vector2(34, -7)
 
 [node name="m16fx" type="AudioStreamPlayer" parent="." index="6"]

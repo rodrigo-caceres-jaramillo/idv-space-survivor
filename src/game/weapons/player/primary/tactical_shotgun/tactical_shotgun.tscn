@@ -1,11 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://46qt1bixs5v6"]
+[gd_scene load_steps=4 format=3 uid="uid://46qt1bixs5v6"]
 
 [ext_resource type="PackedScene" uid="uid://dn5r6qogjyaco" path="res://src/game/weapons/player/base/range/range_weapon.tscn" id="1_8arjw"]
 [ext_resource type="PackedScene" uid="uid://cwn44fakb1tkg" path="res://src/game/projectiles/player/buckshot/buckshot_projectile.tscn" id="2_cnbsp"]
+[ext_resource type="Texture2D" uid="uid://xf7dnsxq2t3o" path="res://src/game/weapons/player/primary/tactical_shotgun/tactical_shotgun.png" id="2_ny6lr"]
 
 [node name="tactical_shotgun" node_paths=PackedStringArray("weapon_fsx") instance=ExtResource("1_8arjw")]
+texture = ExtResource("2_ny6lr")
+offset = Vector2(17, -1)
 weapon_fsx = NodePath("ShotgunSfx")
 projectile = ExtResource("2_cnbsp")
+
+[node name="SecondHand" parent="." index="1"]
+position = Vector2(25, -2)
+
+[node name="Tip" parent="." index="2"]
+position = Vector2(38, -4)
 
 [node name="ShotgunSfx" type="AudioStreamPlayer" parent="." index="6"]
 volume_db = -0.8

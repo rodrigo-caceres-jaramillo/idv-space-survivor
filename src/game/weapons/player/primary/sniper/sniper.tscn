@@ -5,15 +5,15 @@
 [ext_resource type="Texture2D" uid="uid://dxc6shawo5ng0" path="res://src/game/weapons/player/primary/sniper/sniper.png" id="2_u31tc"]
 
 [node name="Sniper" node_paths=PackedStringArray("weapon_fsx") instance=ExtResource("1_m2tfw")]
-position = Vector2(8, -1)
+texture = ExtResource("2_u31tc")
+offset = Vector2(8, -3)
 weapon_fsx = NodePath("SniperSfx")
 projectile = ExtResource("2_jv26i")
 
-[node name="Sprite" parent="." index="0"]
-position = Vector2(-1, 1)
-texture = ExtResource("2_u31tc")
+[node name="SecondHand" parent="." index="1"]
+position = Vector2(15, -2)
 
-[node name="Tip" parent="." index="1"]
-position = Vector2(28, 0)
+[node name="Tip" parent="." index="2"]
+position = Vector2(35, -4)
 
 [node name="SniperSfx" type="AudioStreamPlayer" parent="." index="5"]

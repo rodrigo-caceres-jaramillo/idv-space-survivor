@@ -5,12 +5,15 @@
 [ext_resource type="PackedScene" uid="uid://ibw35q6xdypf" path="res://src/game/projectiles/player/bullet/bullet_projectile.tscn" id="3_f1b53"]
 
 [node name="smg_rt" node_paths=PackedStringArray("weapon_fsx") instance=ExtResource("1_lc61k")]
-position = Vector2(0, 2)
 texture = ExtResource("2_qwc20")
+offset = Vector2(8, -2)
 weapon_fsx = NodePath("smg_rtfx")
 projectile = ExtResource("3_f1b53")
 
+[node name="SecondHand" parent="." index="1"]
+position = Vector2(16, -4)
+
 [node name="Tip" parent="." index="2"]
-position = Vector2(22, -6)
+position = Vector2(29, -8)
 
 [node name="smg_rtfx" type="AudioStreamPlayer" parent="." index="6"]

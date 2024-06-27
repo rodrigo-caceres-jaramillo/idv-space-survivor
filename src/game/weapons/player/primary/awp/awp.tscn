@@ -6,10 +6,15 @@
 
 [node name="awp" node_paths=PackedStringArray("weapon_fsx") instance=ExtResource("1_tjaaf")]
 texture = ExtResource("2_urek8")
+offset = Vector2(8, -4)
 weapon_fsx = NodePath("awpfx")
 projectile = ExtResource("3_t6e2b")
 
+[node name="SecondHand" parent="." index="1"]
+position = Vector2(17, -3)
+offset = Vector2(17, -3)
+
 [node name="Tip" parent="." index="2"]
-position = Vector2(28, -2)
+position = Vector2(29, -6)
 
 [node name="awpfx" type="AudioStreamPlayer" parent="." index="6"]

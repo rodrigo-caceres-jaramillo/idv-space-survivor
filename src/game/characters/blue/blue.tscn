@@ -192,6 +192,9 @@ stats = ExtResource("2_dg7w5")
 [node name="WeaponManager" parent="." index="0"]
 hand_sprite = ExtResource("2_4288j")
 
+[node name="HandPosition" parent="WeaponManager" index="0"]
+position = Vector2(7, 1)
+
 [node name="DashBar" parent="." index="1"]
 offset_left = -4.0
 offset_top = -27.0

@@ -5,13 +5,17 @@
 [ext_resource type="PackedScene" uid="uid://ibw35q6xdypf" path="res://src/game/projectiles/player/bullet/bullet_projectile.tscn" id="3_jcsos"]
 
 [node name="Rifle" node_paths=PackedStringArray("weapon_fsx") instance=ExtResource("1_n4y06")]
-position = Vector2(6, 0)
+position = Vector2(2.84217e-14, 2)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("2_65ab4")
+offset = Vector2(8.57143, -2.85714)
 weapon_fsx = NodePath("Riflefx")
 projectile = ExtResource("3_jcsos")
 
+[node name="SecondHand" parent="." index="1"]
+position = Vector2(21.4286, -2.85714)
+
 [node name="Tip" parent="." index="2"]
-position = Vector2(28.5714, -2.85714)
+position = Vector2(37.1428, -7.14285)
 
 [node name="Riflefx" type="AudioStreamPlayer" parent="." index="6"]

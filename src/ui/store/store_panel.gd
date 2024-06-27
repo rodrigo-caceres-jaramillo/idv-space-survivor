@@ -35,7 +35,7 @@ func _on_roll_button_pressed():
 
 
 func _on_update_button_pressed():
-	#pass
-	if current_pool.level < pools.size():
+	if (Global.money >= 30 && current_pool.level < pools.size()):
 		current_pool = pools[current_pool.level]
-	restock_store()
+		restock_store()
+		Global.money = Global.money - 30
