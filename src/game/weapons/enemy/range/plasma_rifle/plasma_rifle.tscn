@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://c6uv6i8tbnvtb"]
+[gd_scene load_steps=9 format=3 uid="uid://c6uv6i8tbnvtb"]
 
 [ext_resource type="PackedScene" uid="uid://cv7813u0l66ew" path="res://src/game/weapons/enemy/base/range/range_enemy_weapon.tscn" id="1_632iq"]
 [ext_resource type="Texture2D" uid="uid://c3p0cquiw6hdu" path="res://src/game/weapons/enemy/range/plasma_rifle/plasma_rifle.png" id="2_advjp"]
 [ext_resource type="PackedScene" uid="uid://bstwq34jdqdc" path="res://src/game/projectiles/enemy/energy/enemy_energy.tscn" id="3_yf6sp"]
 [ext_resource type="Resource" uid="uid://c3heao5jp1i57" path="res://src/game/weapons/enemy/range/plasma_rifle/plasma_rifle_stats.tres" id="4_ef6sn"]
+[ext_resource type="AudioStream" uid="uid://dndc34ppcxww6" path="res://assets/sound/blaster_shoot(Enemy).mp3" id="5_nbs3y"]
 
 [sub_resource type="Animation" id="Animation_4hj20"]
 length = 0.001
@@ -48,6 +49,7 @@ offset = Vector2(3, -5)
 projectile = ExtResource("3_yf6sp")
 stats = ExtResource("4_ef6sn")
 two_hands = true
+shoot_audio = ExtResource("5_nbs3y")
 
 [node name="MainHand" parent="." index="0"]
 position = Vector2(1, 0)
@@ -62,3 +64,6 @@ position = Vector2(17, -6)
 libraries = {
 "": SubResource("AnimationLibrary_p5r5e")
 }
+
+[node name="AudioPlayer" parent="." index="6"]
+volume_db = -6.0

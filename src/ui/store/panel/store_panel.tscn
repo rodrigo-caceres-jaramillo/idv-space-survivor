@@ -115,7 +115,7 @@ size_flags_horizontal = 10
 theme_override_fonts/font = ExtResource("6_1es1n")
 theme_override_font_sizes/font_size = 13
 theme_override_styles/normal = SubResource("StyleBoxTexture_w4wx5")
-text = "UPGRADE 10"
+text = "UPGRADE 30"
 icon = ExtResource("5_uo75h")
 icon_alignment = 2
 

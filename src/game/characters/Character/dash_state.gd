@@ -46,3 +46,5 @@ func _on_dash_duration_timeout():
 
 func _on_ghost_timer_timeout():
 	create_ghost()
+	
+

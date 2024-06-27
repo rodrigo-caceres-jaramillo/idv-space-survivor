@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ds70pbbdbtgkc"]
+[gd_scene load_steps=24 format=3 uid="uid://ds70pbbdbtgkc"]
 
 [ext_resource type="Script" path="res://src/game/characters/Character/character.gd" id="1_t5npn"]
 [ext_resource type="Texture2D" uid="uid://dbqaxxd3uvuyh" path="res://assets/textures/player/dash_over.png" id="2_gwk3m"]
@@ -20,14 +20,19 @@
 [ext_resource type="Script" path="res://src/scripts/components/hurt_component.gd" id="10_xcugp"]
 [ext_resource type="Texture2D" uid="uid://dd41ceep0cheh" path="res://assets/textures/ui/reload/reload_over.png" id="11_7xkux"]
 [ext_resource type="Script" path="res://src/game/characters/Character/reload_bar.gd" id="12_5prya"]
+[ext_resource type="AudioStream" uid="uid://b74ovwnd0wcwj" path="res://assets/sound/Dash__.mp3" id="17_p2bxg"]
+[ext_resource type="AudioStream" uid="uid://u07y2fga18w5" path="res://assets/sound/Recarga_DASH.mp3" id="18_b6t2o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cfa88"]
 radius = 52.6709
 
-[node name="Character" type="CharacterBody2D"]
+[node name="Character" type="CharacterBody2D" node_paths=PackedStringArray("playerSfx")]
 collision_mask = 5
 motion_mode = 1
 script = ExtResource("1_t5npn")
+playerSfx = NodePath("PlayerSfx")
+dash_sfx = ExtResource("17_p2bxg")
+dash_notify_sfx = ExtResource("18_b6t2o")
 
 [node name="WeaponManager" type="Node2D" parent="." node_paths=PackedStringArray("actor")]
 script = ExtResource("3_54588")
@@ -130,6 +135,7 @@ sprite = NodePath("../Sprite")
 actor = NodePath("..")
 
 [node name="PlayerSfx" type="AudioStreamPlayer" parent="."]
+volume_db = -15.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 

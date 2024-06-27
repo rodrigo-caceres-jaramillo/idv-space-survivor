@@ -17,3 +17,4 @@ position = Vector2(16, -6)
 position = Vector2(19, -8)
 
 [node name="PistolSfx" type="AudioStreamPlayer" parent="." index="5"]
+volume_db = -10.0

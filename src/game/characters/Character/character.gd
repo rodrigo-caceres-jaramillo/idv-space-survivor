@@ -12,6 +12,9 @@ extends CharacterBody2D
 @onready var state_machine = $StateMachine
 @export var stats: PlayerStats
 @onready var health_bar_component = $HealthBarComponent
+@export var playerSfx: AudioStreamPlayer
+@export var dash_sfx: AudioStream 
+@export var dash_notify_sfx: AudioStream 
 var initial_weapon: WeaponResource
 var dash_delay = 1
 var stun = false
@@ -56,6 +59,7 @@ func add_store_resource(resource: StoreResource):
 			return upgrade_manager.apply_upgrade(resource)
 
 func start_dash_delay():
+	_audio_player(dash_sfx)
 	dash_delay_timer.start(dash_delay)
 	Events.dash_finished.emit(dash_delay)
 	
@@ -64,5 +68,9 @@ func change_invencibility(state):
 	#collision_shape.disabled = state
 
 func _on_dash_delay_timeout():
-	print("dash")
+	_audio_player(dash_notify_sfx)
 	can_dash = true
+	
+func _audio_player(audio:AudioStream):
+	playerSfx.stream = audio
+	playerSfx.play()
