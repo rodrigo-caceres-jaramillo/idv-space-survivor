@@ -14,3 +14,4 @@ projectile = ExtResource("2_ecaq6")
 position = Vector2(15, -6)
 
 [node name="P90fx" type="AudioStreamPlayer" parent="." index="6"]
+volume_db = -10.0

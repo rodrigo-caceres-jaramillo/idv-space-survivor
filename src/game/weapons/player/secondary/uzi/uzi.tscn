@@ -14,4 +14,4 @@ projectile = ExtResource("4_ie1qf")
 position = Vector2(16.2857, -6.28571)
 
 [node name="UziSfx" type="AudioStreamPlayer" parent="." index="5"]
-volume_db = -0.5
+volume_db = -10.0

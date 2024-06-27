@@ -12,3 +12,4 @@ weapon_fsx = NodePath("laser_pistolfx")
 position = Vector2(22, -9)
 
 [node name="laser_pistolfx" type="AudioStreamPlayer" parent="." index="6"]
+volume_db = -5.0
