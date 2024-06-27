@@ -19,3 +19,5 @@ position = Vector2(7, 0)
 script = ExtResource("1_1ytxl")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]

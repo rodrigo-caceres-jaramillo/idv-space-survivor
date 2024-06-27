@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bf50ma2xw51og"]
+[gd_scene load_steps=23 format=3 uid="uid://bf50ma2xw51og"]
 
 [ext_resource type="PackedScene" uid="uid://butts5geqiee5" path="res://src/game/enemies/base/enemy.tscn" id="1_38x6a"]
 [ext_resource type="Resource" uid="uid://bkghjgeh42q5k" path="res://src/game/enemies/stratos/riot_control/riot_control_stats.tres" id="2_8mdo5"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://df5vomm5n8kex" path="res://src/game/enemies/stratos/hands/stratos_hand.png" id="4_qh7f3"]
 [ext_resource type="Texture2D" uid="uid://dyeddyen2jm3b" path="res://src/game/enemies/stratos/riot_control/riot_control.png" id="5_56bq1"]
 [ext_resource type="Script" path="res://src/game/enemies/base/states/enemy_follow_player.gd" id="6_gyjau"]
+[ext_resource type="Script" path="res://src/game/enemies/base/states/enemy_spawn_state.gd" id="6_orjxr"]
 [ext_resource type="Script" path="res://src/game/enemies/base/states/enemy_melee_state.gd" id="7_ivbmi"]
 [ext_resource type="Script" path="res://src/game/enemies/base/states/enemy_knockback_state.gd" id="8_42rbs"]
 
@@ -329,21 +330,25 @@ shape = SubResource("CapsuleShape2D_lcj8p")
 
 [node name="StateMachine" parent="." index="3" node_paths=PackedStringArray("actor", "initial_state", "animation_player")]
 actor = NodePath("..")
-initial_state = NodePath("Follow")
+initial_state = NodePath("EnemySpawnState")
 animation_player = NodePath("../AnimationPlayer")
 
-[node name="Follow" type="Node2D" parent="StateMachine" index="0" node_paths=PackedStringArray("attack_range", "hurtbox")]
+[node name="EnemySpawnState" type="Node2D" parent="StateMachine" index="0"]
+script = ExtResource("6_orjxr")
+spawnTime = 1.0
+
+[node name="Follow" type="Node2D" parent="StateMachine" index="1" node_paths=PackedStringArray("attack_range", "hurtbox")]
 script = ExtResource("6_gyjau")
 attack_range = NodePath("../../AttackRange")
 hurtbox = NodePath("../../HurtboxComponent")
 
-[node name="Attack" type="Node2D" parent="StateMachine" index="1" node_paths=PackedStringArray("attack_manager", "attack_range", "hurtbox")]
+[node name="Attack" type="Node2D" parent="StateMachine" index="2" node_paths=PackedStringArray("attack_manager", "attack_range", "hurtbox")]
 script = ExtResource("7_ivbmi")
 attack_manager = NodePath("../../AttackManager")
 attack_range = NodePath("../../AttackRange")
 hurtbox = NodePath("../../HurtboxComponent")
 
-[node name="Knockback" type="Node2D" parent="StateMachine" index="2"]
+[node name="Knockback" type="Node2D" parent="StateMachine" index="3"]
 script = ExtResource("8_42rbs")
 
 [node name="HurtboxShape" type="CollisionShape2D" parent="HurtboxComponent" index="0"]

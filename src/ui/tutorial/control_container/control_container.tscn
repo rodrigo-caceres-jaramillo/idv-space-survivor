@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsp6rfxy3p3rs"]
+
+[ext_resource type="Script" path="res://src/ui/tutorial/control_container/control_container.gd" id="1_3xnth"]
+[ext_resource type="FontFile" uid="uid://jd478um6wqpv" path="res://assets/fonts/Gameplay.ttf" id="1_qrhcb"]
+
+[node name="HBoxContainer" type="HBoxContainer"]
+script = ExtResource("1_3xnth")
+
+[node name="Action" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_qrhcb")
+text = "move
+"
+
+[node name="Control" type="Label" parent="."]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_qrhcb")
+text = "wasd"

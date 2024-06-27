@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://ckgyuvjejrxtl"]
+[gd_scene load_steps=4 format=3 uid="uid://ckgyuvjejrxtl"]
 
 [ext_resource type="Script" path="res://src/ui/tutorial/tutorial.gd" id="1_g36v0"]
+[ext_resource type="PackedScene" uid="uid://dsp6rfxy3p3rs" path="res://src/ui/tutorial/control_container/control_container.tscn" id="2_4620b"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2dowe"]
 content_margin_left = 5.0
@@ -18,34 +19,48 @@ border_color = Color(0, 0, 0, 1)
 script = ExtResource("1_g36v0")
 
 [node name="Container" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(300, 0)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -44.0
-offset_top = -20.0
-offset_right = 44.0
-offset_bottom = 20.0
+offset_left = -57.0
+offset_top = -60.5
+offset_right = 57.0
+offset_bottom = 60.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_2dowe")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Container"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Container"]
 layout_mode = 2
 
-[node name="Action" type="Label" parent="Container/HBoxContainer"]
+[node name="HBoxContainer" parent="Container/VBoxContainer" instance=ExtResource("2_4620b")]
 layout_mode = 2
-text = "WASD - MOVE
-LEFT CLICK - DASH
-RIGHT CLICK - SHOOT
-1- CHANGE TO PRIMARY
-2 - CHANGE TO SECONDARY
-"
+action_text = "MOVE"
+control_text = "WASD"
 
-[node name="Control" type="Label" parent="Container/HBoxContainer"]
+[node name="HBoxContainer2" parent="Container/VBoxContainer" instance=ExtResource("2_4620b")]
 layout_mode = 2
+action_text = "SHOOT"
+control_text = "RIGTH CLICK"
+
+[node name="HBoxContainer3" parent="Container/VBoxContainer" instance=ExtResource("2_4620b")]
+layout_mode = 2
+action_text = "DASH"
+control_text = "LEFT CLICK"
+
+[node name="HBoxContainer4" parent="Container/VBoxContainer" instance=ExtResource("2_4620b")]
+layout_mode = 2
+action_text = "EQUIP PRIMARY"
+control_text = "1"
+
+[node name="HBoxContainer5" parent="Container/VBoxContainer" instance=ExtResource("2_4620b")]
+layout_mode = 2
+action_text = "EQUIP SECONDARY"
+control_text = "2"
 
 [node name="Duration" type="Timer" parent="."]
 one_shot = true

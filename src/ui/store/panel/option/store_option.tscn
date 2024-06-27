@@ -1,9 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://dyrf50yc61ric"]
+[gd_scene load_steps=14 format=3 uid="uid://dyrf50yc61ric"]
 
 [ext_resource type="StyleBox" uid="uid://bg7ra0k2c1ef0" path="res://src/ui/style_box/store_option.tres" id="1_8k3nv"]
 [ext_resource type="Script" path="res://src/ui/store/panel/option/store_option.gd" id="1_yqeex"]
 [ext_resource type="Texture2D" uid="uid://4jehqdhq563t" path="res://src/game/weapons/player/secondary/pistol/pistol.png" id="2_g1gut"]
 [ext_resource type="FontFile" uid="uid://jd478um6wqpv" path="res://assets/fonts/Gameplay.ttf" id="3_3e06n"]
+[ext_resource type="AudioStream" uid="uid://bt2gkeop4dmuv" path="res://assets/sound/buy.mp3" id="3_ycgne"]
+[ext_resource type="AudioStream" uid="uid://dba10njb524dx" path="res://assets/sound/touch_button.wav" id="4_3i6mo"]
 [ext_resource type="Texture2D" uid="uid://c45p5tvcf6p2d" path="res://assets/textures/money/Money.png" id="4_3tn2f"]
 [ext_resource type="FontFile" uid="uid://dpiss5y70c657" path="res://assets/fonts/PixeloidSans-mLxMm.ttf" id="5_dpy8b"]
 
@@ -51,6 +53,8 @@ offset_right = 250.0
 offset_bottom = 56.0
 theme_override_styles/panel = ExtResource("1_8k3nv")
 script = ExtResource("1_yqeex")
+buy_audio = ExtResource("3_ycgne")
+select_audio = ExtResource("4_3i6mo")
 
 [node name="SelectButton" type="Button" parent="."]
 layout_mode = 2
@@ -106,6 +110,8 @@ theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = SubResource("StyleBoxFlat_moaep")
 text = "10$"
 icon = ExtResource("4_3tn2f")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [connection signal="pressed" from="SelectButton" to="." method="_on_select_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/BuyButton" to="." method="_on_buy_button_pressed"]

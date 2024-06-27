@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cieyh0w75vcq7"]
+[gd_scene load_steps=20 format=3 uid="uid://cieyh0w75vcq7"]
 
 [ext_resource type="Script" path="res://src/ui/store/store_panel.gd" id="1_h8rdo"]
 [ext_resource type="StyleBox" uid="uid://b1hkw1f348phd" path="res://src/ui/style_box/hud_panel.tres" id="1_r5hjk"]
@@ -8,8 +8,10 @@
 [ext_resource type="Resource" uid="uid://dvc5kve003shi" path="res://src/game/store/pools/level_3.tres" id="5_mo2t8"]
 [ext_resource type="Texture2D" uid="uid://c45p5tvcf6p2d" path="res://assets/textures/money/Money.png" id="5_uo75h"]
 [ext_resource type="FontFile" uid="uid://jd478um6wqpv" path="res://assets/fonts/Gameplay.ttf" id="6_1es1n"]
+[ext_resource type="AudioStream" uid="uid://cl2di54cw5y1m" path="res://assets/sound/roll_store.mp3" id="6_87xj4"]
 [ext_resource type="Texture2D" uid="uid://b031w6q5f21t0" path="res://assets/textures/ui/panel/upgrade_panel.png" id="6_567if"]
 [ext_resource type="Texture2D" uid="uid://b1k3rxxxkkgh7" path="res://assets/textures/ui/panel/roll_panel.png" id="7_6umne"]
+[ext_resource type="AudioStream" uid="uid://dbfhq3y3dfifa" path="res://assets/sound/upgrate_store.mp3" id="7_lwpna"]
 [ext_resource type="Texture2D" uid="uid://xqxm44sc5b78" path="res://assets/textures/ui/panel/money_panel.png" id="7_qbvle"]
 [ext_resource type="Script" path="res://src/ui/store/panel/money_counter.gd" id="8_10n7p"]
 
@@ -48,6 +50,8 @@ theme_override_styles/panel = ExtResource("1_r5hjk")
 script = ExtResource("1_h8rdo")
 current_pool = ExtResource("3_3y7ey")
 pools = Array[Resource("res://src/game/store/pools/pool_resource.gd")]([ExtResource("3_3y7ey"), ExtResource("4_cwrk6"), ExtResource("5_mo2t8")])
+roll_audio = ExtResource("6_87xj4")
+upgrade_audio = ExtResource("7_lwpna")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -111,7 +115,9 @@ size_flags_horizontal = 10
 theme_override_fonts/font = ExtResource("6_1es1n")
 theme_override_font_sizes/font_size = 13
 theme_override_styles/normal = SubResource("StyleBoxTexture_w4wx5")
-text = "UPGRADE"
+text = "UPGRADE 10"
+icon = ExtResource("5_uo75h")
+icon_alignment = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(100, 0)
@@ -131,6 +137,8 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_r502x")
 text = "Roll"
 icon = ExtResource("5_uo75h")
 icon_alignment = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/UpdateButton" to="." method="_on_update_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/PanelContainer/RollButton" to="." method="_on_roll_button_pressed"]
