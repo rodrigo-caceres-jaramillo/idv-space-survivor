@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckgyuvjejrxtl"]
+
+[ext_resource type="Script" path="res://src/ui/tutorial/tutorial.gd" id="1_g36v0"]
+
+[node name="Tutorial" type="CanvasLayer"]
+script = ExtResource("1_g36v0")
+
+[node name="Container" type="PanelContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = -20.0
+offset_right = 44.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="Container"]
+layout_mode = 2
+text = "wasd move"
+
+[node name="Duration" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Duration" to="." method="_on_duration_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://btjax2v4qeeu3"]
+[gd_scene load_steps=22 format=3 uid="uid://btjax2v4qeeu3"]
 
 [ext_resource type="Script" path="res://src/main/main.gd" id="1_gwchs"]
 [ext_resource type="Resource" uid="uid://cbvawfcm626sb" path="res://src/game/waves/game_data/game_1.tres" id="2_t5txs"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://beiox4ea7o1wd" path="res://src/ui/pause_menu/pause_menu.tscn" id="11_vjvsd"]
 [ext_resource type="Script" path="res://src/main/camera.gd" id="12_rcq3p"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="12_xg1mj"]
+[ext_resource type="PackedScene" uid="uid://ckgyuvjejrxtl" path="res://src/ui/tutorial/tutorial.tscn" id="12_xt78r"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="13_xlvnm"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="14_xwc28"]
 
@@ -281,6 +282,8 @@ visible = false
 [node name="PauseMenu" parent="UIManager" instance=ExtResource("11_vjvsd")]
 process_mode = 3
 visible = false
+
+[node name="Tutorial" parent="UIManager" instance=ExtResource("12_xt78r")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 visible = false

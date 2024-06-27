@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bngqp1vja7siw"]
+[gd_scene load_steps=5 format=3 uid="uid://bngqp1vja7siw"]
 
 [ext_resource type="Script" path="res://src/ui/main_menu/Buttons.gd" id="1_3sbce"]
 [ext_resource type="FontFile" uid="uid://jd478um6wqpv" path="res://assets/fonts/Gameplay.ttf" id="1_vt1jm"]
 [ext_resource type="PackedScene" uid="uid://bs4uh6ctjo53y" path="res://src/ui/options/options_menu.tscn" id="3_2g2ue"]
+[ext_resource type="StyleBox" uid="uid://dkcbet73vbmhf" path="res://src/ui/style_box/blue_panel.tres" id="3_l5o7w"]
 
 [node name="MainMenu" type="CanvasLayer"]
 
@@ -52,9 +53,11 @@ script = ExtResource("1_3sbce")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_vt1jm")
 theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = ExtResource("3_l5o7w")
 text = "Start"
 
 [node name="OptionsButton" type="Button" parent="Buttons"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_vt1jm")
 theme_override_font_sizes/font_size = 15
@@ -64,6 +67,7 @@ text = "Options"
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_vt1jm")
 theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = ExtResource("3_l5o7w")
 text = "Quit"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
