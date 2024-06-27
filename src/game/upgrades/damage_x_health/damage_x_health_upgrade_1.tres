@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Upgrade" load_steps=6 format=3 uid="uid://u1b1hohdtqfp"]
+
+[ext_resource type="Texture2D" uid="uid://bdaql6h0jrij6" path="res://src/game/upgrades/damage_x_health/damage_x_health_upgrade_1.png" id="1_idp8j"]
+[ext_resource type="Script" path="res://src/game/store/resource/modifier.gd" id="2_234ih"]
+[ext_resource type="Script" path="res://src/game/upgrades/upgrade_resource.gd" id="3_yy5sy"]
+
+[sub_resource type="Resource" id="Resource_p36pv"]
+script = ExtResource("2_234ih")
+stat = 2
+value = 0.3
+positive = true
+
+[sub_resource type="Resource" id="Resource_0kwiu"]
+script = ExtResource("2_234ih")
+stat = 0
+value = -5.0
+positive = true
+
+[resource]
+script = ExtResource("3_yy5sy")
+modifiers = Array[ExtResource("2_234ih")]([SubResource("Resource_p36pv"), SubResource("Resource_0kwiu")])
+name = "Damage cursed module "
+description = "Damage for health"
+price = 10
+icon = ExtResource("1_idp8j")

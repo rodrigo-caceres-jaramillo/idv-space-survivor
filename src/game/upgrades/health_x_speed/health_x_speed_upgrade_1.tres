@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Upgrade" load_steps=6 format=3 uid="uid://ba01lcdx6qfhv"]
+
+[ext_resource type="Script" path="res://src/game/upgrades/upgrade_resource.gd" id="1_2uw1a"]
+[ext_resource type="Texture2D" uid="uid://8nnlsn6q2mwq" path="res://src/game/upgrades/health_x_speed/health_x_speed_upgrade_1.png" id="1_beh10"]
+[ext_resource type="Script" path="res://src/game/store/resource/modifier.gd" id="2_1lshj"]
+
+[sub_resource type="Resource" id="Resource_y7sqe"]
+script = ExtResource("2_1lshj")
+stat = 0
+value = 16.0
+positive = true
+
+[sub_resource type="Resource" id="Resource_6r65c"]
+script = ExtResource("2_1lshj")
+stat = 1
+value = -0.03
+positive = true
+
+[resource]
+script = ExtResource("1_2uw1a")
+modifiers = Array[ExtResource("2_1lshj")]([SubResource("Resource_y7sqe"), SubResource("Resource_6r65c")])
+name = "Health cursed module "
+description = "Health for Speed"
+price = 10
+icon = ExtResource("1_beh10")

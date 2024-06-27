@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Upgrade" load_steps=2 format=3 uid="uid://nwun42dvpps"]
+
+[ext_resource type="Script" path="res://src/game/upgrades/upgrade_resource.gd" id="1_tnab8"]
+
+[resource]
+script = ExtResource("1_tnab8")
+modifiers = Array[Resource("res://src/game/store/resource/modifier.gd")]([])
+name = ""
+description = ""
+price = 0
