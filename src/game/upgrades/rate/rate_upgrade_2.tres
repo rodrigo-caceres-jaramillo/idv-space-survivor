@@ -15,5 +15,5 @@ script = ExtResource("2_oe3qn")
 modifiers = Array[ExtResource("1_27ptl")]([SubResource("Resource_216pj")])
 name = "Fire Rate Module"
 description = "+ 40% Fire Rate"
-price = 10
+price = 20
 icon = ExtResource("1_np201")

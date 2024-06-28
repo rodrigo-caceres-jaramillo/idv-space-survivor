@@ -5,8 +5,8 @@
 [ext_resource type="Resource" uid="uid://b2m4xygijfe0e" path="res://src/game/weapons/enemy/melee/stun_lance/stun_lance_stats.tres" id="3_w7ar0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h3cdv"]
-radius = 3.0
-height = 10.0
+radius = 2.92255
+height = 7.8451
 
 [sub_resource type="Animation" id="Animation_0b8an"]
 length = 0.001
@@ -53,7 +53,7 @@ offset = Vector2(1, -7)
 stats = ExtResource("3_w7ar0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" index="0"]
-position = Vector2(1, -16)
+position = Vector2(0.52145, -10.0774)
 shape = SubResource("CapsuleShape2D_h3cdv")
 
 [node name="AnimationPlayer" parent="." index="3"]

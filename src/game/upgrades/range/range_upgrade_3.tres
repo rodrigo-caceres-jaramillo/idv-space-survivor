@@ -15,5 +15,5 @@ script = ExtResource("2_10nor")
 modifiers = Array[ExtResource("1_3vfaj")]([SubResource("Resource_ixbx3")])
 name = "Range Module"
 description = "+ 30% Range"
-price = 10
+price = 30
 icon = ExtResource("1_kyogk")

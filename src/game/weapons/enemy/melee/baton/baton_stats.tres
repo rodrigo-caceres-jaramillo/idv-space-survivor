@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_58tmm")
-DAMAGE = 5.0
+DAMAGE = 2.0
 DAMAGE_TYPE = ExtResource("1_d7hed")
 ATTACK_RATE = 1.0
 RANGE = 20.0

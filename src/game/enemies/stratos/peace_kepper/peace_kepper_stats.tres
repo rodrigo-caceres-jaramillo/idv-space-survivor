@@ -10,5 +10,5 @@ HEALTH = 20
 HEALTH_TYPE = ExtResource("2_ghb6v")
 SPEED = 0.5
 KB_RESISTANCE = 1.0
-min_value = 1
-max_value = 2
+min_value = 3
+max_value = 4

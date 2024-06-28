@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="WaveEnemy" load_steps=2 format=3 uid="uid://bikc87mmp442r"]
+[gd_resource type="Resource" script_class="WaveEnemy" load_steps=3 format=3 uid="uid://bikc87mmp442r"]
 
 [ext_resource type="Script" path="res://src/game/waves/wave_enemy.gd" id="1_7epdq"]
+[ext_resource type="PackedScene" uid="uid://bf50ma2xw51og" path="res://src/game/enemies/stratos/riot_control/riot_control.tscn" id="1_exdmy"]
 
 [resource]
 script = ExtResource("1_7epdq")
-quantity = 1
+enemy_scene = ExtResource("1_exdmy")
+quantity = 3
 spawn_chance = 1.0

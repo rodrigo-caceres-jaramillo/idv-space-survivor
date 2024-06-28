@@ -1,10 +1,25 @@
-[gd_resource type="Resource" script_class="Upgrade" load_steps=2 format=3 uid="uid://d1ls4er3017or"]
+[gd_resource type="Resource" script_class="Upgrade" load_steps=6 format=3 uid="uid://d1ls4er3017or"]
 
 [ext_resource type="Script" path="res://src/game/upgrades/upgrade_resource.gd" id="1_ref2p"]
+[ext_resource type="Texture2D" uid="uid://byn5pppx43ciq" path="res://src/game/upgrades/rate_x_damage/rate_x_damage_upgrade_1.png" id="1_v416j"]
+[ext_resource type="Script" path="res://src/game/store/resource/modifier.gd" id="2_svht2"]
+
+[sub_resource type="Resource" id="Resource_wtbr8"]
+script = ExtResource("2_svht2")
+stat = 5
+value = 0.3
+positive = true
+
+[sub_resource type="Resource" id="Resource_yixox"]
+script = ExtResource("2_svht2")
+stat = 2
+value = 0.1
+positive = false
 
 [resource]
 script = ExtResource("1_ref2p")
-modifiers = Array[Resource("res://src/game/store/resource/modifier.gd")]([])
-name = ""
-description = ""
-price = 0
+modifiers = Array[ExtResource("2_svht2")]([SubResource("Resource_wtbr8"), SubResource("Resource_yixox")])
+name = "Rate Cursed Module"
+description = "30% Rate  -10% Damage"
+price = 15
+icon = ExtResource("1_v416j")

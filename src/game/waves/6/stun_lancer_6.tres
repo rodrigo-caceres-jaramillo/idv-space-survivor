@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="WaveEnemy" load_steps=3 format=3 uid="uid://co0ejt03q8hwp"]
+
+[ext_resource type="PackedScene" uid="uid://bg51w5vbn6vps" path="res://src/game/enemies/stratos/stun_lancer/stun_lancer.tscn" id="1_dlvyt"]
+[ext_resource type="Script" path="res://src/game/waves/wave_enemy.gd" id="2_810pg"]
+
+[resource]
+script = ExtResource("2_810pg")
+enemy_scene = ExtResource("1_dlvyt")
+quantity = 1
+spawn_chance = 1.0

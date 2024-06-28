@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_vls6n")
-DAMAGE = 5.0
-ATTACK_RATE = 0.5
+DAMAGE = 4.0
+ATTACK_RATE = 0.8
 RANGE = 20.0
 KNOCKBACK = 1

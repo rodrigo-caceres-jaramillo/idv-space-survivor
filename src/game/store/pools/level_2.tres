@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="PoolResource" load_steps=14 format=3 uid="uid://dwwbvofw25cyq"]
+[gd_resource type="Resource" script_class="PoolResource" load_steps=18 format=3 uid="uid://dwwbvofw25cyq"]
 
 [ext_resource type="Resource" uid="uid://be0p2ukh7867q" path="res://src/game/weapons/player/primary/m16/m16.tres" id="1_b4w72"]
 [ext_resource type="Script" path="res://src/game/store/pools/pool_resource.gd" id="1_uxyg4"]
@@ -13,8 +13,12 @@
 [ext_resource type="Resource" uid="uid://b2ogcpq7iecid" path="res://src/game/upgrades/range/range_upgrade_2.tres" id="10_gfu4b"]
 [ext_resource type="Resource" uid="uid://w3ffxoy2nvk5" path="res://src/game/upgrades/rate/rate_upgrade_2.tres" id="11_6jih4"]
 [ext_resource type="Resource" uid="uid://c1pum6oolodt7" path="res://src/game/upgrades/speed/speed_upgrade_2.tres" id="12_25860"]
+[ext_resource type="Resource" uid="uid://b54vhgujw4pxn" path="res://src/game/upgrades/damage_x_health/damage_x_health_upgrade_2.tres" id="13_53tdw"]
+[ext_resource type="Resource" uid="uid://bhrxjmcskt5c4" path="res://src/game/upgrades/health_x_speed/health_x_speed_upgrade_2.tres" id="14_sy6kk"]
+[ext_resource type="Resource" uid="uid://b2od0ntdhwt1n" path="res://src/game/upgrades/range_x_speed/range_x_speed_upgrade_2.tres" id="15_nw1ia"]
+[ext_resource type="Resource" uid="uid://cgyhpr0ut6rux" path="res://src/game/upgrades/rate_x_damage/rate_x_damage_upgrade_2.tres" id="16_uhdhc"]
 
 [resource]
 script = ExtResource("1_uxyg4")
 level = 2
-pool = Array[Resource("res://src/game/store/resource/store_resource.gd")]([ExtResource("5_pn00d"), ExtResource("3_1ucxu"), ExtResource("4_r73a7"), ExtResource("1_b4w72"), ExtResource("2_g0vuh"), ExtResource("6_3su1w"), ExtResource("7_h03uv"), ExtResource("8_6ctx3"), ExtResource("9_t6u2v"), ExtResource("10_gfu4b"), ExtResource("11_6jih4"), ExtResource("12_25860")])
+pool = Array[Resource("res://src/game/store/resource/store_resource.gd")]([ExtResource("5_pn00d"), ExtResource("3_1ucxu"), ExtResource("4_r73a7"), ExtResource("1_b4w72"), ExtResource("2_g0vuh"), ExtResource("6_3su1w"), ExtResource("7_h03uv"), ExtResource("8_6ctx3"), ExtResource("9_t6u2v"), ExtResource("10_gfu4b"), ExtResource("11_6jih4"), ExtResource("12_25860"), ExtResource("13_53tdw"), ExtResource("14_sy6kk"), ExtResource("15_nw1ia"), ExtResource("16_uhdhc")])

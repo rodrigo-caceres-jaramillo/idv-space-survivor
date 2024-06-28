@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bpnddjq1lsy5e"]
+[gd_scene load_steps=4 format=3 uid="uid://bpnddjq1lsy5e"]
 
 [ext_resource type="PackedScene" uid="uid://dn5r6qogjyaco" path="res://src/game/weapons/player/base/range/range_weapon.tscn" id="1_golcl"]
 [ext_resource type="Texture2D" uid="uid://tl1j0srlwq8i" path="res://src/game/weapons/player/secondary/laser_pistol/laser_pistol.png" id="2_v3vav"]
+[ext_resource type="PackedScene" uid="uid://ibw35q6xdypf" path="res://src/game/projectiles/player/bullet/bullet_projectile.tscn" id="3_ksxax"]
 
 [node name="laser_pistol" node_paths=PackedStringArray("weapon_fsx") instance=ExtResource("1_golcl")]
 texture = ExtResource("2_v3vav")
 offset = Vector2(9, -4)
 weapon_fsx = NodePath("laser_pistolfx")
+projectile = ExtResource("3_ksxax")
 
 [node name="Tip" parent="." index="2"]
 position = Vector2(22, -9)

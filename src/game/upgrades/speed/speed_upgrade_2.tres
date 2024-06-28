@@ -15,5 +15,5 @@ script = ExtResource("2_u6apn")
 modifiers = Array[ExtResource("1_fimqe")]([SubResource("Resource_3negu")])
 name = "Speed Module"
 description = "+ 10% Speed"
-price = 10
+price = 20
 icon = ExtResource("1_qlmt6")

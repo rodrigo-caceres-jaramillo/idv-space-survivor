@@ -1,8 +1,8 @@
 [gd_scene load_steps=23 format=3 uid="uid://btjax2v4qeeu3"]
 
 [ext_resource type="Script" path="res://src/main/main.gd" id="1_gwchs"]
-[ext_resource type="Resource" uid="uid://cbvawfcm626sb" path="res://src/game/waves/game_data/game_1.tres" id="2_t5txs"]
 [ext_resource type="Texture2D" uid="uid://0dhpoqbrs2oc" path="res://assets/textures/tiles/tile_set.png" id="2_vhjei"]
+[ext_resource type="Resource" uid="uid://cbvawfcm626sb" path="res://src/game/waves/game_data/game_1.tres" id="4_36sxd"]
 [ext_resource type="Script" path="res://src/game/waves/wave_manager.gd" id="5_g76ig"]
 [ext_resource type="Script" path="res://src/main/impact_manager.gd" id="6_1onaa"]
 [ext_resource type="PackedScene" uid="uid://c3l1vobhw8bkc" path="res://src/ui/hud/damage_label/damage_label.tscn" id="7_3j06x"]
@@ -251,7 +251,7 @@ layer_1/tile_data = PackedInt32Array(524301, 327680, 3, 589837, 327680, 1, 65537
 [node name="WaveManager" type="Node2D" parent="."]
 position = Vector2(994, 285)
 script = ExtResource("5_g76ig")
-game_data = ExtResource("2_t5txs")
+game_data = ExtResource("4_36sxd")
 
 [node name="WaveTimer" type="Timer" parent="WaveManager"]
 one_shot = true

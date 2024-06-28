@@ -66,4 +66,6 @@ libraries = {
 }
 
 [node name="AudioPlayer" parent="." index="6"]
-volume_db = -6.0
+volume_db = -10.0
+attenuation = 9.84915
+max_polyphony = 3

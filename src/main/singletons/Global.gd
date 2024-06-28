@@ -4,7 +4,7 @@ var charater_resource = null
 var initial_stats = null
 var camera
 var player = null
-var money: int = 100:
+var money: int = 1000:
 	set(value):
 		money = value
 		money_changed.emit(value)
@@ -23,7 +23,7 @@ var wave_timer
 var pick_up_container = Node.new()
 
 func set_up():
-	money = 100
+	money = 1000
 	pick_up_container = Node.new()
 	if(!player == null): player.queue_free()
 	var new_player = charater_resource.character_scene.instantiate()
@@ -31,8 +31,7 @@ func set_up():
 	player = new_player
 	
 
-	
-	
+
 signal money_changed(value)
 signal selected_resource_changed(value)
 signal weapon_selected_changed(value)

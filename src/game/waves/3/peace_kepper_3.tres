@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="WaveEnemy" load_steps=2 format=3 uid="uid://cah23smoi8u7m"]
+[gd_resource type="Resource" script_class="WaveEnemy" load_steps=3 format=3 uid="uid://cah23smoi8u7m"]
 
-[ext_resource type="Script" path="res://src/game/waves/wave_enemy.gd" id="1_5nwt1"]
+[ext_resource type="PackedScene" uid="uid://isjmxgfbgpan" path="res://src/game/enemies/stratos/peace_kepper/peace_kepper.tscn" id="1_b61ev"]
+[ext_resource type="Script" path="res://src/game/waves/wave_enemy.gd" id="2_ym7rh"]
 
 [resource]
-script = ExtResource("1_5nwt1")
+script = ExtResource("2_ym7rh")
+enemy_scene = ExtResource("1_b61ev")
 quantity = 1
 spawn_chance = 1.0

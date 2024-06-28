@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="WaveEnemy" load_steps=2 format=3 uid="uid://cjtbo55tp6dv4"]
-
-[ext_resource type="Script" path="res://src/game/waves/wave_enemy.gd" id="1_nf1bt"]
-
-[resource]
-script = ExtResource("1_nf1bt")
-quantity = 1
-spawn_chance = 1.0

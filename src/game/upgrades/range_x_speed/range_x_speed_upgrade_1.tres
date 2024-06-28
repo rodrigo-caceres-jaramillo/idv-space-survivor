@@ -1,10 +1,25 @@
-[gd_resource type="Resource" script_class="Upgrade" load_steps=2 format=3 uid="uid://bpa10p5ht3cao"]
+[gd_resource type="Resource" script_class="Upgrade" load_steps=6 format=3 uid="uid://bpa10p5ht3cao"]
 
+[ext_resource type="Texture2D" uid="uid://dictx8dwa2far" path="res://src/game/upgrades/range_x_speed/range_x_speed_upgrade_1.png" id="1_7b7tj"]
 [ext_resource type="Script" path="res://src/game/upgrades/upgrade_resource.gd" id="1_pya2k"]
+[ext_resource type="Script" path="res://src/game/store/resource/modifier.gd" id="2_utccw"]
+
+[sub_resource type="Resource" id="Resource_2tvxv"]
+script = ExtResource("2_utccw")
+stat = 5
+value = 0.15
+positive = true
+
+[sub_resource type="Resource" id="Resource_v5mi0"]
+script = ExtResource("2_utccw")
+stat = 1
+value = 0.03
+positive = false
 
 [resource]
 script = ExtResource("1_pya2k")
-modifiers = Array[Resource("res://src/game/store/resource/modifier.gd")]([])
-name = ""
-description = ""
-price = 0
+modifiers = Array[ExtResource("2_utccw")]([SubResource("Resource_2tvxv"), SubResource("Resource_v5mi0")])
+name = "Range Cursed Module"
+description = "+15 Range -3% Speed"
+price = 15
+icon = ExtResource("1_7b7tj")
