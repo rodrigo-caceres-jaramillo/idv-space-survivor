@@ -13,7 +13,7 @@ positive = true
 [resource]
 script = ExtResource("3_adn5a")
 modifiers = Array[ExtResource("2_thimr")]([SubResource("Resource_5h233")])
-name = "Critical Chance Module"
+name = "Crit. Chance Module"
 description = "+ 60% Critical Chance"
-price = 10
+price = 20
 icon = ExtResource("1_peox0")

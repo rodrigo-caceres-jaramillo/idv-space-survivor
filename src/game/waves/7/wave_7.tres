@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="WaveData" load_steps=5 format=3 uid="uid://8bemoil21vgs"]
+
+[ext_resource type="Script" path="res://src/game/waves/wave_data.gd" id="1_80gr5"]
+[ext_resource type="Resource" uid="uid://bqqtpi4l175wy" path="res://src/game/waves/7/gunner_7.tres" id="2_k7cbl"]
+[ext_resource type="Resource" uid="uid://ck24a516nlk06" path="res://src/game/waves/7/stun_lancer_7.tres" id="3_rdakp"]
+[ext_resource type="Resource" uid="uid://566n4t2xyyw0" path="res://src/game/waves/7/tropper_7.tres" id="4_3hnx2"]
+
+[resource]
+script = ExtResource("1_80gr5")
+wave_duration = 10
+wave_intensity = 0.5
+max_enemies = 3
+wave_enemies = Array[Resource("res://src/game/waves/wave_enemy.gd")]([ExtResource("2_k7cbl"), ExtResource("3_rdakp"), ExtResource("4_3hnx2")])

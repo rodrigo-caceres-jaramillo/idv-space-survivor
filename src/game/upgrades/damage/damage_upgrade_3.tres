@@ -15,5 +15,5 @@ script = ExtResource("3_s4pjc")
 modifiers = Array[ExtResource("2_5lm5e")]([SubResource("Resource_0v54n")])
 name = "Damage Module"
 description = "+ 60% Damage"
-price = 10
+price = 30
 icon = ExtResource("1_aidxj")

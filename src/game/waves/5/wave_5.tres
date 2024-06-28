@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WaveData" load_steps=3 format=3 uid="uid://c0qor2xfbmfwr"]
+
+[ext_resource type="Script" path="res://src/game/waves/wave_data.gd" id="1_t1i58"]
+[ext_resource type="Resource" uid="uid://bwwmflw2q0m85" path="res://src/game/waves/3/fast.tres" id="2_2cti6"]
+
+[resource]
+script = ExtResource("1_t1i58")
+wave_duration = 50
+wave_intensity = 0.5
+max_enemies = 50
+wave_enemies = Array[Resource("res://src/game/waves/wave_enemy.gd")]([ExtResource("2_2cti6")])

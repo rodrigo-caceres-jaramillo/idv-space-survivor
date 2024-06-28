@@ -13,7 +13,7 @@ positive = true
 [resource]
 script = ExtResource("2_8dhn6")
 modifiers = Array[ExtResource("1_p0ucf")]([SubResource("Resource_kbnia")])
-name = "Critical Damage Module"
+name = "Crit. Damage Module"
 description = "+ 30% Critical Damage"
-price = 10
+price = 30
 icon = ExtResource("1_hm8ky")
