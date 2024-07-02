@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://g2hv8i31lb4a"
-path="res://.godot/imported/basic_projectile.png-081c785bb7f6fa4084896287e41f5e76.ctex"
+uid="uid://br4ja71hvxtg"
+path="res://.godot/imported/bronko.png-86f3f71177007b7e46e8be7b735f711b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/game/weapons/projectiles/player/buckshot/basic_projectile.png"
-dest_files=["res://.godot/imported/basic_projectile.png-081c785bb7f6fa4084896287e41f5e76.ctex"]
+source_file="res://src/game/weapons/player/secondary/bronko/bronko.png"
+dest_files=["res://.godot/imported/bronko.png-86f3f71177007b7e46e8be7b735f711b.ctex"]
 
 [params]
 

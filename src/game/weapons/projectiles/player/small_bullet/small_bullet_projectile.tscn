@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjre030tknah1"]
+
+[ext_resource type="PackedScene" uid="uid://d00a51jft8ga2" path="res://src/game/weapons/projectiles/base/base_projectile.tscn" id="1_g0n4n"]
+[ext_resource type="Texture2D" uid="uid://c0meq86b8ys6p" path="res://src/game/weapons/projectiles/player/small_bullet/small_bullet.png" id="2_m7lb2"]
+
+[node name="SmallBulletProjectile" instance=ExtResource("1_g0n4n")]
+self_modulate = Color(3, 3, 3, 1)
+z_index = 0
+texture = ExtResource("2_m7lb2")
+
+[node name="HitboxComponent" parent="." index="0"]
+visible = true

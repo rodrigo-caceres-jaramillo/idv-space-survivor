@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="RangeWeaponsStats" load_steps=3 format=3 uid="uid://cx8kww62p1m8g"]
+
+[ext_resource type="Resource" uid="uid://b8tlfv3eycwwy" path="res://src/data/damage_types/impact.tres" id="1_borak"]
+[ext_resource type="Script" path="res://src/game/weapons/player/base/range/range_weapon_stats.gd" id="2_xdsa2"]
+
+[resource]
+script = ExtResource("2_xdsa2")
+DAMAGE = 5.0
+DAMAGE_TYPE = ExtResource("1_borak")
+CRITICAL_CHANCE = 10.0
+CRITICAL_DAMAGE = 2.0
+MULTISHOT = 1.0
+PENETRATION = 0.0
+FIRE_RATE = 15.0
+RELOAD = 1.0
+MAGAZINE = 20
+RANGE = 20.0
+KNOCKBACK = 2
+SPREAD = 0.15
+PROJECTILE_SPEED = 600.0

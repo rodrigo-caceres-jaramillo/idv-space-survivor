@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=5 format=3 uid="uid://c0nqjn535oj7q"]
+
+[ext_resource type="Texture2D" uid="uid://1ljpqckcbcrc" path="res://src/game/weapons/player/secondary/viper/viper.png" id="1_sqtb2"]
+[ext_resource type="Script" path="res://src/game/weapons/weapon_resource.gd" id="2_jw0g7"]
+[ext_resource type="Resource" uid="uid://cx8kww62p1m8g" path="res://src/game/weapons/player/secondary/viper/viper_stats.tres" id="3_01chx"]
+[ext_resource type="PackedScene" uid="uid://bshxgijrsi371" path="res://src/game/weapons/player/secondary/viper/viper.tscn" id="4_mxbr3"]
+
+[resource]
+script = ExtResource("2_jw0g7")
+name = "Viper"
+icon = ExtResource("1_sqtb2")
+weapon_scene = ExtResource("4_mxbr3")
+stats = ExtResource("3_01chx")
+weapon_type = 1

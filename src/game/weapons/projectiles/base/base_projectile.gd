@@ -34,7 +34,8 @@ func initialize(stats, _global_position, _direction):
 	self.speed = stats.PROJECTILE_SPEED
 	self.direction = _direction
 	self.max_penetration = stats.PENETRATION
-	self.max_distance = (stats.RANGE * 5)
+	var distance = stats.RANGE * 5
+	self.max_distance = randf_range(distance, distance-10)
 	
 func check_penetration():
 	if(max_penetration == 0):

@@ -18,8 +18,8 @@ func _ready():
 	add_child(reload_start)
 	reload_finish.stream = reload_finish_audio
 	reload_finish.bus = "sfx"
-	add_child(reload_start)
-	trigger_type.attack.connect(play_shoot_sound)
+	add_child(reload_finish)
+	trigger_type.fire_start.connect(play_shoot_sound)
 	reload_type.reload_started.connect(play_start_reload_sound)
 	reload_type.reload_finished.connect(play_finish_reload_sound)
 

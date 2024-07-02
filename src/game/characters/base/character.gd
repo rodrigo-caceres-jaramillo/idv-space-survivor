@@ -41,15 +41,13 @@ func _physics_process(_delta):
 		weapon_manager.equip_weapon(1)
 	if Input.is_action_just_pressed("melee_weapon"):
 		weapon_manager.equip_weapon(2)
-	if(can_shoot):
-		if Input.is_action_pressed("fire_weapon"):
-			self.weapon_manager.shoot_weapon()
-		if Input.is_action_just_pressed("reload"):
-			self.weapon_manager.reload_weapon()
-		
+
 func health_to_max():
 	stats.HEALTH = stats.MAX_HEALTH
 
+func equip_weapon(weapon_resource: WeaponResource):
+	weapon_manager.add_weapon(weapon_resource)
+	
 func add_store_resource(resource: StoreResource):
 	match resource.type:
 		StoreResource.ResourceTypes.WEAPON:

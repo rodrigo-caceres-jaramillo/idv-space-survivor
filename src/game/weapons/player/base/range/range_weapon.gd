@@ -15,6 +15,9 @@ var reloading:bool = false
 var magazine_size: int
 var current_ammo: int
 
+func change_active_state(value):
+	change_state.emit(value)
+
 func set_up(b_stast:RangeWeaponsStats, p_stats: PlayerStats, hand_texture):
 	base_stats = b_stast
 	stats = b_stast
@@ -25,6 +28,7 @@ func set_up(b_stast:RangeWeaponsStats, p_stats: PlayerStats, hand_texture):
 	Events.wave_started.connect(update_stats.unbind(1))
 	self.magazine_size = stats.MAGAZINE
 	self.current_ammo = stats.MAGAZINE
+	change_active_state(false)
 
 func update_stats():
 	stats.DAMAGE = base_stats.DAMAGE * player_stats.DAMAGE
@@ -33,13 +37,6 @@ func update_stats():
 	stats.CRITICAL_DAMAGE = base_stats.CRITICAL_DAMAGE * player_stats.CRIT_DAMAGE
 	stats.RANGE = base_stats.RANGE * player_stats.RANGE
 
-func fire():
-	if self.reloading: return
-	if current_ammo > 0: self.shoot_try.emit()
-	else: self.reload_try.emit()
-	
-func reload():
-	self.reload_try.emit()
-		
+signal change_state(value: bool)
 signal shoot_try()
 signal reload_try()

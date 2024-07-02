@@ -15,4 +15,4 @@ extends Resource
 @export var RANGE: float = 20.0
 @export var KNOCKBACK: int = 1
 @export var SPREAD: float = 0.0
-@export var PROJECTILE_SPEED: float = 1000.0
+@export var PROJECTILE_SPEED: float = 500.0

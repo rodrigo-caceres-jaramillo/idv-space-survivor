@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://d0otfohjoplfd"]
+
+[ext_resource type="Script" path="res://src/ui/test_menu/test_menu.gd" id="1_eijfy"]
+[ext_resource type="PackedScene" uid="uid://dfdw8nqmfv4oc" path="res://src/ui/test_menu/test_option/test_option.tscn" id="2_e0qdj"]
+[ext_resource type="Resource" uid="uid://c3u8sli0fqhg1" path="res://src/game/weapons/player/secondary/standard/standard.tres" id="2_rmo8j"]
+[ext_resource type="Resource" uid="uid://bh1iysc3jns2y" path="res://src/game/weapons/player/secondary/dex/dex.tres" id="3_oggox"]
+[ext_resource type="Resource" uid="uid://bimc6a10ybeqk" path="res://src/game/weapons/player/secondary/bronko/bronko.tres" id="4_esxpa"]
+[ext_resource type="Resource" uid="uid://c0nqjn535oj7q" path="res://src/game/weapons/player/secondary/viper/viper.tres" id="5_gbghd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cuf3y"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.121569, 0.121569, 0.121569, 0.713726)
+
+[node name="TestMenu" type="CanvasLayer"]
+script = ExtResource("1_eijfy")
+weapons = Array[Resource("res://src/game/weapons/weapon_resource.gd")]([ExtResource("2_rmo8j"), ExtResource("3_oggox"), ExtResource("4_esxpa"), ExtResource("5_gbghd")])
+weapon_option = ExtResource("2_e0qdj")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(150, 200)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -118.0
+offset_bottom = 200.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cuf3y")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Test Weapons"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

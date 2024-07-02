@@ -5,9 +5,15 @@ var fire_rate_timer = Timer.new()
 
 func _ready():
 	add_child(fire_rate_timer)
-	range_weapon.shoot_try.connect(shoot)
+	range_weapon.change_state.connect(set_state)
 	fire_rate_timer.timeout.connect(func(): range_weapon.can_shoot = true)
-	
+
+func _process(delta):
+	if Input.is_action_pressed("fire_weapon"):
+		if range_weapon.reloading: return
+		if range_weapon.current_ammo > 0: self.shoot()
+		else: range_weapon.reload_try.emit()
+
 func shoot():
 	if not range_weapon.can_shoot: return
 	var flash = range_weapon.muzzle_flash.instantiate()
@@ -18,7 +24,7 @@ func shoot():
 	range_weapon.current_ammo -= 1
 	Events.weapon_ammo_changed.emit(range_weapon.current_ammo)
 	spawn_projectile()
-	attack.emit()
+	fire_start.emit()
 	range_weapon.can_shoot = false
 	fire_rate_timer.start(1.0/range_weapon.stats.FIRE_RATE)
 
@@ -29,5 +35,3 @@ func spawn_projectile():
 		var projectile = range_weapon.projectile.instantiate()
 		get_tree().current_scene.add_child(projectile)
 		projectile.initialize(range_weapon.stats, weapon_tip.global_position, spread_direction)
-
-signal attack()

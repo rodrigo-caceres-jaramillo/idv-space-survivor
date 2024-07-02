@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://btjax2v4qeeu3"]
+[gd_scene load_steps=24 format=3 uid="uid://btjax2v4qeeu3"]
 
 [ext_resource type="Script" path="res://src/main/main.gd" id="1_gwchs"]
 [ext_resource type="Texture2D" uid="uid://0dhpoqbrs2oc" path="res://assets/textures/tiles/tile_set.png" id="2_vhjei"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="12_xg1mj"]
 [ext_resource type="PackedScene" uid="uid://ckgyuvjejrxtl" path="res://src/ui/tutorial/tutorial.tscn" id="12_xt78r"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="13_xlvnm"]
+[ext_resource type="PackedScene" uid="uid://d0otfohjoplfd" path="res://src/ui/test_menu/test_menu.tscn" id="14_uvarn"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="14_xwc28"]
 
 [sub_resource type="Environment" id="Environment_gd5by"]
@@ -286,6 +287,8 @@ process_mode = 3
 visible = false
 
 [node name="Tutorial" parent="UIManager" instance=ExtResource("12_xt78r")]
+
+[node name="TestMenu" parent="UIManager" instance=ExtResource("14_uvarn")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 visible = false

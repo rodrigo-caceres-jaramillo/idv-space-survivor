@@ -8,6 +8,10 @@ func _ready():
 	range_weapon.reload_try.connect(reload)
 	reload_timer.timeout.connect(reload_finish)
 
+func _process(delta):
+	if Input.is_action_just_pressed("reload"):
+		self.reload()
+
 func reload():
 	if range_weapon.current_ammo <= range_weapon.stats.MAGAZINE and not range_weapon.reloading:
 		reload_started.emit()

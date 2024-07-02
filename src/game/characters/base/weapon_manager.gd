@@ -26,18 +26,13 @@ func _process(_delta):
 func set_up(_initial_weapon: WeaponResource):
 	self.load_weapon(_initial_weapon)
 	self.current_weapon = weapons[_initial_weapon.weapon_type]
+	self.current_weapon.change_active_state(true)
 	self.current_weapon.visible = true
 	Events.current_weapon_changed.emit(current_weapon)
 
 func get_weapon_resource(weapon_type):
 	return weapons_resource[weapon_type]
-	
-func shoot_weapon():
-	self.current_weapon.fire()
 
-func reload_weapon():
-	self.current_weapon.reload()
-	
 func remove_weapon(weapon_type):
 	var weapon = weapons[weapon_type]
 	weapon.queue_free()
@@ -53,8 +48,10 @@ func load_weapon(weapon_resource):
 	weapon.position = hand_position.position
 	weapon.visible = false
 	if(current_weapon):
+		self.current_weapon.change_active_state(false)
 		self.current_weapon.visible = false
 	self.current_weapon = weapon
+	self.current_weapon.change_active_state(true)
 	self.current_weapon.visible = true
 	Events.current_weapon_changed.emit(current_weapon)
 	
@@ -67,8 +64,10 @@ func add_weapon(weapon_resource):
 
 func equip_weapon(weapon_type):
 	if(weapons[weapon_type] and !(weapon_type == current_weapon_type)):
+		self.current_weapon.change_active_state(false)
 		self.current_weapon.visible = false
 		self.current_weapon = weapons[weapon_type]
+		self.current_weapon.change_active_state(true)
 		self.current_weapon.visible = true
 		self.current_weapon_type = weapon_type
 		Events.current_weapon_changed.emit(current_weapon)

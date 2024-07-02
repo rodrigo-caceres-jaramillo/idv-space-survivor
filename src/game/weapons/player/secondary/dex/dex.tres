@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=5 format=3 uid="uid://bh1iysc3jns2y"]
+
+[ext_resource type="Script" path="res://src/game/weapons/weapon_resource.gd" id="1_6g82a"]
+[ext_resource type="Texture2D" uid="uid://c1ovupwk27p77" path="res://src/game/weapons/player/secondary/dex/dex.png" id="1_h41is"]
+[ext_resource type="Resource" uid="uid://by51wddfns3c1" path="res://src/game/weapons/player/secondary/dex/dex_stats.tres" id="2_ti4fu"]
+[ext_resource type="PackedScene" uid="uid://yhe8m0qqc4q8" path="res://src/game/weapons/player/secondary/dex/dex.tscn" id="3_swwou"]
+
+[resource]
+script = ExtResource("1_6g82a")
+name = "Dex"
+icon = ExtResource("1_h41is")
+weapon_scene = ExtResource("3_swwou")
+stats = ExtResource("2_ti4fu")
+weapon_type = 1
