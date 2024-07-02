@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://c74piex43b0ct"]
+
+[ext_resource type="Script" path="res://src/game/weapons/particles/muzzle_flash/flash.gd" id="1_rspuu"]
+
+[sub_resource type="Gradient" id="Gradient_vjbep"]
+offsets = PackedFloat32Array(0, 0.492308, 0.764103, 1)
+colors = PackedColorArray(0.526795, 0, 0, 1, 0.843137, 0.329412, 0.0313726, 1, 0.93979, 0.662864, 0.065201, 1, 1, 0.953238, 0.721375, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_icnly"]
+gradient = SubResource("Gradient_vjbep")
+
+[sub_resource type="Curve" id="Curve_je458"]
+_data = [Vector2(0.142523, 0.516981), 0.0, 0.0, 0, 0, Vector2(0.488318, 0.788679), 0.0, 0.0, 0, 0, Vector2(0.810748, 0.532076), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_j8mwk"]
+curve = SubResource("Curve_je458")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qunou"]
+lifetime_randomness = 0.1
+particle_flag_disable_z = true
+spread = 30.0
+initial_velocity_min = 200.0
+initial_velocity_max = 300.0
+angular_velocity_min = 200.0
+angular_velocity_max = 300.0
+gravity = Vector3(0, 0, 0)
+damping_min = 250.0
+damping_max = 300.0
+scale_max = 5.0
+scale_curve = SubResource("CurveTexture_j8mwk")
+color_ramp = SubResource("GradientTexture1D_icnly")
+
+[node name="BasicFlash" type="GPUParticles2D"]
+self_modulate = Color(2, 2, 2, 1)
+show_behind_parent = true
+z_index = -1
+emitting = false
+amount = 9
+process_material = SubResource("ParticleProcessMaterial_qunou")
+lifetime = 0.04
+one_shot = true
+randomness = 0.1
+script = ExtResource("1_rspuu")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

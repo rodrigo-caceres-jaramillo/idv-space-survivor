@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://l4o40vj2b5k4" path="res://src/game/characters/blue/blue.tscn" id="1_6awxk"]
 [ext_resource type="Script" path="res://src/game/characters/character_resource.gd" id="1_x5xfb"]
-[ext_resource type="Texture2D" uid="uid://bxvf481uc5x5j" path="res://assets/textures/player/player.png" id="2_i81kr"]
-[ext_resource type="Resource" uid="uid://bemisdj1a3rrr" path="res://src/game/weapons/player/secondary/pistol/pistol.tres" id="3_acx0c"]
+[ext_resource type="Texture2D" uid="uid://bs3852in2q82w" path="res://src/game/characters/blue/blue_icon.png" id="2_jwkrq"]
+[ext_resource type="Resource" uid="uid://c3u8sli0fqhg1" path="res://src/game/weapons/player/secondary/standard/standard.tres" id="3_mvlvd"]
 [ext_resource type="Resource" uid="uid://cltvjnuq5jeon" path="res://src/game/characters/blue/blue_stats.tres" id="5_akwlj"]
 
 [resource]
@@ -11,7 +11,7 @@ resource_local_to_scene = true
 script = ExtResource("1_x5xfb")
 name = "Character 1"
 description = "Basic"
-icon = ExtResource("2_i81kr")
+icon = ExtResource("2_jwkrq")
 stats = ExtResource("5_akwlj")
-initial_weapon = ExtResource("3_acx0c")
+initial_weapon = ExtResource("3_mvlvd")
 character_scene = ExtResource("1_6awxk")

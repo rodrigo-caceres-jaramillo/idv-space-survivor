@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Upgrade" load_steps=5 format=3 uid="uid://w3ffxoy2nvk5"]
 
-[ext_resource type="Script" path="res://src/game/store/resource/modifier.gd" id="1_27ptl"]
+[ext_resource type="Script" path="res://src/data/store/resource/modifier.gd" id="1_27ptl"]
 [ext_resource type="Texture2D" uid="uid://dp8emggledunp" path="res://src/game/upgrades/rate/rate_upgrade_2.png" id="1_np201"]
 [ext_resource type="Script" path="res://src/game/upgrades/upgrade_resource.gd" id="2_oe3qn"]
 

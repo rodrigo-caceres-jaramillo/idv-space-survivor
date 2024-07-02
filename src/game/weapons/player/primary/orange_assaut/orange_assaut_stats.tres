@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="RangedWeaponsStats" load_steps=5 format=3 uid="uid://bgykns0rffe2e"]
 
-[ext_resource type="Script" path="res://src/game/weapons/player/base/range/ranged_weapon_stats.gd" id="1_2bvb8"]
-[ext_resource type="Resource" uid="uid://cgmatvoybq8xa" path="res://src/scripts/data/damage_types/puncture.tres" id="1_x6t2p"]
+[ext_resource type="Script" path="res://src/game/weapons/player/base/range/range_weapon_stats.gd" id="1_2bvb8"]
+[ext_resource type="Resource" uid="uid://cgmatvoybq8xa" path="res://src/data/damage_types/puncture.tres" id="1_x6t2p"]
 [ext_resource type="AudioStream" uid="uid://ctj2y11jfm3mh" path="res://assets/sound/orange_asault_reload.wav" id="2_ivoo0"]
 [ext_resource type="AudioStream" uid="uid://dnmahjh6xx3va" path="res://assets/sound/Assalt_rifle_shoot.mp3" id="4_ux6b6"]
 

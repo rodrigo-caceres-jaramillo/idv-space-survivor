@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://l4o40vj2b5k4"]
 
-[ext_resource type="PackedScene" uid="uid://ds70pbbdbtgkc" path="res://src/game/characters/Character/character.tscn" id="1_5gu0q"]
+[ext_resource type="PackedScene" uid="uid://ds70pbbdbtgkc" path="res://src/game/characters/base/character.tscn" id="1_5gu0q"]
 [ext_resource type="Texture2D" uid="uid://mcyunttshb8f" path="res://src/game/characters/blue/blue_hand.png" id="2_4288j"]
 [ext_resource type="Resource" uid="uid://cltvjnuq5jeon" path="res://src/game/characters/blue/blue_stats.tres" id="2_dg7w5"]
 [ext_resource type="Texture2D" uid="uid://cg6fstd07mhmq" path="res://src/game/characters/blue/blue.png" id="3_snc6i"]
@@ -193,7 +193,7 @@ stats = ExtResource("2_dg7w5")
 hand_sprite = ExtResource("2_4288j")
 
 [node name="HandPosition" parent="WeaponManager" index="0"]
-position = Vector2(7, 1)
+position = Vector2(8, 5)
 
 [node name="DashBar" parent="." index="1"]
 offset_left = -4.0
@@ -208,8 +208,9 @@ offset_right = 8.0
 offset_bottom = -14.0
 
 [node name="HealthBarComponent" parent="." index="3"]
-offset_top = 16.0
+offset_top = 17.0
 offset_right = 9.0
+offset_bottom = 22.0
 
 [node name="Sprite" parent="." index="5"]
 texture = ExtResource("3_snc6i")

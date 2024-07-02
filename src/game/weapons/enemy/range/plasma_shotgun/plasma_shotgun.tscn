@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cv7813u0l66ew" path="res://src/game/weapons/enemy/base/range/range_enemy_weapon.tscn" id="1_4u3l2"]
 [ext_resource type="Texture2D" uid="uid://o8u5k022jfal" path="res://src/game/weapons/enemy/range/plasma_shotgun/plasma_shotgun.png" id="2_d6ps1"]
-[ext_resource type="PackedScene" uid="uid://bstwq34jdqdc" path="res://src/game/projectiles/enemy/energy/enemy_energy.tscn" id="3_hhw0q"]
+[ext_resource type="PackedScene" uid="uid://bstwq34jdqdc" path="res://src/game/weapons/projectiles/enemy/energy/enemy_energy.tscn" id="3_hhw0q"]
 [ext_resource type="Resource" uid="uid://dk6cudnrt2ch0" path="res://src/game/weapons/enemy/range/plasma_shotgun/plasma_shotgun_stats.tres" id="4_3elcg"]
 [ext_resource type="AudioStream" uid="uid://u3wtr5otghex" path="res://assets/sound/Shotgun_blaster(Enemy_2).mp3" id="5_trbo6"]
 

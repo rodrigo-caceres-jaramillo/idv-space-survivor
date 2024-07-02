@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PoolResource" load_steps=5 format=3 uid="uid://bk7h7p0jos0f0"]
+
+[ext_resource type="Resource" uid="uid://dshclcsumgrij" path="res://src/game/weapons/player/primary/awp/awp.tres" id="1_4ygtr"]
+[ext_resource type="Resource" uid="uid://be0p2ukh7867q" path="res://src/game/weapons/player/primary/m16/m16.tres" id="2_q1ll0"]
+[ext_resource type="Resource" uid="uid://cfi6aqqk31ros" path="res://src/game/weapons/player/primary/orange_assaut/orange_assaut.tres" id="3_dwpcf"]
+[ext_resource type="Script" path="res://src/data/store/pools/pool_resource.gd" id="4_vqnaa"]
+
+[resource]
+script = ExtResource("4_vqnaa")
+level = 2
+pool = Array[Resource("res://src/data/store/resource/store_resource.gd")]([ExtResource("1_4ygtr"), ExtResource("2_q1ll0"), ExtResource("3_dwpcf")])

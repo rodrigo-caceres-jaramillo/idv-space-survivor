@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="RangedWeaponsStats" load_steps=5 format=3 uid="uid://cxqoi8pa1owrc"]
 
-[ext_resource type="Resource" uid="uid://b8tlfv3eycwwy" path="res://src/scripts/data/damage_types/impact.tres" id="1_eh550"]
-[ext_resource type="Script" path="res://src/game/weapons/player/base/range/ranged_weapon_stats.gd" id="1_i1irq"]
+[ext_resource type="Resource" uid="uid://b8tlfv3eycwwy" path="res://src/data/damage_types/impact.tres" id="1_eh550"]
+[ext_resource type="Script" path="res://src/game/weapons/player/base/range/range_weapon_stats.gd" id="1_i1irq"]
 [ext_resource type="AudioStream" uid="uid://8whasbfe3y6b" path="res://assets/sound/mixkit-shotgun-long-pump-1666.wav" id="2_e06cp"]
 [ext_resource type="AudioStream" uid="uid://u3wtr5otghex" path="res://assets/sound/Shotgun_blaster(Enemy_2).mp3" id="4_i3p11"]
 

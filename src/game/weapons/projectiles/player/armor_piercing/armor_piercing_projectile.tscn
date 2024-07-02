@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://ovbc7f82f6e6"]
+
+[ext_resource type="PackedScene" uid="uid://d00a51jft8ga2" path="res://src/game/weapons/projectiles/base/base_projectile.tscn" id="1_6ab62"]
+
+[node name="ArmorPiercingProjectile" instance=ExtResource("1_6ab62")]

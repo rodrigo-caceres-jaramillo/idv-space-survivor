@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Upgrade" load_steps=5 format=3 uid="uid://uq0q8yvb5ebi"]
 
-[ext_resource type="Script" path="res://src/game/store/resource/modifier.gd" id="2_63t18"]
+[ext_resource type="Script" path="res://src/data/store/resource/modifier.gd" id="2_63t18"]
 [ext_resource type="Script" path="res://src/game/upgrades/upgrade_resource.gd" id="3_xwrm7"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qvkjb"]

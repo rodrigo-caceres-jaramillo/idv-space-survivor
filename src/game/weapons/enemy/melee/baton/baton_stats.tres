@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="MeleeEnemyWeaponStats" load_steps=3 format=3 uid="uid://2vj4xcabem7h"]
 
 [ext_resource type="Script" path="res://src/game/weapons/enemy/base/melee/melee_enemy_weapon_stats.gd" id="1_58tmm"]
-[ext_resource type="Resource" uid="uid://b8tlfv3eycwwy" path="res://src/scripts/data/damage_types/impact.tres" id="1_d7hed"]
+[ext_resource type="Resource" uid="uid://b8tlfv3eycwwy" path="res://src/data/damage_types/impact.tres" id="1_d7hed"]
 
 [resource]
 script = ExtResource("1_58tmm")

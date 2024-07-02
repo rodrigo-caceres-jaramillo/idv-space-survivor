@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Upgrade" load_steps=6 format=3 uid="uid://cnw02be33rw7g"]
 
 [ext_resource type="Texture2D" uid="uid://cdp2g8e24aygi" path="res://src/game/upgrades/damage_x_health/damage_x_health_upgrade_3.png" id="1_epjyb"]
-[ext_resource type="Script" path="res://src/game/store/resource/modifier.gd" id="2_2qs27"]
+[ext_resource type="Script" path="res://src/data/store/resource/modifier.gd" id="2_2qs27"]
 [ext_resource type="Script" path="res://src/game/upgrades/upgrade_resource.gd" id="3_1i0yk"]
 
 [sub_resource type="Resource" id="Resource_sbv3n"]

@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="DamageType" load_steps=3 format=3 uid="uid://cgmatvoybq8xa"]
-
-[ext_resource type="Script" path="res://src/scripts/data/damage_types/damage_types.gd" id="1_7i3kw"]
-[ext_resource type="Texture2D" uid="uid://d0fmmv5k5ysrc" path="res://src/scripts/data/damage_types/puncture.png" id="1_njfv7"]
-
-[resource]
-script = ExtResource("1_7i3kw")
-name = "Puncture"
-icon = ExtResource("1_njfv7")

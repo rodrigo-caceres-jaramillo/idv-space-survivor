@@ -1,11 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://cieyh0w75vcq7"]
+[gd_scene load_steps=18 format=3 uid="uid://cieyh0w75vcq7"]
 
 [ext_resource type="Script" path="res://src/ui/store/store_panel.gd" id="1_h8rdo"]
 [ext_resource type="StyleBox" uid="uid://b1hkw1f348phd" path="res://src/ui/style_box/hud_panel.tres" id="1_r5hjk"]
 [ext_resource type="PackedScene" uid="uid://dyrf50yc61ric" path="res://src/ui/store/panel/option/store_option.tscn" id="2_pla2b"]
-[ext_resource type="Resource" uid="uid://c2dd4g83h820w" path="res://src/game/store/pools/level_1.tres" id="3_3y7ey"]
-[ext_resource type="Resource" uid="uid://dwwbvofw25cyq" path="res://src/game/store/pools/level_2.tres" id="4_cwrk6"]
-[ext_resource type="Resource" uid="uid://dvc5kve003shi" path="res://src/game/store/pools/level_3.tres" id="5_mo2t8"]
+[ext_resource type="Resource" uid="uid://l3xu8dwqyrjs" path="res://src/data/store/pools/level_1.tres" id="3_3y7ey"]
 [ext_resource type="Texture2D" uid="uid://c45p5tvcf6p2d" path="res://assets/textures/money/Money.png" id="5_uo75h"]
 [ext_resource type="FontFile" uid="uid://jd478um6wqpv" path="res://assets/fonts/Gameplay.ttf" id="6_1es1n"]
 [ext_resource type="AudioStream" uid="uid://cl2di54cw5y1m" path="res://assets/sound/roll_store.mp3" id="6_87xj4"]
@@ -49,7 +47,6 @@ size_flags_vertical = 3
 theme_override_styles/panel = ExtResource("1_r5hjk")
 script = ExtResource("1_h8rdo")
 current_pool = ExtResource("3_3y7ey")
-pools = Array[Resource("res://src/game/store/pools/pool_resource.gd")]([ExtResource("3_3y7ey"), ExtResource("4_cwrk6"), ExtResource("5_mo2t8")])
 roll_audio = ExtResource("6_87xj4")
 upgrade_audio = ExtResource("7_lwpna")
 

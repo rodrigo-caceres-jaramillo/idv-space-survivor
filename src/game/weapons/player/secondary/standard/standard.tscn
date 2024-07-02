@@ -1,0 +1,37 @@
+[gd_scene load_steps=9 format=3 uid="uid://lsoqspf1u6da"]
+
+[ext_resource type="PackedScene" uid="uid://dn5r6qogjyaco" path="res://src/game/weapons/player/base/range/range_weapon.tscn" id="1_x7k2x"]
+[ext_resource type="Texture2D" uid="uid://dlaygagimrruc" path="res://src/game/weapons/player/secondary/standard/standard.png" id="2_crb77"]
+[ext_resource type="PackedScene" uid="uid://ibw35q6xdypf" path="res://src/game/weapons/projectiles/player/bullet/bullet_projectile.tscn" id="3_3bopp"]
+[ext_resource type="AudioStream" uid="uid://dnmahjh6xx3va" path="res://assets/sound/Assalt_rifle_shoot.mp3" id="4_a5gid"]
+[ext_resource type="PackedScene" uid="uid://c74piex43b0ct" path="res://src/game/weapons/particles/muzzle_flash/basic_flash.tscn" id="4_gh3ne"]
+[ext_resource type="Script" path="res://src/game/weapons/player/base/range/reloads/magazine_reload.gd" id="4_sycrm"]
+[ext_resource type="AudioStream" uid="uid://diofe4dtgj5nk" path="res://assets/sound/rifle_reload.wav" id="5_gtjvd"]
+[ext_resource type="Script" path="res://src/game/weapons/player/base/range/triggers/auto_trigger.gd" id="5_j0q1d"]
+
+[node name="StandardGun" instance=ExtResource("1_x7k2x")]
+texture = ExtResource("2_crb77")
+offset = Vector2(3, -2)
+projectile = ExtResource("3_3bopp")
+muzzle_flash = ExtResource("4_gh3ne")
+
+[node name="SecondHand" parent="." index="1"]
+position = Vector2(16, -6)
+
+[node name="Tip" parent="." index="2"]
+position = Vector2(9, -4)
+
+[node name="WeaponAudioManager" parent="." index="3" node_paths=PackedStringArray("trigger_type", "reload_type")]
+trigger_type = NodePath("../AutoTriggerType")
+shoot_audio = ExtResource("4_a5gid")
+reload_type = NodePath("../MagazineReloadType")
+reload_start_audio = ExtResource("5_gtjvd")
+
+[node name="MagazineReloadType" type="Node2D" parent="." index="4" node_paths=PackedStringArray("range_weapon")]
+script = ExtResource("4_sycrm")
+range_weapon = NodePath("..")
+
+[node name="AutoTriggerType" type="Node2D" parent="." index="5" node_paths=PackedStringArray("range_weapon", "weapon_tip")]
+script = ExtResource("5_j0q1d")
+range_weapon = NodePath("..")
+weapon_tip = NodePath("../Tip")

@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="RangedWeaponsStats" load_steps=5 format=3 uid="uid://cpbk7b2tufye4"]
 
-[ext_resource type="Resource" uid="uid://b8tlfv3eycwwy" path="res://src/scripts/data/damage_types/impact.tres" id="1_sk2or"]
+[ext_resource type="Resource" uid="uid://b8tlfv3eycwwy" path="res://src/data/damage_types/impact.tres" id="1_sk2or"]
 [ext_resource type="AudioStream" uid="uid://8whasbfe3y6b" path="res://assets/sound/mixkit-shotgun-long-pump-1666.wav" id="2_ehgsp"]
-[ext_resource type="Script" path="res://src/game/weapons/player/base/range/ranged_weapon_stats.gd" id="2_mrol6"]
+[ext_resource type="Script" path="res://src/game/weapons/player/base/range/range_weapon_stats.gd" id="2_mrol6"]
 [ext_resource type="AudioStream" uid="uid://cesywvh3cvlr4" path="res://assets/sound/shotgun.wav" id="4_fgtqc"]
 
 [resource]

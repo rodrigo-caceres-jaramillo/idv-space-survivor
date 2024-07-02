@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="GameData" load_steps=3 format=3 uid="uid://dx3231rs32b8b"]
+
+[ext_resource type="Script" path="res://src/data/waves/game_data.gd" id="1_a7qhc"]
+[ext_resource type="Resource" uid="uid://de067fr0vmgyu" path="res://src/data/waves/1/wave_1.tres" id="2_e5w1k"]
+
+[resource]
+script = ExtResource("1_a7qhc")
+waves_data = Array[Resource("res://src/data/waves/wave_data.gd")]([ExtResource("2_e5w1k")])

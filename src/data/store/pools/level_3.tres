@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PoolResource" load_steps=5 format=3 uid="uid://wyebiay0553c"]
+
+[ext_resource type="Resource" uid="uid://850ncg2qdncs" path="res://src/game/weapons/player/primary/sniper/sniper.tres" id="1_yyu0j"]
+[ext_resource type="Resource" uid="uid://diuc6qkgvsfsa" path="res://src/game/weapons/player/primary/tactical_shotgun/tactical_shotgun.tres" id="2_mou56"]
+[ext_resource type="Resource" uid="uid://bh5nx6sulc75o" path="res://src/game/weapons/player/secondary/laser_pistol/laser_pistol.tres" id="3_dd4us"]
+[ext_resource type="Script" path="res://src/data/store/pools/pool_resource.gd" id="4_adh5x"]
+
+[resource]
+script = ExtResource("4_adh5x")
+level = 3
+pool = Array[Resource("res://src/data/store/resource/store_resource.gd")]([ExtResource("1_yyu0j"), ExtResource("2_mou56"), ExtResource("3_dd4us")])

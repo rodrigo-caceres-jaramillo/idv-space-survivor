@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="EnemyStats" load_steps=3 format=3 uid="uid://bkghjgeh42q5k"]
 
-[ext_resource type="Resource" uid="uid://c8gk45drndbdg" path="res://src/scripts/data/health_types/alien.tres" id="1_ejskq"]
+[ext_resource type="Resource" uid="uid://c8gk45drndbdg" path="res://src/data/health_types/alien.tres" id="1_ejskq"]
 [ext_resource type="Script" path="res://src/game/enemies/base/enemy_stats.gd" id="2_442k8"]
 
 [resource]

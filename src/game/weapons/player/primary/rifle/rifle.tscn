@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dn5r6qogjyaco" path="res://src/game/weapons/player/base/range/range_weapon.tscn" id="1_n4y06"]
 [ext_resource type="Texture2D" uid="uid://jcitfpig33ox" path="res://src/game/weapons/player/primary/rifle/rifle.png" id="2_65ab4"]
-[ext_resource type="PackedScene" uid="uid://ibw35q6xdypf" path="res://src/game/projectiles/player/bullet/bullet_projectile.tscn" id="3_jcsos"]
+[ext_resource type="PackedScene" uid="uid://ibw35q6xdypf" path="res://src/game/weapons/projectiles/player/bullet/bullet_projectile.tscn" id="3_jcsos"]
 
 [node name="Rifle" node_paths=PackedStringArray("weapon_fsx") instance=ExtResource("1_n4y06")]
 position = Vector2(2.84217e-14, 2)

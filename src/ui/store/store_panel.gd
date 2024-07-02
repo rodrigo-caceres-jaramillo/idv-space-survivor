@@ -1,6 +1,6 @@
 extends PanelContainer
 
-@export var current_pool: PoolResource
+@export var current_pool: PoolResource 
 @export var pools: Array[PoolResource]
 @onready var store_option_1 = $VBoxContainer/StoreOption1
 @onready var store_option_2 = $VBoxContainer/StoreOption2

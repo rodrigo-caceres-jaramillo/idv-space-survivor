@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="EnemyStats" load_steps=3 format=3 uid="uid://b514eblow7xtu"]
 
 [ext_resource type="Script" path="res://src/game/enemies/base/enemy_stats.gd" id="1_jdw2q"]
-[ext_resource type="Resource" uid="uid://c8gk45drndbdg" path="res://src/scripts/data/health_types/alien.tres" id="1_voggh"]
+[ext_resource type="Resource" uid="uid://c8gk45drndbdg" path="res://src/data/health_types/alien.tres" id="1_voggh"]
 
 [resource]
 resource_local_to_scene = true

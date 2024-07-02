@@ -1,7 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://bdw1rphlnfjhm"]
-
-[ext_resource type="PackedScene" uid="uid://d00a51jft8ga2" path="res://src/game/projectiles/base/base_projectile.tscn" id="1_fqprp"]
-[ext_resource type="Texture2D" uid="uid://loa1ettdc5uk" path="res://src/game/projectiles/player/rifle/rifle.png" id="2_qenhc"]
-
-[node name="RifleProjectile" instance=ExtResource("1_fqprp")]
-texture = ExtResource("2_qenhc")

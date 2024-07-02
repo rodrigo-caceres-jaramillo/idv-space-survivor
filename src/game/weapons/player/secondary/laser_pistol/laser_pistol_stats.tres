@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="RangedWeaponsStats" load_steps=5 format=3 uid="uid://mtqmtb6ql3ii"]
 
-[ext_resource type="Resource" uid="uid://cgmatvoybq8xa" path="res://src/scripts/data/damage_types/puncture.tres" id="1_ek0a4"]
-[ext_resource type="Script" path="res://src/game/weapons/player/base/range/ranged_weapon_stats.gd" id="1_r6h17"]
+[ext_resource type="Resource" uid="uid://cgmatvoybq8xa" path="res://src/data/damage_types/puncture.tres" id="1_ek0a4"]
+[ext_resource type="Script" path="res://src/game/weapons/player/base/range/range_weapon_stats.gd" id="1_r6h17"]
 [ext_resource type="AudioStream" uid="uid://dqbwhhoj0uxpc" path="res://assets/sound/blaster_reload.mp3" id="2_arjw3"]
 [ext_resource type="AudioStream" uid="uid://bt1j3ry1pcity" path="res://assets/sound/blaster_shoot.mp3" id="4_gpt27"]
 

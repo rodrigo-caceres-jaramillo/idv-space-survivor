@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Upgrade" load_steps=5 format=3 uid="uid://kvs7do4xop06"]
 
 [ext_resource type="Texture2D" uid="uid://botcfjdu2tyu4" path="res://src/game/upgrades/crit_damage/crit_damage_upgrade_3.png" id="1_hm8ky"]
-[ext_resource type="Script" path="res://src/game/store/resource/modifier.gd" id="1_p0ucf"]
+[ext_resource type="Script" path="res://src/data/store/resource/modifier.gd" id="1_p0ucf"]
 [ext_resource type="Script" path="res://src/game/upgrades/upgrade_resource.gd" id="2_8dhn6"]
 
 [sub_resource type="Resource" id="Resource_kbnia"]

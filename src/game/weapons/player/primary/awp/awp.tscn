@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dn5r6qogjyaco" path="res://src/game/weapons/player/base/range/range_weapon.tscn" id="1_tjaaf"]
 [ext_resource type="Texture2D" uid="uid://4gkax2xitp5i" path="res://src/game/weapons/player/primary/awp/awp.png" id="2_urek8"]
-[ext_resource type="PackedScene" uid="uid://ibw35q6xdypf" path="res://src/game/projectiles/player/bullet/bullet_projectile.tscn" id="3_t6e2b"]
+[ext_resource type="PackedScene" uid="uid://ibw35q6xdypf" path="res://src/game/weapons/projectiles/player/bullet/bullet_projectile.tscn" id="3_t6e2b"]
 
 [node name="awp" node_paths=PackedStringArray("weapon_fsx") instance=ExtResource("1_tjaaf")]
 texture = ExtResource("2_urek8")

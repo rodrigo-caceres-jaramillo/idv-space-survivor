@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dn5r6qogjyaco" path="res://src/game/weapons/player/base/range/range_weapon.tscn" id="1_mv35n"]
 [ext_resource type="Texture2D" uid="uid://dcapwnwvcxt2d" path="res://src/game/weapons/player/primary/sky/sky.png" id="2_qbd7p"]
-[ext_resource type="PackedScene" uid="uid://cwn44fakb1tkg" path="res://src/game/projectiles/player/buckshot/buckshot_projectile.tscn" id="3_bx5uq"]
+[ext_resource type="PackedScene" uid="uid://cwn44fakb1tkg" path="res://src/game/weapons/projectiles/player/buckshot/buckshot_projectile.tscn" id="3_bx5uq"]
 
 [node name="sky" node_paths=PackedStringArray("weapon_fsx") instance=ExtResource("1_mv35n")]
 texture = ExtResource("2_qbd7p")

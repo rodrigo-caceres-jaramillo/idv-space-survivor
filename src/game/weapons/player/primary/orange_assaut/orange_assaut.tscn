@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dn5r6qogjyaco" path="res://src/game/weapons/player/base/range/range_weapon.tscn" id="1_rjbqi"]
 [ext_resource type="Texture2D" uid="uid://bf7hhdq1e27hx" path="res://src/game/weapons/player/primary/orange_assaut/Orange_assaut.png" id="2_6wyv6"]
-[ext_resource type="PackedScene" uid="uid://ibw35q6xdypf" path="res://src/game/projectiles/player/bullet/bullet_projectile.tscn" id="3_43awr"]
+[ext_resource type="PackedScene" uid="uid://ibw35q6xdypf" path="res://src/game/weapons/projectiles/player/bullet/bullet_projectile.tscn" id="3_43awr"]
 
 [node name="orange_assaut" node_paths=PackedStringArray("weapon_fsx") instance=ExtResource("1_rjbqi")]
 texture = ExtResource("2_6wyv6")

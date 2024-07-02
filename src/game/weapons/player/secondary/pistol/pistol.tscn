@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dn5r6qogjyaco" path="res://src/game/weapons/player/base/range/range_weapon.tscn" id="1_yejcx"]
 [ext_resource type="Texture2D" uid="uid://4jehqdhq563t" path="res://src/game/weapons/player/secondary/pistol/pistol.png" id="2_3oqmi"]
-[ext_resource type="PackedScene" uid="uid://ibw35q6xdypf" path="res://src/game/projectiles/player/bullet/bullet_projectile.tscn" id="4_njtau"]
+[ext_resource type="PackedScene" uid="uid://ibw35q6xdypf" path="res://src/game/weapons/projectiles/player/bullet/bullet_projectile.tscn" id="4_njtau"]
 
 [node name="Pistol" node_paths=PackedStringArray("weapon_fsx") instance=ExtResource("1_yejcx")]
 texture = ExtResource("2_3oqmi")

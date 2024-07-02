@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="HealthType" load_steps=2 format=3 uid="uid://cwes86ht6xt8h"]
+
+[ext_resource type="Script" path="res://src/data/health_types/health_types.gd" id="1_sku0y"]
+
+[resource]
+script = ExtResource("1_sku0y")
+name = "Character"

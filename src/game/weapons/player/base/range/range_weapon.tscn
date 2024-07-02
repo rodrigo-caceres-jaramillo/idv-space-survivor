@@ -1,11 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://dn5r6qogjyaco"]
 
 [ext_resource type="Script" path="res://src/game/weapons/player/base/range/range_weapon.gd" id="1_w3q8x"]
-[ext_resource type="Script" path="res://src/scripts/components/spawn_projectile_component.gd" id="2_bp3st"]
+[ext_resource type="Script" path="res://src/game/weapons/player/base/range/weapon_audio_manager.gd" id="2_kwj8s"]
 
 [node name="RangeWeapon" type="Sprite2D"]
 z_index = 5
-scale = Vector2(0.7, 0.4)
 script = ExtResource("1_w3q8x")
 
 [node name="MainHand" type="Sprite2D" parent="."]
@@ -15,9 +14,5 @@ script = ExtResource("1_w3q8x")
 [node name="Tip" type="Marker2D" parent="."]
 position = Vector2(7, 0)
 
-[node name="FireRateTimer" type="Timer" parent="."]
-
-[node name="ReloadTimer" type="Timer" parent="."]
-
-[node name="SpawnProjectileComponent" type="Node" parent="."]
-script = ExtResource("2_bp3st")
+[node name="WeaponAudioManager" type="Node2D" parent="."]
+script = ExtResource("2_kwj8s")
