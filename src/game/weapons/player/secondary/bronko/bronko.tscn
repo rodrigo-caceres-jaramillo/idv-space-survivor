@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cxbb5tgxokai1"]
+[gd_scene load_steps=10 format=3 uid="uid://cxbb5tgxokai1"]
 
 [ext_resource type="PackedScene" uid="uid://dn5r6qogjyaco" path="res://src/game/weapons/player/base/range/range_weapon.tscn" id="1_wwhpr"]
 [ext_resource type="Texture2D" uid="uid://br4ja71hvxtg" path="res://src/game/weapons/player/secondary/bronko/bronko.png" id="2_4pfdd"]
 [ext_resource type="PackedScene" uid="uid://cwn44fakb1tkg" path="res://src/game/weapons/projectiles/player/buckshot/buckshot_projectile.tscn" id="3_4raey"]
 [ext_resource type="PackedScene" uid="uid://c74piex43b0ct" path="res://src/game/weapons/particles/muzzle_flash/basic_flash.tscn" id="4_mwkql"]
+[ext_resource type="Texture2D" uid="uid://djgvtpdx7adls" path="res://assets/textures/hud/crooshair/crosshair_1.png" id="5_5q3fr"]
 [ext_resource type="AudioStream" uid="uid://dnmahjh6xx3va" path="res://assets/sound/Assalt_rifle_shoot.mp3" id="5_m2k3k"]
 [ext_resource type="AudioStream" uid="uid://diofe4dtgj5nk" path="res://assets/sound/rifle_reload.wav" id="6_e7m5v"]
 [ext_resource type="Script" path="res://src/game/weapons/player/base/range/reloads/magazine_reload.gd" id="7_7ovds"]
@@ -15,6 +16,7 @@ texture = ExtResource("2_4pfdd")
 offset = Vector2(3, -2)
 projectile = ExtResource("3_4raey")
 muzzle_flash = ExtResource("4_mwkql")
+crosshair = ExtResource("5_5q3fr")
 
 [node name="SecondHand" parent="." index="1"]
 position = Vector2(16, -6)

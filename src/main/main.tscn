@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://btjax2v4qeeu3"]
+[gd_scene load_steps=29 format=3 uid="uid://btjax2v4qeeu3"]
 
 [ext_resource type="Script" path="res://src/main/main.gd" id="1_gwchs"]
 [ext_resource type="Texture2D" uid="uid://0dhpoqbrs2oc" path="res://assets/textures/tiles/tile_set.png" id="2_vhjei"]
@@ -18,6 +18,10 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="13_xlvnm"]
 [ext_resource type="PackedScene" uid="uid://d0otfohjoplfd" path="res://src/ui/test_menu/test_menu.tscn" id="14_uvarn"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="14_xwc28"]
+[ext_resource type="Script" path="res://src/main/mouse_manager.gd" id="15_5h1bm"]
+[ext_resource type="PackedScene" uid="uid://bf50ma2xw51og" path="res://src/game/enemies/stratos/riot_control/riot_control.tscn" id="19_53t20"]
+[ext_resource type="Resource" uid="uid://c8gk45drndbdg" path="res://src/data/health_types/alien.tres" id="20_0gn05"]
+[ext_resource type="Script" path="res://src/game/enemies/base/enemy_stats.gd" id="21_ufrrr"]
 
 [sub_resource type="Environment" id="Environment_gd5by"]
 background_mode = 3
@@ -218,7 +222,7 @@ texture = ExtResource("2_vhjei")
 
 [sub_resource type="TileSet" id="TileSet_3y124"]
 physics_layer_0/collision_layer = 1
-physics_layer_0/collision_mask = 6
+physics_layer_0/collision_mask = 0
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
@@ -232,6 +236,16 @@ ease = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bnke5"]
 size = Vector2(704, 480)
+
+[sub_resource type="Resource" id="Resource_3rppi"]
+resource_local_to_scene = true
+script = ExtResource("21_ufrrr")
+HEALTH = 10000000
+HEALTH_TYPE = ExtResource("20_0gn05")
+SPEED = 0.0
+KB_RESISTANCE = 10000.0
+min_value = 1
+max_value = 2
 
 [node name="Main" type="Node2D"]
 position = Vector2(-288, -197)
@@ -290,6 +304,9 @@ visible = false
 
 [node name="TestMenu" parent="UIManager" instance=ExtResource("14_uvarn")]
 
+[node name="MouseManager" type="Node2D" parent="."]
+script = ExtResource("15_5h1bm")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 visible = false
 position = Vector2(688, 421)
@@ -324,5 +341,9 @@ limit_target = NodePath("../CameraBounds/Collision")
 position = Vector2(608, 333)
 shape = SubResource("RectangleShape2D_bnke5")
 disabled = true
+
+[node name="RiotControl" parent="." instance=ExtResource("19_53t20")]
+position = Vector2(685, 348)
+stats = SubResource("Resource_3rppi")
 
 [connection signal="timeout" from="Camera2D/ShakeTimer" to="Camera2D" method="_on_shake_timer_timeout"]

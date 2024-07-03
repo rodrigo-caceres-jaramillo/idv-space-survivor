@@ -47,7 +47,7 @@ func health_to_max():
 
 func equip_weapon(weapon_resource: WeaponResource):
 	weapon_manager.add_weapon(weapon_resource)
-	
+
 func add_store_resource(resource: StoreResource):
 	match resource.type:
 		StoreResource.ResourceTypes.WEAPON:

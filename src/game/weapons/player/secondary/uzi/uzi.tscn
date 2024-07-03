@@ -4,14 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://chb1ttynmaxqd" path="res://src/game/weapons/player/secondary/uzi/uzi.png" id="2_8pneg"]
 [ext_resource type="PackedScene" uid="uid://ibw35q6xdypf" path="res://src/game/weapons/projectiles/player/bullet/bullet_projectile.tscn" id="4_ie1qf"]
 
-[node name="Uzi" node_paths=PackedStringArray("weapon_fsx") instance=ExtResource("1_5f04n")]
+[node name="Uzi" instance=ExtResource("1_5f04n")]
 texture = ExtResource("2_8pneg")
 offset = Vector2(5, -2)
-weapon_fsx = NodePath("UziSfx")
 projectile = ExtResource("4_ie1qf")
 
 [node name="Tip" parent="." index="2"]
 position = Vector2(16.2857, -6.28571)
 
-[node name="UziSfx" type="AudioStreamPlayer" parent="." index="5"]
+[node name="UziSfx" type="AudioStreamPlayer" parent="." index="4"]
 volume_db = -10.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://lsoqspf1u6da"]
+[gd_scene load_steps=10 format=3 uid="uid://lsoqspf1u6da"]
 
 [ext_resource type="PackedScene" uid="uid://dn5r6qogjyaco" path="res://src/game/weapons/player/base/range/range_weapon.tscn" id="1_x7k2x"]
 [ext_resource type="Texture2D" uid="uid://dlaygagimrruc" path="res://src/game/weapons/player/secondary/standard/standard.png" id="2_crb77"]
@@ -8,12 +8,14 @@
 [ext_resource type="Script" path="res://src/game/weapons/player/base/range/reloads/magazine_reload.gd" id="4_sycrm"]
 [ext_resource type="AudioStream" uid="uid://diofe4dtgj5nk" path="res://assets/sound/rifle_reload.wav" id="5_gtjvd"]
 [ext_resource type="Script" path="res://src/game/weapons/player/base/range/triggers/auto_trigger.gd" id="5_j0q1d"]
+[ext_resource type="Texture2D" uid="uid://ch5di2e8vdrec" path="res://assets/textures/hud/crooshair/crosshair_3.png" id="5_t2vic"]
 
 [node name="StandardGun" instance=ExtResource("1_x7k2x")]
 texture = ExtResource("2_crb77")
 offset = Vector2(3, -2)
 projectile = ExtResource("3_3bopp")
 muzzle_flash = ExtResource("4_gh3ne")
+crosshair = ExtResource("5_t2vic")
 
 [node name="SecondHand" parent="." index="1"]
 position = Vector2(16, -6)

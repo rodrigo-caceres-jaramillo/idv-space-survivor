@@ -12,6 +12,7 @@ extends Node2D
 func _ready():
 	shoot.stream = shoot_audio
 	shoot.bus = "sfx"
+	shoot.max_polyphony = 50
 	add_child(shoot)
 	reload_start.stream = reload_start_audio
 	reload_start.bus = "sfx"
@@ -24,10 +25,7 @@ func _ready():
 	reload_type.reload_finished.connect(play_finish_reload_sound)
 
 func play_shoot_sound():
-	var new_shoot_player = shoot.duplicate()
-	add_child(new_shoot_player)
-	new_shoot_player.play()
-	new_shoot_player.finished.connect(func():new_shoot_player.queue_free())
+	shoot.play()
 
 func play_start_reload_sound():
 	if not reload_start.is_playing():

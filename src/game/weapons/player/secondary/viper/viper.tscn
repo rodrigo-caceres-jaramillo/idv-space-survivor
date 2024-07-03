@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bshxgijrsi371"]
+[gd_scene load_steps=10 format=3 uid="uid://bshxgijrsi371"]
 
 [ext_resource type="PackedScene" uid="uid://dn5r6qogjyaco" path="res://src/game/weapons/player/base/range/range_weapon.tscn" id="1_yg0x0"]
 [ext_resource type="Texture2D" uid="uid://1ljpqckcbcrc" path="res://src/game/weapons/player/secondary/viper/viper.png" id="2_asgwd"]
 [ext_resource type="PackedScene" uid="uid://cjre030tknah1" path="res://src/game/weapons/projectiles/player/small_bullet/small_bullet_projectile.tscn" id="3_d7ajt"]
 [ext_resource type="PackedScene" uid="uid://c74piex43b0ct" path="res://src/game/weapons/particles/muzzle_flash/basic_flash.tscn" id="4_fjn6g"]
 [ext_resource type="AudioStream" uid="uid://dnmahjh6xx3va" path="res://assets/sound/Assalt_rifle_shoot.mp3" id="5_0804w"]
+[ext_resource type="Texture2D" uid="uid://ch5di2e8vdrec" path="res://assets/textures/hud/crooshair/crosshair_3.png" id="5_xx72f"]
 [ext_resource type="AudioStream" uid="uid://diofe4dtgj5nk" path="res://assets/sound/rifle_reload.wav" id="6_y7kxa"]
 [ext_resource type="Script" path="res://src/game/weapons/player/base/range/reloads/magazine_reload.gd" id="7_4itfs"]
 [ext_resource type="Script" path="res://src/game/weapons/player/base/range/triggers/auto_trigger.gd" id="8_h3mwu"]
@@ -14,6 +15,7 @@ texture = ExtResource("2_asgwd")
 offset = Vector2(3, -2)
 projectile = ExtResource("3_d7ajt")
 muzzle_flash = ExtResource("4_fjn6g")
+crosshair = ExtResource("5_xx72f")
 
 [node name="SecondHand" parent="." index="1"]
 position = Vector2(16, -6)

@@ -1,6 +1,7 @@
 class_name Projectile
 extends Sprite2D
 
+@onready var animation_player = $AnimationPlayer
 @onready var hitbox_component = $HitboxComponent
 var speed
 var direction := Vector2.ZERO
@@ -20,7 +21,7 @@ func _process(delta):
 	traveled_distance += move_vector.length()
 	
 	if traveled_distance >= max_distance:
-		queue_free()
+		impact()
 		
 	look_at(position + direction)
 	
@@ -39,10 +40,18 @@ func initialize(stats, _global_position, _direction):
 	
 func check_penetration():
 	if(max_penetration == 0):
-		queue_free()
+		impact()
 	else:
 		enemies_penetrated += 1
 		if(max_penetration < enemies_penetrated):
-			queue_free()
+			impact()
+
+func impact():
+	hitbox_component.is_active = false
+	self.speed = 0
+	animation_player.play("impact")
+	await animation_player.animation_finished
+	queue_free()
+
 
 

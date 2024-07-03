@@ -4,6 +4,7 @@ extends Node2D
 @export var projectile: PackedScene
 @export var muzzle_flash: PackedScene
 @export var two_hands: bool
+@export var crosshair: Texture
 @onready var tip = $Tip
 @onready var main_hand = $MainHand
 @onready var second_hand = $SecondHand

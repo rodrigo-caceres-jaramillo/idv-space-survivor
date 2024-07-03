@@ -4,8 +4,8 @@ extends Node2D
 @export var hand_sprite: Texture
 @onready var hand_position = $HandPosition
 var stats: PlayerStats
-var weapons_resource =  {0:null, 1:null, 2:null}
-var weapons= {0:null, 1:null, 2:null}
+var weapons_resource =  {0:null, 1:null}
+var weapons= {0:null, 1:null}
 var current_weapon: Node2D
 var current_weapon_type: int = 0
 var weapons_types = WeaponResource.WeaponTypes
