@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cieyh0w75vcq7"]
+[gd_scene load_steps=17 format=3 uid="uid://cieyh0w75vcq7"]
 
 [ext_resource type="Script" path="res://src/ui/store/store_panel.gd" id="1_h8rdo"]
 [ext_resource type="StyleBox" uid="uid://b1hkw1f348phd" path="res://src/ui/style_box/hud_panel.tres" id="1_r5hjk"]
@@ -35,9 +35,6 @@ texture_margin_left = 6.0
 texture_margin_top = 6.0
 texture_margin_right = 6.0
 texture_margin_bottom = 6.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r502x"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="StorePanel" type="PanelContainer"]
 custom_minimum_size = Vector2(250, 0)
@@ -101,8 +98,9 @@ layout_mode = 2
 [node name="StoreOption4" parent="VBoxContainer" instance=ExtResource("2_pla2b")]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="HBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_constants/separation = 10
 
 [node name="UpdateButton" type="Button" parent="VBoxContainer/HBoxContainer"]
@@ -112,7 +110,7 @@ size_flags_horizontal = 10
 theme_override_fonts/font = ExtResource("6_1es1n")
 theme_override_font_sizes/font_size = 13
 theme_override_styles/normal = SubResource("StyleBoxTexture_w4wx5")
-text = "UPGRADE 30"
+text = "UPGRADE SHOP 30"
 icon = ExtResource("5_uo75h")
 icon_alignment = 2
 
@@ -126,12 +124,9 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_h4q7p")
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("6_1es1n")
 theme_override_font_sizes/font_size = 13
-theme_override_styles/normal = SubResource("StyleBoxFlat_r502x")
-text = "Roll 5"
+text = "REFLESH ITEMS 5"
 icon = ExtResource("5_uo75h")
 icon_alignment = 2
 

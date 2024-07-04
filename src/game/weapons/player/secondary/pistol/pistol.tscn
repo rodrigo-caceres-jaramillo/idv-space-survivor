@@ -4,10 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://4jehqdhq563t" path="res://src/game/weapons/player/secondary/pistol/pistol.png" id="2_3oqmi"]
 [ext_resource type="PackedScene" uid="uid://ibw35q6xdypf" path="res://src/game/weapons/projectiles/player/bullet/bullet_projectile.tscn" id="4_njtau"]
 
-[node name="Pistol" node_paths=PackedStringArray("weapon_fsx") instance=ExtResource("1_yejcx")]
+[node name="Pistol" instance=ExtResource("1_yejcx")]
 texture = ExtResource("2_3oqmi")
 offset = Vector2(8, -2)
-weapon_fsx = NodePath("PistolSfx")
 projectile = ExtResource("4_njtau")
 
 [node name="SecondHand" parent="." index="1"]
@@ -16,5 +15,5 @@ position = Vector2(16, -6)
 [node name="Tip" parent="." index="2"]
 position = Vector2(19, -8)
 
-[node name="PistolSfx" type="AudioStreamPlayer" parent="." index="5"]
+[node name="PistolSfx" type="AudioStreamPlayer" parent="." index="4"]
 volume_db = -10.0
