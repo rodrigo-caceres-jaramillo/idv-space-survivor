@@ -1,7 +1,7 @@
 extends VBoxContainer
 
 @onready var wave = $Wave
-@onready var time_left = $TimeLeft
+@onready var time_left = $HBoxContainer/TimeLeft
 
 func _ready():
 	self.wave.text = "Wave" + str(1)

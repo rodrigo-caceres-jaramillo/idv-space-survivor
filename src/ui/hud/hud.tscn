@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://daba4863wb8fu"]
+[gd_scene load_steps=13 format=3 uid="uid://daba4863wb8fu"]
 
 [ext_resource type="PackedScene" uid="uid://j1hv0mdwq75c" path="res://src/ui/hud/health_money/health_money.tscn" id="1_22fa2"]
 [ext_resource type="FontFile" uid="uid://jd478um6wqpv" path="res://assets/fonts/Gameplay.ttf" id="3_7epsx"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://chb1ttynmaxqd" path="res://src/game/weapons/player/secondary/uzi/uzi.png" id="6_oahc3"]
 [ext_resource type="StyleBox" uid="uid://b1hkw1f348phd" path="res://src/ui/style_box/hud_panel.tres" id="6_pd3lu"]
 [ext_resource type="Script" path="res://src/ui/hud/vignette.gd" id="7_pqur5"]
+[ext_resource type="Texture2D" uid="uid://bx7fc6vkhlqbb" path="res://assets/textures/hud/timer/Timer.png" id="8_ageak"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_34oor"]
 content_margin_left = 2.0
@@ -99,7 +100,14 @@ text = "WAVE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TimeLeft" type="Label" parent="MarginContainer/WaveProgressPanel/WaveProgress"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/WaveProgressPanel/WaveProgress"]
+layout_mode = 2
+
+[node name="TimerIcon" type="TextureRect" parent="MarginContainer/WaveProgressPanel/WaveProgress/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("8_ageak")
+
+[node name="TimeLeft" type="Label" parent="MarginContainer/WaveProgressPanel/WaveProgress/HBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_7epsx")
 theme_override_font_sizes/font_size = 13
