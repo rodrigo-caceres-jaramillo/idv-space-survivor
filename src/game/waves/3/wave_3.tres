@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://src/game/waves/wave_data.gd" id="1_r4fk5"]
 [ext_resource type="Resource" uid="uid://cah23smoi8u7m" path="res://src/game/waves/3/peace_kepper_3.tres" id="2_1u3b7"]
-[ext_resource type="Resource" uid="uid://bc12wieo5cyex" path="res://src/game/waves/3/stun_lancer_3.tres" id="3_ck5vm"]
+[ext_resource type="Resource" uid="uid://bbd3t4fac86r2" path="res://src/game/waves/3/riot_control_3.tres" id="3_ichqf"]
 
 [resource]
 script = ExtResource("1_r4fk5")
-wave_duration = 40
+wave_duration = 35
 wave_intensity = 1.5
-max_enemies = 20
-wave_enemies = Array[Resource("res://src/game/waves/wave_enemy.gd")]([ExtResource("2_1u3b7"), ExtResource("3_ck5vm")])
+max_enemies = 25
+wave_enemies = Array[Resource("res://src/game/waves/wave_enemy.gd")]([ExtResource("2_1u3b7"), ExtResource("3_ichqf")])

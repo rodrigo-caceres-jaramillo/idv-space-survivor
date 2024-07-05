@@ -11,4 +11,4 @@
 
 [resource]
 script = ExtResource("1_pm3sn")
-waves_data = Array[Resource("res://src/game/waves/wave_data.gd")]([ExtResource("2_irkrx"), ExtResource("5_u54aa"), ExtResource("8_vp5v2"), ExtResource("4_sbxb5"), ExtResource("3_tomhv"), ExtResource("6_dp7py"), ExtResource("7_dp102")])
+waves_data = Array[Resource("res://src/game/waves/wave_data.gd")]([ExtResource("2_irkrx"), ExtResource("3_tomhv"), ExtResource("4_sbxb5"), ExtResource("5_u54aa"), ExtResource("6_dp7py"), ExtResource("7_dp102"), ExtResource("8_vp5v2")])

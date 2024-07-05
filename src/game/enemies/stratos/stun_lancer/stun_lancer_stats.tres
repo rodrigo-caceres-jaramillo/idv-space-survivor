@@ -6,9 +6,9 @@
 [resource]
 resource_local_to_scene = true
 script = ExtResource("1_6g1dr")
-HEALTH = 20
+HEALTH = 10
 HEALTH_TYPE = ExtResource("1_3r0oh")
-SPEED = 0.7
+SPEED = 0.6
 KB_RESISTANCE = 1.0
 min_value = 2
 max_value = 3
