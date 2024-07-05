@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SaleOption" load_steps=3 format=3 uid="uid://8ml4n5sbhn4b"]
+
+[ext_resource type="Resource" uid="uid://uq0q8yvb5ebi" path="res://src/game/equipment/upgrades/weapon/damage/damage_upgrade_2.tres" id="1_idwgc"]
+[ext_resource type="Script" path="res://src/data/store/sale_options/sale_option.gd" id="1_u1n6n"]
+
+[resource]
+script = ExtResource("1_u1n6n")
+rarity = 0
+price = 20
+type = 1
+equipment = ExtResource("1_idwgc")

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PoolResource" load_steps=4 format=3 uid="uid://dtcgki1ea428t"]
+
+[ext_resource type="Resource" uid="uid://brmxg4g4xq0n2" path="res://src/data/store/sale_options/damage_1.tres" id="1_8f7tq"]
+[ext_resource type="Resource" uid="uid://8ml4n5sbhn4b" path="res://src/data/store/sale_options/damage_2.tres" id="2_khcff"]
+[ext_resource type="Script" path="res://src/data/store/pools/pool_resource.gd" id="4_vqnaa"]
+
+[resource]
+script = ExtResource("4_vqnaa")
+level = 2
+pool = Array[Resource("res://src/data/store/sale_options/sale_option.gd")]([ExtResource("1_8f7tq"), ExtResource("2_khcff")])

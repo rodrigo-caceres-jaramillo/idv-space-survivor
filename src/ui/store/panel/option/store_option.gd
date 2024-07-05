@@ -23,17 +23,26 @@ func _on_buy_button_pressed():
 	if (Global.money >= sale_option.price):
 		audio_stream_player.stream = select_audio
 		audio_stream_player.play()
-		if(Global.player.add_store_resource(sale_option)):
-			audio_stream_player.stream = buy_audio
-			audio_stream_player.play()
-			Global.money = Global.money - sale_option.price
-			sale_option = null
-			sprite_option.texture = null
-			option_name.text = ""
-			description.text = ""
-			buy_button.hide()
-			store_option_buy.emit(self)
+		if(sale_option.type == 0):
+			Global.player.equip_weapon(sale_option.equipment)
+			empty_self()
+		elif(sale_option.type == 1):
+			print("buy upgrade")
+			Global.player.equip_upgrade(sale_option.equipment)
+			empty_self()
 
+
+func empty_self():
+	audio_stream_player.stream = buy_audio
+	audio_stream_player.play()
+	Global.money = Global.money - sale_option.price
+	sale_option = null
+	sprite_option.texture = null
+	option_name.text = ""
+	description.text = ""
+	buy_button.hide()
+	store_option_buy.emit(self)
+	
 func _on_select_button_pressed():
 	audio_stream_player.stream = select_audio
 	audio_stream_player.play()

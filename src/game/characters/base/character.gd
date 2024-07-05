@@ -30,7 +30,8 @@ func equip_weapon(weapon: Weapon):
 	weapon_manager.add_weapon(weapon)
 	
 func equip_upgrade(upgrade: Upgrade):
-	if upgrade.upgrade_type == 1:
+	if upgrade.upgrade_type == upgrade.UpgradeTypes.character:
 		upgrade_manager.add_upgrade(upgrade)
-	elif upgrade.upgrade_type == 2:
+	elif upgrade.upgrade_type == upgrade.UpgradeTypes.weapon:
+		print("weaopon upgrade")
 		weapon_manager.add_upgrade(upgrade)

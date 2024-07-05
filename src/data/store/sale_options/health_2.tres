@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SaleOption" load_steps=3 format=3 uid="uid://ekho8y0k6dx3"]
+
+[ext_resource type="Script" path="res://src/data/store/sale_options/sale_option.gd" id="1_r8g5h"]
+[ext_resource type="Resource" uid="uid://4j4cyrg66s0d" path="res://src/game/equipment/upgrades/character/health/health_upgrade_3.tres" id="1_vcmhq"]
+
+[resource]
+script = ExtResource("1_r8g5h")
+rarity = 0
+price = 30
+type = 1
+equipment = ExtResource("1_vcmhq")

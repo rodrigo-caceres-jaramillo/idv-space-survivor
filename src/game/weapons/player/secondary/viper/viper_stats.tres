@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_xdsa2")
-DAMAGE = 5.0
+DAMAGE = 7.0
 DAMAGE_TYPE = ExtResource("1_borak")
 CRITICAL_CHANCE = 10.0
 CRITICAL_DAMAGE = 2.0

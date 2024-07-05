@@ -1,14 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5uhvngjdi1ky"]
+[gd_scene load_steps=10 format=3 uid="uid://b5uhvngjdi1ky"]
 
 [ext_resource type="PackedScene" uid="uid://dn5r6qogjyaco" path="res://src/game/weapons/player/base/range/range_weapon.tscn" id="1_m2tfw"]
 [ext_resource type="PackedScene" uid="uid://ibw35q6xdypf" path="res://src/game/weapons/projectiles/player/bullet/bullet_projectile.tscn" id="2_jv26i"]
 [ext_resource type="Texture2D" uid="uid://dxc6shawo5ng0" path="res://src/game/weapons/player/primary/sniper/sniper.png" id="2_u31tc"]
+[ext_resource type="PackedScene" uid="uid://c74piex43b0ct" path="res://src/game/equipment/weapons/particles/muzzle_flash/basic_flash.tscn" id="4_smour"]
+[ext_resource type="AudioStream" uid="uid://7unmhtmqwlsp" path="res://assets/sound/sniper_shoot.mp3" id="4_srbip"]
+[ext_resource type="Texture2D" uid="uid://l04a01rsrhry" path="res://assets/textures/hud/crooshair/crosshair.png" id="5_e01ie"]
+[ext_resource type="AudioStream" uid="uid://b848cb3p15jxb" path="res://assets/sound/sniper_reload.mp3" id="5_qqque"]
+[ext_resource type="Script" path="res://src/game/weapons/player/base/range/triggers/semi_trigger.gd" id="6_tlnip"]
+[ext_resource type="Script" path="res://src/game/weapons/player/base/range/reloads/magazine_reload.gd" id="7_067r7"]
 
-[node name="Sniper" node_paths=PackedStringArray("weapon_fsx") instance=ExtResource("1_m2tfw")]
+[node name="Sniper" instance=ExtResource("1_m2tfw")]
 texture = ExtResource("2_u31tc")
 offset = Vector2(8, -3)
-weapon_fsx = NodePath("SniperSfx")
 projectile = ExtResource("2_jv26i")
+muzzle_flash = ExtResource("4_smour")
+crosshair = ExtResource("5_e01ie")
 
 [node name="SecondHand" parent="." index="1"]
 position = Vector2(15, -2)
@@ -16,4 +23,17 @@ position = Vector2(15, -2)
 [node name="Tip" parent="." index="2"]
 position = Vector2(35, -4)
 
-[node name="SniperSfx" type="AudioStreamPlayer" parent="." index="5"]
+[node name="WeaponAudioManager" parent="." index="4" node_paths=PackedStringArray("trigger_type", "reload_type")]
+trigger_type = NodePath("../SemiTriggerType")
+shoot_audio = ExtResource("4_srbip")
+reload_type = NodePath("../MagazineReloadType")
+reload_start_audio = ExtResource("5_qqque")
+
+[node name="SemiTriggerType" type="Node2D" parent="." index="5" node_paths=PackedStringArray("range_weapon", "weapon_tip")]
+script = ExtResource("6_tlnip")
+range_weapon = NodePath("..")
+weapon_tip = NodePath("../Tip")
+
+[node name="MagazineReloadType" type="Node2D" parent="." index="6" node_paths=PackedStringArray("range_weapon")]
+script = ExtResource("7_067r7")
+range_weapon = NodePath("..")

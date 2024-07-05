@@ -29,6 +29,10 @@ func set_up(b_stast:RangeWeaponsStats, upgrades, hand_texture):
 	self.current_ammo = stats.MAGAZINE
 	change_active_state(false)
 
+func apply_upgrades(upgrades):
+	upgrade_manager.upgrades = upgrades
+	upgrade_manager.apply_upgrades()
+
 signal change_state(value: bool)
 signal shoot_try()
 signal reload_try()

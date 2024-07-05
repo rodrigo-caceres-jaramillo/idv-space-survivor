@@ -9,13 +9,13 @@ load_path = "res://.godot/imported/damage_upgrade_2.png-bade543cc42c94f27681aab1
 [sub_resource type="Resource" id="Resource_0v54n"]
 script = ExtResource("2_63t18")
 stat = 2
-value = 0.4
+value = 40.0
 positive = true
 
 [resource]
 script = ExtResource("3_xwrm7")
 modifiers = Array[ExtResource("2_63t18")]([SubResource("Resource_0v54n")])
+upgrade_type = 0
 name = "Damage Module"
-description = "+ 40% Damage"
-price = 20
 icon = SubResource("CompressedTexture2D_qvkjb")
+description = "+ 40% Damage"

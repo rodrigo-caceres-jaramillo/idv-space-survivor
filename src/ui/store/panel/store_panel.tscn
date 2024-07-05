@@ -1,10 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://cieyh0w75vcq7"]
+[gd_scene load_steps=22 format=3 uid="uid://cieyh0w75vcq7"]
 
 [ext_resource type="Script" path="res://src/ui/store/store_panel.gd" id="1_h8rdo"]
 [ext_resource type="StyleBox" uid="uid://b1hkw1f348phd" path="res://src/ui/style_box/hud_panel.tres" id="1_r5hjk"]
 [ext_resource type="PackedScene" uid="uid://dyrf50yc61ric" path="res://src/ui/store/panel/option/store_option.tscn" id="2_pla2b"]
 [ext_resource type="Resource" uid="uid://l3xu8dwqyrjs" path="res://src/data/store/pools/level_1.tres" id="3_3y7ey"]
+[ext_resource type="Resource" uid="uid://dtcgki1ea428t" path="res://src/data/store/pools/level_2.tres" id="4_f26do"]
 [ext_resource type="Texture2D" uid="uid://c45p5tvcf6p2d" path="res://assets/textures/money/Money.png" id="5_uo75h"]
+[ext_resource type="Resource" uid="uid://84nsfjylp3h3" path="res://src/data/store/pools/level_3.tres" id="5_uuc0h"]
 [ext_resource type="FontFile" uid="uid://jd478um6wqpv" path="res://assets/fonts/Gameplay.ttf" id="6_1es1n"]
 [ext_resource type="AudioStream" uid="uid://cl2di54cw5y1m" path="res://assets/sound/roll_store.mp3" id="6_87xj4"]
 [ext_resource type="Texture2D" uid="uid://b031w6q5f21t0" path="res://assets/textures/ui/panel/upgrade_panel.png" id="6_567if"]
@@ -22,6 +24,13 @@ texture_margin_top = 7.0
 texture_margin_right = 7.0
 texture_margin_bottom = 7.0
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8md2y"]
+texture = ExtResource("6_567if")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w4wx5"]
 texture = ExtResource("6_567if")
 texture_margin_left = 6.0
@@ -29,12 +38,28 @@ texture_margin_top = 6.0
 texture_margin_right = 6.0
 texture_margin_bottom = 6.0
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h4q7p"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f0v52"]
+texture = ExtResource("6_567if")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+modulate_color = Color(0.641934, 0.641934, 0.641934, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_crrux"]
 texture = ExtResource("7_6umne")
 texture_margin_left = 6.0
 texture_margin_top = 6.0
 texture_margin_right = 6.0
 texture_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qnjtp"]
+texture = ExtResource("7_6umne")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+modulate_color = Color(0.364084, 0.364084, 0.364084, 1)
 
 [node name="StorePanel" type="PanelContainer"]
 custom_minimum_size = Vector2(250, 0)
@@ -44,6 +69,7 @@ size_flags_vertical = 3
 theme_override_styles/panel = ExtResource("1_r5hjk")
 script = ExtResource("1_h8rdo")
 current_pool = ExtResource("3_3y7ey")
+pools = Array[Resource("res://src/data/store/pools/pool_resource.gd")]([ExtResource("3_3y7ey"), ExtResource("4_f26do"), ExtResource("5_uuc0h")])
 roll_audio = ExtResource("6_87xj4")
 upgrade_audio = ExtResource("7_lwpna")
 
@@ -63,6 +89,23 @@ theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("6_1es1n")
 theme_override_font_sizes/font_size = 15
 text = "STORE"
+
+[node name="StoreLevel" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("6_1es1n")
+theme_override_font_sizes/font_size = 15
+text = "LV :"
+
+[node name="LevelCount" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.572549, 0.0509804, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("6_1es1n")
+theme_override_font_sizes/font_size = 15
+text = "1"
 
 [node name="MoneyCounter" type="PanelContainer" parent="VBoxContainer/HBoxContainer2"]
 layout_mode = 2
@@ -101,7 +144,21 @@ layout_mode = 2
 [node name="HBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_constants/separation = 10
+theme_override_constants/separation = 2
+
+[node name="MaxLevel" type="PanelContainer" parent="VBoxContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_8md2y")
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/MaxLevel"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("6_1es1n")
+theme_override_font_sizes/font_size = 13
+text = "LEVEL MAX"
+horizontal_alignment = 1
 
 [node name="UpdateButton" type="Button" parent="VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(100, 0)
@@ -110,22 +167,20 @@ size_flags_horizontal = 10
 theme_override_fonts/font = ExtResource("6_1es1n")
 theme_override_font_sizes/font_size = 13
 theme_override_styles/normal = SubResource("StyleBoxTexture_w4wx5")
+theme_override_styles/hover = SubResource("StyleBoxTexture_f0v52")
 text = "UPGRADE SHOP 30"
 icon = ExtResource("5_uo75h")
 icon_alignment = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-size_flags_horizontal = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_h4q7p")
-
-[node name="RollButton" type="Button" parent="VBoxContainer/HBoxContainer/PanelContainer"]
+[node name="RollButton" type="Button" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("6_1es1n")
 theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxTexture_crrux")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qnjtp")
 text = "REFLESH ITEMS 5"
 icon = ExtResource("5_uo75h")
 icon_alignment = 2
@@ -133,4 +188,4 @@ icon_alignment = 2
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/UpdateButton" to="." method="_on_update_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/PanelContainer/RollButton" to="." method="_on_roll_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/RollButton" to="." method="_on_roll_button_pressed"]

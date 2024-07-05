@@ -57,6 +57,11 @@ func load_weapon(weapon_resource):
 	self.current_weapon.visible = true
 	Events.current_weapon_changed.emit(current_weapon)
 	
+func add_upgrade(upgrade):
+		weapon_upgrades.append(upgrade)
+		if(weapons[1]): weapons[1].apply_upgrades(self.weapon_upgrades)
+		if(weapons[2]): weapons[2].apply_upgrades(self.weapon_upgrades)
+	
 func add_weapon(weapon_resource):
 	if(weapons[weapon_resource.weapon_type]):
 		remove_weapon(weapon_resource.weapon_type)
@@ -75,21 +80,23 @@ func equip_weapon(weapon_type):
 		Events.current_weapon_changed.emit(current_weapon)
 		
 func equip_next_weapon():
-	self.current_weapon.change_active_state(false)
-	self.current_weapon.visible = false
 	var next_weapon_type = 2 if (current_weapon_type == 1) else 1
-	self.current_weapon = weapons[next_weapon_type]
-	self.current_weapon.change_active_state(true)
-	self.current_weapon.visible = true
-	self.current_weapon_type = next_weapon_type
-	Events.current_weapon_changed.emit(current_weapon)
-		
+	if(weapons[next_weapon_type]):
+		self.current_weapon.change_active_state(false)
+		self.current_weapon.visible = false
+		self.current_weapon = weapons[next_weapon_type]
+		self.current_weapon.change_active_state(true)
+		self.current_weapon.visible = true
+		self.current_weapon_type = next_weapon_type
+		Events.current_weapon_changed.emit(current_weapon)
+			
 func equip_prev_weapon():
-	self.current_weapon.change_active_state(false)
-	self.current_weapon.visible = false
 	var prev_weapon_type = 1 if (current_weapon_type == 2) else 2
-	self.current_weapon = weapons[prev_weapon_type]
-	self.current_weapon.change_active_state(true)
-	self.current_weapon.visible = true
-	self.current_weapon_type = prev_weapon_type
-	Events.current_weapon_changed.emit(current_weapon)
+	if(weapons[prev_weapon_type]):
+		self.current_weapon.change_active_state(false)
+		self.current_weapon.visible = false
+		self.current_weapon = weapons[prev_weapon_type]
+		self.current_weapon.change_active_state(true)
+		self.current_weapon.visible = true
+		self.current_weapon_type = prev_weapon_type
+		Events.current_weapon_changed.emit(current_weapon)

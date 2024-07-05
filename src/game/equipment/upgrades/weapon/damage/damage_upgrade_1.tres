@@ -7,13 +7,13 @@
 [sub_resource type="Resource" id="Resource_0v54n"]
 script = ExtResource("2_s6vwu")
 stat = 2
-value = 0.2
+value = 20.0
 positive = true
 
 [resource]
 script = ExtResource("1_55xbl")
 modifiers = Array[ExtResource("2_s6vwu")]([SubResource("Resource_0v54n")])
+upgrade_type = 1
 name = "Damage Module"
-description = "+20% Damage"
-price = 10
 icon = ExtResource("1_ieltw")
+description = "+20% Damage"

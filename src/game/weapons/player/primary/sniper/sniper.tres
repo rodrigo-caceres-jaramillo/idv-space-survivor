@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="StoreWeapon" load_steps=5 format=3 uid="uid://850ncg2qdncs"]
+[gd_resource type="Resource" script_class="Weapon" load_steps=5 format=3 uid="uid://850ncg2qdncs"]
 
 [ext_resource type="Script" path="res://src/game/weapons/weapon.gd" id="1_1b35t"]
 [ext_resource type="Texture2D" uid="uid://dxc6shawo5ng0" path="res://src/game/weapons/player/primary/sniper/sniper.png" id="1_mfaxh"]
@@ -9,8 +9,7 @@
 script = ExtResource("1_1b35t")
 weapon_scene = ExtResource("3_mh3lf")
 stats = ExtResource("3_bw3bj")
+weapon_type = 1
 name = "Sniper"
-description = "Camper"
-price = 25
 icon = ExtResource("1_mfaxh")
-type = 0
+description = "Camper"

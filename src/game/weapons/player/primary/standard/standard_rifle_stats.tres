@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="RangeWeaponsStats" load_steps=2 format=3 uid="uid://cqd316ylu5adk"]
+[gd_resource type="Resource" script_class="RangeWeaponsStats" load_steps=3 format=3 uid="uid://cqd316ylu5adk"]
 
+[ext_resource type="Resource" uid="uid://cgmatvoybq8xa" path="res://src/data/damage_types/puncture.tres" id="1_mdbkl"]
 [ext_resource type="Script" path="res://src/game/weapons/player/base/range/range_weapon_stats.gd" id="1_wxpek"]
 
 [resource]
 script = ExtResource("1_wxpek")
 DAMAGE = 10.0
+DAMAGE_TYPE = ExtResource("1_mdbkl")
 CRITICAL_CHANCE = 10.0
 CRITICAL_DAMAGE = 2.0
 MULTISHOT = 1.0
