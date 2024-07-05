@@ -1,16 +1,39 @@
-[gd_scene load_steps=4 format=3 uid="uid://dnkyc6jbiuaeo"]
+[gd_scene load_steps=10 format=3 uid="uid://dnkyc6jbiuaeo"]
 
 [ext_resource type="PackedScene" uid="uid://dn5r6qogjyaco" path="res://src/game/weapons/player/base/range/range_weapon.tscn" id="1_5f04n"]
 [ext_resource type="Texture2D" uid="uid://chb1ttynmaxqd" path="res://src/game/weapons/player/secondary/uzi/uzi.png" id="2_8pneg"]
 [ext_resource type="PackedScene" uid="uid://ibw35q6xdypf" path="res://src/game/weapons/projectiles/player/bullet/bullet_projectile.tscn" id="4_ie1qf"]
+[ext_resource type="PackedScene" uid="uid://c74piex43b0ct" path="res://src/game/equipment/weapons/particles/muzzle_flash/basic_flash.tscn" id="4_y3lnh"]
+[ext_resource type="Texture2D" uid="uid://dn7nv5sn3nh46" path="res://assets/textures/hud/crooshair/crosshair_2.png" id="5_ihg8b"]
+[ext_resource type="AudioStream" uid="uid://y28k54ngy87t" path="res://assets/sound/pistol_shoot.mp3" id="6_fhgce"]
+[ext_resource type="AudioStream" uid="uid://dwqs8uxlfwcry" path="res://assets/sound/pistol_reload.mp3" id="7_olq73"]
+[ext_resource type="Script" path="res://src/game/weapons/player/base/range/triggers/auto_trigger.gd" id="8_mcv4s"]
+[ext_resource type="Script" path="res://src/game/weapons/player/base/range/reloads/magazine_reload.gd" id="9_n43ua"]
 
 [node name="Uzi" instance=ExtResource("1_5f04n")]
 texture = ExtResource("2_8pneg")
 offset = Vector2(5, -2)
 projectile = ExtResource("4_ie1qf")
+muzzle_flash = ExtResource("4_y3lnh")
+crosshair = ExtResource("5_ihg8b")
 
 [node name="Tip" parent="." index="2"]
 position = Vector2(16.2857, -6.28571)
 
 [node name="UziSfx" type="AudioStreamPlayer" parent="." index="4"]
 volume_db = -10.0
+
+[node name="WeaponAudioManager" parent="." index="5" node_paths=PackedStringArray("trigger_type", "reload_type")]
+trigger_type = NodePath("../AutoTriggerType")
+shoot_audio = ExtResource("6_fhgce")
+reload_type = NodePath("../MagazineReloadType")
+reload_start_audio = ExtResource("7_olq73")
+
+[node name="AutoTriggerType" type="Node2D" parent="." index="6" node_paths=PackedStringArray("range_weapon", "weapon_tip")]
+script = ExtResource("8_mcv4s")
+range_weapon = NodePath("..")
+weapon_tip = NodePath("../Tip")
+
+[node name="MagazineReloadType" type="Node2D" parent="." index="7" node_paths=PackedStringArray("range_weapon")]
+script = ExtResource("9_n43ua")
+range_weapon = NodePath("..")

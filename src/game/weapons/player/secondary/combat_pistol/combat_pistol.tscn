@@ -1,14 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://bo6yvfcvxts5n"]
+[gd_scene load_steps=10 format=3 uid="uid://bo6yvfcvxts5n"]
 
 [ext_resource type="PackedScene" uid="uid://dn5r6qogjyaco" path="res://src/game/weapons/player/base/range/range_weapon.tscn" id="1_1iecw"]
 [ext_resource type="Texture2D" uid="uid://30uheahqk2rr" path="res://src/game/weapons/player/secondary/combat_pistol/combat_pistol.png" id="2_wpir1"]
 [ext_resource type="PackedScene" uid="uid://ibw35q6xdypf" path="res://src/game/weapons/projectiles/player/bullet/bullet_projectile.tscn" id="3_e74m8"]
+[ext_resource type="PackedScene" uid="uid://c74piex43b0ct" path="res://src/game/equipment/weapons/particles/muzzle_flash/basic_flash.tscn" id="4_03c7t"]
+[ext_resource type="Texture2D" uid="uid://l04a01rsrhry" path="res://assets/textures/hud/crooshair/crosshair.png" id="5_d03tb"]
+[ext_resource type="Script" path="res://src/game/weapons/player/base/range/reloads/magazine_reload.gd" id="6_k13tc"]
+[ext_resource type="Script" path="res://src/game/weapons/player/base/range/triggers/auto_trigger.gd" id="7_hd2mg"]
+[ext_resource type="AudioStream" uid="uid://y28k54ngy87t" path="res://assets/sound/pistol_shoot.mp3" id="8_jjp1o"]
+[ext_resource type="AudioStream" uid="uid://dwqs8uxlfwcry" path="res://assets/sound/pistol_reload.mp3" id="9_ltfu4"]
 
-[node name="combat_pistol" node_paths=PackedStringArray("weapon_fsx") instance=ExtResource("1_1iecw")]
+[node name="combat_pistol" instance=ExtResource("1_1iecw")]
 texture = ExtResource("2_wpir1")
 offset = Vector2(9, -3)
-weapon_fsx = NodePath("combat_pistol")
 projectile = ExtResource("3_e74m8")
+muzzle_flash = ExtResource("4_03c7t")
+crosshair = ExtResource("5_d03tb")
 
 [node name="SecondHand" parent="." index="1"]
 position = Vector2(16, -6)
@@ -16,5 +23,20 @@ position = Vector2(16, -6)
 [node name="Tip" parent="." index="2"]
 position = Vector2(19, -8)
 
-[node name="combat_pistol" type="AudioStreamPlayer" parent="." index="6"]
+[node name="MagazineReloadType" type="Node2D" parent="." index="4" node_paths=PackedStringArray("range_weapon")]
+script = ExtResource("6_k13tc")
+range_weapon = NodePath("..")
+
+[node name="AutoTriggerType" type="Node2D" parent="." index="5" node_paths=PackedStringArray("range_weapon", "weapon_tip")]
+script = ExtResource("7_hd2mg")
+range_weapon = NodePath("..")
+weapon_tip = NodePath("../Tip")
+
+[node name="WeaponAudioManager" parent="." index="6" node_paths=PackedStringArray("trigger_type", "reload_type")]
+trigger_type = NodePath("../AutoTriggerType")
+shoot_audio = ExtResource("8_jjp1o")
+reload_type = NodePath("../MagazineReloadType")
+reload_start_audio = ExtResource("9_ltfu4")
+
+[node name="combat_pistol" type="AudioStreamPlayer" parent="." index="7"]
 volume_db = -10.0

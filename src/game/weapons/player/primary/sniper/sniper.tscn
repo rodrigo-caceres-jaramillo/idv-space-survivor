@@ -15,6 +15,7 @@ texture = ExtResource("2_u31tc")
 offset = Vector2(8, -3)
 projectile = ExtResource("2_jv26i")
 muzzle_flash = ExtResource("4_smour")
+two_hands = true
 crosshair = ExtResource("5_e01ie")
 
 [node name="SecondHand" parent="." index="1"]

@@ -1,14 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://di0fxl5l1a0y1"]
+[gd_scene load_steps=10 format=3 uid="uid://di0fxl5l1a0y1"]
 
 [ext_resource type="PackedScene" uid="uid://dn5r6qogjyaco" path="res://src/game/weapons/player/base/range/range_weapon.tscn" id="1_rjbqi"]
 [ext_resource type="Texture2D" uid="uid://bf7hhdq1e27hx" path="res://src/game/weapons/player/primary/orange_assaut/Orange_assaut.png" id="2_6wyv6"]
 [ext_resource type="PackedScene" uid="uid://ibw35q6xdypf" path="res://src/game/weapons/projectiles/player/bullet/bullet_projectile.tscn" id="3_43awr"]
+[ext_resource type="PackedScene" uid="uid://c74piex43b0ct" path="res://src/game/equipment/weapons/particles/muzzle_flash/basic_flash.tscn" id="4_rubj0"]
+[ext_resource type="Texture2D" uid="uid://dn7nv5sn3nh46" path="res://assets/textures/hud/crooshair/crosshair_2.png" id="5_3d00p"]
+[ext_resource type="Script" path="res://src/game/weapons/player/base/range/reloads/magazine_reload.gd" id="6_s1g28"]
+[ext_resource type="Script" path="res://src/game/weapons/player/base/range/triggers/auto_trigger.gd" id="7_2828e"]
+[ext_resource type="AudioStream" uid="uid://b4hafl071mquu" path="res://assets/sound/rifle_shoot.mp3" id="8_fw3js"]
+[ext_resource type="AudioStream" uid="uid://ctj2y11jfm3mh" path="res://assets/sound/orange_asault_reload.wav" id="9_y6hmb"]
 
-[node name="orange_assaut" node_paths=PackedStringArray("weapon_fsx") instance=ExtResource("1_rjbqi")]
+[node name="orange_assaut" instance=ExtResource("1_rjbqi")]
 texture = ExtResource("2_6wyv6")
 offset = Vector2(11, -2)
-weapon_fsx = NodePath("orange_assautfx")
 projectile = ExtResource("3_43awr")
+muzzle_flash = ExtResource("4_rubj0")
+two_hands = true
+crosshair = ExtResource("5_3d00p")
 
 [node name="SecondHand" parent="." index="1"]
 position = Vector2(23, -4)
@@ -16,4 +24,19 @@ position = Vector2(23, -4)
 [node name="Tip" parent="." index="2"]
 position = Vector2(40, -7)
 
-[node name="orange_assautfx" type="AudioStreamPlayer" parent="." index="6"]
+[node name="MagazineReloadType" type="Node2D" parent="." index="4" node_paths=PackedStringArray("range_weapon")]
+script = ExtResource("6_s1g28")
+range_weapon = NodePath("..")
+
+[node name="AutoTriggerType" type="Node2D" parent="." index="5" node_paths=PackedStringArray("range_weapon", "weapon_tip")]
+script = ExtResource("7_2828e")
+range_weapon = NodePath("..")
+weapon_tip = NodePath("../Tip")
+
+[node name="WeaponAudioManager" parent="." index="6" node_paths=PackedStringArray("trigger_type", "reload_type")]
+trigger_type = NodePath("../AutoTriggerType")
+shoot_audio = ExtResource("8_fw3js")
+reload_type = NodePath("../MagazineReloadType")
+reload_start_audio = ExtResource("9_y6hmb")
+
+[node name="orange_assautfx" type="AudioStreamPlayer" parent="." index="7"]
