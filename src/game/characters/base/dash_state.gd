@@ -1,22 +1,39 @@
 class_name DashPlayerState
 extends State
 
-@onready var ghost_timer = $GhostTimer
-@onready var dash_duration = $DashDuration
+@export var hurtbox: HurtboxComponent
 @export var ghost_scene: PackedScene
+@export var dash_audio: AudioStream
+@export var dash_ready_audio: AudioStream
+@onready var delay_timer = Timer.new()
+@onready var duration_timer = Timer.new()
+@onready var ghost_timer = Timer.new()
 const FLASH_MATERIAL = preload("res://src/scripts/effects/white_flash_material.tres")
 var dash_direction = Vector2()
 var dash_speed = 2
+var dash_delay = 1
 var delay
 var sprite
 
+func _ready():
+	add_child(delay_timer)
+	delay_timer.one_shot = true
+	delay_timer.timeout.connect(dash_ready)
+	add_child(duration_timer)
+	duration_timer.one_shot = true
+	duration_timer.timeout.connect(dash_finish)
+	add_child(ghost_timer)
+	ghost_timer.wait_time = 0.1
+	ghost_timer.timeout.connect(func():create_ghost())
+
 func enter(_data):
 	actor.sprite.material = FLASH_MATERIAL
-	actor.change_invencibility(true)
+	hurtbox.is_invincible = true
+	audio_manager.play_sound(dash_audio)
 	self.sprite = actor.sprite
 	actor.can_shoot = false
 	actor.can_dash = false
-	dash_duration.start(0.3)
+	duration_timer.start(0.3)
 	ghost_timer.start()
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	direction.normalized()
@@ -24,7 +41,6 @@ func enter(_data):
 	create_ghost()
 
 func physics_update(_delta : float):
-	
 	actor.move_and_slide()
 
 func create_ghost():
@@ -36,15 +52,18 @@ func create_ghost():
 	ghost.frame = sprite.frame
 	actor.add_child(ghost)
 	
-func _on_dash_duration_timeout():
+func dash_finish():
 	actor.can_shoot = true
-	actor.start_dash_delay()
+	start_dash_delay()
 	ghost_timer.stop()
 	actor.sprite.material = null
-	actor.change_invencibility(false)
+	hurtbox.is_invincible = false
 	state_transition.emit(self, "idle")
-
-func _on_ghost_timer_timeout():
-	create_ghost()
 	
-
+func dash_ready():
+	actor.can_dash = true
+	audio_manager.play_sound(dash_ready_audio)
+	
+func start_dash_delay():
+	delay_timer.start(dash_delay)
+	Events.dash_finished.emit(dash_delay)

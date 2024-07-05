@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="WeaponResource" load_steps=5 format=3 uid="uid://bimc6a10ybeqk"]
 
 [ext_resource type="Texture2D" uid="uid://br4ja71hvxtg" path="res://src/game/weapons/player/secondary/bronko/bronko.png" id="1_rotq7"]
-[ext_resource type="Script" path="res://src/game/weapons/weapon_resource.gd" id="1_wdeju"]
+[ext_resource type="Script" path="res://src/game/weapons/weapon.gd" id="1_wdeju"]
 [ext_resource type="Resource" uid="uid://c7q3m6hebr130" path="res://src/game/weapons/player/secondary/bronko/bronko_stats.tres" id="3_74n6n"]
 [ext_resource type="PackedScene" uid="uid://cxbb5tgxokai1" path="res://src/game/weapons/player/secondary/bronko/bronko.tscn" id="4_gsac2"]
 
@@ -11,4 +11,4 @@ name = "Bronko"
 icon = ExtResource("1_rotq7")
 weapon_scene = ExtResource("4_gsac2")
 stats = ExtResource("3_74n6n")
-weapon_type = 1
+weapon_type = 2

@@ -16,15 +16,3 @@ func apply_modifier(modifier: Modifier):
 				stats.MAX_HEALTH += modifier.value if modifier.positive else -modifier.value
 		modifier.Stat.SPEED:
 			stats.SPEED += modifier.value if modifier.positive else -modifier.value
-			print(stats.SPEED)
-		modifier.Stat.DAMAGE:
-			stats.DAMAGE += modifier.value if modifier.positive else -modifier.value
-			print(stats.DAMAGE)
-		modifier.Stat.CRIT_CHANCE:
-			stats.CRIT_CHANCE += modifier.value if modifier.positive else -modifier.value
-		modifier.Stat.CRIT_DAMAGE:
-			stats.CRIT_DAMAGE += modifier.value if modifier.positive else -modifier.value
-		modifier.Stat.RANGE:
-			stats.RANGE += modifier.value if modifier.positive else -modifier.value
-		modifier.Stat.RATE:
-			stats.RATE += modifier.value if modifier.positive else -modifier.value

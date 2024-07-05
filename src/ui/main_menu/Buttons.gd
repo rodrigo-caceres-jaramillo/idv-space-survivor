@@ -2,7 +2,6 @@ extends VBoxContainer
 
 @export var char: Resource
 
-
 func _ready():
 	Global.charater_resource = char
 	

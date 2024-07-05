@@ -14,15 +14,12 @@ func _ready():
 
 func set_up():
 	stats = Global.player.stats
-	print(stats.MAX_HEALTH)
 	max_health = stats.MAX_HEALTH
 	health = stats.HEALTH
 	update_max_health(max_health)
 	update_health(health)
-	
 	stats.health_changed.connect(self.update_health)
 	stats.max_health_changed.connect(self.update_max_health)
-	
 	
 func update_money(new_value):
 	self.money_label.text = str(new_value)

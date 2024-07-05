@@ -4,6 +4,7 @@ extends Node
 @export var actor: CharacterBody2D
 @export var initial_state: State
 @export var animation_player: AnimationPlayer
+@export var audio_manager: AudioManager
 var current_state: State
 var states: Dictionary = {}
 
@@ -13,6 +14,7 @@ func _ready():
 			states[child.name.to_lower()] = child
 			child.actor = actor
 			child.animation_player = animation_player
+			child.audio_manager = audio_manager
 			child.state_transition.connect(on_child_transition)
 	if initial_state:
 		initial_state.enter(null)

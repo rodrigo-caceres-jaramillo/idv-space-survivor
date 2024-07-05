@@ -49,6 +49,9 @@ var FINAL_SPEED: float:
 
 func _init():
 	HEALTH = MAX_HEALTH
+	
+func health_to_max():
+	self.HEALTH = self.MAX_HEALTH
 
 signal stats_changed()
 signal max_health_changed(new_value)

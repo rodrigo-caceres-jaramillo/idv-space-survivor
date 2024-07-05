@@ -12,7 +12,6 @@ func enter(_data):
 func physics_update(_delta):
 	var direction = actor.global_position.direction_to(Global.player.global_position).normalized()
 	actor.velocity = actor.stats.FINAL_SPEED * direction
-	print(attack_range.has_overlapping_areas())
 	if attack_range.has_overlapping_areas(): state_transition.emit(self, "attack")
 	actor.move_and_slide()
 	update_animation(direction)

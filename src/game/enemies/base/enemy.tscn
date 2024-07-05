@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://butts5geqiee5"]
+[gd_scene load_steps=13 format=3 uid="uid://butts5geqiee5"]
 
 [ext_resource type="Script" path="res://src/game/enemies/base/enemy.gd" id="1_1hpwl"]
 [ext_resource type="PackedScene" uid="uid://jl3lbb3ikuhm" path="res://src/game/pickups/money/money.tscn" id="2_cjfdy"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://src/scripts/components/spawner_component.gd" id="8_q5w0d"]
 [ext_resource type="Texture2D" uid="uid://b2c3e1l13v4j7" path="res://assets/textures/hud/health/health_under.png" id="9_ptn0d"]
 [ext_resource type="Texture2D" uid="uid://dp3455beb64d4" path="res://assets/textures/hud/health/health_progress.png" id="10_orxg7"]
+[ext_resource type="Script" path="res://src/game/characters/base/player_audio_manager.gd" id="11_mur20"]
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 4
@@ -42,10 +43,10 @@ collision_layer = 0
 collision_mask = 2
 monitorable = false
 
-[node name="HurtComponent" type="Node" parent="." node_paths=PackedStringArray("player_sfx", "hurtbox_component", "sprite", "actor")]
+[node name="HurtComponent" type="Node" parent="." node_paths=PackedStringArray("audio_manager", "hurtbox_component", "sprite", "actor")]
 script = ExtResource("5_f0sbc")
-hit_player_sfx = ExtResource("6_hvyip")
-player_sfx = NodePath("../EnemySfx")
+hit_audio = ExtResource("6_hvyip")
+audio_manager = NodePath("../AudioManager")
 hurtbox_component = NodePath("../HurtboxComponent")
 sprite = NodePath("../Sprite")
 actor = NodePath("..")
@@ -64,3 +65,6 @@ texture_progress = ExtResource("10_orxg7")
 script = ExtResource("5_cqd0b")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="AudioManager" type="Node2D" parent="."]
+script = ExtResource("11_mur20")

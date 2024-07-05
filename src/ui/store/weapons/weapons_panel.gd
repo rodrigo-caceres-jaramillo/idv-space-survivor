@@ -7,5 +7,5 @@ func _ready():
 	Events.player_ready.connect(set_up)
 	
 func set_up():
-	primary_weapon.set_up(0)
-	secondary_weapon.set_up(1)
+	primary_weapon.set_up(1)
+	secondary_weapon.set_up(2)

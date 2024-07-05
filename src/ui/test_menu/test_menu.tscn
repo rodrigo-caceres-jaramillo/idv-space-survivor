@@ -1,11 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://d0otfohjoplfd"]
+[gd_scene load_steps=9 format=3 uid="uid://d0otfohjoplfd"]
 
 [ext_resource type="Script" path="res://src/ui/test_menu/test_menu.gd" id="1_eijfy"]
 [ext_resource type="PackedScene" uid="uid://dfdw8nqmfv4oc" path="res://src/ui/test_menu/test_option/test_option.tscn" id="2_e0qdj"]
-[ext_resource type="Resource" uid="uid://c3u8sli0fqhg1" path="res://src/game/weapons/player/secondary/standard/standard.tres" id="2_rmo8j"]
-[ext_resource type="Resource" uid="uid://bh1iysc3jns2y" path="res://src/game/weapons/player/secondary/dex/dex.tres" id="3_oggox"]
-[ext_resource type="Resource" uid="uid://bimc6a10ybeqk" path="res://src/game/weapons/player/secondary/bronko/bronko.tres" id="4_esxpa"]
-[ext_resource type="Resource" uid="uid://c0nqjn535oj7q" path="res://src/game/weapons/player/secondary/viper/viper.tres" id="5_gbghd"]
+[ext_resource type="Resource" uid="uid://cdjagr0rjgkdf" path="res://src/game/weapons/player/primary/standard/standard_rifle.tres" id="2_iehkp"]
+[ext_resource type="Resource" uid="uid://bimc6a10ybeqk" path="res://src/game/weapons/player/secondary/bronko/bronko.tres" id="3_mh5hi"]
+[ext_resource type="Resource" uid="uid://bh1iysc3jns2y" path="res://src/game/weapons/player/secondary/dex/dex.tres" id="4_etq6b"]
+[ext_resource type="Resource" uid="uid://c3u8sli0fqhg1" path="res://src/game/weapons/player/secondary/standard/standard.tres" id="5_x0p1i"]
+[ext_resource type="Resource" uid="uid://c0nqjn535oj7q" path="res://src/game/weapons/player/secondary/viper/viper.tres" id="6_5updh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cuf3y"]
 content_margin_left = 5.0
@@ -16,7 +17,7 @@ bg_color = Color(0.121569, 0.121569, 0.121569, 0.713726)
 
 [node name="TestMenu" type="CanvasLayer"]
 script = ExtResource("1_eijfy")
-weapons = Array[Resource("res://src/game/weapons/weapon_resource.gd")]([ExtResource("2_rmo8j"), ExtResource("3_oggox"), ExtResource("4_esxpa"), ExtResource("5_gbghd")])
+weapons = Array[Resource("res://src/game/weapons/weapon.gd")]([ExtResource("2_iehkp"), ExtResource("3_mh5hi"), ExtResource("4_etq6b"), ExtResource("5_x0p1i"), ExtResource("6_5updh")])
 weapon_option = ExtResource("2_e0qdj")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]

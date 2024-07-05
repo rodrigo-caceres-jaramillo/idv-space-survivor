@@ -2,21 +2,13 @@ class_name Character
 extends CharacterBody2D
 
 @onready var hurt_component = $HurtComponent
-@onready var collision_shape = $CollisionShape
-@onready var hurtbox_component = $HurtboxComponent as HurtboxComponent
 @onready var weapon_manager = $WeaponManager
 @onready var upgrade_manager = $UpgradeManager
-@onready var items_manager = $ItemsManager
-@onready var dash_delay_timer = $DashDelayTimer
 @onready var sprite = $Sprite
 @onready var state_machine = $StateMachine
 @export var stats: PlayerStats
 @onready var health_bar_component = $HealthBarComponent
-@export var playerSfx: AudioStreamPlayer
-@export var dash_sfx: AudioStream 
-@export var dash_notify_sfx: AudioStream 
-var initial_weapon: WeaponResource
-var dash_delay = 1
+var initial_weapon: Weapon
 var stun = false
 var can_dash = true
 var can_shoot = true
@@ -31,45 +23,14 @@ func _ready():
 		self.hide()
 	)
 	Events.player_ready.emit()
-	Events.wave_finished.connect(health_to_max.unbind(1))
-	Events.wave_started.connect(health_to_max.unbind(1))
+	Events.wave_finished.connect(stats.health_to_max.unbind(1))
+	Events.wave_started.connect(stats.health_to_max.unbind(1))
 
-func _physics_process(_delta):
-	if Input.is_action_just_pressed("primary_weapon"):
-		weapon_manager.equip_weapon(0)
-	if Input.is_action_just_pressed("secondary_weapon"):
-		weapon_manager.equip_weapon(1)
-	if Input.is_action_just_pressed("melee_weapon"):
-		weapon_manager.equip_weapon(2)
-
-func health_to_max():
-	stats.HEALTH = stats.MAX_HEALTH
-
-func equip_weapon(weapon_resource: WeaponResource):
-	weapon_manager.add_weapon(weapon_resource)
-
-func add_store_resource(resource: StoreResource):
-	match resource.type:
-		StoreResource.ResourceTypes.WEAPON:
-			return weapon_manager.add_weapon(resource)
-		StoreResource.ResourceTypes.ITEM:
-			return items_manager.add_item(resource)
-		StoreResource.ResourceTypes.UPGRADE:
-			return upgrade_manager.apply_upgrade(resource)
-
-func start_dash_delay():
-	_audio_player(dash_sfx)
-	dash_delay_timer.start(dash_delay)
-	Events.dash_finished.emit(dash_delay)
+func equip_weapon(weapon: Weapon):
+	weapon_manager.add_weapon(weapon)
 	
-func change_invencibility(state):
-	hurtbox_component.is_invincible = state
-	#collision_shape.disabled = state
-
-func _on_dash_delay_timeout():
-	_audio_player(dash_notify_sfx)
-	can_dash = true
-	
-func _audio_player(audio:AudioStream):
-	playerSfx.stream = audio
-	playerSfx.play()
+func equip_upgrade(upgrade: Upgrade):
+	if upgrade.upgrade_type == 1:
+		upgrade_manager.add_upgrade(upgrade)
+	elif upgrade.upgrade_type == 2:
+		weapon_manager.add_upgrade(upgrade)

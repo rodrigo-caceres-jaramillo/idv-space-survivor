@@ -3,6 +3,7 @@ extends Node2D
 
 var animation_player: AnimationPlayer
 var actor: CharacterBody2D
+var audio_manager: AudioManager
 var blend_position : Vector2 = Vector2.ZERO
 
 signal state_transition

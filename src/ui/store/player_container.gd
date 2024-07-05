@@ -13,10 +13,10 @@ func update_stats():
 	stats = Global.player.stats
 	health.set_up("Health", stats.MAX_HEALTH)
 	speed.set_up("Speed", stats.SPEED)
-	
+
 func show_upgrade_stats(upgrade_resource):
 	update_stats()
-	for modifier in upgrade_resource.modifiers:
+	for modifier in upgrade_resource.equipment.modifiers:
 		if(modifier.stat == Modifier.Stat.HEALTH):
 			health.show_upgrade(stats.MAX_HEALTH, modifier.value)
 		if(modifier.stat == Modifier.Stat.SPEED):

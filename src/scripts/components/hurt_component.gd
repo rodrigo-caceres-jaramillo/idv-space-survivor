@@ -1,8 +1,8 @@
 class_name HurtComponent
 extends Node
 
-@export var hit_player_sfx: AudioStream 
-@export var player_sfx : AudioStreamPlayer
+@export var hit_audio: AudioStream 
+@export var audio_manager : AudioManager
 @export var hurtbox_component: HurtboxComponent
 @export var sprite: Sprite2D
 @export var actor: CharacterBody2D
@@ -27,7 +27,7 @@ func apply_damage(hitbox: HitboxComponent):
 	if(hitbox.damage_type == stats.HEALTH_TYPE.weakness):
 		damage *= 1.5
 		effectiveness = 1
-	_audio_player(hit_player_sfx)
+	audio_manager.play_sound(hit_audio)
 	var is_critical = false
 	if randi_range (1, 100) <= hitbox.crit_chance:
 		is_critical = true
@@ -38,7 +38,3 @@ func apply_damage(hitbox: HitboxComponent):
 	sprite.material = null
 	Events.damage_take.emit(impact_position, damage, is_critical, effectiveness)
 	stats.HEALTH -= damage
-
-func _audio_player(audio:AudioStream):
-	player_sfx.stream = audio
-	player_sfx.play()

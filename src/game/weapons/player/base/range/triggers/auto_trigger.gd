@@ -8,7 +8,7 @@ func _ready():
 	range_weapon.change_state.connect(set_state)
 	fire_rate_timer.timeout.connect(func(): range_weapon.can_shoot = true)
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_pressed("fire_weapon"):
 		if range_weapon.reloading: return
 		if range_weapon.current_ammo > 0: self.shoot()

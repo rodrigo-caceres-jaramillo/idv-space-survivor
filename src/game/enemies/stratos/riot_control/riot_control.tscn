@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://butts5geqiee5" path="res://src/game/enemies/base/enemy.tscn" id="1_38x6a"]
 [ext_resource type="Resource" uid="uid://bkghjgeh42q5k" path="res://src/game/enemies/stratos/riot_control/riot_control_stats.tres" id="2_8mdo5"]
-[ext_resource type="Resource" uid="uid://ufgcf3ijd65g" path="res://src/game/weapons/enemy/melee/baton/baton.tres" id="3_d4aeq"]
+[ext_resource type="Resource" uid="uid://ufgcf3ijd65g" path="res://src/game/equipment/weapons/enemy/melee/baton/baton.tres" id="3_d4aeq"]
 [ext_resource type="Texture2D" uid="uid://df5vomm5n8kex" path="res://src/game/enemies/stratos/hands/stratos_hand.png" id="4_qh7f3"]
 [ext_resource type="Texture2D" uid="uid://dyeddyen2jm3b" path="res://src/game/enemies/stratos/riot_control/riot_control.png" id="5_56bq1"]
 [ext_resource type="Script" path="res://src/game/enemies/base/states/enemy_follow_player.gd" id="6_gyjau"]

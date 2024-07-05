@@ -6,7 +6,7 @@ extends PanelContainer
 @onready var store_option_2 = $VBoxContainer/StoreOption2
 @onready var store_option_3 = $VBoxContainer/StoreOption3
 @onready var store_option_4 = $VBoxContainer/StoreOption4
-@onready var roll_button = $VBoxContainer/RollButton
+@onready var roll_button = $VBoxContainer/HBoxContainer/PanelContainer/RollButton
 @onready var audio_stream_player = $AudioStreamPlayer
 @export var roll_audio: AudioStream
 @export var upgrade_audio: AudioStream

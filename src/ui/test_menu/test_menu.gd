@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@export var weapons: Array[WeaponResource]
+@export var weapons: Array[Weapon]
 @export var weapon_option: PackedScene
 @onready var v_box_container = $PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer
 

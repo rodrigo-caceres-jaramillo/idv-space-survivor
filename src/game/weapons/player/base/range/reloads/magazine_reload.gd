@@ -8,7 +8,7 @@ func _ready():
 	range_weapon.reload_try.connect(reload)
 	reload_timer.timeout.connect(reload_finish)
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("reload"):
 		self.reload()
 

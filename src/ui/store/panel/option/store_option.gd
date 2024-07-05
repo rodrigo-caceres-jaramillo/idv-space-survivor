@@ -1,7 +1,7 @@
 class_name StoreOption
 extends PanelContainer
 
-@export var store_option_resource: StoreResource
+@export var sale_option: SaleOption
 @export var buy_audio: AudioStream
 @export var select_audio: AudioStream
 @onready var sprite_option = $HBoxContainer/PanelContainer/SpriteOption
@@ -11,24 +11,23 @@ extends PanelContainer
 @onready var select_button = $SelectButton
 @onready var audio_stream_player = $AudioStreamPlayer
 
-
-func set_option(_store_option: StoreResource):
-	store_option_resource = _store_option
-	sprite_option.texture = _store_option.icon
-	option_name.text = str(_store_option.name)
-	description.text = str(_store_option.description)
+func set_option(_sale_option: SaleOption):
+	sale_option = _sale_option
+	sprite_option.texture = _sale_option.equipment.icon
+	option_name.text = str(_sale_option.equipment.name)
+	description.text = str(_sale_option.equipment.description)
 	buy_button.show()
-	buy_button.text = str(_store_option.price)
+	buy_button.text = str(_sale_option.price)
 
 func _on_buy_button_pressed():
-	if (Global.money >= store_option_resource.price):
+	if (Global.money >= sale_option.price):
 		audio_stream_player.stream = select_audio
 		audio_stream_player.play()
-		if(Global.player.add_store_resource(store_option_resource)):
+		if(Global.player.add_store_resource(sale_option)):
 			audio_stream_player.stream = buy_audio
 			audio_stream_player.play()
-			Global.money = Global.money - store_option_resource.price
-			store_option_resource = null
+			Global.money = Global.money - sale_option.price
+			sale_option = null
 			sprite_option.texture = null
 			option_name.text = ""
 			description.text = ""
@@ -38,7 +37,7 @@ func _on_buy_button_pressed():
 func _on_select_button_pressed():
 	audio_stream_player.stream = select_audio
 	audio_stream_player.play()
-	if(!store_option_resource == null):
-		Global.store_option_selected = store_option_resource
+	if(!sale_option == null):
+		Global.sale_option_selected = sale_option
 		
 signal store_option_buy(option: StoreOption)

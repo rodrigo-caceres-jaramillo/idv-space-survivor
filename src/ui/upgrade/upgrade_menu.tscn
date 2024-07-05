@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://dv7lqkh85d7eh"]
+
+[ext_resource type="PackedScene" uid="uid://db28ox2a2lp5b" path="res://src/ui/stats/weapon/weapon_stats_panel.tscn" id="1_1y004"]
+[ext_resource type="PackedScene" uid="uid://bxtsfgmu7fpws" path="res://src/ui/upgrade/cell/upgrade_cell.tscn" id="2_o1n6s"]
+
+[node name="UpgradeMenu" type="CanvasLayer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="WeaponStatsPanel" parent="MarginContainer/PanelContainer/HBoxContainer" instance=ExtResource("1_1y004")]
+layout_mode = 2
+size_flags_horizontal = 1
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="UpgradeCell" parent="MarginContainer/PanelContainer/HBoxContainer/GridContainer" instance=ExtResource("2_o1n6s")]
+layout_mode = 2
+
+[node name="UpgradeCell2" parent="MarginContainer/PanelContainer/HBoxContainer/GridContainer" instance=ExtResource("2_o1n6s")]
+layout_mode = 2
+
+[node name="UpgradeCell3" parent="MarginContainer/PanelContainer/HBoxContainer/GridContainer" instance=ExtResource("2_o1n6s")]
+layout_mode = 2
+
+[node name="UpgradeCell4" parent="MarginContainer/PanelContainer/HBoxContainer/GridContainer" instance=ExtResource("2_o1n6s")]
+layout_mode = 2
+
+[node name="UpgradeCell5" parent="MarginContainer/PanelContainer/HBoxContainer/GridContainer" instance=ExtResource("2_o1n6s")]
+layout_mode = 2
