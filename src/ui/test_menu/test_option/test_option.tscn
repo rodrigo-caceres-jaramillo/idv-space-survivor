@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dfdw8nqmfv4oc"]
 
 [ext_resource type="Script" path="res://src/ui/test_menu/test_option/test_option.gd" id="1_ppu4l"]
-[ext_resource type="Texture2D" uid="uid://dlaygagimrruc" path="res://src/game/weapons/player/secondary/standard/standard.png" id="2_6e7tj"]
+[ext_resource type="Texture2D" uid="uid://dlaygagimrruc" path="res://src/game/equipment/weapons/player/secondary/standard/standard.png" id="2_6e7tj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_da2nv"]
 content_margin_left = 2.0

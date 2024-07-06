@@ -7,13 +7,16 @@
 [sub_resource type="Resource" id="Resource_216pj"]
 script = ExtResource("1_27ptl")
 stat = 6
-value = 0.4
+value = 40.0
 positive = true
 
 [resource]
 script = ExtResource("2_oe3qn")
+type = 1
 modifiers = Array[ExtResource("1_27ptl")]([SubResource("Resource_216pj")])
+upgrade_type = 1
 name = "Fire Rate Module"
-description = "+ 40% Fire Rate"
-price = 20
 icon = ExtResource("1_np201")
+description = "+ 40% Fire Rate"
+rarity = 0
+price = 20

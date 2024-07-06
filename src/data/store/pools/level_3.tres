@@ -1,11 +1,10 @@
-[gd_resource type="Resource" script_class="PoolResource" load_steps=5 format=3 uid="uid://84nsfjylp3h3"]
+[gd_resource type="Resource" script_class="PoolResource" load_steps=4 format=3 uid="uid://84nsfjylp3h3"]
 
+[ext_resource type="Resource" uid="uid://4j4cyrg66s0d" path="res://src/game/equipment/upgrades/character/health/health_upgrade_3.tres" id="1_b38vr"]
 [ext_resource type="Script" path="res://src/data/store/pools/pool_resource.gd" id="1_cks2q"]
-[ext_resource type="Resource" uid="uid://b1wccpqyhpcfo" path="res://src/data/store/sale_options/damage_3.tres" id="1_s4431"]
-[ext_resource type="Resource" uid="uid://ekho8y0k6dx3" path="res://src/data/store/sale_options/health_2.tres" id="2_0icsy"]
-[ext_resource type="Resource" uid="uid://c24kkecpvvghd" path="res://src/data/store/sale_options/health_3.tres" id="3_nynjq"]
+[ext_resource type="Resource" uid="uid://bka5g5r27jv76" path="res://src/game/equipment/upgrades/character/health_x_speed/health_x_speed_upgrade_3.tres" id="2_kkn2i"]
 
 [resource]
 script = ExtResource("1_cks2q")
 level = 3
-pool = Array[Resource("res://src/data/store/sale_options/sale_option.gd")]([ExtResource("1_s4431"), ExtResource("2_0icsy"), ExtResource("3_nynjq")])
+pool = Array[Resource("res://src/game/equipment/equipment.gd")]([ExtResource("1_b38vr"), ExtResource("2_kkn2i")])

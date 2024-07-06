@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=5 format=3 uid="uid://cdjagr0rjgkdf"]
+
+[ext_resource type="Script" path="res://src/game/equipment/weapons/weapon.gd" id="1_2kg60"]
+[ext_resource type="Texture2D" uid="uid://cmm1e36cblec" path="res://src/game/equipment/weapons/player/primary/standard/standard_rifle.png" id="1_ymwmq"]
+[ext_resource type="Resource" uid="uid://cqd316ylu5adk" path="res://src/game/equipment/weapons/player/primary/standard/standard_rifle_stats.tres" id="3_lr1fd"]
+[ext_resource type="PackedScene" uid="uid://bppxnfxxk06a0" path="res://src/game/equipment/weapons/player/primary/standard/standard_rifle.tscn" id="4_if6pg"]
+
+[resource]
+script = ExtResource("1_2kg60")
+name = "SI Rifle"
+icon = ExtResource("1_ymwmq")
+description = "Standar Issue Rifle"
+weapon_scene = ExtResource("4_if6pg")
+stats = ExtResource("3_lr1fd")
+weapon_type = 1

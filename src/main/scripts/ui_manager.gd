@@ -10,10 +10,13 @@ const CROSSHAIR = preload("res://assets/textures/hud/crooshair/crosshair.png")
 func _ready():
 	Events.wave_finished.connect(show_store.unbind(1))
 	Events.wave_started.connect(show_ui.unbind(1))
-	Global.player.stats.no_health.connect(show_game_over)
+	Events.player_ready.connect(when_player_ready)
 	Events.game_finish.connect(show_game_finish.unbind(1))
 	Input.set_custom_mouse_cursor(CROSSHAIR, Input.CURSOR_ARROW, Vector2(16,32))
 
+func when_player_ready():
+	Global.player.stats.no_health.connect(show_game_over)
+	
 func _process(_delta):
 	if Input.is_action_just_pressed("escape"):
 		show_pause_menu()

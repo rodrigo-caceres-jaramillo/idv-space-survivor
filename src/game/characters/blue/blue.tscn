@@ -189,7 +189,7 @@ _data = {
 }
 
 [node name="BlueChararcter" instance=ExtResource("1_5gu0q")]
-stats = ExtResource("2_dg7w5")
+base_stats = ExtResource("2_dg7w5")
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource("3_snc6i")
@@ -230,6 +230,9 @@ hand_sprite = ExtResource("2_4288j")
 
 [node name="HandPosition" parent="WeaponManager" index="0"]
 position = Vector2(8, 5)
+
+[node name="UpgradeManager" parent="." index="8" node_paths=PackedStringArray("player")]
+player = NodePath("..")
 
 [node name="HurtComponent" parent="." index="10" node_paths=PackedStringArray("audio_manager")]
 hit_audio = ExtResource("7_pcyml")

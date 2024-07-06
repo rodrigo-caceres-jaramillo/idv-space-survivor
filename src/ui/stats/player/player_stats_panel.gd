@@ -26,9 +26,9 @@ func show_upgrade_stats(upgrade_resource):
 	for modifier in upgrade_resource.modifiers:
 		if(modifier.stat == Modifier.Stat.DAMAGE):
 			damage.show_upgrade(stats.DAMAGE, modifier.value)
-		if(modifier.stat == Modifier.Stat.CRIT_CHANCE):
+		if(modifier.stat == Modifier.Stat.CRITICAL_CHANCE):
 			crit_chance.show_upgrade(stats.CRIT_CHANCE, modifier.value)
-		if(modifier.stat == Modifier.Stat.CRIT_DAMAGE):
+		if(modifier.stat == Modifier.Stat.CRITICAL_DAMAGE):
 			crit_damage.show_upgrade(stats.CRIT_DAMAGE, modifier.value)
 		if(modifier.stat == Modifier.Stat.RATE):
 			rate.show_upgrade(stats.RATE, modifier.value)

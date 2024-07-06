@@ -1,0 +1,38 @@
+[gd_scene load_steps=10 format=3 uid="uid://q82n6blymgbs"]
+
+[ext_resource type="PackedScene" uid="uid://dn5r6qogjyaco" path="res://src/game/equipment/weapons/player/base/range/range_weapon.tscn" id="1_mv35n"]
+[ext_resource type="Texture2D" uid="uid://dcapwnwvcxt2d" path="res://src/game/equipment/weapons/player/primary/sky/sky.png" id="2_qbd7p"]
+[ext_resource type="PackedScene" uid="uid://cwn44fakb1tkg" path="res://src/game/projectiles/player/buckshot/buckshot_projectile.tscn" id="3_bx5uq"]
+[ext_resource type="PackedScene" uid="uid://c74piex43b0ct" path="res://src/game/equipment/weapons/particles/muzzle_flash/basic_flash.tscn" id="4_7l1pq"]
+[ext_resource type="Texture2D" uid="uid://ch5di2e8vdrec" path="res://assets/textures/hud/crooshair/crosshair_3.png" id="5_g4jdc"]
+[ext_resource type="Script" path="res://src/game/equipment/weapons/player/base/range/triggers/semi_trigger.gd" id="6_03pwr"]
+[ext_resource type="Script" path="res://src/game/equipment/weapons/player/base/range/reloads/magazine_reload.gd" id="7_nnp75"]
+[ext_resource type="AudioStream" uid="uid://cesywvh3cvlr4" path="res://assets/sound/shotgun.wav" id="8_neaxe"]
+[ext_resource type="AudioStream" uid="uid://8whasbfe3y6b" path="res://assets/sound/mixkit-shotgun-long-pump-1666.wav" id="9_5bl8g"]
+
+[node name="sky" instance=ExtResource("1_mv35n")]
+texture = ExtResource("2_qbd7p")
+projectile = ExtResource("3_bx5uq")
+muzzle_flash = ExtResource("4_7l1pq")
+two_hands = true
+crosshair = ExtResource("5_g4jdc")
+
+[node name="Tip" parent="." index="2"]
+position = Vector2(28, -4)
+
+[node name="SemiTriggerType" type="Node2D" parent="." index="4" node_paths=PackedStringArray("range_weapon", "weapon_tip")]
+script = ExtResource("6_03pwr")
+range_weapon = NodePath("..")
+weapon_tip = NodePath("../Tip")
+
+[node name="MagazineReloadType" type="Node2D" parent="." index="5" node_paths=PackedStringArray("range_weapon")]
+script = ExtResource("7_nnp75")
+range_weapon = NodePath("..")
+
+[node name="WeaponAudioManager" parent="." index="6" node_paths=PackedStringArray("trigger_type", "reload_type")]
+trigger_type = NodePath("../SemiTriggerType")
+shoot_audio = ExtResource("8_neaxe")
+reload_type = NodePath("../MagazineReloadType")
+reload_start_audio = ExtResource("9_5bl8g")
+
+[node name="skyfx" type="AudioStreamPlayer" parent="." index="7"]

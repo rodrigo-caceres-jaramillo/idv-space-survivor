@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://butts5geqiee5" path="res://src/game/enemies/base/enemy.tscn" id="1_13qqr"]
 [ext_resource type="Texture2D" uid="uid://df5vomm5n8kex" path="res://src/game/enemies/stratos/hands/stratos_hand.png" id="2_dw1pu"]
 [ext_resource type="Resource" uid="uid://c4owuhm28wim4" path="res://src/game/enemies/stratos/peace_kepper/peace_kepper_stats.tres" id="2_gxrip"]
-[ext_resource type="Resource" uid="uid://dyt1mekwdyngi" path="res://src/game/equipment/weapons/enemy/range/plasma_pistol/plasma_pistol.tres" id="3_rh8it"]
+[ext_resource type="Resource" uid="uid://dyt1mekwdyngi" path="res://src/game/enemies/weapons/range/plasma_pistol/plasma_pistol.tres" id="3_rh8it"]
 [ext_resource type="Texture2D" uid="uid://2ciwh6ldh6i0" path="res://src/game/enemies/stratos/peace_kepper/peace_kepper.png" id="4_hsly3"]
 [ext_resource type="Script" path="res://src/game/enemies/base/states/enemy_follow_player.gd" id="5_1jmgs"]
 [ext_resource type="Script" path="res://src/game/enemies/base/states/enemy_spawn_state.gd" id="6_alhmk"]

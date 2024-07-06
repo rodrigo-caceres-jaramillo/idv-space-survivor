@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="WaveEnemy" load_steps=2 format=3 uid="uid://dvb15y7titn3v"]
+
+[ext_resource type="Script" path="res://src/data/waves/wave_enemy.gd" id="1_vfb43"]
+
+[resource]
+script = ExtResource("1_vfb43")
+quantity = 1
+spawn_chance = 1.0

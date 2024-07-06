@@ -7,13 +7,16 @@
 [sub_resource type="Resource" id="Resource_kbnia"]
 script = ExtResource("1_7olir")
 stat = 4
-value = 0.2
+value = 20.0
 positive = true
 
 [resource]
 script = ExtResource("2_3604b")
+type = 1
 modifiers = Array[ExtResource("1_7olir")]([SubResource("Resource_kbnia")])
+upgrade_type = 1
 name = "Crit. Damage Module"
-description = "+ 20% Critical Damage"
-price = 20
 icon = ExtResource("1_prsn1")
+description = "+ 20% Critical Damage"
+rarity = 0
+price = 30

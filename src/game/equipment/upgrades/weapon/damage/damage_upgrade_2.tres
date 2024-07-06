@@ -14,8 +14,11 @@ positive = true
 
 [resource]
 script = ExtResource("3_xwrm7")
+type = 1
 modifiers = Array[ExtResource("2_63t18")]([SubResource("Resource_0v54n")])
-upgrade_type = 0
+upgrade_type = 1
 name = "Damage Module"
 icon = SubResource("CompressedTexture2D_qvkjb")
 description = "+ 40% Damage"
+rarity = 0
+price = 30

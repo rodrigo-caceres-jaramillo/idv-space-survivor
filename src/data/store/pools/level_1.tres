@@ -1,11 +1,21 @@
-[gd_resource type="Resource" script_class="PoolResource" load_steps=5 format=3 uid="uid://l3xu8dwqyrjs"]
+[gd_resource type="Resource" script_class="PoolResource" load_steps=15 format=3 uid="uid://l3xu8dwqyrjs"]
 
-[ext_resource type="Resource" uid="uid://dnm7u8ryjbh6o" path="res://src/data/store/sale_options/health_1.tres" id="1_dv4g5"]
+[ext_resource type="Resource" uid="uid://bimc6a10ybeqk" path="res://src/game/equipment/weapons/player/secondary/bronko/bronko.tres" id="1_hc251"]
+[ext_resource type="Resource" uid="uid://cdjagr0rjgkdf" path="res://src/game/equipment/weapons/player/primary/standard/standard_rifle.tres" id="1_m0c0p"]
 [ext_resource type="Script" path="res://src/data/store/pools/pool_resource.gd" id="1_usxbm"]
-[ext_resource type="Resource" uid="uid://brmxg4g4xq0n2" path="res://src/data/store/sale_options/damage_1.tres" id="2_s3e74"]
-[ext_resource type="Resource" uid="uid://ekho8y0k6dx3" path="res://src/data/store/sale_options/health_2.tres" id="3_1esv6"]
+[ext_resource type="Resource" uid="uid://bh1iysc3jns2y" path="res://src/game/equipment/weapons/player/secondary/dex/dex.tres" id="2_ibftv"]
+[ext_resource type="Resource" uid="uid://c0nqjn535oj7q" path="res://src/game/equipment/weapons/player/secondary/viper/viper.tres" id="3_mije1"]
+[ext_resource type="Resource" uid="uid://ckhc0sebwk17o" path="res://src/game/equipment/upgrades/character/health/health_upgrade_1.tres" id="4_yg577"]
+[ext_resource type="Resource" uid="uid://bvtrtse3oemkg" path="res://src/game/equipment/upgrades/character/speed/speed_upgrade_1.tres" id="5_sd3ic"]
+[ext_resource type="Resource" uid="uid://ds58bou0r6cs4" path="res://src/game/equipment/upgrades/weapon/crit_chance/crit_chance_upgrade_1.tres" id="6_sk61u"]
+[ext_resource type="Resource" uid="uid://dee7k7wn5plj4" path="res://src/game/equipment/upgrades/weapon/crit_damage/crit_damage_upgrade_1.tres" id="7_4761b"]
+[ext_resource type="Resource" uid="uid://eep8sh2ng802" path="res://src/game/equipment/upgrades/weapon/damage/damage_upgrade_1.tres" id="8_b4mq0"]
+[ext_resource type="Resource" uid="uid://cbwk5o4sixyod" path="res://src/game/equipment/upgrades/weapon/range/range_upgrade_1.tres" id="9_1pwhi"]
+[ext_resource type="Resource" uid="uid://dui0c7dmvco7i" path="res://src/game/equipment/upgrades/weapon/rate/rate_upgrade_1.tres" id="10_jsa7u"]
+[ext_resource type="Resource" uid="uid://cxn3v10pikvn8" path="res://src/game/equipment/weapons/player/primary/shotgun/shotgun.tres" id="12_v37ks"]
+[ext_resource type="Resource" uid="uid://850ncg2qdncs" path="res://src/game/equipment/weapons/player/primary/sniper/sniper.tres" id="13_cd24s"]
 
 [resource]
 script = ExtResource("1_usxbm")
 level = 1
-pool = Array[Resource("res://src/data/store/sale_options/sale_option.gd")]([ExtResource("1_dv4g5"), ExtResource("2_s3e74"), ExtResource("3_1esv6")])
+pool = Array[Resource("res://src/game/equipment/equipment.gd")]([ExtResource("1_m0c0p"), ExtResource("1_hc251"), ExtResource("2_ibftv"), ExtResource("3_mije1"), ExtResource("4_yg577"), ExtResource("5_sd3ic"), ExtResource("6_sk61u"), ExtResource("7_4761b"), ExtResource("8_b4mq0"), ExtResource("9_1pwhi"), ExtResource("10_jsa7u"), ExtResource("12_v37ks"), ExtResource("13_cd24s")])

@@ -12,12 +12,12 @@ var weapon_selected: Weapon:
 	set(value):
 		weapon_selected = value
 		weapon_selected_changed.emit(value)
-var sale_option_selected: SaleOption:
+var sale_option_selected: Equipment:
 	set(value):
 		sale_option_selected = value
-		if(value.type == SaleOption.Types.WEAPON):
+		if(value.type == Equipment.Types.WEAPON):
 			weapon_resource_selected.emit(value)
-		if(value.type == SaleOption.Types.UPGRADE):
+		if(value.type == Equipment.Types.UPGRADE):
 			upgrade_resource_selected.emit(value)
 var wave_timer
 var pick_up_container = Node.new()

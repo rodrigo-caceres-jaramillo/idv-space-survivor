@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="WaveEnemy" load_steps=3 format=3 uid="uid://cautdnx02c33b"]
+
+[ext_resource type="PackedScene" uid="uid://b12is4i6qsnjh" path="res://src/game/enemies/stratos/gunner/gunner.tscn" id="1_5qnt1"]
+[ext_resource type="Script" path="res://src/data/waves/wave_enemy.gd" id="2_i8ypb"]
+
+[resource]
+script = ExtResource("2_i8ypb")
+enemy_scene = ExtResource("1_5qnt1")
+quantity = 1
+spawn_chance = 1.0

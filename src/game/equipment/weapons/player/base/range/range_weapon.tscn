@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dn5r6qogjyaco"]
+
+[ext_resource type="Script" path="res://src/game/equipment/weapons/player/base/range/range_weapon.gd" id="1_w3q8x"]
+[ext_resource type="Script" path="res://src/game/equipment/weapons/player/base/range/weapon_audio_manager.gd" id="2_kwj8s"]
+[ext_resource type="Script" path="res://src/game/equipment/weapons/player/base/range/upgrade_manager.gd" id="3_bw1fy"]
+
+[node name="RangeWeapon" type="Sprite2D"]
+z_index = 5
+script = ExtResource("1_w3q8x")
+
+[node name="MainHand" type="Sprite2D" parent="."]
+
+[node name="SecondHand" type="Sprite2D" parent="."]
+
+[node name="Tip" type="Marker2D" parent="."]
+position = Vector2(7, 0)
+
+[node name="UpgradeManager" type="Node2D" parent="." node_paths=PackedStringArray("weapon")]
+script = ExtResource("3_bw1fy")
+weapon = NodePath("..")
+
+[node name="WeaponAudioManager" type="Node2D" parent="."]
+script = ExtResource("2_kwj8s")

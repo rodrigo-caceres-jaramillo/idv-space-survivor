@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://butts5geqiee5" path="res://src/game/enemies/base/enemy.tscn" id="1_y3a5f"]
 [ext_resource type="Resource" uid="uid://b514eblow7xtu" path="res://src/game/enemies/stratos/tropper/tropper_stats.tres" id="3_14npx"]
-[ext_resource type="Resource" uid="uid://c24lp3fdc7bfr" path="res://src/game/equipment/weapons/enemy/range/plasma_rifle/plasma_rifle.tres" id="3_pifjy"]
+[ext_resource type="Resource" uid="uid://c24lp3fdc7bfr" path="res://src/game/enemies/weapons/range/plasma_rifle/plasma_rifle.tres" id="3_pifjy"]
 [ext_resource type="Texture2D" uid="uid://dbw2ecupowwlo" path="res://src/game/enemies/stratos/hands/stratos_armor_hand.png" id="4_cy7lo"]
 [ext_resource type="Texture2D" uid="uid://fgw11st6rcu0" path="res://src/game/enemies/stratos/tropper/tropper.png" id="5_468vv"]
 [ext_resource type="Script" path="res://src/game/enemies/base/states/enemy_follow_player.gd" id="6_bp11n"]

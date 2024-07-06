@@ -1,7 +1,7 @@
 class_name StoreOption
 extends PanelContainer
 
-@export var sale_option: SaleOption
+@export var sale_option: Equipment
 @export var buy_audio: AudioStream
 @export var select_audio: AudioStream
 @onready var sprite_option = $HBoxContainer/PanelContainer/SpriteOption
@@ -11,11 +11,11 @@ extends PanelContainer
 @onready var select_button = $SelectButton
 @onready var audio_stream_player = $AudioStreamPlayer
 
-func set_option(_sale_option: SaleOption):
+func set_option(_sale_option: Equipment):
 	sale_option = _sale_option
-	sprite_option.texture = _sale_option.equipment.icon
-	option_name.text = str(_sale_option.equipment.name)
-	description.text = str(_sale_option.equipment.description)
+	sprite_option.texture = _sale_option.icon
+	option_name.text = str(_sale_option.name)
+	description.text = str(_sale_option.description)
 	buy_button.show()
 	buy_button.text = str(_sale_option.price)
 
@@ -24,11 +24,11 @@ func _on_buy_button_pressed():
 		audio_stream_player.stream = select_audio
 		audio_stream_player.play()
 		if(sale_option.type == 0):
-			Global.player.equip_weapon(sale_option.equipment)
+			Global.player.equip_weapon(sale_option)
 			empty_self()
 		elif(sale_option.type == 1):
 			print("buy upgrade")
-			Global.player.equip_upgrade(sale_option.equipment)
+			Global.player.equip_upgrade(sale_option)
 			empty_self()
 
 

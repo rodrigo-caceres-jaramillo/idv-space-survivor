@@ -46,7 +46,7 @@ func load_weapon(weapon_resource):
 	var weapon = weapon_resource.weapon_scene.instantiate()
 	self.add_child(weapon)
 	weapons[weapon_resource.weapon_type] = weapon
-	weapon.set_up(weapon_resource.stats, weapon_upgrades, hand_sprite)
+	weapon.set_up(weapon_resource.stats, weapon_resource.weapon_type, weapon_resource.name, weapon_upgrades, hand_sprite)
 	weapon.position = hand_position.position
 	weapon.visible = false
 	if(current_weapon):
@@ -89,7 +89,7 @@ func equip_next_weapon():
 		self.current_weapon.visible = true
 		self.current_weapon_type = next_weapon_type
 		Events.current_weapon_changed.emit(current_weapon)
-			
+
 func equip_prev_weapon():
 	var prev_weapon_type = 1 if (current_weapon_type == 2) else 2
 	if(weapons[prev_weapon_type]):

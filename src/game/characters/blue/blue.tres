@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://l4o40vj2b5k4" path="res://src/game/characters/blue/blue.tscn" id="1_6awxk"]
 [ext_resource type="Script" path="res://src/game/characters/character_resource.gd" id="1_x5xfb"]
 [ext_resource type="Texture2D" uid="uid://bs3852in2q82w" path="res://src/game/characters/blue/blue_icon.png" id="2_jwkrq"]
-[ext_resource type="Resource" uid="uid://c3u8sli0fqhg1" path="res://src/game/weapons/player/secondary/standard/standard.tres" id="3_mvlvd"]
+[ext_resource type="Resource" uid="uid://c3u8sli0fqhg1" path="res://src/game/equipment/weapons/player/secondary/standard/standard.tres" id="3_mvlvd"]
 [ext_resource type="Resource" uid="uid://cltvjnuq5jeon" path="res://src/game/characters/blue/blue_stats.tres" id="5_akwlj"]
 
 [resource]

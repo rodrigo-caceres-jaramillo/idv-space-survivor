@@ -1,7 +1,7 @@
 [gd_scene load_steps=23 format=3 uid="uid://b12is4i6qsnjh"]
 
 [ext_resource type="PackedScene" uid="uid://butts5geqiee5" path="res://src/game/enemies/base/enemy.tscn" id="1_q1j8u"]
-[ext_resource type="Resource" uid="uid://cofhr16osmj2b" path="res://src/game/equipment/weapons/enemy/range/plasma_shotgun/plasma_shotgun.tres" id="3_a5sdi"]
+[ext_resource type="Resource" uid="uid://cofhr16osmj2b" path="res://src/game/enemies/weapons/range/plasma_shotgun/plasma_shotgun.tres" id="3_a5sdi"]
 [ext_resource type="Resource" uid="uid://cgn2fkq3t72tn" path="res://src/game/enemies/stratos/gunner/gunner_stats.tres" id="3_ma111"]
 [ext_resource type="Texture2D" uid="uid://dbw2ecupowwlo" path="res://src/game/enemies/stratos/hands/stratos_armor_hand.png" id="4_6dgbl"]
 [ext_resource type="Texture2D" uid="uid://bd543phdcnv0j" path="res://src/game/enemies/stratos/gunner/gunner.png" id="5_1icu3"]

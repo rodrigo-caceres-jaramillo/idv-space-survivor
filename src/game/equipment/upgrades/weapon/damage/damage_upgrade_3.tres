@@ -17,3 +17,5 @@ upgrade_type = 0
 name = "Damage Module"
 icon = ExtResource("1_aidxj")
 description = "+ 60% Damage"
+rarity = 0
+price = 0

@@ -12,8 +12,11 @@ positive = true
 
 [resource]
 script = ExtResource("1_55xbl")
+type = 1
 modifiers = Array[ExtResource("2_s6vwu")]([SubResource("Resource_0v54n")])
 upgrade_type = 1
 name = "Damage Module"
 icon = ExtResource("1_ieltw")
 description = "+20% Damage"
+rarity = 0
+price = 20

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="WaveData" load_steps=6 format=3 uid="uid://bkvigxoaryq16"]
+
+[ext_resource type="Script" path="res://src/data/waves/wave_data.gd" id="1_fglsa"]
+[ext_resource type="Resource" uid="uid://bsrlwyp7xc3wk" path="res://src/data/waves/3/peace_kepper_3.tres" id="2_neu6t"]
+[ext_resource type="Resource" uid="uid://drc6al8r4hnps" path="res://src/data/waves/3/lancer_3.tres" id="3_ikhca"]
+[ext_resource type="Resource" uid="uid://bad5etctwoyj8" path="res://src/data/waves/4/gunner.tres" id="4_san04"]
+[ext_resource type="Resource" uid="uid://bugvjxr4d1vfh" path="res://src/data/waves/5/tropper.tres" id="5_rg70n"]
+
+[resource]
+script = ExtResource("1_fglsa")
+wave_duration = 40
+wave_intensity = 1.0
+max_enemies = 20
+wave_enemies = Array[Resource("res://src/data/waves/wave_enemy.gd")]([ExtResource("2_neu6t"), ExtResource("3_ikhca"), ExtResource("4_san04"), ExtResource("5_rg70n")])

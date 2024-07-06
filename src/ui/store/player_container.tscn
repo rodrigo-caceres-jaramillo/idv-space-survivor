@@ -58,20 +58,11 @@ theme_override_font_sizes/font_size = 15
 text = "Blue"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/stats"]
+[node name="GridContainer" type="GridContainer" parent="HBoxContainer/stats"]
 layout_mode = 2
 
-[node name="Health" parent="HBoxContainer/stats/HBoxContainer" instance=ExtResource("3_q838w")]
+[node name="Health" parent="HBoxContainer/stats/GridContainer" instance=ExtResource("3_q838w")]
 layout_mode = 2
 
-[node name="CritChance" parent="HBoxContainer/stats/HBoxContainer" instance=ExtResource("3_q838w")]
-layout_mode = 2
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/stats"]
-layout_mode = 2
-
-[node name="Speed" parent="HBoxContainer/stats/HBoxContainer2" instance=ExtResource("3_q838w")]
-layout_mode = 2
-
-[node name="Damage" parent="HBoxContainer/stats/HBoxContainer2" instance=ExtResource("3_q838w")]
+[node name="Speed" parent="HBoxContainer/stats/GridContainer" instance=ExtResource("3_q838w")]
 layout_mode = 2

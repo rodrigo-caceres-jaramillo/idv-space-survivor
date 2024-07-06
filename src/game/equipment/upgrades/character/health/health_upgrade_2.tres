@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Upgrade" load_steps=4 format=3 uid="uid://b1smiewmm1lk1"]
+[gd_resource type="Resource" script_class="Upgrade" load_steps=5 format=3 uid="uid://b1smiewmm1lk1"]
 
+[ext_resource type="Texture2D" uid="uid://ca04wh56hs7eh" path="res://src/game/equipment/upgrades/character/health/health_upgrade_2.png" id="1_if7ia"]
 [ext_resource type="Script" path="res://src/game/equipment/upgrades/modifier.gd" id="1_qsjeu"]
 [ext_resource type="Script" path="res://src/game/equipment/upgrades/upgrade.gd" id="2_lw7a1"]
 
@@ -11,6 +12,11 @@ positive = true
 
 [resource]
 script = ExtResource("2_lw7a1")
-_name = ""
+type = 1
 modifiers = Array[ExtResource("1_qsjeu")]([SubResource("Resource_honb7")])
 upgrade_type = 0
+name = "Health Module"
+icon = ExtResource("1_if7ia")
+description = "+20 Max Health"
+rarity = 0
+price = 30

@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="RangedWeaponsStats" load_steps=5 format=3 uid="uid://c78ovggkl3cl1"]
+
+[ext_resource type="Resource" uid="uid://cgmatvoybq8xa" path="res://src/data/damage_types/puncture.tres" id="1_mmapv"]
+[ext_resource type="Script" path="res://src/game/equipment/weapons/player/base/range/range_weapon_stats.gd" id="1_r8vno"]
+[ext_resource type="AudioStream" uid="uid://diofe4dtgj5nk" path="res://assets/sound/rifle_reload.wav" id="2_nrxb1"]
+[ext_resource type="AudioStream" uid="uid://dnmahjh6xx3va" path="res://assets/sound/Assalt_rifle_shoot.mp3" id="4_vihkb"]
+
+[resource]
+script = ExtResource("1_r8vno")
+DAMAGE = 14.0
+DAMAGE_TYPE = ExtResource("1_mmapv")
+CRITICAL_CHANCE = 15.0
+CRITICAL_DAMAGE = 1.8
+MULTISHOT = 1.0
+PENETRATION = 1.0
+FIRE_RATE = 1.5
+RELOAD = 0.4
+MAGAZINE = 30
+RANGE = 70.0
+KNOCKBACK = 5
+SPREAD = 0.0
+PROJECTILE_SPEED = 900.0
+reload_sfx = ExtResource("2_nrxb1")
+shoot_sfx = ExtResource("4_vihkb")

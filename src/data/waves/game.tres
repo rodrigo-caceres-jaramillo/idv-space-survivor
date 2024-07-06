@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="GameData" load_steps=5 format=3 uid="uid://dx3231rs32b8b"]
+[gd_resource type="Resource" script_class="GameData" load_steps=7 format=3 uid="uid://dx3231rs32b8b"]
 
 [ext_resource type="Script" path="res://src/data/waves/game_data.gd" id="1_a7qhc"]
 [ext_resource type="Resource" uid="uid://de067fr0vmgyu" path="res://src/data/waves/1/wave_1.tres" id="2_e5w1k"]
 [ext_resource type="Resource" uid="uid://dpofa48dmreic" path="res://src/data/waves/2/wave_2.tres" id="3_hc7io"]
 [ext_resource type="Resource" uid="uid://cb7iaby72ej4e" path="res://src/data/waves/3/wave_3.tres" id="4_pl1th"]
+[ext_resource type="Resource" uid="uid://v4ovk3kxbves" path="res://src/data/waves/4/wave_4.tres" id="5_h0csr"]
+[ext_resource type="Resource" uid="uid://bkvigxoaryq16" path="res://src/data/waves/5/wave_5.tres" id="6_igvwn"]
 
 [resource]
 script = ExtResource("1_a7qhc")
-waves_data = Array[Resource("res://src/data/waves/wave_data.gd")]([ExtResource("2_e5w1k"), ExtResource("3_hc7io"), ExtResource("4_pl1th")])
+waves_data = Array[Resource("res://src/data/waves/wave_data.gd")]([ExtResource("2_e5w1k"), ExtResource("3_hc7io"), ExtResource("4_pl1th"), ExtResource("5_h0csr"), ExtResource("6_igvwn")])

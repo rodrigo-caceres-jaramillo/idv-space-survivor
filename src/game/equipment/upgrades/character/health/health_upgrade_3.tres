@@ -15,3 +15,5 @@ modifiers = Array[ExtResource("1_gwt7c")]([SubResource("Resource_honb7")])
 upgrade_type = 0
 name = ""
 description = ""
+rarity = 0
+price = 0

@@ -1,13 +1,12 @@
 extends PanelContainer
 
-@onready var health = $HBoxContainer/stats/HBoxContainer/Health
-@onready var speed = $HBoxContainer/stats/HBoxContainer2/Speed
+@onready var health = $HBoxContainer/stats/GridContainer/Health
+@onready var speed = $HBoxContainer/stats/GridContainer/Speed
 var stats: PlayerStats
 
 func _ready():
 	Events.player_ready.connect(update_stats)
 	Global.upgrade_resource_selected.connect(show_upgrade_stats)
-	Global.player.stats.stats_changed.connect(update_stats)
 	
 func update_stats():
 	stats = Global.player.stats
@@ -16,7 +15,7 @@ func update_stats():
 
 func show_upgrade_stats(upgrade_resource):
 	update_stats()
-	for modifier in upgrade_resource.equipment.modifiers:
+	for modifier in upgrade_resource.modifiers:
 		if(modifier.stat == Modifier.Stat.HEALTH):
 			health.show_upgrade(stats.MAX_HEALTH, modifier.value)
 		if(modifier.stat == Modifier.Stat.SPEED):

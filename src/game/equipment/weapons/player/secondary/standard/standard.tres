@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=5 format=3 uid="uid://c3u8sli0fqhg1"]
+
+[ext_resource type="Script" path="res://src/game/equipment/weapons/weapon.gd" id="1_fhcjd"]
+[ext_resource type="Texture2D" uid="uid://dlaygagimrruc" path="res://src/game/equipment/weapons/player/secondary/standard/standard.png" id="1_vtixa"]
+[ext_resource type="Resource" uid="uid://d7n3f8uhipon" path="res://src/game/equipment/weapons/player/secondary/standard/standart_stats.tres" id="2_3ymys"]
+[ext_resource type="PackedScene" uid="uid://lsoqspf1u6da" path="res://src/game/equipment/weapons/player/secondary/standard/standard.tscn" id="3_i1jpb"]
+
+[resource]
+script = ExtResource("1_fhcjd")
+weapon_scene = ExtResource("3_i1jpb")
+stats = ExtResource("2_3ymys")
+weapon_type = 2
+name = "SI Pistol"
+icon = ExtResource("1_vtixa")
+description = ""

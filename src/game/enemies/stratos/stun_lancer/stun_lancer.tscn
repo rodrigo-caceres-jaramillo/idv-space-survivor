@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://butts5geqiee5" path="res://src/game/enemies/base/enemy.tscn" id="1_ogaie"]
 [ext_resource type="Resource" uid="uid://b2g7ubpirss2i" path="res://src/game/enemies/stratos/stun_lancer/stun_lancer_stats.tres" id="2_c5148"]
-[ext_resource type="Resource" uid="uid://d3ldt786msguw" path="res://src/game/equipment/weapons/enemy/melee/stun_lance/stun_lance.tres" id="3_fcppl"]
+[ext_resource type="Resource" uid="uid://d3ldt786msguw" path="res://src/game/enemies/weapons/melee/stun_lance/stun_lance.tres" id="3_fcppl"]
 [ext_resource type="Texture2D" uid="uid://dbw2ecupowwlo" path="res://src/game/enemies/stratos/hands/stratos_armor_hand.png" id="4_uje5j"]
 [ext_resource type="Texture2D" uid="uid://bqeufcbtvar0i" path="res://src/game/enemies/stratos/stun_lancer/stun_lancer.png" id="5_toym7"]
 [ext_resource type="Script" path="res://src/game/enemies/base/states/enemy_follow_player.gd" id="6_0s78j"]
