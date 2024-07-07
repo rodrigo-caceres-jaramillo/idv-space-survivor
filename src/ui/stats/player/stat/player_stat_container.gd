@@ -5,7 +5,7 @@ extends HBoxContainer
 @onready var upgrade = $Upgrade
 var amount
 
-func set_up(stat_name, _amount):
+func show_stat(stat_name, _amount):
 	amount = _amount
 	stat.text = stat_name
 	base.text = str(amount)
@@ -21,4 +21,4 @@ func show_upgrade(base_stat, new_amount):
 		upgrade.set("theme_override_colors/font_color", red)
 	else:
 		upgrade.set("theme_override_colors/font_color", Color(1, 1, 1))
-	upgrade.text = str(amount + new_amount)
+	upgrade.text = str(new_amount)

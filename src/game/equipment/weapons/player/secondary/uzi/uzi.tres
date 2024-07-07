@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="WeaponResource" load_steps=5 format=3 uid="uid://dxq7n50mauft8"]
+[gd_resource type="Resource" script_class="Weapon" load_steps=5 format=3 uid="uid://dxq7n50mauft8"]
 
 [ext_resource type="Texture2D" uid="uid://chb1ttynmaxqd" path="res://src/game/equipment/weapons/player/secondary/uzi/uzi.png" id="1_kblmc"]
 [ext_resource type="Script" path="res://src/game/equipment/weapons/weapon.gd" id="1_xsg3t"]
@@ -9,8 +9,9 @@
 script = ExtResource("1_xsg3t")
 weapon_scene = ExtResource("3_2s300")
 stats = ExtResource("3_1jhum")
-weapon_type = 1
+weapon_type = 2
 name = "Uzi"
-description = "Fast weapon"
-price = 15
 icon = ExtResource("1_kblmc")
+description = "Fast weapon"
+rarity = 0
+price = 15

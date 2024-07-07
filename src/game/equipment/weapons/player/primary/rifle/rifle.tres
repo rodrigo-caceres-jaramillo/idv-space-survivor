@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="WeaponResource" load_steps=5 format=3 uid="uid://bhg0vw2q8ch3d"]
+[gd_resource type="Resource" script_class="Weapon" load_steps=5 format=3 uid="uid://bhg0vw2q8ch3d"]
 
 [ext_resource type="Script" path="res://src/game/equipment/weapons/weapon.gd" id="1_1vegc"]
 [ext_resource type="Texture2D" uid="uid://jcitfpig33ox" path="res://src/game/equipment/weapons/player/primary/rifle/rifle.png" id="1_8n4wb"]
@@ -9,8 +9,9 @@
 script = ExtResource("1_1vegc")
 weapon_scene = ExtResource("4_ile3r")
 stats = ExtResource("3_7g64q")
-weapon_type = 0
+weapon_type = 1
 name = "FN SCAR"
-description = "Standar"
-price = 25
 icon = ExtResource("1_8n4wb")
+description = "Standar"
+rarity = 0
+price = 25

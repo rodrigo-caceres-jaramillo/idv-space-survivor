@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="WeaponResource" load_steps=5 format=3 uid="uid://cfi6aqqk31ros"]
+[gd_resource type="Resource" script_class="Weapon" load_steps=5 format=3 uid="uid://cfi6aqqk31ros"]
 
 [ext_resource type="Texture2D" uid="uid://bf7hhdq1e27hx" path="res://src/game/equipment/weapons/player/primary/orange_assaut/Orange_assaut.png" id="1_42m1s"]
 [ext_resource type="Script" path="res://src/game/equipment/weapons/weapon.gd" id="1_f1p3o"]
@@ -9,8 +9,9 @@
 script = ExtResource("1_f1p3o")
 weapon_scene = ExtResource("4_c23ou")
 stats = ExtResource("3_owqrq")
-weapon_type = 0
+weapon_type = 1
 name = "Orange Assaut"
-description = "Orange"
-price = 50
 icon = ExtResource("1_42m1s")
+description = "Orange"
+rarity = 0
+price = 50

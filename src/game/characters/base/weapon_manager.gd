@@ -61,6 +61,7 @@ func add_upgrade(upgrade):
 		weapon_upgrades.append(upgrade)
 		if(weapons[1]): weapons[1].apply_upgrades(self.weapon_upgrades)
 		if(weapons[2]): weapons[2].apply_upgrades(self.weapon_upgrades)
+		Events.current_weapon_changed.emit(current_weapon)
 	
 func add_weapon(weapon_resource):
 	if(weapons[weapon_resource.weapon_type]):
@@ -77,7 +78,7 @@ func equip_weapon(weapon_type):
 		self.current_weapon.change_active_state(true)
 		self.current_weapon.visible = true
 		self.current_weapon_type = weapon_type
-		Events.current_weapon_changed.emit(current_weapon)
+	Events.current_weapon_changed.emit(current_weapon)
 		
 func equip_next_weapon():
 	var next_weapon_type = 2 if (current_weapon_type == 1) else 1

@@ -23,12 +23,6 @@ position = Vector2(16, -6)
 [node name="Tip" parent="." index="2"]
 position = Vector2(9, -4)
 
-[node name="WeaponAudioManager" parent="." index="3" node_paths=PackedStringArray("trigger_type", "reload_type")]
-trigger_type = NodePath("../AutoTriggerType")
-shoot_audio = ExtResource("4_a5gid")
-reload_type = NodePath("../MagazineReloadType")
-reload_start_audio = ExtResource("5_gtjvd")
-
 [node name="MagazineReloadType" type="Node2D" parent="." index="4" node_paths=PackedStringArray("range_weapon")]
 script = ExtResource("4_sycrm")
 range_weapon = NodePath("..")
@@ -37,3 +31,9 @@ range_weapon = NodePath("..")
 script = ExtResource("5_j0q1d")
 range_weapon = NodePath("..")
 weapon_tip = NodePath("../Tip")
+
+[node name="WeaponAudioManager" parent="." index="6" node_paths=PackedStringArray("trigger_type", "reload_type")]
+trigger_type = NodePath("../AutoTriggerType")
+shoot_audio = ExtResource("4_a5gid")
+reload_type = NodePath("../MagazineReloadType")
+reload_start_audio = ExtResource("5_gtjvd")

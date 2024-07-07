@@ -7,7 +7,6 @@
 
 [resource]
 script = ExtResource("1_1b35t")
-type = 0
 weapon_scene = ExtResource("3_mh3lf")
 stats = ExtResource("3_bw3bj")
 weapon_type = 1

@@ -11,7 +11,7 @@ anchor_right = 1.0
 offset_bottom = 15.0
 grow_horizontal = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 0
+theme_override_constants/separation = 5
 script = ExtResource("1_vldri")
 
 [node name="DamageIcon" type="TextureRect" parent="."]

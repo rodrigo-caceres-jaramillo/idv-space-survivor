@@ -5,7 +5,7 @@ extends PanelContainer
 @export var buy_audio: AudioStream
 @export var select_audio: AudioStream
 @onready var sprite_option = $HBoxContainer/PanelContainer/SpriteOption
-@onready var option_name = $HBoxContainer/VBoxContainer/OptionName
+@onready var option_name = $HBoxContainer/VBoxContainer/ScrollContainer/OptionName
 @onready var description = $HBoxContainer/VBoxContainer/Description
 @onready var buy_button = $HBoxContainer/BuyButton
 @onready var select_button = $SelectButton

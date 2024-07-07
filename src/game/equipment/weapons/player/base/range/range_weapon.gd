@@ -10,7 +10,6 @@ extends Node2D
 @onready var second_hand = $SecondHand
 @onready var upgrade_manager = $UpgradeManager
 var weapon_type
-var weapon_name
 var base_stats
 var stats
 var can_shoot:bool = true
@@ -24,7 +23,7 @@ func change_active_state(value):
 func set_up(b_stast:RangeWeaponsStats, type, _name, upgrades, hand_texture):
 	base_stats = b_stast
 	weapon_type = type
-	weapon_name = _name
+	self.name = _name
 	self.main_hand.texture = hand_texture
 	if two_hands == true: self.second_hand.texture = hand_texture
 	upgrade_manager.upgrades = upgrades

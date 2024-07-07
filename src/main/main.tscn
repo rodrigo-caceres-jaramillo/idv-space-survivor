@@ -303,6 +303,7 @@ visible = false
 [node name="Tutorial" parent="UIManager" instance=ExtResource("12_xt78r")]
 
 [node name="TestMenu" parent="UIManager" instance=ExtResource("14_uvarn")]
+visible = false
 
 [node name="MouseManager" type="Node2D" parent="."]
 script = ExtResource("15_5h1bm")

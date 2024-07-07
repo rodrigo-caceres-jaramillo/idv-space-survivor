@@ -32,7 +32,7 @@ func initialize(stats, _global_position, _direction):
 	hitbox_component.crit_chance = stats.CRITICAL_CHANCE 
 	hitbox_component.crit_damage = stats.CRITICAL_DAMAGE
 	hitbox_component.knockback = stats.KNOCKBACK
-	self.speed = stats.PROJECTILE_SPEED
+	self.speed = stats.SHOT_SPEED
 	self.direction = _direction
 	self.max_penetration = stats.PENETRATION
 	var distance = stats.RANGE * 5

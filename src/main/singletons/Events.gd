@@ -2,6 +2,7 @@ extends Node
 
 # Player
 signal player_ready()
+signal player_stats_changed()
 signal dash_finished(dash_delay: float)
 signal new_weapon_add(weapon: Weapon)
 signal current_weapon_changed(weapon: PackedScene)

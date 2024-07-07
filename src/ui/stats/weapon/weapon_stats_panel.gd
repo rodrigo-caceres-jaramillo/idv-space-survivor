@@ -12,12 +12,11 @@ func _ready():
 
 func clean_stats():
 	for n in stats.get_children():
-		stats.remove_child(n)
 		n.queue_free()
 
 func show_weapon_stats(weapon):
-	title.text = weapon.name
 	self.clean_stats()
+	title.text = weapon.name
 	var damage_instance = stat_container_scene.instantiate()
 	stats.add_child(damage_instance)
 	damage_instance.show_damage_stat(weapon.stats.DAMAGE_TYPE, weapon.stats.DAMAGE, weapon.stats.MULTISHOT)
@@ -51,21 +50,21 @@ func compare_stats(base_stats, new_stats):
 		var damage_instance_new = stat_container_scene.instantiate()
 		stats.add_child(damage_instance_new)
 		damage_instance_new.compare_damage_stat(new_stats.DAMAGE_TYPE, 0, 0, new_stats.DAMAGE, new_stats.MULTISHOT)
-		
+	
 	for stat_info in base_stats.get_property_list():
 		if !["resource_path", "DAMAGE", "MULTISHOT"].has(stat_info.name) and stat_info.type == TYPE_FLOAT:
-			var stat_instance = stat_container_scene.instantiate()
-			stats.add_child(stat_instance)
 			var current_value = base_stats.get(stat_info.name)
 			var new_value = new_stats.get(stat_info.name)
 			if current_value != 0 or new_value != 0:
+				var stat_instance = stat_container_scene.instantiate()
+				stats.add_child(stat_instance)
 				stat_instance.compare_stats(stat_info.name, current_value, new_value)
-		
+				
 func show_upgrade_stats(upgrade: Upgrade):
-	if(upgrade.type == 1):
+	self.clean_stats()
+	if(upgrade.upgrade_type == 1):
 		var current_weapon = Global.player.weapon_manager.current_weapon
-		title.text = current_weapon.weapon_name
-		self.clean_stats()
+		title.text = current_weapon.name
 		var modified_stats = current_weapon.stats.duplicate()
 		for modifier in upgrade.modifiers:
 			var factor = 1.0 + (modifier.value / 100.0) if modifier.positive else 1.0 - (modifier.value / 100.0)
@@ -81,4 +80,6 @@ func show_upgrade_stats(upgrade: Upgrade):
 				modifier.Stat.RATE:
 					modified_stats.FIRE_RATE *= factor
 		compare_stats(current_weapon.stats, modified_stats)
+	else:
+		show_weapon_stats(Global.player.weapon_manager.current_weapon)
 	

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="WeaponResource" load_steps=5 format=3 uid="uid://dcurfe4wuvwk3"]
+[gd_resource type="Resource" script_class="Weapon" load_steps=5 format=3 uid="uid://dcurfe4wuvwk3"]
 
 [ext_resource type="Script" path="res://src/game/equipment/weapons/weapon.gd" id="1_c1hty"]
 [ext_resource type="Texture2D" uid="uid://30uheahqk2rr" path="res://src/game/equipment/weapons/player/secondary/combat_pistol/combat_pistol.png" id="1_f0p5c"]
@@ -9,8 +9,9 @@
 script = ExtResource("1_c1hty")
 weapon_scene = ExtResource("4_w0pyd")
 stats = ExtResource("3_damqg")
-weapon_type = 0
+weapon_type = 2
 name = "Combat pistol"
-description = "Lion´s pistol"
-price = 20
 icon = ExtResource("1_f0p5c")
+description = "Lion´s pistol"
+rarity = 0
+price = 20

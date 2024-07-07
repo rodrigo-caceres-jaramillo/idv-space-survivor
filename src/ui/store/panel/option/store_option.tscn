@@ -34,7 +34,7 @@ bg_color = Color(0.109804, 0.266667, 0.384314, 0)
 bg_color = Color(0.109804, 0.266667, 0.384314, 0)
 
 [node name="StoreOption" type="PanelContainer"]
-custom_minimum_size = Vector2(150, 50)
+custom_minimum_size = Vector2(250, 50)
 offset_right = 250.0
 offset_bottom = 56.0
 theme_override_styles/panel = ExtResource("1_8k3nv")
@@ -76,16 +76,24 @@ size_flags_vertical = 0
 mouse_filter = 2
 theme_override_constants/separation = 0
 
-[node name="OptionName" type="Label" parent="HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(135, 0)
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 0
+follow_focus = true
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+
+[node name="OptionName" type="Label" parent="HBoxContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("3_3e06n")
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 11
 text = "Nombre de item"
-autowrap_mode = 3
 
 [node name="Description" type="Label" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("5_dpy8b")
 theme_override_font_sizes/font_size = 10
 text = "Descripcion"

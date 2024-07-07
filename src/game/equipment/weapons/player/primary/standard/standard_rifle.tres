@@ -7,9 +7,11 @@
 
 [resource]
 script = ExtResource("1_2kg60")
-name = "SI Rifle"
-icon = ExtResource("1_ymwmq")
-description = "Standar Issue Rifle"
 weapon_scene = ExtResource("4_if6pg")
 stats = ExtResource("3_lr1fd")
 weapon_type = 1
+name = "SI Rifle"
+icon = ExtResource("1_ymwmq")
+description = "Standar Issue Rifle"
+rarity = 0
+price = 0

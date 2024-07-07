@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="WeaponResource" load_steps=5 format=3 uid="uid://bh5nx6sulc75o"]
+[gd_resource type="Resource" script_class="Weapon" load_steps=5 format=3 uid="uid://bh5nx6sulc75o"]
 
 [ext_resource type="Script" path="res://src/game/equipment/weapons/weapon.gd" id="1_jk67y"]
 [ext_resource type="Texture2D" uid="uid://tl1j0srlwq8i" path="res://src/game/equipment/weapons/player/secondary/laser_pistol/laser_pistol.png" id="1_ysgxa"]
@@ -9,8 +9,9 @@
 script = ExtResource("1_jk67y")
 weapon_scene = ExtResource("4_y8fm4")
 stats = ExtResource("3_n6mw1")
-weapon_type = 1
+weapon_type = 2
 name = "Laser pistol"
-description = "the Best bullet the Ligth"
-price = 20
 icon = ExtResource("1_ysgxa")
+description = "the Best bullet the Ligth"
+rarity = 0
+price = 20
