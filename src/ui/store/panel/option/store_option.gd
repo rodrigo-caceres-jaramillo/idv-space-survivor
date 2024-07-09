@@ -7,7 +7,7 @@ extends PanelContainer
 @onready var sprite_option = $HBoxContainer/PanelContainer/SpriteOption
 @onready var option_name = $HBoxContainer/VBoxContainer/ScrollContainer/OptionName
 @onready var description = $HBoxContainer/VBoxContainer/Description
-@onready var buy_button = $HBoxContainer/BuyButton
+@onready var buy_button = $HBoxContainer/ButtonContainer/BuyButton
 @onready var select_button = $SelectButton
 @onready var audio_stream_player = $AudioStreamPlayer
 
@@ -17,7 +17,7 @@ func set_option(_sale_option: Equipment):
 	option_name.text = str(_sale_option.name)
 	description.text = str(_sale_option.description)
 	buy_button.show()
-	buy_button.text = str(_sale_option.price)
+	buy_button.text = "Buy " + str(_sale_option.price)
 
 func _on_buy_button_pressed():
 	if (Global.money >= sale_option.price):
