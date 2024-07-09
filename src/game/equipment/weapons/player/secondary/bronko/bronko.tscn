@@ -5,10 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://cwn44fakb1tkg" path="res://src/game/projectiles/player/buckshot/buckshot_projectile.tscn" id="3_4raey"]
 [ext_resource type="PackedScene" uid="uid://c74piex43b0ct" path="res://src/game/equipment/weapons/particles/muzzle_flash/basic_flash.tscn" id="4_mwkql"]
 [ext_resource type="Texture2D" uid="uid://djgvtpdx7adls" path="res://assets/textures/hud/crooshair/crosshair_1.png" id="5_5q3fr"]
-[ext_resource type="AudioStream" uid="uid://dnmahjh6xx3va" path="res://assets/sound/Assalt_rifle_shoot.mp3" id="5_m2k3k"]
-[ext_resource type="AudioStream" uid="uid://diofe4dtgj5nk" path="res://assets/sound/rifle_reload.wav" id="6_e7m5v"]
 [ext_resource type="Script" path="res://src/game/equipment/weapons/player/base/range/reloads/magazine_reload.gd" id="7_7ovds"]
 [ext_resource type="Script" path="res://src/game/equipment/weapons/player/base/range/triggers/semi_trigger.gd" id="8_gg47r"]
+[ext_resource type="AudioStream" uid="uid://ccfho830xc413" path="res://assets/sound/shotgun_shot_01.wav" id="8_hbehm"]
+[ext_resource type="AudioStream" uid="uid://cxlw3wi172n24" path="res://assets/sound/shotgun_reload_01.wav" id="9_q3fkc"]
 
 [node name="Bronko" instance=ExtResource("1_wwhpr")]
 process_mode = 1
@@ -24,12 +24,6 @@ position = Vector2(16, -6)
 [node name="Tip" parent="." index="2"]
 position = Vector2(11, -4)
 
-[node name="WeaponAudioManager" parent="." index="3" node_paths=PackedStringArray("trigger_type", "reload_type")]
-trigger_type = NodePath("../SemiTriggerType")
-shoot_audio = ExtResource("5_m2k3k")
-reload_type = NodePath("../MagazineReloadType")
-reload_start_audio = ExtResource("6_e7m5v")
-
 [node name="MagazineReloadType" type="Node2D" parent="." index="4" node_paths=PackedStringArray("range_weapon")]
 script = ExtResource("7_7ovds")
 range_weapon = NodePath("..")
@@ -38,3 +32,9 @@ range_weapon = NodePath("..")
 script = ExtResource("8_gg47r")
 range_weapon = NodePath("..")
 weapon_tip = NodePath("../Tip")
+
+[node name="WeaponAudioManager" parent="." index="6" node_paths=PackedStringArray("trigger_type", "reload_type")]
+trigger_type = NodePath("../SemiTriggerType")
+shoot_audio = ExtResource("8_hbehm")
+reload_type = NodePath("../MagazineReloadType")
+reload_start_audio = ExtResource("9_q3fkc")

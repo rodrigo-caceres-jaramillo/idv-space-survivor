@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=5 format=3 uid="uid://dj7b3q6gsmqd"]
+
+[ext_resource type="Script" path="res://src/game/equipment/weapons/weapon.gd" id="1_fg0ia"]
+[ext_resource type="Texture2D" uid="uid://edi56fwm3ffy" path="res://src/game/equipment/weapons/player/primary/striker/striker.png" id="1_uak2n"]
+[ext_resource type="Resource" uid="uid://sjht31hn04c4" path="res://src/game/equipment/weapons/player/primary/striker/striker_stats.tres" id="3_bnjvy"]
+[ext_resource type="PackedScene" uid="uid://bggastu7siqd" path="res://src/game/equipment/weapons/player/primary/striker/striker.tscn" id="4_4s04c"]
+
+[resource]
+script = ExtResource("1_fg0ia")
+weapon_scene = ExtResource("4_4s04c")
+stats = ExtResource("3_bnjvy")
+weapon_type = 1
+name = "Striker"
+icon = ExtResource("1_uak2n")
+description = "Sniper Rifle"
+rarity = 0
+price = 30

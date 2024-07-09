@@ -4,11 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://1ljpqckcbcrc" path="res://src/game/equipment/weapons/player/secondary/viper/viper.png" id="2_asgwd"]
 [ext_resource type="PackedScene" uid="uid://cjre030tknah1" path="res://src/game/projectiles/player/small_bullet/small_bullet_projectile.tscn" id="3_d7ajt"]
 [ext_resource type="PackedScene" uid="uid://c74piex43b0ct" path="res://src/game/equipment/weapons/particles/muzzle_flash/basic_flash.tscn" id="4_fjn6g"]
-[ext_resource type="AudioStream" uid="uid://dnmahjh6xx3va" path="res://assets/sound/Assalt_rifle_shoot.mp3" id="5_0804w"]
 [ext_resource type="Texture2D" uid="uid://ch5di2e8vdrec" path="res://assets/textures/hud/crooshair/crosshair_3.png" id="5_xx72f"]
-[ext_resource type="AudioStream" uid="uid://diofe4dtgj5nk" path="res://assets/sound/rifle_reload.wav" id="6_y7kxa"]
 [ext_resource type="Script" path="res://src/game/equipment/weapons/player/base/range/reloads/magazine_reload.gd" id="7_4itfs"]
+[ext_resource type="AudioStream" uid="uid://y28k54ngy87t" path="res://assets/sound/pistol_shoot.mp3" id="8_8qo5m"]
 [ext_resource type="Script" path="res://src/game/equipment/weapons/player/base/range/triggers/auto_trigger.gd" id="8_h3mwu"]
+[ext_resource type="AudioStream" uid="uid://dwqs8uxlfwcry" path="res://assets/sound/pistol_reload.mp3" id="9_2r4dj"]
 
 [node name="Viper" instance=ExtResource("1_yg0x0")]
 texture = ExtResource("2_asgwd")
@@ -23,12 +23,6 @@ position = Vector2(16, -6)
 [node name="Tip" parent="." index="2"]
 position = Vector2(9, -4)
 
-[node name="WeaponAudioManager" parent="." index="3" node_paths=PackedStringArray("trigger_type", "reload_type")]
-trigger_type = NodePath("../AutoTriggerType")
-shoot_audio = ExtResource("5_0804w")
-reload_type = NodePath("../MagazineReloadType")
-reload_start_audio = ExtResource("6_y7kxa")
-
 [node name="MagazineReloadType" type="Node2D" parent="." index="4" node_paths=PackedStringArray("range_weapon")]
 script = ExtResource("7_4itfs")
 range_weapon = NodePath("..")
@@ -37,3 +31,9 @@ range_weapon = NodePath("..")
 script = ExtResource("8_h3mwu")
 range_weapon = NodePath("..")
 weapon_tip = NodePath("../Tip")
+
+[node name="WeaponAudioManager" parent="." index="6" node_paths=PackedStringArray("trigger_type", "reload_type")]
+trigger_type = NodePath("../AutoTriggerType")
+shoot_audio = ExtResource("8_8qo5m")
+reload_type = NodePath("../MagazineReloadType")
+reload_start_audio = ExtResource("9_2r4dj")

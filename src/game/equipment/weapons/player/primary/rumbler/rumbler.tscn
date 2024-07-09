@@ -1,0 +1,40 @@
+[gd_scene load_steps=10 format=3 uid="uid://o0offr8kxrdc"]
+
+[ext_resource type="PackedScene" uid="uid://dn5r6qogjyaco" path="res://src/game/equipment/weapons/player/base/range/range_weapon.tscn" id="1_qud6n"]
+[ext_resource type="Texture2D" uid="uid://ccchekgykexrj" path="res://src/game/equipment/weapons/player/primary/rumbler/rumbler.png" id="2_en58m"]
+[ext_resource type="PackedScene" uid="uid://cwn44fakb1tkg" path="res://src/game/projectiles/player/buckshot/buckshot_projectile.tscn" id="3_hewh4"]
+[ext_resource type="PackedScene" uid="uid://c74piex43b0ct" path="res://src/game/equipment/weapons/particles/muzzle_flash/basic_flash.tscn" id="4_8epth"]
+[ext_resource type="Texture2D" uid="uid://djgvtpdx7adls" path="res://assets/textures/hud/crooshair/crosshair_1.png" id="5_xpspf"]
+[ext_resource type="AudioStream" uid="uid://ccfho830xc413" path="res://assets/sound/shotgun_shot_01.wav" id="6_cttqe"]
+[ext_resource type="AudioStream" uid="uid://cxlw3wi172n24" path="res://assets/sound/shotgun_reload_01.wav" id="7_qdfom"]
+[ext_resource type="Script" path="res://src/game/equipment/weapons/player/base/range/triggers/semi_trigger.gd" id="9_adthy"]
+[ext_resource type="Script" path="res://src/game/equipment/weapons/player/base/range/reloads/magazine_reload.gd" id="9_m3lrb"]
+
+[node name="Rumbler" instance=ExtResource("1_qud6n")]
+texture = ExtResource("2_en58m")
+offset = Vector2(5, -2)
+projectile = ExtResource("3_hewh4")
+muzzle_flash = ExtResource("4_8epth")
+two_hands = true
+crosshair = ExtResource("5_xpspf")
+
+[node name="SecondHand" parent="." index="1"]
+position = Vector2(9, -1)
+
+[node name="Tip" parent="." index="2"]
+position = Vector2(20, -3)
+
+[node name="WeaponAudioManager" parent="." index="4" node_paths=PackedStringArray("trigger_type", "reload_type")]
+trigger_type = NodePath("../SemiTriggerType")
+shoot_audio = ExtResource("6_cttqe")
+reload_type = NodePath("../MagazineReloadType")
+reload_start_audio = ExtResource("7_qdfom")
+
+[node name="MagazineReloadType" type="Node2D" parent="." index="5" node_paths=PackedStringArray("range_weapon")]
+script = ExtResource("9_m3lrb")
+range_weapon = NodePath("..")
+
+[node name="SemiTriggerType" type="Node2D" parent="." index="6" node_paths=PackedStringArray("range_weapon", "weapon_tip")]
+script = ExtResource("9_adthy")
+range_weapon = NodePath("..")
+weapon_tip = NodePath("../Tip")

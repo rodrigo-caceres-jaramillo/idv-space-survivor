@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=5 format=3 uid="uid://v85bjr5q37fp"]
+
+[ext_resource type="Script" path="res://src/game/equipment/weapons/weapon.gd" id="1_5tmub"]
+[ext_resource type="Texture2D" uid="uid://cgcqmlmtq5qu3" path="res://src/game/equipment/weapons/player/primary/burston/burston.png" id="1_tqci4"]
+[ext_resource type="Resource" uid="uid://ci3eqrxjqctv4" path="res://src/game/equipment/weapons/player/primary/burston/burston_stats.tres" id="3_iqa41"]
+[ext_resource type="PackedScene" uid="uid://653nibeb7hrc" path="res://src/game/equipment/weapons/player/primary/burston/burston.tscn" id="4_4qrel"]
+
+[resource]
+script = ExtResource("1_5tmub")
+weapon_scene = ExtResource("4_4qrel")
+stats = ExtResource("3_iqa41")
+weapon_type = 1
+name = "Burston"
+icon = ExtResource("1_tqci4")
+description = "Burst Rifle"
+rarity = 0
+price = 30

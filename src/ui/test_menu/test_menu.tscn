@@ -1,8 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0otfohjoplfd"]
+[gd_scene load_steps=13 format=3 uid="uid://d0otfohjoplfd"]
 
 [ext_resource type="Script" path="res://src/ui/test_menu/test_menu.gd" id="1_eijfy"]
+[ext_resource type="Resource" uid="uid://v85bjr5q37fp" path="res://src/game/equipment/weapons/player/primary/burston/burston.tres" id="2_2mx2n"]
 [ext_resource type="PackedScene" uid="uid://dfdw8nqmfv4oc" path="res://src/ui/test_menu/test_option/test_option.tscn" id="2_e0qdj"]
 [ext_resource type="Resource" uid="uid://cdjagr0rjgkdf" path="res://src/game/equipment/weapons/player/primary/standard/standard_rifle.tres" id="2_iehkp"]
+[ext_resource type="Resource" uid="uid://djoeclc508q13" path="res://src/game/equipment/weapons/player/primary/rumbler/rumbler.tres" id="3_6h8qd"]
+[ext_resource type="Resource" uid="uid://cptnwlqros5jh" path="res://src/game/equipment/weapons/player/primary/puncher/puncher.tres" id="3_hgqcr"]
+[ext_resource type="Resource" uid="uid://dj7b3q6gsmqd" path="res://src/game/equipment/weapons/player/primary/striker/striker.tres" id="5_7ty7y"]
+[ext_resource type="Resource" uid="uid://bimc6a10ybeqk" path="res://src/game/equipment/weapons/player/secondary/bronko/bronko.tres" id="7_phnhx"]
+[ext_resource type="Resource" uid="uid://bh1iysc3jns2y" path="res://src/game/equipment/weapons/player/secondary/dex/dex.tres" id="8_j2u2f"]
+[ext_resource type="Resource" uid="uid://c3u8sli0fqhg1" path="res://src/game/equipment/weapons/player/secondary/standard/standard.tres" id="9_rwnmh"]
+[ext_resource type="Resource" uid="uid://c0nqjn535oj7q" path="res://src/game/equipment/weapons/player/secondary/viper/viper.tres" id="10_rinru"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cuf3y"]
 content_margin_left = 5.0
@@ -13,7 +21,7 @@ bg_color = Color(0.121569, 0.121569, 0.121569, 0.713726)
 
 [node name="TestMenu" type="CanvasLayer"]
 script = ExtResource("1_eijfy")
-weapons = Array[Resource("res://src/game/equipment/weapons/weapon.gd")]([ExtResource("2_iehkp")])
+weapons = Array[Resource("res://src/game/equipment/weapons/weapon.gd")]([ExtResource("2_2mx2n"), ExtResource("3_hgqcr"), ExtResource("3_6h8qd"), ExtResource("5_7ty7y"), ExtResource("2_iehkp"), ExtResource("7_phnhx"), ExtResource("8_j2u2f"), ExtResource("9_rwnmh"), ExtResource("10_rinru")])
 weapon_option = ExtResource("2_e0qdj")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
