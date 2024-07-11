@@ -240,9 +240,9 @@ size = Vector2(704, 480)
 [sub_resource type="Resource" id="Resource_og4it"]
 resource_local_to_scene = true
 script = ExtResource("22_hnetq")
-HEALTH = 60
+HEALTH = 1000
 HEALTH_TYPE = ExtResource("21_laknm")
-SPEED = 0.5
+SPEED = 0.0
 KB_RESISTANCE = 5.0
 min_value = 5
 max_value = 8
@@ -303,7 +303,6 @@ visible = false
 [node name="Tutorial" parent="UIManager" instance=ExtResource("12_xt78r")]
 
 [node name="TestMenu" parent="UIManager" instance=ExtResource("14_uvarn")]
-visible = false
 
 [node name="MouseManager" type="Node2D" parent="."]
 script = ExtResource("15_5h1bm")

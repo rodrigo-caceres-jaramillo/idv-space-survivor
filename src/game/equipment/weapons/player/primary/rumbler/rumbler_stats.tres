@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="RangeWeaponsStats" load_steps=3 format=3 uid="uid://cwb4q4yj80unj"]
+
+[ext_resource type="Script" path="res://src/game/equipment/weapons/player/base/range/range_weapon_stats.gd" id="1_1g883"]
+[ext_resource type="Resource" uid="uid://b8tlfv3eycwwy" path="res://src/data/damage_types/impact.tres" id="1_rukk7"]
+
+[resource]
+script = ExtResource("1_1g883")
+DAMAGE = 5.0
+DAMAGE_TYPE = ExtResource("1_rukk7")
+CRITICAL_CHANCE = 5.0
+CRITICAL_DAMAGE = 1.5
+MULTISHOT = 8.0
+PENETRATION = 1.0
+FIRE_RATE = 5.0
+RELOAD = 0.2
+MAGAZINE = 2
+RANGE = 20.0
+KNOCKBACK = 1
+SPREAD = 0.3
+SHOT_SPEED = 500.0

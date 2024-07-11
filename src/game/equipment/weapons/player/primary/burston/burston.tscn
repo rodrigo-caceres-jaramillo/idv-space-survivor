@@ -1,0 +1,40 @@
+[gd_scene load_steps=10 format=3 uid="uid://653nibeb7hrc"]
+
+[ext_resource type="PackedScene" uid="uid://dn5r6qogjyaco" path="res://src/game/equipment/weapons/player/base/range/range_weapon.tscn" id="1_cg624"]
+[ext_resource type="Texture2D" uid="uid://cgcqmlmtq5qu3" path="res://src/game/equipment/weapons/player/primary/burston/burston.png" id="2_j8ts8"]
+[ext_resource type="PackedScene" uid="uid://bdw1rphlnfjhm" path="res://src/game/projectiles/player/rifle/rifle_projectile.tscn" id="3_swrs2"]
+[ext_resource type="PackedScene" uid="uid://c74piex43b0ct" path="res://src/game/equipment/weapons/particles/muzzle_flash/basic_flash.tscn" id="4_x4n7l"]
+[ext_resource type="Texture2D" uid="uid://ch5di2e8vdrec" path="res://assets/textures/hud/crooshair/crosshair_3.png" id="5_yx2wm"]
+[ext_resource type="AudioStream" uid="uid://dnmahjh6xx3va" path="res://assets/sound/Assalt_rifle_shoot.mp3" id="6_nbv8x"]
+[ext_resource type="AudioStream" uid="uid://diofe4dtgj5nk" path="res://assets/sound/rifle_reload.wav" id="7_kxvio"]
+[ext_resource type="Script" path="res://src/game/equipment/weapons/player/base/range/reloads/magazine_reload.gd" id="8_qux6y"]
+[ext_resource type="Script" path="res://src/game/equipment/weapons/player/base/range/triggers/burst_trigger.gd" id="9_5um4h"]
+
+[node name="Burston" instance=ExtResource("1_cg624")]
+texture = ExtResource("2_j8ts8")
+offset = Vector2(7, -4)
+projectile = ExtResource("3_swrs2")
+muzzle_flash = ExtResource("4_x4n7l")
+two_hands = true
+crosshair = ExtResource("5_yx2wm")
+
+[node name="SecondHand" parent="." index="1"]
+position = Vector2(9, -1)
+
+[node name="Tip" parent="." index="2"]
+position = Vector2(20, -5)
+
+[node name="WeaponAudioManager" parent="." index="4" node_paths=PackedStringArray("trigger_type", "reload_type")]
+trigger_type = NodePath("../BurstTriggerType")
+shoot_audio = ExtResource("6_nbv8x")
+reload_type = NodePath("../MagazineReloadType")
+reload_start_audio = ExtResource("7_kxvio")
+
+[node name="MagazineReloadType" type="Node2D" parent="." index="5" node_paths=PackedStringArray("range_weapon")]
+script = ExtResource("8_qux6y")
+range_weapon = NodePath("..")
+
+[node name="BurstTriggerType" type="Node2D" parent="." index="6" node_paths=PackedStringArray("range_weapon", "weapon_tip")]
+script = ExtResource("9_5um4h")
+range_weapon = NodePath("..")
+weapon_tip = NodePath("../Tip")

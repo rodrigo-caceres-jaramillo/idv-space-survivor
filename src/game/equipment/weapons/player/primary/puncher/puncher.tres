@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=5 format=3 uid="uid://cptnwlqros5jh"]
+
+[ext_resource type="Texture2D" uid="uid://5p22gsqj3ou6" path="res://src/game/equipment/weapons/player/primary/puncher/puncher.png" id="1_sevvx"]
+[ext_resource type="Script" path="res://src/game/equipment/weapons/weapon.gd" id="1_snwma"]
+[ext_resource type="Resource" uid="uid://bdwq2jmggpqex" path="res://src/game/equipment/weapons/player/primary/puncher/puncher_stats.tres" id="3_vjb0o"]
+[ext_resource type="PackedScene" uid="uid://28738i3m47hu" path="res://src/game/equipment/weapons/player/primary/puncher/puncher.tscn" id="4_ltkcr"]
+
+[resource]
+script = ExtResource("1_snwma")
+weapon_scene = ExtResource("4_ltkcr")
+stats = ExtResource("3_vjb0o")
+weapon_type = 1
+name = "Puncher"
+icon = ExtResource("1_sevvx")
+description = "Semi Rifle"
+rarity = 0
+price = 30

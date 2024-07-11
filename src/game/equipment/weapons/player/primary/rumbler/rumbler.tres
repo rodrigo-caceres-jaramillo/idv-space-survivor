@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=5 format=3 uid="uid://djoeclc508q13"]
+
+[ext_resource type="Texture2D" uid="uid://ccchekgykexrj" path="res://src/game/equipment/weapons/player/primary/rumbler/rumbler.png" id="1_26v0w"]
+[ext_resource type="Script" path="res://src/game/equipment/weapons/weapon.gd" id="1_cuvtx"]
+[ext_resource type="Resource" uid="uid://cwb4q4yj80unj" path="res://src/game/equipment/weapons/player/primary/rumbler/rumbler_stats.tres" id="3_miob2"]
+[ext_resource type="PackedScene" uid="uid://o0offr8kxrdc" path="res://src/game/equipment/weapons/player/primary/rumbler/rumbler.tscn" id="4_2ia64"]
+
+[resource]
+script = ExtResource("1_cuvtx")
+weapon_scene = ExtResource("4_2ia64")
+stats = ExtResource("3_miob2")
+weapon_type = 1
+name = "Rumbler"
+icon = ExtResource("1_26v0w")
+description = "Spreed Shotgun"
+rarity = 0
+price = 30
