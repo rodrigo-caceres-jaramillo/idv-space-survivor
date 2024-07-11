@@ -1,12 +1,52 @@
-[gd_scene load_steps=13 format=3 uid="uid://bngqp1vja7siw"]
+[gd_scene load_steps=18 format=3 uid="uid://bngqp1vja7siw"]
 
 [ext_resource type="Script" path="res://src/ui/main_menu/Buttons.gd" id="1_3sbce"]
+[ext_resource type="Texture2D" uid="uid://djwqgh5dum0b0" path="res://assets/textures/ui/main_menu/main_menu_img.png" id="1_c67tc"]
+[ext_resource type="Texture2D" uid="uid://curji3eu632ha" path="res://assets/textures/ui/main_menu/espacio.jpg" id="1_hjai1"]
 [ext_resource type="FontFile" uid="uid://jd478um6wqpv" path="res://assets/fonts/Gameplay.ttf" id="1_vt1jm"]
 [ext_resource type="PackedScene" uid="uid://bs4uh6ctjo53y" path="res://src/ui/options/options_menu.tscn" id="3_2g2ue"]
 [ext_resource type="Resource" uid="uid://r2xe12hve2mu" path="res://src/game/characters/blue/blue.tres" id="3_20wsg"]
 [ext_resource type="StyleBox" uid="uid://bg7ra0k2c1ef0" path="res://src/ui/style_box/store_option.tres" id="4_nc1oe"]
 [ext_resource type="Texture2D" uid="uid://c1but2pj1xsvu" path="res://assets/textures/ui/panel/red_panel.png" id="5_jgheb"]
 [ext_resource type="AudioStream" uid="uid://drkwq3ru55grf" path="res://assets/sound/menu.mp3" id="7_cle1j"]
+
+[sub_resource type="Animation" id="Animation_rt02i"]
+resource_name = "move"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Image:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(95, 60), Vector2(95, 55), Vector2(95, 61.25), Vector2(95, 66.875), Vector2(95, 60)]
+}
+
+[sub_resource type="Animation" id="Animation_as8h5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Image:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(95, 60)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jr2if"]
+_data = {
+"RESET": SubResource("Animation_as8h5"),
+"move": SubResource("Animation_rt02i")
+}
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r0mvb"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -36,14 +76,41 @@ expand_margin_right = 5.0
 expand_margin_bottom = 5.0
 
 [node name="MainMenu" type="CanvasLayer"]
+layer = 2
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="CanvasImage" type="CanvasLayer" parent="."]
+scale = Vector2(0.8, 0.8)
+transform = Transform2D(0.8, 0, 0, 0.8, 0, 0)
+
+[node name="Background" type="ColorRect" parent="CanvasImage"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 159.0
+offset_bottom = 90.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.0352941, 0.0588235, 0.141176, 1)
+color = Color(0.0052191, 0.00640429, 0.028879, 1)
+
+[node name="Space" type="TextureRect" parent="CanvasImage"]
+offset_right = 801.0
+offset_bottom = 450.0
+texture = ExtResource("1_hjai1")
+
+[node name="Image" type="TextureRect" parent="CanvasImage"]
+offset_left = 95.0
+offset_top = 60.0
+offset_right = 702.0
+offset_bottom = 560.001
+texture = ExtResource("1_c67tc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasImage"]
+reset_on_save = false
+libraries = {
+"": SubResource("AnimationLibrary_jr2if")
+}
+speed_scale = 0.459
 
 [node name="Title" type="Label" parent="."]
 anchors_preset = 8
@@ -51,13 +118,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -276.0
-offset_top = -70.0
-offset_right = 97.0
-offset_bottom = -23.0
+offset_left = -265.0
+offset_top = -168.0
+offset_right = 108.0
+offset_bottom = -121.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.5, 1.5)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_vt1jm")
 theme_override_font_sizes/font_size = 30
 text = "Space Survivor"
@@ -118,9 +186,10 @@ theme_override_font_sizes/font_size = 15
 text = "Options"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+visible = false
 
 [node name="OptionsMenu" parent="CanvasLayer" instance=ExtResource("3_2g2ue")]
-visible = false
 offset_left = -2.0
 offset_top = 15.0
 offset_right = 39.0

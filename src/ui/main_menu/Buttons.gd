@@ -1,9 +1,12 @@
 extends VBoxContainer
 
 @export var char: Resource
+@onready var animation_player = $"../CanvasImage/AnimationPlayer"
+
 
 func _ready():
 	Global.charater_resource = char
+	animation_player.play("move")
 	
 func start_player():
 	Global.set_up()
