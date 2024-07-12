@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="WaveEnemy" load_steps=3 format=3 uid="uid://cambmwljh7xwh"]
+
+[ext_resource type="PackedScene" uid="uid://yipq5j8c7t0i" path="res://src/game/enemies/stratos/boss/boss.tscn" id="1_2ja0y"]
+[ext_resource type="Script" path="res://src/data/waves/wave_enemy.gd" id="1_dei4q"]
+
+[resource]
+script = ExtResource("1_dei4q")
+enemy_scene = ExtResource("1_2ja0y")
+quantity = 1
+spawn_chance = 1.0

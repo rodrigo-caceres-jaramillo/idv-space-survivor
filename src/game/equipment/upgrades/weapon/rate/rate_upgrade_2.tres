@@ -19,4 +19,4 @@ name = "Fire Rate Module"
 icon = ExtResource("1_np201")
 description = "+ 40% Fire Rate"
 rarity = 0
-price = 20
+price = 30

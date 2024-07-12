@@ -14,4 +14,4 @@ name = "SI Rifle"
 icon = ExtResource("1_ymwmq")
 description = "Standar Issue Rifle"
 rarity = 0
-price = 0
+price = 30

@@ -18,9 +18,11 @@ positive = false
 
 [resource]
 script = ExtResource("1_pya2k")
+type = 1
 modifiers = Array[ExtResource("2_utccw")]([SubResource("Resource_2tvxv"), SubResource("Resource_v5mi0")])
 upgrade_type = 0
 name = "Range Cursed Module"
-description = "+15 Range -3% Speed"
-price = 15
 icon = ExtResource("1_7b7tj")
+description = "+15 Range -3% Speed"
+rarity = 0
+price = 15

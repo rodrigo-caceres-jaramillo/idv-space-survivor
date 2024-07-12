@@ -7,7 +7,7 @@
 [sub_resource type="Resource" id="Resource_44nau"]
 script = ExtResource("2_t5eyk")
 stat = 0
-value = 50.0
+value = 30.0
 positive = true
 
 [sub_resource type="Resource" id="Resource_xigrn"]
@@ -23,6 +23,6 @@ modifiers = Array[ExtResource("2_t5eyk")]([SubResource("Resource_44nau"), SubRes
 upgrade_type = 0
 name = "Health cursed module "
 icon = ExtResource("1_r4guc")
-description = "+50 Max Health -10% Speed"
+description = "+30 Max Health -10% Speed"
 rarity = 0
-price = 30
+price = 40

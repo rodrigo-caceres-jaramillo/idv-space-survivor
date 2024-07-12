@@ -7,13 +7,16 @@
 [sub_resource type="Resource" id="Resource_ixbx3"]
 script = ExtResource("1_3vfaj")
 stat = 5
-value = 0.3
+value = 30.0
 positive = true
 
 [resource]
 script = ExtResource("2_10nor")
+type = 1
 modifiers = Array[ExtResource("1_3vfaj")]([SubResource("Resource_ixbx3")])
+upgrade_type = 1
 name = "Range Module"
-description = "+ 30% Range"
-price = 30
 icon = ExtResource("1_kyogk")
+description = "+ 30% Range"
+rarity = 0
+price = 30

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://beiox4ea7o1wd"]
+[gd_scene load_steps=3 format=3 uid="uid://beiox4ea7o1wd"]
 
 [ext_resource type="Script" path="res://src/ui/pause_menu/pause_menu.gd" id="1_lqvdf"]
+[ext_resource type="PackedScene" uid="uid://dsp6rfxy3p3rs" path="res://src/ui/tutorial/control_container/control_container.tscn" id="2_ums3b"]
 
 [node name="PauseMenu" type="CanvasLayer"]
 script = ExtResource("1_lqvdf")
@@ -14,17 +15,51 @@ grow_vertical = 2
 color = Color(0.168627, 0.168627, 0.168627, 0.721569)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(300, 0)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -150.0
+offset_top = -84.5
+offset_right = 150.0
+offset_bottom = 84.5
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" parent="VBoxContainer/VBoxContainer" instance=ExtResource("2_ums3b")]
+layout_mode = 2
+action_text = "MOVE"
+control_text = "WASD"
+
+[node name="HBoxContainer2" parent="VBoxContainer/VBoxContainer" instance=ExtResource("2_ums3b")]
+layout_mode = 2
+action_text = "SHOOT"
+control_text = "LEFT CLICK"
+
+[node name="HBoxContainer3" parent="VBoxContainer/VBoxContainer" instance=ExtResource("2_ums3b")]
+layout_mode = 2
+action_text = "DASH"
+control_text = "RIGHT CLICK"
+
+[node name="HBoxContainer4" parent="VBoxContainer/VBoxContainer" instance=ExtResource("2_ums3b")]
+layout_mode = 2
+action_text = "EQUIP PRIMARY"
+control_text = "1"
+
+[node name="HBoxContainer5" parent="VBoxContainer/VBoxContainer" instance=ExtResource("2_ums3b")]
+layout_mode = 2
+action_text = "EQUIP SECONDARY"
+control_text = "2"
+
+[node name="HBoxContainer6" parent="VBoxContainer/VBoxContainer" instance=ExtResource("2_ums3b")]
+layout_mode = 2
+action_text = "CHANGE WEAPON"
+control_text = "SCROLL WHEEL"
 
 [node name="ResumeButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2

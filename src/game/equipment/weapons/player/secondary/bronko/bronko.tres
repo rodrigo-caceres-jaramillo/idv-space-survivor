@@ -7,7 +7,6 @@
 
 [resource]
 script = ExtResource("1_wdeju")
-type = 0
 weapon_scene = ExtResource("4_gsac2")
 stats = ExtResource("3_74n6n")
 weapon_type = 2
@@ -15,4 +14,4 @@ name = "Bronko"
 icon = ExtResource("1_rotq7")
 description = "Small Shotgun"
 rarity = 0
-price = 30
+price = 50

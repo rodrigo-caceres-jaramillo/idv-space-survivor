@@ -13,7 +13,7 @@ positive = true
 [sub_resource type="Resource" id="Resource_6r65c"]
 script = ExtResource("2_1lshj")
 stat = 1
-value = 0.03
+value = 3.0
 positive = false
 
 [resource]
@@ -25,4 +25,4 @@ name = "Health cursed module "
 icon = ExtResource("1_beh10")
 description = "+15 Max Health -3% Speed"
 rarity = 0
-price = 0
+price = 30

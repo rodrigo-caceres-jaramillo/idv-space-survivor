@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://banvou7ehyoxi"]
+[gd_scene load_steps=15 format=3 uid="uid://banvou7ehyoxi"]
 
 [ext_resource type="PackedScene" uid="uid://cieyh0w75vcq7" path="res://src/ui/store/panel/store_panel.tscn" id="1_1xonm"]
 [ext_resource type="Script" path="res://src/ui/store/start_wave_button.gd" id="2_0wl4q"]
@@ -7,6 +7,22 @@
 [ext_resource type="Texture2D" uid="uid://bsp74h3u0b6yk" path="res://assets/textures/ui/panel/start_panel.png" id="5_0n7ms"]
 [ext_resource type="PackedScene" uid="uid://c4kx661vvd6fc" path="res://src/ui/store/weapons/weapons_panel.tscn" id="5_iqs65"]
 [ext_resource type="PackedScene" uid="uid://db28ox2a2lp5b" path="res://src/ui/stats/weapon/weapon_stats_panel.tscn" id="6_mjfog"]
+[ext_resource type="Resource" uid="uid://l3xu8dwqyrjs" path="res://src/data/store/pools/level_1.tres" id="8_301ox"]
+[ext_resource type="Resource" uid="uid://dtcgki1ea428t" path="res://src/data/store/pools/level_2.tres" id="9_w14jh"]
+[ext_resource type="Resource" uid="uid://84nsfjylp3h3" path="res://src/data/store/pools/level_3.tres" id="10_bgyry"]
+
+[sub_resource type="Gradient" id="Gradient_o1lym"]
+interpolation_mode = 2
+interpolation_color_space = 1
+offsets = PackedFloat32Array(0.150685, 0.287671, 0.625571, 0.808219, 1)
+colors = PackedColorArray(0.0778797, 0.31562, 0.999995, 1, 0.0778797, 0.31562, 0.999995, 1, 0.0497861, 0.235741, 0.725114, 1, 0.0168072, 0.132588, 0.434592, 1, 1.56425e-07, 0.113079, 0.27509, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3hxnq"]
+gradient = SubResource("Gradient_o1lym")
+width = 100
+fill = 1
+fill_from = Vector2(0.529915, 0.498576)
+fill_to = Vector2(0.985019, 0.921699)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k17ka"]
 texture = ExtResource("5_0n7ms")
@@ -20,13 +36,14 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Store" type="CanvasLayer"]
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.319255, 0.319255, 0.319255, 1)
+texture = SubResource("GradientTexture2D_3hxnq")
+expand_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -74,7 +91,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_b0qy1")
 theme_override_font_sizes/font_size = 15
 theme_override_styles/normal = SubResource("StyleBoxFlat_qvagk")
-text = "STArT WAVE"
+text = "STArT WAVE ( 1 / 5 )"
 script = ExtResource("2_0wl4q")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/StoreContainer"]
@@ -82,5 +99,6 @@ layout_mode = 2
 
 [node name="StorePanel" parent="MarginContainer/StoreContainer/VBoxContainer" instance=ExtResource("1_1xonm")]
 layout_mode = 2
+pools = Array[Resource("res://src/data/store/pools/pool_resource.gd")]([ExtResource("8_301ox"), ExtResource("9_w14jh"), ExtResource("10_bgyry")])
 
 [connection signal="pressed" from="MarginContainer/StoreContainer/VBoxContainer2/PanelContainer/StartWaveButton" to="MarginContainer/StoreContainer/VBoxContainer2/PanelContainer/StartWaveButton" method="_on_pressed"]

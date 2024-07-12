@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="PoolResource" load_steps=16 format=3 uid="uid://dtcgki1ea428t"]
+[gd_resource type="Resource" script_class="PoolResource" load_steps=14 format=3 uid="uid://dtcgki1ea428t"]
 
 [ext_resource type="Resource" uid="uid://b1smiewmm1lk1" path="res://src/game/equipment/upgrades/character/health/health_upgrade_2.tres" id="1_eej5q"]
 [ext_resource type="Resource" uid="uid://bhrxjmcskt5c4" path="res://src/game/equipment/upgrades/character/health_x_speed/health_x_speed_upgrade_2.tres" id="2_da0ud"]
@@ -10,13 +10,11 @@
 [ext_resource type="Resource" uid="uid://b2ogcpq7iecid" path="res://src/game/equipment/upgrades/weapon/range/range_upgrade_2.tres" id="7_4xeig"]
 [ext_resource type="Resource" uid="uid://w3ffxoy2nvk5" path="res://src/game/equipment/upgrades/weapon/rate/rate_upgrade_2.tres" id="8_acg4x"]
 [ext_resource type="Resource" uid="uid://cgyhpr0ut6rux" path="res://src/game/equipment/upgrades/weapon/rate_x_damage/rate_x_damage_upgrade_2.tres" id="9_olj5f"]
-[ext_resource type="Resource" uid="uid://bh5nx6sulc75o" path="res://src/game/equipment/weapons/player/secondary/laser_pistol/laser_pistol.tres" id="10_t7p8n"]
-[ext_resource type="Resource" uid="uid://b7bgyrnp5tb3b" path="res://src/game/equipment/weapons/player/secondary/smg_rt/smg_rt.tres" id="11_xrdeg"]
-[ext_resource type="Resource" uid="uid://dreqncs4a6fyj" path="res://src/game/equipment/weapons/player/primary/sky/sky.tres" id="12_v4mcb"]
-[ext_resource type="Resource" uid="uid://cfi6aqqk31ros" path="res://src/game/equipment/weapons/player/primary/orange_assaut/orange_assaut.tres" id="13_4j7bn"]
-[ext_resource type="Resource" uid="uid://be0p2ukh7867q" path="res://src/game/equipment/weapons/player/primary/m16/m16.tres" id="14_nboun"]
+[ext_resource type="Resource" uid="uid://c0nqjn535oj7q" path="res://src/game/equipment/weapons/player/secondary/viper/viper.tres" id="10_3wm10"]
+[ext_resource type="Resource" uid="uid://djoeclc508q13" path="res://src/game/equipment/weapons/player/primary/rumbler/rumbler.tres" id="11_7fk8c"]
+[ext_resource type="Resource" uid="uid://dj7b3q6gsmqd" path="res://src/game/equipment/weapons/player/primary/striker/striker.tres" id="12_y0n8n"]
 
 [resource]
 script = ExtResource("4_vqnaa")
 level = 2
-pool = Array[Resource("res://src/game/equipment/equipment.gd")]([ExtResource("1_eej5q"), ExtResource("2_da0ud"), ExtResource("3_lwkf6"), ExtResource("4_vd2kj"), ExtResource("5_k5rej"), ExtResource("6_dr8vu"), ExtResource("7_4xeig"), ExtResource("8_acg4x"), ExtResource("9_olj5f"), ExtResource("10_t7p8n"), ExtResource("11_xrdeg"), ExtResource("12_v4mcb"), ExtResource("13_4j7bn"), ExtResource("14_nboun")])
+pool = Array[Resource("res://src/game/equipment/equipment.gd")]([ExtResource("1_eej5q"), ExtResource("2_da0ud"), ExtResource("3_lwkf6"), ExtResource("4_vd2kj"), ExtResource("5_k5rej"), ExtResource("6_dr8vu"), ExtResource("7_4xeig"), ExtResource("8_acg4x"), ExtResource("9_olj5f"), ExtResource("10_3wm10"), ExtResource("11_7fk8c"), ExtResource("12_y0n8n")])

@@ -1,6 +1,5 @@
-[gd_resource type="Resource" script_class="PoolResource" load_steps=15 format=3 uid="uid://l3xu8dwqyrjs"]
+[gd_resource type="Resource" script_class="PoolResource" load_steps=14 format=3 uid="uid://l3xu8dwqyrjs"]
 
-[ext_resource type="Resource" uid="uid://bimc6a10ybeqk" path="res://src/game/equipment/weapons/player/secondary/bronko/bronko.tres" id="1_hc251"]
 [ext_resource type="Resource" uid="uid://cdjagr0rjgkdf" path="res://src/game/equipment/weapons/player/primary/standard/standard_rifle.tres" id="1_m0c0p"]
 [ext_resource type="Script" path="res://src/data/store/pools/pool_resource.gd" id="1_usxbm"]
 [ext_resource type="Resource" uid="uid://bh1iysc3jns2y" path="res://src/game/equipment/weapons/player/secondary/dex/dex.tres" id="2_ibftv"]
@@ -12,10 +11,10 @@
 [ext_resource type="Resource" uid="uid://eep8sh2ng802" path="res://src/game/equipment/upgrades/weapon/damage/damage_upgrade_1.tres" id="8_b4mq0"]
 [ext_resource type="Resource" uid="uid://cbwk5o4sixyod" path="res://src/game/equipment/upgrades/weapon/range/range_upgrade_1.tres" id="9_1pwhi"]
 [ext_resource type="Resource" uid="uid://dui0c7dmvco7i" path="res://src/game/equipment/upgrades/weapon/rate/rate_upgrade_1.tres" id="10_jsa7u"]
-[ext_resource type="Resource" uid="uid://cxn3v10pikvn8" path="res://src/game/equipment/weapons/player/primary/shotgun/shotgun.tres" id="12_v37ks"]
-[ext_resource type="Resource" uid="uid://850ncg2qdncs" path="res://src/game/equipment/weapons/player/primary/sniper/sniper.tres" id="13_cd24s"]
+[ext_resource type="Resource" uid="uid://ba01lcdx6qfhv" path="res://src/game/equipment/upgrades/character/health_x_speed/health_x_speed_upgrade_1.tres" id="11_djf8b"]
+[ext_resource type="Resource" uid="uid://d1ls4er3017or" path="res://src/game/equipment/upgrades/weapon/rate_x_damage/rate_x_damage_upgrade_1.tres" id="13_cdcxe"]
 
 [resource]
 script = ExtResource("1_usxbm")
 level = 1
-pool = Array[Resource("res://src/game/equipment/equipment.gd")]([ExtResource("1_m0c0p"), ExtResource("1_hc251"), ExtResource("2_ibftv"), ExtResource("3_mije1"), ExtResource("4_yg577"), ExtResource("5_sd3ic"), ExtResource("6_sk61u"), ExtResource("7_4761b"), ExtResource("8_b4mq0"), ExtResource("9_1pwhi"), ExtResource("10_jsa7u"), ExtResource("12_v37ks"), ExtResource("13_cd24s")])
+pool = Array[Resource("res://src/game/equipment/equipment.gd")]([ExtResource("1_m0c0p"), ExtResource("2_ibftv"), ExtResource("3_mije1"), ExtResource("4_yg577"), ExtResource("5_sd3ic"), ExtResource("6_sk61u"), ExtResource("7_4761b"), ExtResource("8_b4mq0"), ExtResource("9_1pwhi"), ExtResource("10_jsa7u"), ExtResource("11_djf8b"), ExtResource("13_cdcxe")])

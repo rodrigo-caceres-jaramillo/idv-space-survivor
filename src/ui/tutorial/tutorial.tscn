@@ -45,12 +45,12 @@ control_text = "WASD"
 [node name="HBoxContainer2" parent="Container/VBoxContainer" instance=ExtResource("2_4620b")]
 layout_mode = 2
 action_text = "SHOOT"
-control_text = "RIGTH CLICK"
+control_text = "LEFT CLICK"
 
 [node name="HBoxContainer3" parent="Container/VBoxContainer" instance=ExtResource("2_4620b")]
 layout_mode = 2
 action_text = "DASH"
-control_text = "LEFT CLICK"
+control_text = "RIGHT CLICK"
 
 [node name="HBoxContainer4" parent="Container/VBoxContainer" instance=ExtResource("2_4620b")]
 layout_mode = 2
@@ -61,6 +61,11 @@ control_text = "1"
 layout_mode = 2
 action_text = "EQUIP SECONDARY"
 control_text = "2"
+
+[node name="HBoxContainer6" parent="Container/VBoxContainer" instance=ExtResource("2_4620b")]
+layout_mode = 2
+action_text = "CHANGE WEAPON"
+control_text = "SCROLL WHEEL"
 
 [node name="Duration" type="Timer" parent="."]
 one_shot = true

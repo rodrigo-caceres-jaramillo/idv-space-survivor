@@ -11,7 +11,7 @@ func _ready():
 	Events.wave_finished.connect(show_store.unbind(1))
 	Events.wave_started.connect(show_ui.unbind(1))
 	Events.player_ready.connect(when_player_ready)
-	Events.game_finish.connect(show_game_finish.unbind(1))
+	Events.game_finish.connect(show_game_finish)
 	Input.set_custom_mouse_cursor(CROSSHAIR, Input.CURSOR_ARROW, Vector2(16,32))
 
 func when_player_ready():
@@ -31,6 +31,7 @@ func show_pause_menu():
 	paused = !paused
 	
 func show_game_finish():
+	print("game over")
 	show_game_over()
 	store.hide()
 	

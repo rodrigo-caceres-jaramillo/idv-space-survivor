@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://btjax2v4qeeu3"]
+[gd_scene load_steps=25 format=3 uid="uid://btjax2v4qeeu3"]
 
 [ext_resource type="Script" path="res://src/main/main.gd" id="1_gwchs"]
 [ext_resource type="Texture2D" uid="uid://0dhpoqbrs2oc" path="res://assets/textures/tiles/tile_set.png" id="2_vhjei"]
@@ -19,9 +19,6 @@
 [ext_resource type="PackedScene" uid="uid://d0otfohjoplfd" path="res://src/ui/test_menu/test_menu.tscn" id="14_uvarn"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="14_xwc28"]
 [ext_resource type="Script" path="res://src/main/mouse_manager.gd" id="15_5h1bm"]
-[ext_resource type="PackedScene" uid="uid://b12is4i6qsnjh" path="res://src/game/enemies/stratos/gunner/gunner.tscn" id="20_t5n4f"]
-[ext_resource type="Resource" uid="uid://c8gk45drndbdg" path="res://src/data/health_types/alien.tres" id="21_laknm"]
-[ext_resource type="Script" path="res://src/game/enemies/base/enemy_stats.gd" id="22_hnetq"]
 
 [sub_resource type="Environment" id="Environment_gd5by"]
 background_mode = 3
@@ -237,16 +234,6 @@ ease = 2
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bnke5"]
 size = Vector2(704, 480)
 
-[sub_resource type="Resource" id="Resource_og4it"]
-resource_local_to_scene = true
-script = ExtResource("22_hnetq")
-HEALTH = 1000
-HEALTH_TYPE = ExtResource("21_laknm")
-SPEED = 0.0
-KB_RESISTANCE = 5.0
-min_value = 5
-max_value = 8
-
 [node name="Main" type="Node2D"]
 position = Vector2(-288, -197)
 script = ExtResource("1_gwchs")
@@ -303,6 +290,7 @@ visible = false
 [node name="Tutorial" parent="UIManager" instance=ExtResource("12_xt78r")]
 
 [node name="TestMenu" parent="UIManager" instance=ExtResource("14_uvarn")]
+visible = false
 
 [node name="MouseManager" type="Node2D" parent="."]
 script = ExtResource("15_5h1bm")
@@ -341,9 +329,5 @@ limit_target = NodePath("../CameraBounds/Collision")
 position = Vector2(608, 333)
 shape = SubResource("RectangleShape2D_bnke5")
 disabled = true
-
-[node name="Gunner" parent="." instance=ExtResource("20_t5n4f")]
-position = Vector2(727, 351)
-stats = SubResource("Resource_og4it")
 
 [connection signal="timeout" from="Camera2D/ShakeTimer" to="Camera2D" method="_on_shake_timer_timeout"]

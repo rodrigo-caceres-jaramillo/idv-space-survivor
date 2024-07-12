@@ -22,9 +22,10 @@ func start_wave():
 
 func finish_wave():
 	spawn_timer.stop()
-	Events.wave_finished.emit(current_wave)
-	if game_data.waves_data.size() == current_wave :
+	if(current_wave == 5):
 		Events.game_finish.emit()
+	else:
+		Events.wave_finished.emit(current_wave)
 	self.current_wave += 1
 	
 func spawn_group():

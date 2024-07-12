@@ -7,19 +7,22 @@
 [sub_resource type="Resource" id="Resource_wtbr8"]
 script = ExtResource("2_svht2")
 stat = 5
-value = 0.3
+value = 30.0
 positive = true
 
 [sub_resource type="Resource" id="Resource_yixox"]
 script = ExtResource("2_svht2")
 stat = 2
-value = 0.1
+value = 10.0
 positive = false
 
 [resource]
 script = ExtResource("1_ref2p")
+type = 1
 modifiers = Array[ExtResource("2_svht2")]([SubResource("Resource_wtbr8"), SubResource("Resource_yixox")])
+upgrade_type = 1
 name = "Rate Cursed Module"
-description = "30% Rate  -10% Damage"
-price = 15
 icon = ExtResource("1_v416j")
+description = "30% Rate  -10% Damage"
+rarity = 0
+price = 30

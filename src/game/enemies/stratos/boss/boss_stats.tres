@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=3 format=3 uid="uid://jg4yk28w4rec"]
+
+[ext_resource type="Resource" uid="uid://c8gk45drndbdg" path="res://src/data/health_types/alien.tres" id="1_481gk"]
+[ext_resource type="Script" path="res://src/game/enemies/base/enemy_stats.gd" id="2_tdb3u"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("2_tdb3u")
+HEALTH = 500
+HEALTH_TYPE = ExtResource("1_481gk")
+SPEED = 0.2
+KB_RESISTANCE = 100.0
+min_value = 30
+max_value = 50

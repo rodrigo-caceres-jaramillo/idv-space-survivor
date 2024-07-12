@@ -1,10 +1,20 @@
-[gd_resource type="Resource" script_class="PoolResource" load_steps=4 format=3 uid="uid://84nsfjylp3h3"]
+[gd_resource type="Resource" script_class="PoolResource" load_steps=14 format=3 uid="uid://84nsfjylp3h3"]
 
 [ext_resource type="Resource" uid="uid://4j4cyrg66s0d" path="res://src/game/equipment/upgrades/character/health/health_upgrade_3.tres" id="1_b38vr"]
 [ext_resource type="Script" path="res://src/data/store/pools/pool_resource.gd" id="1_cks2q"]
+[ext_resource type="Resource" uid="uid://cptnwlqros5jh" path="res://src/game/equipment/weapons/player/primary/puncher/puncher.tres" id="1_rlm1f"]
+[ext_resource type="Resource" uid="uid://bimc6a10ybeqk" path="res://src/game/equipment/weapons/player/secondary/bronko/bronko.tres" id="2_gdkve"]
 [ext_resource type="Resource" uid="uid://bka5g5r27jv76" path="res://src/game/equipment/upgrades/character/health_x_speed/health_x_speed_upgrade_3.tres" id="2_kkn2i"]
+[ext_resource type="Resource" uid="uid://c7eftloo4mh2t" path="res://src/game/equipment/weapons/player/primary/breaker/breaker.tres" id="3_mjjm1"]
+[ext_resource type="Resource" uid="uid://cepq7rni8fvsu" path="res://src/game/equipment/upgrades/character/speed/speed_upgrade_3.tres" id="5_6yiyj"]
+[ext_resource type="Resource" uid="uid://bumbl3bm21k2q" path="res://src/game/equipment/upgrades/weapon/crit_chance/crit_chance_upgrade_3.tres" id="7_xtor5"]
+[ext_resource type="Resource" uid="uid://kvs7do4xop06" path="res://src/game/equipment/upgrades/weapon/crit_damage/crit_damage_upgrade_3.tres" id="8_4c8po"]
+[ext_resource type="Resource" uid="uid://bmb5s71qfpxbg" path="res://src/game/equipment/upgrades/weapon/damage/damage_upgrade_3.tres" id="9_84gi3"]
+[ext_resource type="Resource" uid="uid://ha4rubn55i6" path="res://src/game/equipment/upgrades/weapon/range/range_upgrade_3.tres" id="10_i0a4o"]
+[ext_resource type="Resource" uid="uid://brlrwc0rxuuug" path="res://src/game/equipment/upgrades/weapon/rate/rate_upgrade_3.tres" id="11_v7hun"]
+[ext_resource type="Resource" uid="uid://cll8hnyb76eoh" path="res://src/game/equipment/upgrades/weapon/rate_x_damage/rate_x_damage_upgrade_3.tres" id="12_y000r"]
 
 [resource]
 script = ExtResource("1_cks2q")
 level = 3
-pool = Array[Resource("res://src/game/equipment/equipment.gd")]([ExtResource("1_b38vr"), ExtResource("2_kkn2i")])
+pool = Array[Resource("res://src/game/equipment/equipment.gd")]([ExtResource("1_rlm1f"), ExtResource("2_gdkve"), ExtResource("3_mjjm1"), ExtResource("1_b38vr"), ExtResource("2_kkn2i"), ExtResource("5_6yiyj"), ExtResource("7_xtor5"), ExtResource("8_4c8po"), ExtResource("9_84gi3"), ExtResource("10_i0a4o"), ExtResource("11_v7hun"), ExtResource("12_y000r")])

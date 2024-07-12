@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=5 format=3 uid="uid://c7eftloo4mh2t"]
+
+[ext_resource type="Script" path="res://src/game/equipment/weapons/weapon.gd" id="1_3fp7g"]
+[ext_resource type="Texture2D" uid="uid://dk6r01q8ly53m" path="res://src/game/equipment/weapons/player/primary/breaker/breaker.png" id="1_wly3u"]
+[ext_resource type="Resource" uid="uid://c1lf443iu2hyp" path="res://src/game/equipment/weapons/player/primary/breaker/breaker_stats.tres" id="3_d425y"]
+[ext_resource type="PackedScene" uid="uid://so4alege2vy0" path="res://src/game/equipment/weapons/player/primary/breaker/breaker.tscn" id="4_fnttr"]
+
+[resource]
+script = ExtResource("1_3fp7g")
+weapon_scene = ExtResource("4_fnttr")
+stats = ExtResource("3_d425y")
+weapon_type = 1
+name = "Breaker"
+icon = ExtResource("1_wly3u")
+description = "Strong shotgun"
+rarity = 0
+price = 50
